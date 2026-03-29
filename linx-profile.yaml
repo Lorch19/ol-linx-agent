@@ -1,0 +1,56 @@
+# Linx Advisor — Compounding Profile
+# This file grows with every significant interaction.
+# Updated by the advisor after decisions, meetings, and learnings.
+# Last updated: 2026-03-29
+
+decision_journal: []
+  # Format:
+  # - date: "YYYY-MM-DD"
+  #   decision: "What was decided"
+  #   alternatives: "What other options existed"
+  #   reasoning: "Why this choice"
+  #   outcome: ""  # Fill in later
+  #   learning: ""  # Gap between expectation and reality
+
+stakeholder_patterns:
+  niv_cpo:
+    cares_about:
+      - "Product architecture coherence"
+      - "Customer-driven decisions"
+    communication_style: "TBD — update after first interactions"
+    recent_pushbacks: []
+  israel_ceo:
+    cares_about:
+      - "Revenue growth and ARR"
+      - "Series B narrative"
+      - "Competitive positioning"
+    communication_style: "TBD — update after first interactions"
+    recent_pushbacks: []
+  eng_leads:
+    cares_about:
+      - "Technical feasibility"
+      - "Architecture quality"
+    communication_style: "TBD"
+    recent_pushbacks: []
+
+customer_intelligence:
+  patterns: []
+  # Format: "Theme — frequency — example"
+  objections: []
+  # Format: "Objection — how we handled it — outcome"
+  requests: []
+  # Format: "Feature request — customer — frequency"
+
+competitive_updates: []
+  # Format:
+  # - date: "YYYY-MM-DD"
+  #   competitor: ""
+  #   change: ""
+  #   implication: ""
+
+growth_tracker:
+  strategic_wins: []
+  # Format: "What I influenced — impact — date"
+  artifacts_shipped: []
+  # Format: "Artifact — purpose — date"
+  influence_radius: "Building — first 2 weeks, establishing credibility with competitive positioning work"
