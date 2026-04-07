@@ -11,7 +11,14 @@ if [ -z "$MESSAGE" ]; then
   exit 1
 fi
 
-curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+RESPONSE=$(curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
   -d chat_id="${TELEGRAM_USER_ID}" \
   -d text="${MESSAGE}" \
-  -d parse_mode="Markdown" > /dev/null
+  -d parse_mode="Markdown")
+
+if echo "$RESPONSE" | grep -q '"ok":true'; then
+  echo "Sent"
+else
+  echo "FAILED: $RESPONSE" >&2
+  exit 1
+fi

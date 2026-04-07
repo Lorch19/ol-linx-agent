@@ -1,1 +1,4 @@
 .env
+.telegram_offset
+.telegram-bot.log
+.telegram-bot.err

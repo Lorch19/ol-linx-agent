@@ -1,0 +1,15 @@
+#!/bin/bash
+# Linx Telegram bot control
+# Usage: ./bot.sh start | stop | status | logs | send "message"
+
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PLIST="$HOME/Library/LaunchAgents/com.ol.linx-telegram-bot.plist"
+
+case "$1" in
+  start)  launchctl load "$PLIST" 2>/dev/null && echo "Bot started" ;;
+  stop)   launchctl unload "$PLIST" 2>/dev/null && echo "Bot stopped" ;;
+  status) launchctl list | grep linx-telegram > /dev/null && echo "Running" || echo "Stopped" ;;
+  logs)   tail -f "$SCRIPT_DIR/.telegram-bot.log" ;;
+  send)   bash "$SCRIPT_DIR/notify.sh" "$2" ;;
+  *)      echo "Usage: ./bot.sh start|stop|status|logs|send \"message\"" ;;
+esac
