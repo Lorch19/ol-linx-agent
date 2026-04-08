@@ -1,5 +1,9 @@
 # Mission 07: Linx Agent — From Notification System to Real Agent
 
+## Targets
+- **1-month target (May 8): 8.5/10** — all tools connected, auto-processing intel, stateful conversations, autonomous intelligence processor
+- **3-month target (July 8): 10/10** — learning loop, outcome tracking, stakeholder prediction, earned autonomy. Requires 90+ days of compounded data — no shortcut.
+
 ## Current State (April 8, 2026)
 
 **What exists:**
