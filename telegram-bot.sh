@@ -20,9 +20,9 @@ PROJECTS=(
   "watch.?together|movie|stream|room|/Users/omrilorch/WatchTogether-Agent|Omri's WatchTogether assistant."
 )
 
-# Default project if no match
-DEFAULT_DIR="/Users/omrilorch/ol-linx-agent"
-DEFAULT_PERSONA="Omri's general assistant. Figure out what he needs and help."
+# No default — ask Omri to clarify
+DEFAULT_DIR=""
+DEFAULT_PERSONA=""
 
 if [ -f "$OFFSET_FILE" ]; then
   OFFSET=$(cat "$OFFSET_FILE")
@@ -88,8 +88,20 @@ handle_message() {
   route_result=$(route_message "$text")
   local project_dir="${route_result%%|*}"
   local persona="${route_result#*|}"
-  local project_name=$(basename "$project_dir")
 
+  if [ -z "$project_dir" ]; then
+    log "No project match — asking to clarify"
+    send_message "Not sure which project this is for. Can you specify?
+
+• *Linx* — IAM, competitors, briefs, commitments
+• *Portfolio* — stocks, positions, trades
+• *ShopAgent* — ecommerce
+• *First Bloom* — baby/child app
+• *WatchTogether* — movie streaming"
+    return
+  fi
+
+  local project_name=$(basename "$project_dir")
   log "Routed to: $project_name"
   send_message "⏳ _Processing ($project_name)..._"
 
