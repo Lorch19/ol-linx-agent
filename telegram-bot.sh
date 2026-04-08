@@ -1,14 +1,18 @@
 #!/bin/bash
-# OpenClaw Telegram Bot — multi-project router
+# OpenClaw Telegram Bot — multi-project router with stateful conversations
 # Polls for incoming messages, detects project context, routes to Claude Code
+# Conversations persist across messages using Claude Code session resume
 # Usage: ./telegram-bot.sh (runs as launchd service)
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source "$SCRIPT_DIR/.env"
 
 OFFSET_FILE="$SCRIPT_DIR/.telegram_offset"
+SESSIONS_DIR="$SCRIPT_DIR/.telegram_sessions"
 CLAUDE_BIN="$HOME/.local/bin/claude"
 POLL_INTERVAL=5
+
+mkdir -p "$SESSIONS_DIR"
 
 # Project registry: keyword patterns → directory + persona
 # Format: "pattern|directory|persona"
@@ -20,7 +24,6 @@ PROJECTS=(
   "watch.?together|movie|stream|room|/Users/omrilorch/WatchTogether-Agent|Omri's WatchTogether assistant."
 )
 
-# No default — ask Omri to clarify
 DEFAULT_DIR=""
 DEFAULT_PERSONA=""
 
@@ -53,13 +56,11 @@ route_message() {
   local text_lower=$(echo "$text" | tr '[:upper:]' '[:lower:]')
 
   for project in "${PROJECTS[@]}"; do
-    # Split: everything before the second-to-last | is patterns, then dir, then persona
     local persona="${project##*|}"
     local rest="${project%|*}"
     local dir="${rest##*|}"
     local patterns="${rest%|*}"
 
-    # Check each pattern (separated by |)
     IFS='|' read -ra PATS <<< "$patterns"
     for pat in "${PATS[@]}"; do
       if echo "$text_lower" | grep -qE "$pat"; then
@@ -70,6 +71,88 @@ route_message() {
   done
 
   echo "$DEFAULT_DIR|$DEFAULT_PERSONA"
+}
+
+# Get session file path for a project (or "general" for unrouted messages)
+get_session_file() {
+  local project_dir="$1"
+  if [ -z "$project_dir" ]; then
+    echo "$SESSIONS_DIR/general.session"
+  else
+    local project_name=$(basename "$project_dir")
+    echo "$SESSIONS_DIR/${project_name}.session"
+  fi
+}
+
+# Run claude with session persistence — resumes prior conversation if one exists
+run_claude() {
+  local project_dir="$1"
+  local persona="$2"
+  local message="$3"
+
+  local session_file
+  session_file=$(get_session_file "$project_dir")
+
+  local system_prompt
+  if [ -n "$persona" ]; then
+    system_prompt="You are $persona Responding via Telegram. Be concise (under 300 words). Use Markdown compatible with Telegram (bold with *, italic with _, code with \`). Read relevant files from the working directory if needed."
+  else
+    system_prompt="You are Omri's personal assistant (OpenClaw). Be concise (under 300 words). Use Telegram-compatible Markdown.
+
+If Omri's message is clearly about a specific project but you can't tell which one, ask him to clarify with one of: Linx, Portfolio, ShopAgent, First Bloom, WatchTogether.
+
+Otherwise just help with whatever he needs."
+  fi
+
+  local json_output exit_code
+
+  # Try resuming existing session
+  if [ -f "$session_file" ]; then
+    local session_id
+    session_id=$(cat "$session_file")
+    log "Resuming session $session_id"
+
+    json_output=$("$CLAUDE_BIN" -p \
+      --output-format json \
+      --max-turns 3 \
+      --resume "$session_id" \
+      "$message" 2>/dev/null)
+    exit_code=$?
+
+    # If resume failed (expired/corrupt session), fall through to new session
+    if [ $exit_code -ne 0 ]; then
+      log "Session resume failed (exit $exit_code), starting fresh"
+      rm -f "$session_file"
+    fi
+  fi
+
+  # Start new session if no existing session or resume failed
+  if [ ! -f "$session_file" ]; then
+    local new_args=(-p --output-format json --max-turns 3)
+    new_args+=(--append-system-prompt "$system_prompt")
+    if [ -n "$project_dir" ]; then
+      new_args+=(-d "$project_dir")
+    fi
+
+    json_output=$("$CLAUDE_BIN" "${new_args[@]}" "$message" 2>/dev/null)
+    exit_code=$?
+  fi
+
+  if [ $exit_code -ne 0 ] || [ -z "$json_output" ]; then
+    echo "Sorry, something went wrong."
+    return 1
+  fi
+
+  # Save session ID for next message
+  local new_session_id
+  new_session_id=$(echo "$json_output" | python3 -c "import sys,json; print(json.load(sys.stdin).get('session_id',''))" 2>/dev/null)
+  if [ -n "$new_session_id" ]; then
+    echo "$new_session_id" > "$session_file"
+    log "Session saved: $new_session_id"
+  fi
+
+  # Extract and return response text
+  echo "$json_output" | python3 -c "import sys,json; print(json.load(sys.stdin).get('result',''))" 2>/dev/null
 }
 
 handle_message() {
@@ -83,6 +166,38 @@ handle_message() {
 
   log "Received: $text"
 
+  # Handle /reset command — clears conversation session
+  local text_lower=$(echo "$text" | tr '[:upper:]' '[:lower:]')
+  if [[ "$text_lower" == "/reset"* ]]; then
+    local reset_target="${text_lower#/reset}"
+    reset_target=$(echo "$reset_target" | xargs)  # trim whitespace
+
+    if [ -z "$reset_target" ]; then
+      # Reset all sessions
+      rm -f "$SESSIONS_DIR"/*.session
+      send_message "All conversation sessions cleared."
+      log "All sessions reset"
+    else
+      # Reset specific project session
+      local found=0
+      for f in "$SESSIONS_DIR"/*.session; do
+        [ -f "$f" ] || continue
+        local fname=$(basename "$f" .session)
+        if echo "$fname" | grep -qi "$reset_target"; then
+          rm -f "$f"
+          send_message "Session cleared for *${fname}*."
+          log "Session reset: $fname"
+          found=1
+          break
+        fi
+      done
+      if [ $found -eq 0 ]; then
+        send_message "No session found matching '$reset_target'."
+      fi
+    fi
+    return
+  fi
+
   # Route to correct project
   local route_result
   route_result=$(route_message "$text")
@@ -92,17 +207,8 @@ handle_message() {
   if [ -z "$project_dir" ]; then
     log "General message — no project context"
     send_message "⏳ _Processing..._"
-
-    response=$("$CLAUDE_BIN" -p \
-      --max-turns 3 \
-      "You are Omri's personal assistant (OpenClaw). Be concise (under 300 words). Use Telegram-compatible Markdown.
-
-If Omri's message is clearly about a specific project but you can't tell which one, ask him to clarify with one of: Linx, Portfolio, ShopAgent, First Bloom, WatchTogether.
-
-Otherwise just help with whatever he needs.
-
-User message: $text" 2>&1) || response="Sorry, something went wrong."
-
+    local response
+    response=$(run_claude "" "" "$text")
     send_message "$response"
     log "Responded general (${#response} chars)"
     return
@@ -113,20 +219,12 @@ User message: $text" 2>&1) || response="Sorry, something went wrong."
   send_message "⏳ _Processing ($project_name)..._"
 
   local response
-  response=$("$CLAUDE_BIN" -p \
-    --max-turns 3 \
-    -d "$project_dir" \
-    "You are $persona Responding via Telegram. Be concise (under 300 words). Use Markdown compatible with Telegram (bold with *, italic with _, code with \`).
-
-Read relevant files from the working directory if needed.
-
-User message: $text" 2>&1) || response="Sorry, something went wrong processing that."
-
+  response=$(run_claude "$project_dir" "$persona" "$text")
   send_message "$response"
   log "Responded to $project_name (${#response} chars)"
 }
 
-log "OpenClaw bot started. Polling every ${POLL_INTERVAL}s..."
+log "OpenClaw bot started (stateful). Polling every ${POLL_INTERVAL}s..."
 
 while true; do
   UPDATES=$(curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates?offset=${OFFSET}&timeout=30" 2>/dev/null)

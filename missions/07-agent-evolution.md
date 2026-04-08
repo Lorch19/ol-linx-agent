@@ -106,7 +106,7 @@ Directional north star, not a commitment. Scope TBD based on Phase B/C learnings
 
 3. **[OPEN → Decide in Phase A.5] Gong access timeline** — May not get access in first weeks. Fallback: manual call notes → structured extraction.
 
-4. **[OPEN] Stateful Telegram conversations** — Options: (a) sqlite db storing conversation history per user, (b) file-based conversation log passed to `claude -p`, (c) long-running Claude session. Tradeoff: simplicity vs quality.
+4. **[RESOLVED] Stateful Telegram conversations** — Using `claude -p --resume $SESSION_ID`. Each project gets its own persistent session via `.telegram_sessions/`. Resume keeps full conversation context (tool history, file reads, etc.) natively. `/reset` command clears sessions. Simple, no external DB, leverages Claude Code's built-in session management.
 
 5. **[OPEN] Telegram approval UX** — Inline keyboards require webhook mode (not polling). Options: (a) text-based approve/reject, (b) lightweight webhook server, (c) python-telegram-bot framework. Defer until Phase D is real.
 

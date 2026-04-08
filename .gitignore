@@ -2,3 +2,4 @@
 .telegram_offset
 .telegram-bot.log
 .telegram-bot.err
+.telegram_sessions/
