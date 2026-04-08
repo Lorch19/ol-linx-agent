@@ -4,7 +4,6 @@
 # Usage: ./telegram-bot.sh (runs in foreground)
 # Stop: Ctrl+C or kill the process
 
-set -e
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 source "$SCRIPT_DIR/.env"
 
@@ -68,8 +67,6 @@ User message: $text" 2>&1) || response="Sorry, something went wrong processing t
 }
 
 log "Linx Telegram bot started. Polling every ${POLL_INTERVAL}s..."
-send_message "🤖 *Linx Advisor Online*
-Send me anything — questions, log entries, meeting notes."
 
 while true; do
   # Get updates from Telegram
