@@ -15,12 +15,12 @@ in plaintext instead of sourced from .env. Keeping both repos created drift risk
 and a live credentials exposure.
 
 ## Success Criteria
-- [ ] study-tracker.json migrated from linx-advisor
-- [ ] .env.example added to document required environment variables
-- [ ] .gitignore confirmed to exclude .env
-- [ ] Telegram bot token rotated via BotFather (manual)
-- [ ] linx-advisor archived on GitHub (manual)
-- [ ] Both repos set back to private on GitHub (manual)
+- [x] study-tracker.json migrated from linx-advisor
+- [x] .env.example added to document required environment variables
+- [x] .gitignore confirmed to exclude .env
+- [x] Telegram bot token rotated via BotFather (manual)
+- [x] linx-advisor archived on GitHub (manual)
+- [x] Both repos set back to private on GitHub (manual)
 
 ## What Claude Code Did
 1. Read and verified all files before acting
