@@ -11,6 +11,7 @@ OFFSET_FILE="$SCRIPT_DIR/.telegram_offset"
 SESSIONS_DIR="$SCRIPT_DIR/.telegram_sessions"
 CLAUDE_BIN="$HOME/.local/bin/claude"
 POLL_INTERVAL=5
+SESSION_TTL=86400  # 24 hours — sessions auto-expire to pick up fresh project state
 
 mkdir -p "$SESSIONS_DIR"
 
@@ -105,6 +106,15 @@ Otherwise just help with whatever he needs."
   fi
 
   local json_output exit_code
+
+  # Expire stale sessions so the bot picks up fresh project state daily
+  if [ -f "$session_file" ]; then
+    local file_age=$(( $(date +%s) - $(stat -f %m "$session_file") ))
+    if [ "$file_age" -gt "$SESSION_TTL" ]; then
+      log "Session expired (${file_age}s old), starting fresh"
+      rm -f "$session_file"
+    fi
+  fi
 
   # Try resuming existing session
   if [ -f "$session_file" ]; then
