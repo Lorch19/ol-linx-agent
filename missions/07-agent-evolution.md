@@ -15,7 +15,7 @@
 - No connection to real work tools (Calendar, Slack, Jira, Gong, email)
 - No event-driven triggers — everything runs on cron schedules
 - No approval/action queue — agent can observe and notify, but can't act
-- Bot name on Telegram is "My OpenClaw Agent" — should be "Linx Advisor"
+- Bot name on Telegram is "My OpenClaw Agent" (shared across all use cases — keep as-is)
 - Commitments have no automated overdue detection beyond the morning brief
 - No feedback loop — agent doesn't learn from Omri's corrections
 
@@ -29,7 +29,7 @@ Get the basics reliable. You start at Linx on April 12 with a working Telegram a
 - Bot stable, no spam, clean restart behavior
 - Telegram commands menu (`/brief`, `/commitments`, `/overdue`, `/log`, `/prep`, `/compete`, `/status`) working
 - Morning brief includes real overdue detection
-- Bot renamed to "Linx Advisor" on Telegram
+- Bot stays "My OpenClaw Agent" (shared bot — Linx is one persona)
 - All scheduled tasks confirmed working with correct paths
 
 **Rating after Phase A: 5/10 — reliable notification system + interactive Q&A**
@@ -106,7 +106,7 @@ Directional north star, not a commitment. Scope TBD based on Phase B/C learnings
 
 5. **[OPEN] Telegram approval UX** — Inline keyboards require webhook mode (not polling). Options: (a) text-based approve/reject, (b) lightweight webhook server, (c) python-telegram-bot framework. Defer until Phase D is real.
 
-6. **[RESOLVE NOW] Bot identity** — Rename to "Linx Advisor" via BotFather. Do it today.
+6. **[RESOLVED] Bot identity** — Keep "My OpenClaw Agent" as the shared bot. Linx advisor is one persona routed through it.
 
 7. **[OPEN] Where to run the bot long-term** — Currently local Mac (launchd). Options: (a) keep local, (b) VPS, (c) hybrid. Defer until stability is proven.
 
