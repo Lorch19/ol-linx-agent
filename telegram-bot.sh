@@ -90,14 +90,21 @@ handle_message() {
   local persona="${route_result#*|}"
 
   if [ -z "$project_dir" ]; then
-    log "No project match — asking to clarify"
-    send_message "Not sure which project this is for. Can you specify?
+    log "General message — no project context"
+    send_message "⏳ _Processing..._"
 
-• *Linx* — IAM, competitors, briefs, commitments
-• *Portfolio* — stocks, positions, trades
-• *ShopAgent* — ecommerce
-• *First Bloom* — baby/child app
-• *WatchTogether* — movie streaming"
+    response=$("$CLAUDE_BIN" -p \
+      --max-turns 3 \
+      "You are Omri's personal assistant (OpenClaw). Be concise (under 300 words). Use Telegram-compatible Markdown.
+
+If Omri's message is clearly about a specific project but you can't tell which one, ask him to clarify with one of: Linx, Portfolio, ShopAgent, First Bloom, WatchTogether.
+
+Otherwise just help with whatever he needs.
+
+User message: $text" 2>&1) || response="Sorry, something went wrong."
+
+    send_message "$response"
+    log "Responded general (${#response} chars)"
     return
   fi
 
