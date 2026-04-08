@@ -5,7 +5,9 @@
 # Usage: ./telegram-bot.sh (runs as launchd service)
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+set -a
 source "$SCRIPT_DIR/.env"
+set +a
 
 OFFSET_FILE="$SCRIPT_DIR/.telegram_offset"
 SESSIONS_DIR="$SCRIPT_DIR/.telegram_sessions"
@@ -34,8 +36,10 @@ else
   OFFSET=0
 fi
 
+LOG_FILE="$SCRIPT_DIR/.telegram-bot.log"
+
 log() {
-  echo "[$(date '+%H:%M:%S')] $1"
+  echo "[$(date '+%H:%M:%S')] $1" >> "$LOG_FILE"
 }
 
 send_message() {
@@ -124,9 +128,9 @@ Otherwise just help with whatever he needs."
 
     json_output=$("$CLAUDE_BIN" -p \
       --output-format json \
-      --max-turns 3 \
+      --max-turns 10 \
       --resume "$session_id" \
-      "$message" 2>/dev/null)
+      "$message" < /dev/null 2>>"$SCRIPT_DIR/.telegram-bot.err")
     exit_code=$?
 
     # If resume failed (expired/corrupt session), fall through to new session
@@ -138,31 +142,53 @@ Otherwise just help with whatever he needs."
 
   # Start new session if no existing session or resume failed
   if [ ! -f "$session_file" ]; then
-    local new_args=(-p --output-format json --max-turns 3)
+    local new_args=(-p --output-format json --max-turns 10)
     new_args+=(--append-system-prompt "$system_prompt")
     if [ -n "$project_dir" ]; then
       new_args+=(-d "$project_dir")
     fi
 
-    json_output=$("$CLAUDE_BIN" "${new_args[@]}" "$message" 2>/dev/null)
+    json_output=$("$CLAUDE_BIN" "${new_args[@]}" "$message" < /dev/null 2>>"$SCRIPT_DIR/.telegram-bot.err")
     exit_code=$?
+    log "New session: exit=$exit_code output_len=${#json_output}"
   fi
 
   if [ $exit_code -ne 0 ] || [ -z "$json_output" ]; then
+    log "Claude failed: exit=$exit_code json_empty=$([ -z "$json_output" ] && echo yes || echo no)"
+    echo "$json_output" > "$SCRIPT_DIR/.telegram-bot-last-error.json"
     echo "Sorry, something went wrong."
     return 1
   fi
 
-  # Save session ID for next message
-  local new_session_id
-  new_session_id=$(echo "$json_output" | python3 -c "import sys,json; print(json.load(sys.stdin).get('session_id',''))" 2>/dev/null)
+  # Parse JSON: save session, extract result, handle errors
+  local parsed
+  parsed=$(echo "$json_output" | python3 -c "
+import sys, json
+d = json.load(sys.stdin)
+sid = d.get('session_id', '')
+result = d.get('result', '')
+is_error = d.get('is_error', False)
+print(f'{sid}')
+print(f'{is_error}')
+print(result)
+" 2>>"$SCRIPT_DIR/.telegram-bot.err")
+
+  local new_session_id=$(echo "$parsed" | head -1)
+  local is_error=$(echo "$parsed" | sed -n '2p')
+  local response_text=$(echo "$parsed" | tail -n +3)
+
   if [ -n "$new_session_id" ]; then
     echo "$new_session_id" > "$session_file"
     log "Session saved: $new_session_id"
   fi
 
-  # Extract and return response text
-  echo "$json_output" | python3 -c "import sys,json; print(json.load(sys.stdin).get('result',''))" 2>/dev/null
+  if [ "$is_error" = "True" ] || [ -z "$response_text" ]; then
+    log "Claude returned error or empty result"
+    echo "Sorry, I couldn't process that. Try again or /reset."
+    return 1
+  fi
+
+  echo "$response_text"
 }
 
 handle_message() {
@@ -237,7 +263,7 @@ handle_message() {
 log "OpenClaw bot started (stateful). Polling every ${POLL_INTERVAL}s..."
 
 while true; do
-  UPDATES=$(curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates?offset=${OFFSET}&timeout=30" 2>/dev/null)
+  UPDATES=$(curl -s "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/getUpdates?offset=${OFFSET}&timeout=30" 2>>"$SCRIPT_DIR/.telegram-bot.err")
 
   if [ -z "$UPDATES" ]; then
     sleep "$POLL_INTERVAL"
