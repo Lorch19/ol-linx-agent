@@ -1,42 +1,40 @@
 # IAM ↔ Fintech Concept Bridge
 
-Quick translation layer for Omri. When identity security jargon comes up, this maps it to fintech equivalents you already know.
+> Purpose: Translate identity security jargon into fintech equivalents Omri already understands.
 
-## Core Concepts
-
-| IAM Concept | Fintech Equivalent | What It Actually Means |
+| IAM Concept | Fintech Equivalent | Why It Clicks |
 |---|---|---|
-| **IGA** (Identity Governance & Administration) | KYC/AML compliance infrastructure | Managing who has access to what, proving it to auditors, and automating the lifecycle |
-| **Identity lifecycle (JML)** — Joiner/Mover/Leaver | Customer onboarding/offboarding lifecycle | When someone joins, changes role, or leaves — their access must change accordingly |
-| **Access certification / attestation** | Periodic KYC re-verification | Managers periodically review "does this person still need this access?" — like re-verifying customer identity |
-| **Entitlements** | Transaction permissions / account limits | Specific things a user can do in a system (read, write, admin, approve) |
-| **Segregation of Duties (SoD)** | Dual-control / maker-checker | Ensuring one person can't both initiate and approve (like payment approval workflows) |
-| **Provisioning / deprovisioning** | Account activation / deactivation | Granting or revoking system access — like enabling/disabling payment capabilities |
-| **Role mining** | Customer segmentation for permissions | Analyzing actual usage patterns to define standard access packages |
-| **ISPM** (Identity Security Posture Management) | Risk scoring dashboard | Continuous assessment of identity-related risks across the organization |
-| **NHI** (Non-Human Identities) | API keys / service tokens / webhooks | Service accounts, API keys, bots, certificates — machine-to-machine credentials |
-| **PAM** (Privileged Access Management) | Admin/superuser access controls | Securing and monitoring accounts with elevated privileges (like treasury access) |
-| **JIT Access** (Just-In-Time) | Temporary elevated permissions | Granting access only when needed, auto-revoking after — like temporary payment limits |
-| **CIEM** (Cloud Infrastructure Entitlement Management) | Cloud resource permission management | Managing who can do what in AWS/Azure/GCP — fine-grained cloud permissions |
-| **SCIM** | Standardized user provisioning API | Protocol for syncing user data between systems — like standardized KYC data sharing |
-| **CAEP** (Continuous Access Evaluation Protocol) | Real-time transaction monitoring signals | Shared signals between systems to detect and respond to access risks in real-time |
-| **Zero Trust** | "Never trust, always verify" | Every access request is verified regardless of network location — like re-authenticating every transaction |
-| **Identity fabric** | Unified compliance infrastructure | Architecture approach that unifies identity services across the org — like a unified compliance platform |
-| **Rubber-stamp reviews** | Compliance checkbox theater | Managers blindly approving all access reviews to clear their queue — the #1 problem in IGA |
+| **Identity Governance (IGA)** | Compliance/KYC operations | Both ensure the right entity has the right access/permissions, with audit trails |
+| **Access Certification** | Periodic account reconciliation | Reviewing who has what, confirming it's still justified |
+| **Least Privilege** | Need-to-know data access in trading systems | Minimize blast radius of a compromise |
+| **Provisioning/Deprovisioning** | Account onboarding/offboarding | Lifecycle management with SLA expectations |
+| **Entitlements** | Permission sets / authorization scopes | What a user CAN do vs. what they SHOULD do |
+| **SOD (Segregation of Duties)** | Maker-checker controls | Prevent one person from both initiating and approving |
+| **ISPM (Identity Security Posture)** | Risk scoring / exposure analytics | Continuous measurement of security posture, not point-in-time |
+| **NHI (Non-Human Identity)** | API keys, service accounts, trading bots | Machine actors that authenticate and authorize |
+| **JIT Access** | Temporary elevated permissions for ops | Time-boxed access that auto-revokes |
+| **Identity Fabric** | Financial data mesh / integration layer | Unified identity data plane across systems |
+| **ITDR (Identity Threat Detection)** | Fraud detection / transaction monitoring | Behavioral analytics to catch anomalous identity activity |
+| **PAM (Privileged Access)** | Admin/root access to core banking systems | High-impact access that needs extra controls |
+| **CIEM** | Cloud cost optimization but for permissions | Right-sizing entitlements in cloud infrastructure |
+| **CAEP/Shared Signals** | Real-time fraud signals between banks | Cross-system event sharing for continuous access evaluation |
+| **Zero Standing Privileges** | No persistent admin access | All elevated access is requested, justified, and time-bound |
+| **Rubber-stamping (access reviews)** | Blind approval of compliance questionnaires | The universal governance failure mode |
+| **Access Graph** | Transaction/relationship graph (like PayPal/Stripe risk models) | Map all relationships between entities and their permissions |
+| **SCIM** | Standardized API for user provisioning | Like PSD2/Open Banking APIs but for identity |
+| **Identity Attack Surface** | Fraud exposure surface | Sum of all identity-related vulnerabilities |
 
-## Buyer Personas (IAM ↔ Fintech mapping)
+## Mental Models That Transfer Well
 
-| IAM Buyer | Fintech Equivalent | What They Care About |
-|---|---|---|
-| **CISO** | Chief Compliance Officer | Risk reduction, audit readiness, breach prevention |
-| **IAM Director** | Head of KYC/AML Operations | Operational efficiency, tool consolidation, team productivity |
-| **IT Security Analyst** | Compliance analyst | Day-to-day operations, alert fatigue, false positives |
-| **GRC Manager** | Regulatory affairs | Audit evidence, framework compliance, reporting |
-| **CIO/CTO** | CTO | Platform consolidation, cost reduction, modernization |
+**Omri's fintech PM instincts that directly apply:**
+- Transaction monitoring → identity behavior monitoring (same analytical approach)
+- Fraud prevention → identity threat detection (same risk calculus)
+- Compliance automation → IGA workflow automation (same buyer pain)
+- API-first architecture → connector-first identity platform (same integration philosophy)
+- Real-time risk scoring → continuous posture assessment (same data pipeline challenge)
 
-## Key Market Dynamics (through fintech lens)
-
-- **Integration challenge** = like connecting to hundreds of banks/PSPs. IGA tools need connectors to every app in the org. Legacy tools onboard ~10-20 apps/year; enterprises use thousands.
-- **Deployment timeline** = like implementing a core banking system. Traditional IGA: 12-18 months. This is why "agentless" and "fast TTV" matter so much.
-- **NHI explosion** = like the API economy in payments. Machine identities outnumber humans 17:1 and growing 44% YoY. No one governs them well.
-- **Agentic AI identities** = like autonomous payment agents. AI agents that can take actions, escalate privileges, and chain operations. New category, no established governance.
+**Where fintech instincts can mislead:**
+- Fintech: users are external customers. IAM: users are internal employees/contractors/machines. The trust model is inverted.
+- Fintech: regulatory frameworks are clear (PCI-DSS, PSD2, SOX). IAM: compliance requirements vary wildly by industry and are often ambiguous.
+- Fintech: speed of transaction is critical. IAM: speed of deployment and time-to-value is the equivalent metric.
+- Fintech: fraud is adversarial. IAM: most identity risk is accidental (overprovisioning, orphaned accounts, config drift). The threat model is more entropy than malice.

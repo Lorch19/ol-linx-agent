@@ -1,52 +1,77 @@
-# Identity Security Market Context
-*Last updated: 2026-03-29 | Confidence: confirmed (Gartner + public sources)*
+# Market Context — Identity Security
 
-## Market Size
-- IGA market: ~$8.6B (2024), grew 9.2% YoY, forecast 10.7% growth to 2025
-- Projected: $24B+ by 2032 (13.8% CAGR)
-- NHI market: $11.3B standalone
-- Machine-to-human identity ratio: 17:1, up 44% YoY
+> Last updated: 2026-04-08
+> Sources: Gartner IGA Market Guide (Oct 2025), Gartner IAM Attack Surface report (Oct 2025), vendor press releases, analyst coverage.
 
-## Market Drivers (Gartner, Oct 2025)
-1. **Security risk management** overtaking compliance as primary driver — identity-first security approach
-2. **Cloud/hybrid delivery shift** — SaaS-based IGA accelerating even in conservative sectors
-3. **AI/GenAI integration** — not yet standard but demand growing rapidly for: lifecycle management, anomaly detection, entitlement reviews
-4. **Machine identity governance** — "Most IGA vendor solutions only govern service accounts right now" — gap for broader NHI/agentic
+## Market Size & Growth
 
-## Gartner's IGA Market Direction (3 innovation areas)
-1. **Visibility** — faster app integration, identity graphing, data management
-2. **Intelligence** — AI-powered analytics, recommendations, autonomous actions
-3. **Machine identity** — extending governance beyond service accounts to all NHI types
+- IGA market grew 9.2% (2023→2024), forecast 10.7% (2024→2025) per Gartner 2Q25
+- Gartner estimates 55+ vendors in the IGA market overall
+- Identity security (broader than IGA) is the fastest-growing segment of cybersecurity
 
-## Enterprise Buyer Pain Points
-- **Integration scalability** — 89% of orgs integrated <50% of apps with IGA. Legacy onboards ~10-20 apps/year; enterprises use thousands.
-- **Access reviews are theater** — Quarterly certifications produce rubber-stamp approvals.
-- **Deployment kills projects** — Traditional IGA: 12-18 months.
-- **NHI blind spots** — No governance over service accounts, API keys, AI agents.
-- **Role management is broken** — No single person has context to own business roles.
-- **The reactive trap** — Risk accumulates 24/7, governance happens periodically.
+## Key Market Forces (from Gartner Oct 2025)
 
-## M&A Consolidation (2025-2026)
-- Veza → ServiceNow: ~$1B (March 2026) — graph-based identity + ITSM distribution
-- Zilla → CyberArk: $175M (Feb 2025) — cloud-native IGA into PAM platform
-- Venafi → CyberArk: $1.54B — machine identity/certificate management
-- Palo Alto Networks → CyberArk (strategic moves referenced by Gartner)
+1. **Shift to cloud/SaaS delivery** — even conservative sectors accelerating cloud-native IGA. Hybrid remains a requirement in certain regions/industries.
+2. **Security and business enablement overtaking compliance** as primary adoption drivers. Organizations now implement IGA for risk reduction and productivity, not just audit.
+3. **AI/GenAI integration accelerating** — AI-enabled governance not yet standard, but demand growing rapidly for identity lifecycle, anomaly detection, entitlement reviews.
+4. **Machine identity explosion** — NHI (AI agents, service accounts, IoT, RPA bots, API keys) outnumber human identities. Most IGA solutions only govern service accounts today. Gap = opportunity.
 
-## RSA 2026 Theme
-- Dominant theme: agentic AI governance
-- 85% of orgs adopting AI agents, only 5% at production scale — blocked by identity/access questions
+## The Identity Attack Surface Problem
 
-## Gartner IGA Mandatory Features
-1. Identity lifecycle management + data integration
-2. Access request processing + workflow orchestration
-3. Access certification (attestation/review)
-4. Provisioning via automated connectors + ITSM integration
-5. Policy and role management
-6. Auditing, reporting, basic analytics + risk scoring
-7. Entitlement management + data integration
+Per Gartner (Oct 2025):
+- IAM infrastructure is fragmented across disconnected tools and silos
+- Business units make IAM decisions without IAM leader oversight → misconfigs, exposed credentials, disabled MFA, orphaned accounts
+- Buyers are overwhelmed by crowded ISPM/hygiene/ITDR market — hard to discern which solution fits
 
-## Series B Benchmarks (for Linx context)
-- ARR benchmarks: $7-10M for successful raise
-- Must prove: repeatable sales motion, land-and-expand, NRR >120%, sub-2x burn multiple
-- Customer diversification needed
-- Window for standalone identity governance startups narrowing — must show platform trajectory
+**Gartner strategic assumption:** By 2028, 70% of CISOs will use an IVIP (Identity Visibility & Intelligence Platform) to shrink their IAM attack surface.
+
+Per Veza State of Identity Report (Dec 2025):
+- Average worker holds ~96,000 entitlements
+- 38% of IdP accounts are dormant
+- Only 55% of permissions are safe and compliant
+- 16.5% of total permissions belong to inactive users
+
+Per IDSA 2024 Trends Report (cited by Lumos):
+- 90% of organizations experienced an identity-related incident in the past year
+- 84% of those had direct business impact
+
+Per Gartner IAM Leadership Survey 2024:
+- 54% of organizations saw increase in identity-related breaches
+- 1 in 3 experienced business interruptions, financial loss, or regulatory penalties from identity incidents
+- 44% of IAM leaders say IAM team is primarily responsible for machine identities
+- 62% of organizations experienced at least one deepfake attack involving social engineering
+
+## Buyer Dynamics
+
+**Who buys identity security:**
+- CISO (security budget) — increasingly the economic buyer for ISPM/visibility
+- IAM Director/VP (IT budget) — traditional IGA buyer, compliance-driven
+- IT Operations — influenced by deployment speed and operational burden
+
+**What's changed:**
+- Identity has moved from IT back-office to boardroom security priority
+- "Identity-first security" is now Gartner's recommended architectural approach
+- Compliance is necessary but no longer sufficient to justify IGA investment
+- Speed to value is a top-3 buying criterion for new purchases (legacy IGA burned buyers with 2-year implementations)
+
+## M&A Activity (Signal: Market Consolidation)
+
+| Date | Acquirer | Target | Signal |
+|---|---|---|---|
+| Feb 2025 | CyberArk | Zilla Security | PAM leader buying IGA |
+| Apr 2025 | Palo Alto Networks | CyberArk (announced) | Platform consolidation — identity into network security |
+| Dec 2025 | ServiceNow | Veza | Workflow platform buying identity visibility |
+
+**Pattern:** Identity security is being pulled into larger platforms (security, ITSM, network). This is both a threat (platform bundling) and a validation (identity is foundational infrastructure). Startups that haven't landed key accounts before integration completes lose the window.
+
+## What This Means for Linx
+
+1. **The window is open but closing.** ServiceNow/Veza integration will take 12-18 months. CyberArk/Zilla is still integrating. This is the period where purpose-built vendors can land accounts before "good enough" platform features arrive.
+
+2. **Compete on identity security outcomes, not IGA features.** The market is moving from "manage identities" to "reduce identity risk." Linx's positioning should be about shrinking the attack surface, not running certification campaigns.
+
+3. **Speed to value is table stakes.** ConductorOne set the bar at <4 weeks. Any new IGA/identity security vendor that requires months of implementation will lose.
+
+4. **NHI and AI agent governance are the new frontier.** Most vendors are early. The first vendor to deliver real, production-grade NHI lifecycle governance (not just discovery) at enterprise scale wins a durable position.
+
+5. **The "AI for IAM" vs "IAM for AI" distinction matters.** Linx's assignment focused on "AI for IAM" (AI agents helping IAM teams). The market is also demanding "IAM for AI" (governing AI agent identities). Both are needed.

@@ -1,49 +1,57 @@
-# Linx Security — Product Status
-*Last updated: 2026-03-29 | Confidence: confirmed (public sources + session context)*
+# Linx Security — Product Profile
 
-## Company
-- **Founded:** ~2023, emerged from stealth July 2024
-- **Stage:** Series A ($33M: $6M seed + $27M Series A)
-- **Investors:** Index Ventures, Cyberstarts. Wiz founders are angel investors.
-- **Team:** ~60 people
-- **Founders:** Israel Duanis (CEO, ex-Check Point, Talpiot), Niv Goldenberg (CPO, ex-Transmit Security/Adallom, Talpiot)
+> Last updated: 2026-04-08
+> Status: INCOMPLETE — needs significant enrichment from internal Linx sources once Omri has access.
+> Current info based on: public description, assignment brief, Omri's assignment deck.
 
-## Architecture
-- **AI-native** — built with AI from core, not bolted on
-- **Graph-based** — identity relationship graph for cross-identity visibility
-- **Agentless** — no agents to deploy, fast time-to-value
-- **Unified coverage** — human identities, NHI (service accounts, API keys, bots), agentic AI identities
+## Company Overview
 
-## Current Capabilities
+- **What they say:** "Linx is building the next generation of Identity Security and Governance solutions to empower organizations to effortlessly and quickly reduce identity-related risks, achieve their security and compliance objectives, and increase productivity through tighter alignment between security and the business."
+- **Stage:** Startup (likely Series A/B — validate)
+- **Key leaders:** CEO Israel (validate last name), CPO Niv (validate last name)
+- **Gartner access:** Licensed (reports are issued to NIV@LINXSECURITY.IO)
 
-| Capability | Status | Notes |
-|---|---|---|
-| Risk Visibility (ISPM) | **Live** | Table stakes — Veza, Silverfort have this |
-| NHI + Agentic Identity Governance | **Live** | Linx's differentiator — emerging category |
-| AI-Powered Remediation (Autopilot) | **Live** (March 2026) | Autonomous remediation with guardrails — gap in market |
-| Governance & Policy | **Building** (V1.1) | First governance layer |
-| Access Approvals & Workflows | Roadmap | ConductorOne, Lumos play here |
-| JIT Access | Roadmap | Opal's strength |
-| Compliance & Reporting | Roadmap | SailPoint, Saviynt dominate |
-| Identity Lifecycle (JML) | Roadmap | Legacy IGA core — SailPoint, Saviynt, CyberArk |
+## Core Capabilities (from public description)
 
-## Strategic Narrative (from Linx blog)
-1. **Agentic identity as first-class governance problem** — sequential risk, compound access, delegation context loss. Treat decision sequences as first-class security objects.
-2. **JIT access from humans to agents** — 4-layer model: visibility → policy/decision → intelligence → fulfillment/audit. Agents are distinct identities (not service account wrappers).
-3. **Autopilot = autonomous but guardrailed** — continuous monitoring + contextual risk evaluation + autonomous action OR human escalation.
+1. **Identity data ingestion and organization** — ingest from multiple sources, normalize, create unified view
+2. **Contextualized insights** — not just raw data, but risk-aware, business-contextualized intelligence
+3. **Workflow automation** — automate remediation and governance workflows
+4. **Continuous attack surface reduction** — posture management over time, not point-in-time audits
+5. **Compliance gap identification** — align identity posture with compliance requirements
 
-## Customers
-Peloton, Wiz, Aramark, Discount Tire, Achieve, New American Funding — mix of mid-market and Fortune 500.
+## Product Architecture (validate internally)
 
-## Analyst Recognition
-- Forrester "Workforce Identity Security Platforms Landscape, Q4 2025" — listed in 3 categories: identity governance, AI agent identity management ("top disruptor"), ISPM
-- **NOT in Gartner's Market Guide for IGA** (Oct 2025, 20 representative vendors) — too early/too small
+- Data ingestion layer (connectors to identity sources)
+- Identity graph / data model
+- Analytics / intelligence engine
+- Workflow / automation layer
+- Dashboard / reporting
 
-## Key Gaps (honest assessment)
-- No full IGA lifecycle management (JML) — building, not live
-- No compliance/reporting framework — on roadmap
-- No access reviews/certification — on roadmap
-- No JIT access — on roadmap
-- Integration ecosystem likely limited vs. established vendors (SailPoint has hundreds of connectors)
-- Not in Gartner MQ — GTM maturity is early
-- Small customer base for enterprise credibility
+## Assignment Focus: AI Agent as "Virtual Employee"
+
+Omri's assignment (completed) designed an MVP AI agent that:
+- Acts as a "virtual employee" for identity teams
+- Addresses IGA or ISPM use cases
+- Replaces the need to hire additional identity team headcount
+- Makes decisions, ingests data/signals, generates outputs
+
+This aligns with the broader market trend of "AI for IAM" — using AI to make IAM teams more effective.
+
+## Known Gaps (to validate)
+
+Based on competitive analysis, areas where Linx likely needs investment:
+- IGA core workflow depth (lifecycle, provisioning, certification) — appears earlier stage vs. SailPoint/Saviynt
+- NHI governance beyond service accounts
+- PAM capabilities (likely absent — different category)
+- Connector breadth (ConductorOne's 300+ sets a high bar)
+- Data access governance
+
+## Key Questions for Internal Discovery
+
+1. What is Linx's actual connector count and integration approach?
+2. Where is Linx in the IGA maturity curve — light IGA or full-featured?
+3. What is the current customer base profile (size, industry, primary use case)?
+4. What does the roadmap look like for NHI and AI agent governance?
+5. How does Linx's identity graph compare architecturally to Veza's Access Graph?
+6. What is the deployment model — SaaS only? Hybrid? On-prem option?
+7. What is typical time-to-value for new customers?

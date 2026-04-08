@@ -1,41 +1,37 @@
-# Omri — PM Context for Advisor
+# Omri Lorch — Context for the Agent
 
-## Background & Strengths
-- Head of Product at Cedar Money (seed-stage fintech) — strategy, ICP pivot, compliance platform, blockchain integration
-- 6 years at Payoneer — Principal PM / Product Team Lead
-  - Led China B2B platform: PMF + 20% growth in 6 months
-  - Launched Ecosystem (partnerships, embedded lending)
-  - Owned KYC/Risk/Compliance/Account Security domains
-  - Managed 3 PMs
-- Deep compliance & risk expertise: KYC conversion +11%, operational revenue loss -35%, onboarding time -20%
-- MBA from Tel Aviv University (ML, Tech, Finance)
-- Technical: Python, SQL, API-first thinking
+> Purpose: Help the agent personalize advice, bridge jargon, and anticipate blind spots.
 
-## Growth Goals at Linx
-- Move from "new PM" to "trusted strategic voice" at a 60-person startup
-- Position for product leadership role
-- Own platform-level problems, not just feature tickets
+## Background
+- Experienced product leader transitioning from fintech into identity security
+- New PM at Linx Security
+- Strong PM fundamentals — don't explain basic product concepts
+- Has completed the Linx assignment (AI agent for IGA/ISPM as "virtual employee")
 
-## Known Blind Spots (bridge these)
-- Identity security is a new domain — strong on compliance/risk concepts but new to IAM-specific jargon and buyer dynamics
-- Coming from fintech where the customer is often a business/merchant — enterprise CISO selling motion is different
-- May over-index on compliance angle (his comfort zone) vs. security risk management or business enablement angles
+## Strengths to Leverage
+- Product strategy and prioritization — can think in frameworks without being told
+- Customer empathy and user research instincts from fintech
+- Data-driven decision making
+- Comfortable with technical depth (API-first, data pipelines, ML-assisted features)
+- Strong communicator — can translate between engineering and business
+- Builder mentality — proactively creates tools and systems (this agent repo is evidence)
+
+## Potential Blind Spots (challenge these)
+- IAM jargon and tribal knowledge — bridge everything with fintech equivalents (see iam-fintech-bridge.md)
+- Enterprise security buying dynamics may differ from fintech (longer cycles, CISO politics, compliance-driven budgets)
+- The compliance-vs-security tension in identity is more nuanced than in fintech
+- Regulated industry requirements (healthcare, financial services, government) shape IGA requirements in ways that cloud-first companies don't experience
+- The "why not Okta/Entra?" question — understanding why IdPs are necessary but insufficient requires deep domain knowledge
 
 ## Working Style
-- Wants direct challenge, not polished agreement
-- When excited about something, that's when blind spots are largest — push harder
-- Evidence-first; if no data, say so and suggest how to get it
-- Prefers concise communication — bullets over essays
+- Prefers sharp, direct communication — no padding
+- Values being challenged — push back when something doesn't hold up
+- Uses tools aggressively to augment thinking (Claude projects, Claude Code agents, NotebookLM, etc.)
+- Builds in public — podcast series, agent repos
+- Responds well to evidence-based arguments, poorly to hand-wavy opinions
 
-## Stakeholder Context
-- CPO: Niv Goldenberg (ex-Transmit Security/Adallom, Talpiot)
-- CEO: Israel Duanis (ex-Check Point, Talpiot)
-- Both founders are Talpiot alumni — expect high analytical rigor, data-driven arguments
-- Engineering leads: TBD (update as Omri learns the org)
-
-## Prior Assignment Work
-Designed AI Agent MVP for "Continuous Identity Risk Detection & Remediation":
-- Confidence × Risk Matrix for agent autonomy
-- Progressive Autonomy Model: Shadow → Recommend → Supervised → Trusted Auto
-- The Autonomy Loop: analyst decides → agent learns → proposes policy → director approves → policy codified
-- Building principles: Trust (earned), Control (granular, kill switch, undo), Visibility (reasoning traces)
+## Current Phase
+- Onboarding at Linx Security
+- Building domain fluency in identity security
+- Needs to understand: competitive landscape, Gartner category definitions, key competitors, IdP dynamics, enterprise buying
+- Goal: walk in on day one fluent in the problem space so ramp is about learning Linx from the inside, not catching up on the category
