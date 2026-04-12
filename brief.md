@@ -5,21 +5,30 @@
 **Week 1: Identity Foundations + System Access** (Apr 12-18)
 
 ## Today's Focus
-- **Play with Linx dev environment.** Explore: how does discovery work? What does the graph look like? How does Autopilot surface vs. remediate?
-- Read Google Zanzibar paper (ReBAC foundation) — optional if platform takes all day
-- Review `knowledge/identity-foundations.md` cheatsheet — can you explain the 7 IGA use cases without looking?
+1. ★ **Review the research game plan + identity-foundations cheatsheet.** Are they accurate? Anything missing? Anything wrong? (`research-gameplan.md` + `knowledge/identity-foundations.md`)
+2. ★ **Play with Linx dev/prod environments.** Explore: discovery, graph, Autopilot, dashboard. What do those 84 agents do?
+3. Read Google Zanzibar paper (ReBAC foundation) — optional if platform takes all day
+
+## Onboarding To-Dos (from Sarit — track through this week)
+- DevOps with Keren Aloni: fix dev env permissions, Claude Code permissions, Hi Bob
+- Hi Bob onboarding, Figma review, Linear review
+- ClickHouse + OpenSearch, Slack channels, Loom, Grain, Datadog
+- Set intro meetings with eng people (see `references/stakeholder-map.md`)
+- Schedule shadow session with Mor (PM)
 
 ## This Week's Key Dates
-- **Thursday Apr 16: Meeting with Dor.** Agenda: NHI strategic direction, agent repo OK, onboarding questions, SoD for AI agents as opportunity.
-- **Friday Apr 18: Week 1 self-assessment.** What do I know cold? What's fuzzy?
+- **Thursday Apr 17: Meeting with Dor.** Big agenda — see `research-gameplan.md` for full prep.
+  - ★ AI-native initiative: position to lead it.
+  - NHI direction, priorities, customers, SoD for AI agents, agent repo.
+- **Friday Apr 18: Week 1 self-assessment.**
 
 ## Open Commitments
-- Discuss NHI direction + onboarding questions with Dor — Apr 16
-- Get leadership OK on agent repo setup — Apr 18
-- Study ConductorOne docs, Lumos product, Noma Security — Apr 18
+- Dor meeting prep — finalize by Wed Apr 16
+- Study ConductorOne docs, Lumos product, Noma Security — Apr 18 (start Thu)
+- Deliver "Linx Product & Market Brief" — May 1
 
 ## Yesterday's Key Takeaway
-Day 1: built identity foundations cheatsheet covering category zoo, 7 IGA use cases, auth models, SaaS governance, NHI risk. Key insight: SoD for AI agents is unoccupied whitespace. Omer (lead PM) says Linx drawing away from NHIs — validate with Dor Thursday.
+Day 1: built identity foundations cheatsheet + research game plan. Met Sarit (CTO) — got onboarding to-dos and key people list. **Big opportunity: Linx wants to become AI-native. Multiple initiatives planned. Omri should position to lead this. Discuss with Dor Thursday.**
 
 ## One Thing
-Get your hands on the Linx platform today. Concepts without product context are just theory.
+Review the cheatsheet and game plan first thing. Then get your hands on the platform. Concepts without product context are just theory.

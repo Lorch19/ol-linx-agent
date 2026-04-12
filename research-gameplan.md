@@ -8,19 +8,51 @@
 
 ## Week 1: Apr 12-18 — Identity Foundations + System Access + Product Dev Cycle
 
-**Goal:** Solid conceptual base. Hands-on Linx system. Understand how the team works.
+**Goal:** Solid conceptual base. Hands-on Linx system. Understand how the team works. Set intro meetings.
+
+### Onboarding Setup (from Sarit — track through week)
+- [ ] DevOps with Keren Aloni: fix dev env permissions (login.linxdev.net), Claude Code permissions, Hi Bob
+- [ ] Hi Bob onboarding
+- [ ] Figma review — get access, understand design system
+- [ ] Linear review — get access, understand how work is tracked
+- [ ] ClickHouse and OpenSearch — understand data infra
+- [ ] Join Slack channels (get list from team)
+- [ ] Tools: set up Loom, Grain access (customers + Niv, up-to-date only), Datadog
+- [ ] Set intro meetings with key eng people (see `references/stakeholder-map.md`)
+- [ ] Shadow Mor (PM) — schedule a sit-with session
+
+### Daily Plan
 
 | Day | Focus | Action | Done |
 |---|---|---|---|
-| Sun Apr 13 | Linx platform | ★ Play with Linx dev/prod environments. Explore: discovery, graph, Autopilot, dashboard. How many connectors? What do those 84 agents do? | [ ] |
+| Sun Apr 13 | Linx platform | ★ Play with Linx dev/prod environments. Explore: discovery, graph, Autopilot, dashboard. What do those 84 agents do? | [ ] |
+| Sun Apr 13 | Review | ★ Review research game plan + identity-foundations cheatsheet — is anything missing or wrong? | [ ] |
 | Mon Apr 14 | Foundations review | ★ Review `identity-foundations.md` cold. Explain 7 IGA use cases + category zoo without looking. | [ ] |
-| Mon Apr 14 | Product dev cycle | Understand the Notion → Linear → Figma → Dev → Test → Production flow. How does Dana fit? How does work reach the dev team? | [ ] |
+| Mon Apr 14 | Product dev cycle | Understand the Notion → Linear → Figma → Dev → Test → Production flow. How does Dana fit? | [ ] |
 | Tue Apr 15 | Linx platform | ★ Sketch the Linx system diagram. List what you understand vs. what's still fuzzy. | [ ] |
 | Tue Apr 15 | Self-study | Read Google Zanzibar paper (ReBAC). CNAPP research (Wiz/Prisma overlap with identity). | [ ] |
-| Wed Apr 16 | Dor prep | ★ Finalize questions list for Dor (see Questions Bank below). | [ ] |
-| Thu Apr 17 | ★ Dor meeting | NHI direction, agent repo, day-to-day ops, priorities, competitive advantage, SoD for AI agents pitch. | [ ] |
+| Wed Apr 16 | Dor prep | ★ Finalize questions list + AI-native initiative pitch for Dor (see below). | [ ] |
+| Thu Apr 17 | ★ Dor meeting | See Dor Meeting Agenda below. | [ ] |
 | Thu Apr 17 | Competitive | Start ConductorOne docs deep dive. | [ ] |
 | Fri Apr 18 | Week 1 retro | Self-assessment: what do I know cold? What's fuzzy? Update cheatsheet. | [ ] |
+
+### ★ Dor Meeting Agenda (Thursday Apr 17)
+
+**Strategic:**
+1. **AI-native initiative — position to lead.** Linx wants to become more AI-native across delivery lifecycle, customer research, market research. Omri has the background + the tooling already built. Frame: "I've been building AI-native PM workflows for months. I'd love to own this initiative. Here's what I can bring."
+2. NHI strategic direction — why is Linx pulling away? What's the reasoning? Where does Omer's context fit?
+3. SoD for AI agents — pitch as whitespace opportunity nobody owns yet.
+4. Priorities — where does Linx plan to be in 6/12 months?
+
+**Operational:**
+5. How does the day-to-day look? Meeting cadence, rituals, decision flow.
+6. Customers — where do we win, where do we lose, what's missing, competitive advantage.
+7. Agent repo — personal GitHub with Linx IP, get OK or migrate.
+
+**Onboarding:**
+8. Confirm week 2-3 plan alignment. Any adjustments?
+9. Which 5 test cases for customer deep dive?
+10. When to observe first customer meeting?
 
 ---
 
