@@ -1,16 +1,25 @@
-# Today's Brief — Saturday, March 29, 2026
-*Generated manually. Morning brief task takes over tomorrow.*
+# Today's Brief — Sunday, April 13, 2026
+*Day 2 at Linx.*
 
 ## Current Phase
-**Pre-Onboarding** (March 29 — April 11). You start at Linx on April 12.
+**Week 1: Identity Foundations + System Access** (Apr 12-18)
 
-## This Week's Focus
-- Begin daily log habit. Target: log something every day this week.
-- Read the 4 onboarding PDFs (How to Securely Delegate Access to Agents, IAM for LLM-Based AI Agents, Gartner Market Guide for IGA, Reduce Your IAM Attack Surface)
-- Review competitive matrix + battle cards. Can you pitch Linx's positioning in 30 seconds?
+## Today's Focus
+- **Play with Linx dev environment.** Explore: how does discovery work? What does the graph look like? How does Autopilot surface vs. remediate?
+- Read Google Zanzibar paper (ReBAC foundation) — optional if platform takes all day
+- Review `knowledge/identity-foundations.md` cheatsheet — can you explain the 7 IGA use cases without looking?
+
+## This Week's Key Dates
+- **Thursday Apr 16: Meeting with Dor.** Agenda: NHI strategic direction, agent repo OK, onboarding questions, SoD for AI agents as opportunity.
+- **Friday Apr 18: Week 1 self-assessment.** What do I know cold? What's fuzzy?
 
 ## Open Commitments
-None yet.
+- Discuss NHI direction + onboarding questions with Dor — Apr 16
+- Get leadership OK on agent repo setup — Apr 18
+- Study ConductorOne docs, Lumos product, Noma Security — Apr 18
+
+## Yesterday's Key Takeaway
+Day 1: built identity foundations cheatsheet covering category zoo, 7 IGA use cases, auth models, SaaS governance, NHI risk. Key insight: SoD for AI agents is unoccupied whitespace. Omer (lead PM) says Linx drawing away from NHIs — validate with Dor Thursday.
 
 ## One Thing
-The daily log habit is the foundation. Everything else in this system depends on it. Start today.
+Get your hands on the Linx platform today. Concepts without product context are just theory.

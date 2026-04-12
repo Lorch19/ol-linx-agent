@@ -20,3 +20,14 @@
 - IGA category being redefined (Gartner Market Guide): provisioning → ISPM + NHI + agentic. Incumbents retrofitting. Linx is native to new definition.
 - ODMs: measure IAM by business outcomes (risk reduced, violations caught), not ops metrics (tickets closed).
 - Core principle: be customer-obsessed. Be the voice of the customer in the halls. Customer-first, always.
+
+## 2026-04-12 — DAY 1
+- First day at Linx. Received onboarding plan from Dor — 5-week structured ramp.
+- Reviewed onboarding plan: strong on sequencing (identity foundations → customers → competitors → own a domain). Gap: no explicit Series B context or customer conversation counting.
+- Deep dive into identity foundations: category zoo (IGA/ISPM/ITDR/PAM/CIEM/NHI/CNAPP), 7 IGA use cases, authorization models (RBAC/ABAC/ReBAC), SaaS governance challenges, NHI risk landscape.
+- Created `knowledge/identity-foundations.md` — living cheatsheet for identity concepts + terms.
+- **Insight: SoD for AI agents** — nobody enforces segregation of duties for AI agents today. If an agent can read sensitive data AND send emails externally = toxic combination. Potential Linx whitespace to own.
+- **Key internal context from Omer (lead PM):** Linx is drawing away from NHIs at the moment. Need to validate strategic reasoning with Dor on Thursday.
+- Agent setup: most tools connected to work Claude. Decision: keep agent repo on personal GitHub (private), get explicit OK from leadership this week.
+- Competitors to study: ConductorOne (docs — best public IGA documentation), Lumos (main competitor on human identities), Noma Security (AI governance approach).
+- Tomorrow: start playing with the Linx platform.
