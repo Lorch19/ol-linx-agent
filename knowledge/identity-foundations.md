@@ -19,6 +19,18 @@
 | **NHI** | Non-Human Identity (platforms) | Governing machine identities: service accounts, API keys, AI agents | API keys, trading bots, service accounts | Strategic — but Omer says Linx drawing away from NHI currently (validate with Dor) |
 | **CNAPP** | Cloud-Native Application Protection Platform | Unified cloud security: workload protection, posture management, vulnerability scanning, runtime protection across cloud-native apps | Unified risk platform for cloud-native fintech infra | Adjacent — CNAPP vendors (Wiz, Palo Alto Prisma) increasingly touch identity (CIEM). Watch for convergence with identity security. |
 
+### How They Relate (Quick Map)
+
+| Platform | Core Question | Focus Area | Timing |
+|---|---|---|---|
+| **IGA** | Who *should* have access? | Access lifecycle & governance | Planned / periodic |
+| **ISPM** | What's *already broken*? | Identity posture & risk | Continuous |
+| **ITDR** | Are we under attack *right now*? | Active threat detection | Real-time |
+| **PAM** | How do we protect the keys to the kingdom? | Privileged accounts & secrets | Preventive + real-time |
+| **CIEM** | Who/what can do what in the cloud? | Cloud entitlements (IaaS/PaaS) | Continuous |
+| **NHI** | What are our bots and scripts doing? | Non-human identity security | Continuous |
+| **CNAPP** | Is our cloud-native infra secure? | Workload + posture + vulnerability | Continuous |
+
 **Key relationship:** IGA is about who *should* have access. ISPM is about what's *already broken*. ITDR is about who's *attacking* right now. They're layers, not competitors. A CISO needs all three but buys them separately — that's the buyer pain.
 
 ---

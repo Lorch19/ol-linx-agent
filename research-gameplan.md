@@ -1,109 +1,159 @@
 # Research Game Plan — Onboarding Phase
 
-> Created: April 12, 2026 (Day 1)
-> Aligns with: Dor's onboarding plan + 30-60-90 milestones
+> Created: April 12, 2026 (Day 1). Updated: April 12.
+> Aligns with: Dor's 5-week onboarding plan + 30-60-90 milestones
 > Rule: check off items as you go. Starred items (★) are highest priority.
 
 ---
 
-## Week 1: Apr 12-18 — Identity Foundations + System Access
+## Week 1: Apr 12-18 — Identity Foundations + System Access + Product Dev Cycle
 
-**Goal:** Solid conceptual base + hands-on Linx system familiarity.
+**Goal:** Solid conceptual base. Hands-on Linx system. Understand how the team works.
 
 | Day | Focus | Action | Done |
 |---|---|---|---|
-| Sun Apr 13 | Linx platform | ★ Play with Linx dev environment. Explore: how does discovery work? What does the graph look like? How does Autopilot surface vs. remediate? | [ ] |
-| Sun Apr 13 | Self-study | Read Google Zanzibar paper (ReBAC foundation). Search: "Zanzibar Google's Consistent Global Authorization System" | [ ] |
-| Mon Apr 14 | Identity foundations | ★ Review `identity-foundations.md` cheatsheet cold. Can you explain the 7 IGA use cases without looking? | [ ] |
-| Mon Apr 14 | CNAPP context | Self-research: What is CNAPP? How do Wiz/Prisma Cloud overlap with identity? Where does CIEM fit? | [ ] |
-| Tue Apr 15 | Linx platform | ★ Sketch the Linx system diagram from what you've seen. Identify gaps in your understanding. Bring questions to Dor. | [ ] |
-| Wed Apr 16 | Internal | ★ **Dor meeting (Thursday).** Agenda: NHI strategic direction (why pulling away?), agent repo OK, onboarding plan alignment, first-week questions. | [ ] |
-| Thu Apr 17 | Competitive | Start ConductorOne docs deep dive (see below). | [ ] |
-| Fri Apr 18 | Review | Week 1 self-assessment: what do I know cold? What's still fuzzy? Update cheatsheet. | [ ] |
-
-**Pre-Dor meeting prep (by Wed Apr 16):**
-- [ ] List of questions about NHI strategic direction
-- [ ] 3-5 first-week observations/questions about Linx platform
-- [ ] Agent repo discussion point
-- [ ] SoD for AI agents — pitch as opportunity?
+| Sun Apr 13 | Linx platform | ★ Play with Linx dev/prod environments. Explore: discovery, graph, Autopilot, dashboard. How many connectors? What do those 84 agents do? | [ ] |
+| Mon Apr 14 | Foundations review | ★ Review `identity-foundations.md` cold. Explain 7 IGA use cases + category zoo without looking. | [ ] |
+| Mon Apr 14 | Product dev cycle | Understand the Notion → Linear → Figma → Dev → Test → Production flow. How does Dana fit? How does work reach the dev team? | [ ] |
+| Tue Apr 15 | Linx platform | ★ Sketch the Linx system diagram. List what you understand vs. what's still fuzzy. | [ ] |
+| Tue Apr 15 | Self-study | Read Google Zanzibar paper (ReBAC). CNAPP research (Wiz/Prisma overlap with identity). | [ ] |
+| Wed Apr 16 | Dor prep | ★ Finalize questions list for Dor (see Questions Bank below). | [ ] |
+| Thu Apr 17 | ★ Dor meeting | NHI direction, agent repo, day-to-day ops, priorities, competitive advantage, SoD for AI agents pitch. | [ ] |
+| Thu Apr 17 | Competitive | Start ConductorOne docs deep dive. | [ ] |
+| Fri Apr 18 | Week 1 retro | Self-assessment: what do I know cold? What's fuzzy? Update cheatsheet. | [ ] |
 
 ---
 
-## Week 2: Apr 19-25 — Competitors Deep Dive (Part 1)
+## Weeks 2-3: Apr 19 - May 1 — Competitors + Customers + Platform (IN PARALLEL)
 
-**Goal:** Understand ConductorOne and Lumos deeply enough to articulate strengths/weaknesses vs. Linx.
+**Goal:** Per Dor's plan — run all three tracks simultaneously. By May 1: deliver "Linx Product & Market Brief," be able to describe each competitor's thesis/architecture/strengths/weaknesses.
 
-| Focus | Action | Done |
+### Track A: Competitors (all 5 + Noma)
+
+| Competitor | Core Focus | Deadline | Done |
+|---|---|---|---|
+| ★ ConductorOne | Docs deep dive — IGA workflow model, connector arch, deployment speed, AI capabilities | Apr 22 | [ ] |
+| ★ Lumos | Main human identity competitor — Autonomous Identity thesis, product pages, Gartner reviews | Apr 22 | [ ] |
+| ★ Silverfort | Existential competitor — unified pitch, Rezonate acquisition, AI Agent Security | Apr 25 | [ ] |
+| SailPoint | IGA benchmark — interactive demo, product docs, what "full-featured" looks like | Apr 28 | [ ] |
+| Veza (ServiceNow) | Access graph approach, ServiceNow integration trajectory | Apr 28 | [ ] |
+| Saviynt | Converged IGA + PAM + CIEM, Identity Security for AI (RSAC 2026) | Apr 28 | [ ] |
+| Noma Security | AI/ML security thesis, AI agent governance approach — competitor or complementary? | Apr 25 | [ ] |
+
+**For each competitor, be able to articulate:**
+1. Core thesis (one sentence)
+2. Architectural approach (how they do it)
+3. Top 3 strengths / Top 3 weaknesses
+4. Head-to-head vs. Linx (where we win, where we lose)
+
+### Track B: Customers
+
+| Action | Deadline | Done |
 |---|---|---|
-| ★ ConductorOne docs | Read their public docs end-to-end. Focus on: IGA workflow model, connector architecture, deployment speed claims, AI capabilities. [conductorone.com/docs](https://www.conductorone.com/docs/) | [ ] |
-| ★ Lumos product | Review: Identity Governance solution page, Autonomous Identity overview, Gartner Peer Insights reviews. Understand their "autonomous identity" thesis. | [ ] |
-| Noma Security | Research: What is their AI security thesis? How do they approach AI agent governance? Are they a competitor or complementary? | [ ] |
-| Grain recordings | ★ Watch 2+ demo/POV Grain recordings from Dor's list. Take notes: what positioning do we use? What questions do customers ask? | [ ] |
-| Customer context | Read `customer-intel.md`. Start building mental model of ICP. | [ ] |
-| Cheatsheet update | Add ConductorOne, Lumos, and Noma learnings to `identity-foundations.md` | [ ] |
+| ★ Deep dive into 5 test cases (from Dor) | Apr 25 | [ ] |
+| ★ Watch Grain: Classical Demo by Drew | Apr 21 | [ ] |
+| ★ Watch Grain: AI-automation centric demo | Apr 21 | [ ] |
+| Watch Grain: Achieve POV scoping | Apr 23 | [ ] |
+| Watch Grain: Discount Tire POV scoping | Apr 23 | [ ] |
+| Watch Grain: Summit POV readout | Apr 25 | [ ] |
+| Watch Grain: Aviatrix POV readout | Apr 25 | [ ] |
+| ★ Join a customer meeting as observer | by May 1 | [ ] |
+| Read `customer-intel.md` — build ICP mental model | Apr 21 | [ ] |
 
-**By end of week 2, be able to answer:**
-1. What is ConductorOne's core architectural advantage?
-2. How does Lumos's "autonomous identity" differ from Linx's Autopilot?
-3. What does Noma Security do that identity vendors don't?
-4. For each: where are they strong vs. Linx? Where are they weak?
+**After each Grain recording, log:** What positioning did we use? What did the customer ask? What objections came up? What was the outcome?
 
----
+### Track C: Linx Platform Deep Dive
 
-## Week 3: Apr 26 - May 1 — Competitors Deep Dive (Part 2) + Customer Immersion
-
-**Goal:** Complete competitor map. Start customer pattern recognition. Deliver "Linx Product & Market Brief."
-
-| Focus | Action | Done |
+| Action | Deadline | Done |
 |---|---|---|
-| Veza (ServiceNow) | Understand their access graph approach. How does ServiceNow acquisition change their trajectory? | [ ] |
-| SailPoint | Interactive demo tour. Understand the IGA benchmark — what does "full-featured IGA" look like? | [ ] |
-| Silverfort | ★ Existential competitor. Understand their unified identity security pitch. How does it differ from Linx? | [ ] |
-| Grain recordings | ★ Watch 2+ more recordings (POV scoping, readouts). Note customer objections and buying patterns. | [ ] |
-| Customer meeting | ★ Join a customer meeting as observer (per Dor's plan). Log 3 things: what they care about, what surprised you, any commitment made. | [ ] |
-| ★ Deliverable | **"Linx Product & Market Brief"** — Dor's end-of-week-3 goal. Use competitive matrix + customer intel + platform knowledge. | [ ] |
+| ★ Full platform walkthrough (with Omer or Mor?) | Apr 22 | [ ] |
+| Product documentation deep dive | Apr 25 | [ ] |
+| Architecture — connectors, graph model, data flow | Apr 25 | [ ] |
+| Autopilot — how it works under the hood, what it can/can't remediate | Apr 28 | [ ] |
+| Can sketch the full system diagram unprompted | May 1 | [ ] |
+
+### Track D: Reading (fit around the above)
+
+| Reading | Priority | Deadline | Done |
+|---|---|---|---|
+| ★ Gartner IGA Market Guide (Oct 2025) — via Niv | HIGH | Apr 22 | [ ] |
+| Veza State of Identity Report (Dec 2025) | HIGH | Apr 25 | [ ] |
+| Bessemer VC: "Building blocks of modern enterprise identity" | HIGH | Apr 25 | [ ] |
+| Venture in Security: 3 articles on cybersecurity product building | MED | Apr 28 | [ ] |
+| CISO org materials (Understanding CISO Org, Day in the Life, Mindmap) | MED | Apr 28 | [ ] |
+| Microsoft CISO Workshop | MED | May 1 | [ ] |
+| CrowdStrike ITDR explainer | LOW | May 1 | [ ] |
+
+### ★ End of Week 3 Deliverable: "Linx Product & Market Brief"
+**Due: May 1.** Contents: Linx product overview, competitive positioning, customer dynamics, market context, initial strategic recommendations.
 
 ---
 
-## Week 4-5: May 2-16 — Execution Mode
+## Weeks 4-5: May 2-16 — Execution Mode
 
-**Goal:** Ship first artifact. Own first customer. Understand POV process.
+**Goal:** Ship 1 meaningful PRD. Own first customer. Understand the POV process.
 
-| Focus | Action | Done |
+| Action | Deadline | Done |
 |---|---|---|
-| POV process | Test case with Omer — understand how Linx wins deals | [ ] |
-| First PRD/spec | ★ Design-to-production cycle. Start with NHI epic (per Dor's plan) or governance gap (per competitive matrix). Align with Dor on which. | [ ] |
-| Own a customer | ★ First supervised customer ownership. Prep using battle cards + customer-intel. | [ ] |
-| Platform reading | Study Linx product docs, architecture docs, connector list | [ ] |
-| Gartner reports | Read Gartner IGA Market Guide (Oct 2025) via Niv's access. Read IAM Attack Surface report. | [ ] |
+| ★ POV test case with Omer — understand how Linx wins deals | May 5 | [ ] |
+| ★ First PRD or feature improvement — design-to-production cycle | May 12 | [ ] |
+| ★ Own a first customer (supervised) | May 16 | [ ] |
+| Continue NHI epic execution (per Dor's plan) | ongoing | [ ] |
+| Topic-specific dive — TBD based on team setup and division of labor | May 9 | [ ] |
+| AI-native PM: clarify what this means to Dor/Niv + start implementation | May 9 | [ ] |
+
+**End of week 5 checkpoints (from Dor):**
+- [ ] Shipped 1 meaningful PRD or feature improvement
+- [ ] Own first customer
+- [ ] Understand the Linx POV process
 
 ---
 
-## Reading & Research Backlog (unscheduled — fit around the above)
+## Questions Bank — For Internal Discovery
 
-**High priority:**
-- [ ] Gartner IGA Market Guide (Oct 2025) — via Niv's licensed access
-- [ ] Veza State of Identity Report (Dec 2025) — real permission sprawl data
-- [ ] Bessemer VC: "Building blocks of modern enterprise identity"
+*Bring to Dor (Apr 17), Niv, Omer, and other conversations. Check off as answered.*
 
-**Medium priority:**
-- [ ] Venture in Security: 3 articles on cybersecurity product building
-- [ ] CISO org materials (Understanding the CISO Org, Day in the Life, CISO Mindmap)
-- [ ] Microsoft CISO Workshop (learn.microsoft.com)
-- [ ] CrowdStrike ITDR explainer
+### Operations & Day-to-Day
+- [ ] How does the day-to-day look like here? What's the rhythm?
+- [ ] What agents do we use? I saw 84 in the dashboard — what are they?
+- [ ] How many connectors do we have? What's the integration approach?
+- [ ] Product dev cycle: Notion → Linear → Figma → how does work flow to dev and back?
 
-**Low priority (reference when relevant):**
-- [ ] Microsoft ITDR overview
-- [ ] Astrix Security / Clutch Security (NHI-specific context)
-- [ ] ConductorOne open-source connectors on GitHub (conductorone/baton-sdk)
+### Strategy & Priorities
+- [ ] Where do we plan to be in 6/12 months? Current priorities?
+- [ ] NHIs — why are we drawing away? Strategic reasoning? (Omer context)
+- [ ] SoD for AI agents — is this on anyone's radar as an opportunity?
+- [ ] "AI-native PM" — what does Dor/Niv mean by this? Using AI in PM workflow, or owning AI product features?
+
+### Customers & Competitive
+- [ ] Where do we win deals? Where do we lose? What are we missing?
+- [ ] What is our competitive advantage in the customer's words?
+- [ ] What's our ICP? Industry, size, primary use case, buyer persona?
+- [ ] Typical time-to-value for new customers?
+
+### Product & Architecture
+- [ ] Where is Linx in the IGA maturity curve — light IGA or full-featured?
+- [ ] How does Linx's identity graph compare architecturally to Veza's Access Graph?
+- [ ] Deployment model — SaaS only? Hybrid? On-prem option?
+- [ ] Autopilot: what can it remediate today? What's the roadmap?
+- [ ] What's the current connector count and roadmap for expansion?
+
+### Series B & Growth
+- [ ] What's the Series B timeline and narrative?
+- [ ] What proof points are needed before fundraise?
+- [ ] What metrics matter most right now (ARR, NRR, logo count, expansion)?
 
 ---
 
 ## Success Metrics (self-check)
 
-By end of week 1: Can explain category zoo + 7 IGA use cases + auth models without looking.
-By end of week 3: Can deliver a "Linx Product & Market Brief" grounded in customer + competitive evidence.
-By end of week 5: Have shipped 1 PRD, own 1 customer, understand the POV process.
+| Checkpoint | Target | Status |
+|---|---|---|
+| End of week 1 | Explain category zoo + 7 IGA use cases + auth models without looking | [ ] |
+| End of week 3 | Deliver "Linx Product & Market Brief" with competitive + customer evidence | [ ] |
+| End of week 3 | Describe each of 5 competitors: thesis, architecture, strengths, weaknesses vs. Linx | [ ] |
+| End of week 3 | Watched 4+ Grain recordings, joined 1 customer meeting | [ ] |
+| End of week 5 | Shipped 1 PRD, own 1 customer, understand POV process | [ ] |
 
 ---
 
