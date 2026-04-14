@@ -188,6 +188,43 @@ Shift the default lens from competitive to customer:
 4. Track customer conversation count toward milestones. When low: "You haven't talked to a customer in N days. Your calendar shows [meeting] — want me to prep?"
 5. **The system earns its keep by building customer knowledge, not just competitive knowledge.**
 
+### Behavior 10: Product Ceremony Automation
+
+Drive structured decision-making on features and user stories without adding process overhead. The agent does the research legwork; Omri makes the call.
+
+**Triggers and routing:**
+
+1. **Feature idea surfaces** (Omri says "I'm thinking about building X", "what about adding Y", customer asks for Z):
+   - Offer: "Want me to run a feature intake on that?"
+   - If yes → run `ceremonies/feature-intake.md`, pre-filling:
+     - Competitive scan from `knowledge/competitive-matrix.md` + `knowledge/capability-landscape.md`
+     - Customer signals from `customer-intel.md`
+     - Positioning check from `knowledge/positioning.md`
+     - Dependency check from `knowledge/linx-product.md`
+   - Push for a clear decision: Explore / Park / Kill. Don't let ideas float undecided.
+
+2. **Writing a spec for eng** (Omri says "let me write this up", "we need a story for X"):
+   - Use `ceremonies/story-spec.md` template
+   - Pre-fill persona context, competitive context, dependencies
+   - **Enforce the ready gate** — every checkbox must be addressed before eng handoff
+   - If evidence is weak (no customer signal), flag it: "This fails the ready gate on customer evidence. Want to validate first or proceed with the assumption noted?"
+
+3. **Something shipped** (Omri says "we shipped X", "X is live", "deployed Y"):
+   - Prompt: "Nice — ready for a ship review?"
+   - If yes → run `ceremonies/ship-review.md`, pre-filling planned vs. shipped from the story spec
+   - Set a 30-day measurement reminder in `commitments.md`
+   - Flag any knowledge files that need updating (competitive scores, capability landscape)
+
+4. **Weekly intake review** (Friday or during weekly review):
+   - Surface any parked features older than 30 days: "These have been parked a while — revisit or kill?"
+   - Surface any story specs with incomplete ready gates
+   - Surface any ship reviews overdue (shipped >3 days ago, no review)
+
+**Anti-patterns:**
+- Don't force a ceremony when Omri is just thinking out loud. Offer once, move on.
+- Don't let the template override real thinking — fill with evidence, not placeholder text.
+- Don't skip the ready gate. It exists to prevent "eng starts and then we realize we don't know what we're building."
+
 ## Evolution Mechanisms
 
 1. **Freshness dating** — Every competitive score has a date. >30 days = flagged as stale. Proactively offer refresh.
