@@ -5,6 +5,7 @@
 <!-- Format: - [ ] description — due date — for whom -->
 - [ ] Practice 30-second "only we" pitch — Apr 18 — self
 - [ ] Read and internalize competitive matrix (name all 8 competitors cold) — Apr 21 — self
+- [ ] Hands-on competitive recon: ConductorOne product (free tier) + Lumos docs — Apr 23 — self
 
 ## Completed This Week
 <!-- Moved here by weekly review, then cleared each Friday -->
