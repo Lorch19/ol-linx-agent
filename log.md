@@ -20,3 +20,11 @@
 - IGA category being redefined (Gartner Market Guide): provisioning → ISPM + NHI + agentic. Incumbents retrofitting. Linx is native to new definition.
 - ODMs: measure IAM by business outcomes (risk reduced, violations caught), not ops metrics (tickets closed).
 - Core principle: be customer-obsessed. Be the voice of the customer in the halls. Customer-first, always.
+
+## 2026-04-14
+- Day 2. Still learning identity fundamentals and testing the system. Not yet in full Week 1 execution mode.
+- Identity security landscape taxonomy internalized: IGA (governance/lifecycle), ISPM (posture/hygiene), ITDR (real-time threats), PAM (privileged accounts), CIEM (cloud entitlements), NHI (bots/service accounts).
+- Reviewed 4 Linx specs/epics to build a ticket-writing quality standard: Groups (epic), Security Assessment for POV (feature spec), Governance platform (vision doc), End-user Tasks (system design). Saved to references/ticket-examples.md.
+- Key finding across all 4: no success metrics in any spec. Also: prioritization often punted, named personas rare. These are the patterns to fix first.
+- Three document types emerging: feature epic, feature spec, vision/platform doc. Each needs a different template — one Skill won't fit all.
+- Customer calls recorded in Grain (noted for future reference).
