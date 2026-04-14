@@ -234,6 +234,15 @@
 - ISPM is not a strength
 - AI capabilities feel "added" rather than native-first
 
+**Customer voice — what prospects actually say about SailPoint (source: Rona Shaanan, 6 customer calls, Apr 2026):**
+- **"Too Big to Succeed"** — Over-engineered for mid-market needs. Choice Bank cited a $4.5M Huntington Bank deployment with Accenture. Customers with 5-person teams feel they need a "fleet of consultants" just to get it running.
+- **High Time to Value** — Configuring connectors for custom/modern SaaS apps is slow and painful. Prospects contrast this with desire for "rapid deployment" and "day-one visibility."
+- **"Clunky" UX** — Manager access reviews described as "extremely manual" and confusing. Summit's Aaron praised Linx as "very clean" and standing above others — implying SailPoint feels dated.
+- **Fragmented Visibility** — Legacy tools miss "islands of identity." WWT and Discount Tire noted SailPoint struggles with deep cloud-native environments (AWS/Azure) and NHIs. Good at "compliance checkboxes," poor at real-time risk.
+- **Cost vs. Value** — Growing "sticker shock." Choice Bank and Discount Tire want "modular" or "creative" pricing — feel forced into expensive all-or-nothing licensing tiers.
+
+**Summary customer sentiment:** SailPoint = "Old Guard" — powerful and comprehensive, but expensive, slow to deploy, and requiring too much "babysitting." Prospects are actively seeking a modern alternative with AI-driven automation and less implementation pain.
+
 **When you'll face them:** Every enterprise IGA deal. "Nobody gets fired for buying SailPoint."
 
 **How to win:**
@@ -241,6 +250,7 @@
 - **Modern architecture** — native AI, graph-based data model, autonomous remediation
 - **Frame as "SailPoint for compliance, Linx for security"** — don't compete on IGA completeness
 - **Don't attack them head-on** on governance depth — find the adjacent wedge
+- **Use the customer voice** — "Too Big to Succeed" and "sticker shock" angles resonate strongly with mid-market and small-team buyers
 
 ---
 

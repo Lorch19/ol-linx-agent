@@ -105,6 +105,8 @@ Re-IPO'd at $12.8B valuation, surpassed $1B ARR. Launched **Agent Identity Secur
 
 **Key insight:** The incumbent is not asleep. They shipped agentic identity before most challengers. Don't assume innovation lag — compete on architecture, not claims.
 
+**Customer voice (Apr 2026, 6 prospect calls):** Prospects call SailPoint the "Old Guard" — respected for depth but seen as over-engineered, expensive ($4.5M deployment cited), clunky UX, and poor at real-time cloud-native visibility. Active desire for modern alternative. Use "Too Big to Succeed" and "sticker shock" angles in mid-market deals.
+
 ### CyberArk (Palo Alto Networks) — 88/100 (+3)
 **Major event:** $25B PANW acquisition **closed Feb 11, 2026** (largest security M&A ever). Record $1.36B CyberArk revenue, $1.44B ARR at close. Zilla IGA integrated, Venafi machine identity shipped, Secure AI Agents GA Dec 2025.
 
