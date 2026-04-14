@@ -20,3 +20,8 @@
 - IGA category being redefined (Gartner Market Guide): provisioning → ISPM + NHI + agentic. Incumbents retrofitting. Linx is native to new definition.
 - ODMs: measure IAM by business outcomes (risk reduced, violations caught), not ops metrics (tickets closed).
 - Core principle: be customer-obsessed. Be the voice of the customer in the halls. Customer-first, always.
+
+## 2026-04-14
+- Product ceremony framework built: feature intake, story spec, ship review templates with agent automation. Portable — adapt to whatever Linx already has.
+- Observation: Linx's sprint/task management is not scalable — relies too heavily on people and manual coordination. Future initiative: formalize and automate. Need to see the actual workflow internally first.
+- Insight: many customer requests are small/simple. Opportunity to use AI to resolve these automatically and decrease dev team burden. Evaluate once inside: what % of requests are automatable? What's the current triage flow? Could be a quick win with high visibility.
