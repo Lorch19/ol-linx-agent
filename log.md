@@ -20,3 +20,11 @@
 - IGA category being redefined (Gartner Market Guide): provisioning → ISPM + NHI + agentic. Incumbents retrofitting. Linx is native to new definition.
 - ODMs: measure IAM by business outcomes (risk reduced, violations caught), not ops metrics (tickets closed).
 - Core principle: be customer-obsessed. Be the voice of the customer in the halls. Customer-first, always.
+
+## 2026-04-14
+- First 1:1 with Dor (VP Product, direct manager). Strong meeting.
+- Shared two main observations: (1) product is tech-out not customer-first, (2) AI-powered autonomy gap — both in product and how we work.
+- Dor's 3-month success criteria: (1) Own product lifecycle of assigned domain (TBD), (2) Successfully demo the product, (3) Lead cross-company strategic initiatives, (4) Company AI transformation.
+- #4 (AI transformation) is a standout signal — Dor sees Omri as the driver for this on Day 3.
+- Dashboard review in progress in parallel session.
+- Grain ↔ Datadog research complete — no native connector, Pipedream is best path for POC.
