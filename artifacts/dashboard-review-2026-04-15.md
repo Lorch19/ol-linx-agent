@@ -31,22 +31,26 @@
 
 This is the unifying problem. It manifests differently in each area, but the pattern is the same: metrics, lists, and findings are presented as raw inventory rather than as decisions waiting to be made.
 
-### Why this matters strategically
-- **Adoption risk.** Security buyers don't bounce off a dashboard because there's too much data. They bounce because they can't figure out where to start. This reinforces what customer research has already surfaced: JLL's "these numbers are still scary" (Feb 2026) and the fact that CS has to narrate the dashboard in nearly every demo (Docusign, McKinsey, Macmillan, Enpro).
-- **Differentiation risk.** Competitors (SailPoint, CyberArk, ConductorOne) show comparable data density. What can set Linx apart is *interpretation* — "here's what matters, here's why, here's what others in similar situations did." That layer is currently absent.
-- **Scalability of CS.** Verbal narration on every onboarding call is a product gap, not a training problem. It will not scale post-Series B.
+### Why this may matter (to validate with the team)
+*Caveat: I'm in my first week at Linx, so the points below are hypotheses drawn from the walkthrough and from Rona's customer research — not conclusions. They need to be pressure-tested with people who know the history.*
 
-### What's fundamentally working
-- **Data depth and coverage are strong.** The breadth of metrics reflects a mature underlying data model. Nothing suggests the product needs to collect *less* — it needs to interpret *more*.
-- **Insights & Reports section is the closest to "right."** The pre-built categories (Orphan accounts, Recently joined users, HRIS/IDP inconsistencies) show the team knows how to package insight. That mindset needs to propagate across the rest of the product.
-- **Visualizations themselves are well-chosen.** Heatmaps, trend lines, donuts are not the issue. The issue is what surrounds them.
+- **Possible adoption risk.** From the customer research already captured (JLL's "these numbers are still scary," Feb 2026; CS narrating the dashboard across Docusign, McKinsey, Macmillan, Enpro calls), it looks like users struggle to find a starting point. If that's representative, the insight gap is a friction point on first impression.
+- **Possible differentiation angle.** Competitors (SailPoint, CyberArk, ConductorOne) show comparable data density. Interpretation — saying what matters and why — could be a place Linx differentiates rather than competing on data volume. Worth testing against how the GTM team positions us today.
+- **Open question on CS load.** If the dashboard needs verbal narration in most demos, is that a product readiness signal, a demo-script habit, or an expected part of enterprise onboarding? I can't tell yet. Worth asking Jonah and Kevin.
 
-### What's fundamentally off
-Three recurring patterns, ordered by severity:
+### Observations from the walkthrough
+*These are first-impression observations, not judgments on the team's choices. Happy to be told I'm missing context.*
 
-1. **No prioritization or guided action.** Every screen presents data at equal visual and structural weight. Nothing answers "what should I do right now and why?"
-2. **Findings are descriptions, not insights.** Detections restate the query that generated them rather than explaining risk, blast radius, or recommended action.
-3. **No institutional memory.** The system doesn't leverage what the organization has already decided — past resolutions, workflow outcomes, common handling patterns — to inform the current user. Every user starts from zero every time.
+- **Data depth is clearly a strength.** The breadth of metrics reflects a mature underlying data model. The question I have isn't about collecting less — it's whether the interpretation layer is keeping pace.
+- **Insights & Reports feels closest to the pattern I'd want elsewhere.** Pre-built categories (Orphan accounts, Recently joined users, HRIS/IDP inconsistencies) package insight rather than raw data. Curious why that mindset hasn't propagated to Dashboard / Issues / Workflows — product sequencing? different owners? different maturity?
+- **Visualizations themselves are well-chosen.** Heatmaps, trend lines, donuts aren't the issue. The framing around them is what I'd probe.
+
+### Patterns I kept noticing
+Three recurring patterns across the surfaces I reviewed — stated as observations, open to being corrected:
+
+1. **Prioritization / guided action seems light.** Most screens present data at equal visual weight. It was unclear to me what I should do first on any given screen. (Possibly intentional — different users want different starting points.)
+2. **Findings read as descriptions of the detection, not explanations of risk.** Detections often restate the query that generated them rather than explaining impact or recommended action. Open question whether deeper pages go further than the side panels I saw.
+3. **Past decisions don't seem to be resurfaced.** 2,206 resolved issues exist but aren't visible when triaging new ones. Whether to use that history is a real product question — I'm flagging the absence, not prescribing the fix.
 
 ---
 
@@ -81,26 +85,36 @@ Three recurring patterns, ordered by severity:
 
 ---
 
-## 3. Stress Tests (open questions to resolve before acting)
+## 3. One Idea Worth Exploring — Different Views for Different Users
 
-These are places where the feedback could be wrong, or where severity depends on facts not yet confirmed:
+One thing that came up repeatedly while reviewing the product: the dashboard seems to assume a single audience, but in practice there are probably several very different users looking at the same screen — e.g., a CISO wanting posture and trends, an identity admin wanting a task queue, an employee wanting to see their own access and pending requests.
 
-- **Primary dashboard audience.** CISO (wants posture/trends) or analyst (wants task queue)? The answer changes prioritization of nearly every recommendation.
-- **NHI context availability.** Is missing blast-radius explanation a UI problem or a data problem? Severity shifts accordingly.
-- **Issue detail depth.** Does the full issue page go deeper than the side panel reviewed here? If not, it's a fundamental gap; if yes, it's a summary-panel fix.
-- **Workflow scale in practice.** Typical deployments with <15 workflows: flat list is fine. With 50+: real problem. Need data.
-- **Report consumers.** Who actually reads exported reports — analysts (raw data OK) or managers/auditors (need narrative)?
-- **Grouping trust.** If Issues get grouped into cases, what's the fallback when the grouping gets it wrong?
+Rona's research already has a seed of this (Noam Blatt at Vega: *"How can they see their own Linx dashboard without all the admin things?"*). The redesign might be a natural moment to ask whether the dashboard should branch into role-scoped views rather than try to serve everyone at once.
+
+Flagging this as a direction to consider, not a recommendation.
 
 ---
 
-## 4. Common Thread — One Design Principle to Carry Forward
+## 4. Open Questions to Resolve Before Acting
 
-If the redesign keeps one principle from this feedback, it should be:
+Places where my read could be wrong, or where the answer meaningfully changes the shape of any redesign:
+
+- **Primary dashboard audience.** If it's one persona, prioritization changes everything; if it's several, the branching view idea above becomes more relevant.
+- **NHI context availability.** Is missing blast-radius explanation a UI problem or a data problem? Severity shifts accordingly.
+- **Issue detail depth.** Does the full issue page go deeper than the side panel I saw? If yes, a lot of my Issues feedback is really about the summary panel, not the whole feature.
+- **Workflow scale in practice.** Typical deployments with <15 workflows: flat list is probably fine. With 50+: grouping matters more.
+- **Report consumers.** Who actually reads exported reports — analysts (raw data OK) or managers/auditors (need narrative)?
+- **Grouping trust.** If Issues were grouped into cases, what's the fallback when the grouping gets it wrong?
+
+---
+
+## 5. Common Thread — One Lens to Consider
+
+If the redesign keeps one lens from this feedback, I'd suggest this one:
 
 > **Every number, list, and finding should earn its place by answering one of three questions: What does this mean? What should I do about it? What have we done about similar things before?**
 
-Everything else is detail.
+Offered as a framing device, not a rule.
 
 ---
 
