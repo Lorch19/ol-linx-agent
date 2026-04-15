@@ -7,7 +7,7 @@
 ## Company Overview
 
 - **What they say:** "Linx is building the next generation of Identity Security and Governance solutions to empower organizations to effortlessly and quickly reduce identity-related risks, achieve their security and compliance objectives, and increase productivity through tighter alignment between security and the business."
-- **Stage:** Startup (likely Series A/B — validate)
+- **Stage:** Post-Series B (closed). Focus now: execution, market position, path to next round.
 - **Key leaders:** CEO Israel (validate last name), CPO Niv (validate last name)
 - **Gartner access:** Licensed (reports are issued to NIV@LINXSECURITY.IO)
 
