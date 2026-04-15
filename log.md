@@ -28,3 +28,7 @@
 - #4 (AI transformation) is a standout signal — Dor sees Omri as the driver for this on Day 3.
 - Dashboard review in progress in parallel session.
 - Grain ↔ Datadog research complete — no native connector, Pipedream is best path for POC.
+
+### Ideas to raise with Dor (next 1:1)
+- **SailPoint/Saviynt migration tool** — a purpose-built migration tool that dramatically simplifies moving from SailPoint/Saviynt to Linx could be a game-changer for displacement deals. Want Dor's read on whether this is on the radar.
+- **Autonomous solution for non-technical customers** — "we take care of you end-to-end." Could be a winning wedge for customers who don't have mature IAM teams. Hypothesis: this segment is underserved by SailPoint (too complex) and ConductorOne/Lumos (still require admin effort).
