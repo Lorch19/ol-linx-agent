@@ -2,6 +2,12 @@
 <!-- Type 2-3 bullets under today's date after meetings. That's it. -->
 <!-- The evening extract task handles the rest. -->
 
+## 2026-04-16
+- **ESCALATION — AI Assistant reliability:** Sony Pictures (Michael Melo) has been escalating for 6+ months. False confirmations ("report created" when it wasn't), accuracy failures on security-critical tasks. Michael advising Crunchyroll CTO against using the assistant.
+- Michael requested user-configurable accuracy guardrails — accuracy over helpfulness toggle.
+- Linx response (Dor + Niv): root cause at AI/backend data boundary, committed to stricter QA, less appeasing personality, twice-daily eng status reports.
+- Logged to customer-intel.md. Need to assess: are other customers experiencing the same silently?
+
 ## 2026-03-29
 - System initialized. Pre-onboarding phase begins. Day 1 at Linx: April 12.
 - Competitive positioning complete: Linx scored 65/100, governance depth (2.5/5) is the #1 gap.
