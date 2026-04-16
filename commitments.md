@@ -9,6 +9,7 @@
 - [ ] Prep "first week questions" list for Niv and Israel — Apr 11 — self
 - [ ] Draft competitive positioning one-pager — Apr 11 — self
 - [ ] Practice 30-second "only we" pitch — Apr 11 — self
+- [ ] AI Assistant reliability — research root causes, form PM POV, raise with Niv/Dor — ongoing — Sony Pictures escalation
 
 ## Completed This Week
 <!-- Moved here by weekly review, then cleared each Friday -->
