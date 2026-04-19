@@ -12,7 +12,6 @@
 - [ ] Read Feb 8 AI roadmap doc before Thursday deep dive — Apr 22 — self
 - [ ] Ask Omer Efroni for AI Workshop Notion page + Figma before his last day — Apr 22 — self
 - [ ] Sit with Uri (architecture, per Omer tip — verify same as "Ori" in stakeholder map) — Apr 30 — self
-- [ ] Bring one well-framed "new agent" idea to Thursday deep dive (not five half-baked) — Apr 23 — self
 - [ ] 30-min intro with Shon (AI TL) — next two weeks — self
 - [ ] Skills "Linx-Native" transformation (separate project) — surface to agent when ready for review — ongoing — Omri
 
