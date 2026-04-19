@@ -97,3 +97,12 @@
 - Success metrics at 30/60/90 for "leading AI"
 - Does "AI" become the assigned domain, or is this on top of a separate domain?
 - Share context on the internal "Operating System" — agent is blind
+
+### Week 2 plan locked (short week: Yom HaZikaron + HaAtzmaut Apr 21-23)
+- **Stance:** too early for a 30/60/90 — Omri is still learning. Starting posture = learn the domain + shadow Sony. Agent will challenge + guide on cadence.
+- **Priority order:** Customers → AI Assistant/Sony → Competitors.
+- **Primary bucket = Customers, capability-first framing.** Not "ask for a list of customers" but "build the capability to know which customers use which features/systems self-serve." Apply the same pattern across customer-learning asks.
+- **Secondary = Sony shadow mode.** Read transcripts, attend eng status reports, 30-min with Shon or Amir Ben Ami, private POV. Decision on ownership posture by Apr 26.
+- **Dashboard:** Rona has first-pass feedback; second-pass + open questions reframed as Omri's self-learning gap (not Rona blocker). Deferred to Apr 30.
+- **Ada / internal OS context received (file: `Ada - PM - OS/ada-strategic-context-2026-04-19.md`).** Confirms bucket 3 of Dor's mandate is shipping Ada-style agent inside Linx. Not a side project — half the job.
+- **Commitments cleanup applied:** Noma research and 30-sec pitch drill dropped. Competitive matrix cold recall re-dated to May 2. ConductorOne/Lumos docs re-dated to Apr 26.
