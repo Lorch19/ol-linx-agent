@@ -63,7 +63,7 @@
 | **Omer Blachman** | Connectors | [ ] |
 | **Yoad** | [TBD] | [ ] |
 | **Ofek** | Analytics | [ ] |
-| **Ori** | Architecture | [ ] |
+| **Ori** (Uri?) | Architecture — Omer Efroni flagged as priority sit-down | [ ] |
 | **Refael** | Dev ninja | [ ] |
 | **Amir Hamanachem** | [TBD] | [ ] |
 
