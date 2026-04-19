@@ -38,11 +38,11 @@ Search the Linx Notion workspace and identify the **most useful 8–15 pages** t
 
 ### B. PRD and spec writing standards
 
-1. Find 2–3 **exemplary** PRDs, feature specs, or requirements documents — ones people would point to as "this is how we do it well."
+1. Find 2–3 PRDs, feature specs, or requirements documents that meet ALL of these criteria: (a) authored in the last 6 months, (b) referenced by others as a model or template, (c) resulted in shipped features. If fewer than 3 meet all criteria, surface whatever qualifies and flag the gap.
 2. What structural sections are mandatory vs. optional?
-3. How are success metrics handled? Are they usually included, missing, or vague?
-4. Is there a written PRD template or writing guide?
-5. What tone and level of detail is typical?
+3. Do these PRDs include quantitative success criteria? If yes, what format — target + threshold + kill criterion, or just aspirational numbers, or prose descriptions?
+4. Is there a written PRD template or writing guide? If yes, find and extract it.
+5. Voice: first-person, "we/our," third-person? How formal? How much detail per section?
 
 ### C. Company strategic context
 
@@ -104,10 +104,11 @@ After all the page extracts, close with a synthesis:
 
 - **Be selective.** 8–15 pages total. Don't extract everything.
 - **Skip drafts and abandoned docs** unless they're the only source on a topic.
-- **Use original language** when Linx-specific terms matter — don't paraphrase Linx's POV in generic words.
+- **Extract, don't summarize.** Prefer direct quotes over paraphrase. Don't restate Linx's POV in generic words — use Linx's own language verbatim.
+- **Don't interpret.** If a page says X, report X. Save your interpretation for the synthesis section, and label it clearly as interpretation when you do.
 - **Gaps are data.** If something doesn't exist, say so explicitly.
-- **Flag contradictions.** Where two pages disagree, call it out.
-- **No sales polish.** This is internal research; dry + accurate beats fluent + vague.
+- **Flag contradictions.** Where two pages disagree, quote both and call it out.
+- **No sales polish.** This is internal research; dry + accurate beats fluent + vague. If a sentence feels smooth, check if it lost specificity.
 
 ---
 
