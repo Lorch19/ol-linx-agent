@@ -1,6 +1,6 @@
 # Stakeholder Map — Linx Security
 
-> Last updated: 2026-04-14 (enriched from Dor 1:1)
+> Last updated: 2026-04-19
 > Status: Names populated. Styles/preferences TBD as interactions happen.
 
 ## Leadership
@@ -31,19 +31,32 @@
 - **Met Day 1.** Provided onboarding to-dos, key people list, and tools overview.
 - **What they care about:** [To be discovered — likely: engineering velocity, architecture, AI-native initiatives]
 - **Key signal:** Linx wants to become more **AI-native** across delivery lifecycle, customer research, market research. Multiple initiatives planned.
+- **Cycle 79:** Leading MCP gateway POC with Amir Ben Ami.
+
+### Amir Ben Ami — Head of AI
+- **Met:** Apr 19 (same-day intro).
+- **Thursday Apr 23:** AI Assistant deep dive — fastest path into bucket 2 of Omri's AI mandate.
+- **Scope:** Head of AI engineering; owns AI team (16 weeks/qtr capacity — smallest of all teams).
+- **Cycle 79:** MCP gateway POC (with Sarit).
+- **Open agenda for Thursday:** Feb 8 NYC doc access, MCP gateway intent, AI team capacity vs "everyone does AI," Drifter success bar, dogfooding Agentic AI Identities on Linx's own agents.
+
+### Victoria — Marketing
+- **Scope:** Led Autopilot press release (Mar 19, 2026). Niv + Dor edited.
+- **Signal:** External AI positioning runs through her — useful counterpart when codifying Linx's AI POV.
 
 ## Product Team
 
-### Omer — Lead PM
-- **Area:** Lead PM, connectors knowledge
-- **Status (Apr 19):** Leaving Linx. Deprioritize as relationship investment.
+### Omer Efroni — Lead PM (Autopilot / Co-Pilot)
+- **Scope:** Owns 5 of 6 Autopilot PRDs — Multi-Agent System, AI governance-Agent, Drifter, Profile Tuner, Reviewer Agent.
+- **Status (Apr 19):** Leaving Linx. Last day imminent — **single largest knowledge concentration risk.**
 - **Personality flag:** Omri's read — not a nice person. Watch for friction; route around when possible.
-- **Key context:** Told Omri that Linx is drawing away from NHIs at the moment.
-- **How Linx wins deals:** POV test case partner (weeks 4-5) — reassign if he leaves first
+- **Key context:** Told Omri Linx is drawing away from NHIs at the moment.
+- **Critical-path ask:** Figma + Notion handoff (AI Workshop page + per-PRD designs) before last day.
 
-### Mor — PM
-- **Area:** PM
-- **Action:** Sit with Mor to shadow and observe PM work at Linx.
+### Mor — PM (Agentic AI Identities)
+- **Scope:** Owns the "Agentic AI Identities" epic — Option B of Linx's AI strategy (governing customers' AI agents). Separate portfolio from Omer Efroni's Autopilot work.
+- **Status:** In product design. 10-capability framework, M0-M4 milestones (~8mo).
+- **Action:** Intro + shadow. Omri's AI mandate covers Mor's scope — org clarity needed with Niv.
 
 ### Dana — [Product team]
 - **Area:** Product team. Part of the dev cycle flow.
