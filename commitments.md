@@ -7,7 +7,9 @@
 ### AI Leadership Mandate (Dor, Apr 19)
 - [ ] Scope the AI leadership mandate — three buckets (Assistant/Co-Pilot current, customer AI future, company AI internal). Define 30/60/90 plan + decision rights + delineation with Amir Ben Ami / Shon — Apr 30 — Dor
 - [ ] AI Assistant reliability — shadow Sony escalation, form private POV, decide ownership posture — Apr 26 decision point — self
-- [ ] 30-min intro with Shon (AI TL) or Amir Ben Ami (Head of AI) framed around AI Assistant architecture + failure modes — Apr 30 — self
+- [ ] AI Assistant deep dive with Amir Ben Ami — Apr 23 (Thursday) — self + Amir
+- [ ] Read Notion materials on the AI Assistant (pre-reading for Thursday deep dive) — Apr 22 — self
+- [ ] 30-min intro with Shon (AI TL) — next two weeks — self
 - [ ] Skills "Linx-Native" transformation (separate project) — surface to agent when ready for review — ongoing — Omri
 
 ### Customer Learning (Week 2 primary)
@@ -36,6 +38,7 @@
 - [x] Discuss NHI strategic direction + other onboarding questions with Dor — Apr 14/16 — Dor
 - [x] Share dashboard review report with Rona — Apr 17 — Rona
 - [x] Receive internal "Operating System" (Ada) context from Omri — Apr 19 — Omri → agent
+- [x] Intro 1:1 with Amir Ben Ami (Head of AI) — Apr 19 — Amir
 - [x] Test daily log habit: log something 8+ out of 14 days — Apr 11 — self
 - [x] Read all 4 Linx onboarding PDFs — Apr 4 — self
 - [x] Prep "first week questions" list for Niv and Israel — Apr 11 — self

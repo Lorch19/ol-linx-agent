@@ -106,3 +106,9 @@
 - **Dashboard:** Rona has first-pass feedback; second-pass + open questions reframed as Omri's self-learning gap (not Rona blocker). Deferred to Apr 30.
 - **Ada / internal OS context received (file: `Ada - PM - OS/ada-strategic-context-2026-04-19.md`).** Confirms bucket 3 of Dor's mandate is shipping Ada-style agent inside Linx. Not a side project — half the job.
 - **Commitments cleanup applied:** Noma research and 30-sec pitch drill dropped. Competitive matrix cold recall re-dated to May 2. ConductorOne/Lumos docs re-dated to Apr 26.
+
+### Amir Ben Ami 1:1 (same day)
+- Met same-day. Thursday (Apr 23) scheduled for AI Assistant deep dive. Fastest possible path into bucket 2 of the AI mandate — no weeks of intro-chasing.
+- Omri's read on his own gap: he is not an AI expert. Wants agent's help building toward right values — value-driven, anti over-engineering, best practices, trust through small valuable wins.
+- Agent's additions to that philosophy (for codification): lead through evaluation not architecture; be customer voice in every AI decision; own failure-mode vocabulary (hallucinations, confidence collapse, compound errors); build a public "what we don't do" list; weekly AI-product practice reading cadence (Willison, Husain, Shankar, Yan, Lee); guard ambition against small-wins drift.
+- Watch-outs flagged: "don't over-engineer" shouldn't mean under-engineering reliability (Sony cautionary tale); "small wins" shouldn't become small thinking; trust compounds slowly, collapses fast — don't over-promise early.
