@@ -14,8 +14,17 @@
 ## Phase 1: Learn & Map (Days 1-30) — Due May 12, 2026
 **Theme:** Understand the terrain. Earn the right to have opinions.
 
+### Dor's 3-Month Success Criteria (from Apr 14 1:1)
+> 1. Own the product lifecycle of assigned domain (TBD)
+> 2. Be able to successfully demo the product
+> 3. Leading cross-company strategic initiatives
+> 4. Company AI transformation
+
+### Phase 1 Milestones (aligned to Dor's criteria)
+- [ ] **Demo readiness (Dor #2):** Can demo core product flows end-to-end — target: by end of Phase 1
+- [ ] **AI transformation kickoff (Dor #4):** Deliver first AI adoption proposal (internal or product-side)
 - [ ] 5+ customer conversations (direct or observed) — count: 0
-- [ ] Stakeholder map populated: Niv style observed + 2 pushbacks documented; Israel priorities confirmed; eng lead names + working styles known
+- [ ] Stakeholder map populated: Dor style confirmed; Niv style observed + 2 pushbacks documented; Israel priorities confirmed; eng lead names + working styles known
 - [ ] Product architecture: can sketch the Linx system diagram unprompted
 - [ ] Competitive landscape validated with 3+ internal stakeholders ("Does this match what you see?")
 - [ ] First artifact shipped + shared with sales/CS + feedback received

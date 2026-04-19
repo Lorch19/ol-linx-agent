@@ -45,3 +45,15 @@
 - Key finding across all 4: no success metrics in any spec. Also: prioritization often punted, named personas rare. These are the patterns to fix first.
 - Three document types emerging: feature epic, feature spec, vision/platform doc. Each needs a different template — one Skill won't fit all.
 - Customer calls recorded in Grain (noted for future reference).
+
+## 2026-04-14 — DAY 3
+- First 1:1 with Dor (VP Product, direct manager). Strong meeting.
+- Shared two main observations: (1) product is tech-out not customer-first, (2) AI-powered autonomy gap — both in product and how we work.
+- Dor's 3-month success criteria: (1) Own product lifecycle of assigned domain (TBD), (2) Successfully demo the product, (3) Lead cross-company strategic initiatives, (4) Company AI transformation.
+- #4 (AI transformation) is a standout signal — Dor sees Omri as the driver for this on Day 3.
+- Dashboard review in progress in parallel session.
+- Grain ↔ Datadog research complete — no native connector, Pipedream is best path for POC.
+
+### Ideas to raise with Dor (next 1:1)
+- **SailPoint/Saviynt migration tool** — a purpose-built migration tool that dramatically simplifies moving from SailPoint/Saviynt to Linx could be a game-changer for displacement deals. Want Dor's read on whether this is on the radar.
+- **Autonomous solution for non-technical customers** — "we take care of you end-to-end." Could be a winning wedge for customers who don't have mature IAM teams. Hypothesis: this segment is underserved by SailPoint (too complex) and ConductorOne/Lumos (still require admin effort).

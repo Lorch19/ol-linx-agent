@@ -1,9 +1,19 @@
 # Stakeholder Map — Linx Security
 
-> Last updated: 2026-04-12 (enriched from Sarit meeting, Day 1)
+> Last updated: 2026-04-14 (enriched from Dor 1:1)
 > Status: Names populated. Styles/preferences TBD as interactions happen.
 
 ## Leadership
+
+### Dor — VP Product
+- **Role:** VP Product (Omri's direct manager)
+- **What they care about:** Product ownership, demo readiness, cross-company strategic initiatives, AI transformation
+- **Communication style:** [Refining — first read: receptive to direct feedback, open to new ideas]
+- **Known priorities:** Wants Omri to own a domain (TBD), drive AI transformation company-wide
+- **3-month success criteria for Omri:** (1) Own product lifecycle of assigned domain, (2) Demo the product successfully, (3) Lead cross-company strategic initiatives, (4) Company AI transformation
+- **How to work with them:** Lead with customer-first framing. Bring solutions, not just observations. AI transformation is a green light — he's sponsoring it.
+- **First 1:1:** Apr 14, 2026 — went well, feedbacks on dashboard and AI gaps landed positively
+- **Provided 5-week onboarding plan.** Thursday Apr 16 check-in covers: NHI direction, priorities, AI-native initiative positioning, agent repo, onboarding questions.
 
 ### Niv — Co-Founder & CPO
 - **What they care about:** Product-market fit, roadmap execution, competitive differentiation, customer feedback loops
@@ -22,11 +32,6 @@
 - **What they care about:** [To be discovered — likely: engineering velocity, architecture, AI-native initiatives]
 - **Key signal:** Linx wants to become more **AI-native** across delivery lifecycle, customer research, market research. Multiple initiatives planned.
 
-### Dor — [Manager / Product Lead]
-- **Omri reports to Dor.** Provided 5-week onboarding plan.
-- **Thursday Apr 16 meeting:** NHI direction, priorities, AI-native initiative positioning, agent repo, onboarding questions.
-- **What they care about:** [To be discovered]
-
 ## Product Team
 
 ### Omer — Lead PM
@@ -42,7 +47,7 @@
 - **Area:** Product team. Part of the dev cycle flow.
 
 ### Rona — [Product team]
-- **Area:** Product team.
+- **Area:** Product team. Owning dashboard redesign (Apr 15 review delivered).
 
 ## Engineering — Key People (need intro meetings)
 
