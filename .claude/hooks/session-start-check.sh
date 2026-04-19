@@ -28,10 +28,13 @@ if [[ -n "$main_sha" ]]; then
 
   current_branch=$(git branch --show-current 2>/dev/null || echo "")
   orphans_filtered=()
-  for o in "${orphans[@]:-}"; do
-    [[ "$o" == "origin/$current_branch "* ]] && continue
-    orphans_filtered+=("$o")
-  done
+  if [[ ${#orphans[@]} -gt 0 ]]; then
+    for o in "${orphans[@]}"; do
+      [[ -z "$o" ]] && continue
+      [[ "$o" == "origin/$current_branch "* ]] && continue
+      orphans_filtered+=("$o")
+    done
+  fi
 
   if [[ ${#orphans_filtered[@]} -gt 0 ]]; then
     echo "WARN: ${#orphans_filtered[@]} orphan branch(es) not merged to main:"
