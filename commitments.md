@@ -11,7 +11,7 @@
 
 ### Customer proximity
 - [ ] Self-serve "which customers use which features" capability — Apr 24 — self  [→ log 2026-04-19]
-- [ ] 4 Grain recordings watched end-to-end — Apr 24 — self
+- [x] 4 Grain recordings watched end-to-end — Apr 24 — self (done; continuing as cadence)
 - [ ] 1 live customer voice (call / shadow / CS) — Apr 24 — self
 - [ ] Top-5 customer pains in `customer-intel.md` with attribution — Apr 24 — self
 - [ ] 2 non-Sony customers with AI Assistant signals — Apr 24 — self  [→ log 2026-04-16]
