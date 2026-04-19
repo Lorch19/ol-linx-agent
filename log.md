@@ -107,6 +107,22 @@
 - **Ada / internal OS context received (file: `Ada - PM - OS/ada-strategic-context-2026-04-19.md`).** Confirms bucket 3 of Dor's mandate is shipping Ada-style agent inside Linx. Not a side project — half the job.
 - **Commitments cleanup applied:** Noma research and 30-sec pitch drill dropped. Competitive matrix cold recall re-dated to May 2. ConductorOne/Lumos docs re-dated to Apr 26.
 
+### Session close-out notes (end of 2026-04-19)
+- **Notion extraction ran successfully in Linx Claude against Omer's 15-page list.** Output is extensive and highly valuable — includes AI architecture (4-tier maturity model, 6-layer stack), PRD standards, Autopilot press release quotes, Sony RCA details, Agentic AI Identities epic, Cycle 79 priorities, and Product Roadmap planning. **Output NOT yet saved to this repo** — Omri to paste into a fresh session for ingestion.
+- **Top 3 findings that change the plan (for next session to act on):**
+  1. **A vs B governance question resolved: both, parallel.** Option A (Linx's own AI — Autopilot/Co-Pilot) is owned by Omer Efroni. Option B (governing customers' AI agents — "Agentic AI Identities" epic) is a real, in-design product owned by a different PM (likely Mor), with an 8-month milestone plan. Omri's mandate covers both. Option C (compliance wedge) is absent — decision or oversight?
+  2. **Sony has two layers, don't conflate.** Aug 27, 2025 outage = deployment-process failure (Pydantic validation, 19-min fix). Still Draft 7 months later. Separately, Michael Melo's 6-month escalation is about AI output quality (false confirmations). Bucket 1 framing needs to separate process discipline from AI quality.
+  3. **No written AI strategy / POV document exists.** Closest is Sep 2025 Orchestration Capabilities (stale) + Mar 2026 Autopilot press release. This is Omri's first real deliverable opportunity — a Linx AI POV reconciling A + B.
+- **Other material findings flagged for next session:**
+  - AI Workshop Feb 8 NYC page returns 404 — ask Amir Thursday
+  - No 2026 OKRs doc found — ask Dor
+  - AI team capacity = 16 weeks/qtr (smallest of all teams) while "every team does AI" is the mindset — structural tension
+  - PM ownership split (Omer → Autopilot, Mor → Agentic Identities) — Omri's new charter needs org clarity with Niv
+  - Most PRDs lack success metrics — Reviewer Agent PRD has strong testing section worth copying as a template
+  - Peloton opted out of an AI feature ("Disable AI Role & Permissions Descriptions") — customer AI resistance signal, not just Sony
+  - Marketing-reality gap: Autopilot press release claims launch while underlying epics (Multi-Agent System, Drifter, Profile Tuner) still "In Product Design"
+- **State of the session:** Agent froze mid-save of the extraction artifact (analysis paralysis on sequencing). Omri rightly called it and closed session. Next session priority: ingest the extraction output → artifact file, update `knowledge/linx-product.md` (was INCOMPLETE, now has real data), update `references/stakeholder-map.md` (add Mor as Agentic AI Identities owner), update `customer-intel.md` (clarify Sony two-layer nuance + add Peloton AI opt-out).
+
 ### Amir Ben Ami 1:1 (same day)
 - Met same-day. Thursday (Apr 23) scheduled for AI Assistant deep dive. Fastest possible path into bucket 2 of the AI mandate — no weeks of intro-chasing.
 - Omri's read on his own gap: he is not an AI expert. Wants agent's help building toward right values — value-driven, anti over-engineering, best practices, trust through small valuable wins.
