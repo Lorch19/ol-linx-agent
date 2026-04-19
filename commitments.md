@@ -15,6 +15,7 @@
 - [ ] Second-pass product review covering unreviewed surfaces (Access reviews, SoD, end-user views, Linx AI, filter behavior, etc.) — Apr 22 — self
 - [ ] Hands-on competitive recon: ConductorOne product (free tier) + Lumos docs — Apr 23 — self
 - [ ] Deliver "Linx Product & Market Brief" (end of week 3 goal) — May 1 — Dor
+- [ ] AI Assistant reliability — research root causes, form PM POV, raise with Niv/Dor — ongoing — Sony Pictures escalation
 
 ## Completed This Week
 <!-- Moved here by weekly review, then cleared each Friday -->

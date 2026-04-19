@@ -71,5 +71,11 @@
 - Consolidated report drafted for Rona (new designer owning Dashboard redesign). Stored in `artifacts/dashboard-review-2026-04-15.md`. Second-pass planned to cover unreviewed surfaces.
 - Open questions to resolve before acting: primary dashboard persona (CISO vs analyst), whether missing NHI context is UI gap or data gap, typical workflow count per deployment, who actually consumes exported reports.
 
+## 2026-04-16 — DAY 5
+- **ESCALATION — AI Assistant reliability:** Sony Pictures (Michael Melo) has been escalating for 6+ months. False confirmations ("report created" when it wasn't), accuracy failures on security-critical tasks. Michael advising Crunchyroll CTO against using the assistant.
+- Michael requested user-configurable accuracy guardrails — accuracy over helpfulness toggle.
+- Linx response (Dor + Niv): root cause at AI/backend data boundary, committed to stricter QA, less appeasing personality, twice-daily eng status reports.
+- Logged to `customer-intel.md` + `artifacts/ai-assistant-reliability-problem-statement.md`. Need to assess: are other customers experiencing the same silently?
+
 ## 2026-04-19
 - Added Workflow Builder (trigger config) feedback to dashboard review: trigger catalog is overwhelming and has broken items, per-integration setup feels redundant, no tooltips/previews, possible direction = AI-assisted builder with decision-tree preview.

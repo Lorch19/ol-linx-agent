@@ -104,10 +104,27 @@
 - **Open questions:** Cloud-native environment — what's the full stack?
 - **Last contact:** Pre-April 2026 (Rona's call review)
 
+## Sony Pictures (incl. Crunchyroll)
+- **Stage:** Existing customer (enterprise — media/entertainment)
+- **Key contact:** Michael Melo
+- **Cares about:** AI Assistant accuracy, security-critical task reliability, user-configurable accuracy guardrails
+- **Risk level:** HIGH — ESCALATION. Michael actively advising Crunchyroll CTO against using Linx AI Assistant.
+- **Issues (6+ months):**
+  - False "report created" confirmations — requires complete rework
+  - Persistent accuracy failures eroding trust
+  - Requested user-configurable accuracy guardrails (accuracy > helpfulness toggle)
+- **Internal response:** Dor Renert + Niv Goldenberg acknowledged root cause at AI/backend data boundary. Committed to stricter QA, less "appeasing" assistant personality, twice-daily engineering status reports.
+- **Open questions:**
+  - What is the current status of the engineering fixes?
+  - Has Michael seen improvement since the commitments were made?
+  - Are other customers experiencing the same issues silently?
+  - What's the churn risk timeline for this account?
+- **Last contact:** April 2026 (escalation ongoing)
+
 ---
 
 ## Patterns & Signals
-> Source: Rona Shaanan's discovery synthesis (Apr 2026), 6 customer calls (Achieve, WWT, Choice Bank, Summit, Discount Tire, Aviatrix)
+> Source: Rona Shaanan's discovery synthesis (Apr 2026), 6 customer calls (Achieve, WWT, Choice Bank, Summit, Discount Tire, Aviatrix) + Sony Pictures escalation
 
 ### Four Universal Pain Themes
 
@@ -123,5 +140,11 @@
 4. **Audit Anxiety vs. Manager Burnout**
    Regulatory pressure forcing expanded access reviews, but no tooling to do it efficiently. Without automated role mining or AI recommendations, expanding reviews = rubber-stamping + increased risk.
 
+### Cross-Customer Signals
+- **CRITICAL:** AI Assistant reliability is a live escalation at Sony Pictures. If Michael Melo is the only one speaking up, others may be silently churning or deprioritizing the assistant. Need to proactively survey other accounts.
+- **Product risk:** False confirmation pattern (saying "done" when it's not) is the most damaging failure mode for a security product — it creates false sense of security. This is not a UX issue, it's a trust-in-the-product issue.
+- Customer count: 10 named references. Actual customer base size unknown — confirm internally.
+- No first-hand customer conversation data yet. Phase 1 target: 5+ conversations by April 28.
+
 ### Summary
-Customers are **data-rich but insight-poor**, struggling with a manual "Identity Gap" that leaves them vulnerable to both security risks and regulatory failure. Customer count in this synthesis: 6 named. Total customer base size still to confirm internally.
+Customers are **data-rich but insight-poor**, struggling with a manual "Identity Gap" that leaves them vulnerable to both security risks and regulatory failure.
