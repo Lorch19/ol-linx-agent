@@ -79,3 +79,21 @@
 
 ## 2026-04-19
 - Added Workflow Builder (trigger config) feedback to dashboard review: trigger catalog is overwhelming and has broken items, per-integration setup feels redundant, no tooltips/previews, possible direction = AI-assisted builder with decision-tree preview.
+
+### Dor news — AI leadership mandate (Product)
+- **Dor has formally assigned Omri to lead AI at Linx from Product.** Materialization of Dor's 3-month success criterion #4 on Day 6. This is a substantial scope expansion — likely reframes what "own a domain" means for Omri.
+- **Scope has three buckets:**
+  1. **Current product AI** — AI Assistant + Co-Pilot. Both need significant work. Research into root causes, invest in better understanding the problem, and build capabilities to monitor it. (Sony Pictures escalation = first visible litmus test.)
+  2. **Future customer AI** — what AI can do for Linx customers, how it evolves, how we govern it. Forward-looking product strategy.
+  3. **Company AI (internal)** — Omri also wants to lead internal AI. Includes "the Operating System we designed" (agent has no context on this yet — to be shared), automations, insights visibility across the system.
+- **Omri's top priority this week (explicit):** customers first, then competitors, then continue learning the system. Aligned with customer-first discipline.
+- **Agent repo approval (Dor/Niv):** Omri says this will take more time — deprioritize, don't chase.
+- **Skills transformation ("Operator Kit" → "Linx Native"):** Omri is running this as low priority in a separate project. Agent has no visibility into that work. Flag to re-sync when Omri surfaces it.
+
+### Open questions Omri needs to answer before the scope is executable
+- Scope sequencing across the three buckets for first 30 days
+- Decision rights: sponsor (Dor), eng allocation, budget, advisory vs P&L-style ownership
+- Delineation with Amir Ben Ami (Head of AI) and Shon (AI TL) — product/eng line
+- Success metrics at 30/60/90 for "leading AI"
+- Does "AI" become the assigned domain, or is this on top of a separate domain?
+- Share context on the internal "Operating System" — agent is blind

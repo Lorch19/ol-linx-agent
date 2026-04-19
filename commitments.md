@@ -4,7 +4,9 @@
 ## Active
 <!-- Format: - [ ] description — due date — for whom -->
 - [ ] Discuss NHI strategic direction + other onboarding questions with Dor — Apr 16 (Thursday) — Dor
-- [ ] Get explicit OK from leadership on agent repo setup (personal GitHub w/ Linx IP) — Apr 18 — Dor/Niv
+- [ ] Get explicit OK from leadership on agent repo setup (personal GitHub w/ Linx IP) — deferred (will take more time, not this-week priority) — Dor/Niv
+- [ ] Scope the AI leadership mandate — three buckets (Assistant/Co-Pilot current, customer AI future, company AI internal). Define 30/60/90 plan + decision rights + delineation with Amir Ben Ami / Shon — Apr 30 — Dor
+- [ ] Get context on internal "Operating System we designed" + Skills Linx-Native transformation (separate project) — Apr 23 — Omri → agent
 - [ ] Study ConductorOne documentation (IGA patterns) — Apr 18 — self
 - [ ] Study Lumos product (main human identity competitor) — Apr 18 — self
 - [ ] Research Noma Security (AI governance approach) — Apr 18 — self
