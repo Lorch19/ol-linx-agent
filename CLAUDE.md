@@ -4,16 +4,29 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 
 ## On Every Session Start (MANDATORY)
 
-1. Read `brief.md` — today's context (calendar, commitments, focus)
-2. Scan `commitments.md` — note anything overdue
-3. If first message is work-related, weave in relevant context naturally
-4. If something is overdue, mention once. Don't nag.
+1. Run `git fetch --all --prune` and check for orphan `claude/*` branches ahead of `main`. If any exist, surface them before starting substantive work — they may contain context from prior sessions you're otherwise blind to. The `.claude/hooks/session-start-check.sh` hook does this automatically; treat its warnings as authoritative.
+2. Read `brief.md` — today's context (calendar, commitments, focus)
+3. Scan `commitments.md` — note anything overdue
+4. If first message is work-related, weave in relevant context naturally
+5. If something is overdue, mention once. Don't nag.
+
+## During Sessions — Persistence Discipline (MANDATORY)
+
+**The single cause of past data loss: conversations happened, but were never written to files and committed. Every Claude Code web session starts from `origin/main` — if it's not in the repo, it does not exist.**
+
+- **Write same-turn, not later.** When Omri shares a meeting, decision, customer detail, idea, or learning, append it to `log.md` in the same turn. Never say "I'll log this at the end" — there may be no end you see.
+- **Update live, not batched.** Commitments mentioned → update `commitments.md` now. Customer signal → update `customer-intel.md` now. Stakeholder detail → update `references/stakeholder-map.md` now.
+- **Commit before you stop.** Any file change in a work session gets committed with a descriptive message before the session ends. The `Stop` hook will block session end if anything is uncommitted or unpushed.
+- **Merge back to main.** If working on a feature branch, merge (or open a PR and merge) to `main` before ending the session. Orphan branches = blindness in the next session.
 
 ## During Sessions
 
 - Meeting/decision/customer mention → offer to log once ("Add to the log?")
 - Meeting prep → check brief.md first, then knowledge files
 - Feature evaluation → check customer-intel.md first, then competitive-matrix
+- **Feature idea surfaced** → offer to run feature intake (`ceremonies/feature-intake.md`)
+- **Writing a spec for eng** → use story spec template (`ceremonies/story-spec.md`)
+- **Something shipped** → celebrate briefly, log it, prompt for ship review (`ceremonies/ship-review.md`)
 - Shipped artifact → celebrate briefly, log it, check off commitment
 - Competitor mentioned → pull scoring + offer fresh research
 
@@ -37,6 +50,13 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 - `battle-cards.md` — 1-pagers for SailPoint, CyberArk, ConductorOne, Lumos
 - `market-context.md` — Market size, dynamics, buyer pains, M&A trends
 - `linx-product.md` — Current product status, architecture, roadmap, gaps
+
+## Ceremonies (`ceremonies/`)
+
+- `README.md` — Product ceremony framework: lifecycle, cadence, agent automation
+- `feature-intake.md` — Feature triage template (the "trade ticket")
+- `story-spec.md` — User story template with ready gate
+- `ship-review.md` — Post-ship learning loop (the "trade settlement")
 
 ## References (`references/`)
 
