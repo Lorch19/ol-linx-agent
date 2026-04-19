@@ -16,6 +16,7 @@
 - Core thesis from review: **data-rich but insight-poor.** Every surface tells the user what exists without telling them what it means or what to do. Three recurring patterns: (1) no prioritization/guided action, (2) findings are descriptions not insights, (3) no institutional memory (past resolutions not leveraged).
 - Strongest section: Insights & Reports — pre-built categories show the team knows how to package insight. Weakest: Issues (1,383 flat items, alert fatigue) and Workflows (4-click drill-down to failure reason, no aggregation).
 - Consolidated report drafted for Rona (new designer owning Dashboard redesign). Stored in artifacts/dashboard-review-2026-04-15.md. Second-pass planned to cover unreviewed surfaces.
+- Added Workflow Builder (trigger config) feedback: trigger catalog is overwhelming and has broken items, per-integration setup feels redundant, no tooltips/previews, possible direction = AI-assisted builder with decision-tree preview.
 - Open questions to resolve before acting: primary dashboard persona (CISO vs analyst), whether missing NHI context is UI gap or data gap, typical workflow count per deployment, who actually consumes exported reports.
 
 ### Gartner PDF Takeaways

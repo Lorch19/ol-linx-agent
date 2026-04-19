@@ -83,6 +83,13 @@ Three recurring patterns across the surfaces I reviewed — stated as observatio
 - **Too many clicks to reach a failure reason.** Four levels deep (list → detail → run → step → error). No aggregated failure reasoning at the top (e.g., "800 of 1,000 failures share the same root cause").
 - **No batch handling of failures.** The user must repeat the drill-down for every failed run individually.
 
+### 2.6 Workflow Builder (trigger configuration)
+- **Triggers are overwhelming.** Many trigger options with no logical grouping. A user has to scan the whole list linearly — no categories, no prioritization.
+- **Customer-facing issues inside the trigger list.** There are visible broken or problematic items in the trigger catalog itself, which erodes trust for any user building their first workflow.
+- **Per-integration workflow setup is unclear.** Why does the user need to configure a separate workflow per integration when the underlying logic is often the same (e.g., "revoke dormant accounts")? Open question: technical limitation or design choice?
+- **Nothing is self-explanatory.** No tooltips, no inline help, no preview of what a workflow will actually do or affect before it runs. Especially risky for destructive actions (revoke, deprovision).
+- **Direction worth exploring: AI-assisted builder.** Given the number of options and the decision-tree nature of workflow creation, a "build with AI" flow — user describes intent in plain language, system proposes a workflow, user reviews a decision tree before activating — could reduce the cognitive load more than incremental UI fixes like tooltips or grouping. Flagging as a direction, not a prescription.
+
 ---
 
 ## 3. One Idea Worth Exploring — Different Views for Different Users
