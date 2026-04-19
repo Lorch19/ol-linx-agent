@@ -9,7 +9,10 @@
 - [ ] Study Lumos product (main human identity competitor) — Apr 18 — self
 - [ ] Research Noma Security (AI governance approach) — Apr 18 — self
 - [ ] Practice 30-second "only we" pitch — Apr 18 — self
+- [ ] Share dashboard review report with Rona (and Niv/product if appropriate) — Apr 17 — Rona
+- [ ] Resolve open questions from dashboard review: primary persona, NHI context (UI vs data gap), workflow scale, report consumers — Apr 20 — self/product
 - [ ] Read and internalize competitive matrix (name all 8 competitors cold) — Apr 21 — self
+- [ ] Second-pass product review covering unreviewed surfaces (Access reviews, SoD, end-user views, Linx AI, filter behavior, etc.) — Apr 22 — self
 - [ ] Hands-on competitive recon: ConductorOne product (free tier) + Lumos docs — Apr 23 — self
 - [ ] Deliver "Linx Product & Market Brief" (end of week 3 goal) — May 1 — Dor
 

@@ -62,3 +62,14 @@
 - Product ceremony framework built: feature intake, story spec, ship review templates with agent automation. Portable — adapt to whatever Linx already has.
 - Observation: Linx's sprint/task management is not scalable — relies too heavily on people and manual coordination. Future initiative: formalize and automate. Need to see the actual workflow internally first.
 - Insight: many customer requests are small/simple. Opportunity to use AI to resolve these automatically and decrease dev team burden. Evaluate once inside: what % of requests are automatable? What's the current triage flow? Could be a quick win with high visibility.
+
+## 2026-04-15 — DAY 4
+- Completed first-pass product UX review of Linx Dashboard. Scope covered: Dashboard (landing), Discover → Non-Human Identities, Issues, Insights & Reports (incl. Scheduled Reports), Workflows.
+- Not yet reviewed: Human identities, Agents (detailed), Accounts/Groups/Roles/Applications/Resources, Access profiles/requests/reviews, SoD, Configurations, Employee management, System logs, Integrations, end-user surfaces (My access, Tasks), Linx AI, filter-behavior tests.
+- Core thesis from review: **data-rich but insight-poor.** Every surface tells the user what exists without telling them what it means or what to do. Three recurring patterns: (1) no prioritization/guided action, (2) findings are descriptions not insights, (3) no institutional memory (past resolutions not leveraged).
+- Strongest section: Insights & Reports — pre-built categories show the team knows how to package insight. Weakest: Issues (1,383 flat items, alert fatigue) and Workflows (4-click drill-down to failure reason, no aggregation).
+- Consolidated report drafted for Rona (new designer owning Dashboard redesign). Stored in `artifacts/dashboard-review-2026-04-15.md`. Second-pass planned to cover unreviewed surfaces.
+- Open questions to resolve before acting: primary dashboard persona (CISO vs analyst), whether missing NHI context is UI gap or data gap, typical workflow count per deployment, who actually consumes exported reports.
+
+## 2026-04-19
+- Added Workflow Builder (trigger config) feedback to dashboard review: trigger catalog is overwhelming and has broken items, per-integration setup feels redundant, no tooltips/previews, possible direction = AI-assisted builder with decision-tree preview.

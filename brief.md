@@ -1,34 +1,26 @@
-# Today's Brief — Sunday, April 13, 2026
-*Day 2 at Linx.*
+# Today's Brief — Sunday, April 19, 2026
+*Day 6 at Linx (Week 2 starts).*
 
 ## Current Phase
-**Week 1: Identity Foundations + System Access** (Apr 12-18)
+**Week 2: Customer Proximity + Dashboard Follow-Through.** Week 1 delivered onboarding ramp, first Dor 1:1, dashboard UX review pass-one.
 
-## Today's Focus
-1. ★ **Review the research game plan + identity-foundations cheatsheet.** Are they accurate? Anything missing? Anything wrong? (`research-gameplan.md` + `knowledge/identity-foundations.md`)
-2. ★ **Play with Linx dev/prod environments.** Explore: discovery, graph, Autopilot, dashboard. What do those 84 agents do?
-3. Read Google Zanzibar paper (ReBAC foundation) — optional if platform takes all day
-
-## Onboarding To-Dos (from Sarit — track through this week)
-- DevOps with Keren Aloni: fix dev env permissions, Claude Code permissions, Hi Bob
-- Hi Bob onboarding, Figma review, Linear review
-- ClickHouse + OpenSearch, Slack channels, Loom, Grain, Datadog
-- Set intro meetings with eng people (see `references/stakeholder-map.md`)
-- Schedule shadow session with Mor (PM)
+## Active Work
+- **Dashboard review — second pass** covering unreviewed surfaces (Human identities, Access reviews, SoD, Configurations, end-user views, Linx AI, filter behavior). Due Apr 22.
+- **Dashboard review — open questions** to resolve with product: primary persona, NHI context (UI vs data gap), workflow scale, report consumers. Due Apr 20.
+- **Dor 1:1 follow-through:** SailPoint/Saviynt migration tool idea + autonomous-for-non-technical-customers wedge to raise next 1:1.
+- **Competitive recon:** ConductorOne free tier + Lumos docs hands-on. Due Apr 23.
 
 ## This Week's Key Dates
-- **Thursday Apr 17: Meeting with Dor.** Big agenda — see `research-gameplan.md` for full prep.
-  - ★ AI-native initiative: position to lead it.
-  - NHI direction, priorities, customers, SoD for AI agents, agent repo.
-- **Friday Apr 18: Week 1 self-assessment.**
+- **Apr 20:** Resolve dashboard open questions with product
+- **Apr 22:** Second-pass dashboard review complete
+- **Apr 23:** ConductorOne + Lumos hands-on recon complete
+- **May 1:** "Linx Product & Market Brief" for Dor
 
-## Open Commitments
-- Dor meeting prep — finalize by Wed Apr 16
-- Study ConductorOne docs, Lumos product, Noma Security — Apr 18 (start Thu)
-- Deliver "Linx Product & Market Brief" — May 1
-
-## Yesterday's Key Takeaway
-Day 1: built identity foundations cheatsheet + research game plan. Met Sarit (CTO) — got onboarding to-dos and key people list. **Big opportunity: Linx wants to become AI-native. Multiple initiatives planned. Omri should position to lead this. Discuss with Dor Thursday.**
+## Open Commitments (see `commitments.md`)
+- Practice 30-sec "only we" pitch — Apr 18 (slightly overdue)
+- Internalize competitive matrix cold — Apr 21
+- Study ConductorOne / Lumos / Noma docs — Apr 18 (overdue, pick up this week)
+- Agent repo explicit OK from Dor/Niv — Apr 18 (overdue, raise in next 1:1)
 
 ## One Thing
-Review the cheatsheet and game plan first thing. Then get your hands on the platform. Concepts without product context are just theory.
+The dashboard review landed well with Dor. Now the test is whether the second-pass + follow-through earn a real domain to own. Week 2 is about converting a strong Week 1 signal into an assignment.
