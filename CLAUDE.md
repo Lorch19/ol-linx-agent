@@ -14,6 +14,9 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 - Meeting/decision/customer mention → offer to log once ("Add to the log?")
 - Meeting prep → check brief.md first, then knowledge files
 - Feature evaluation → check customer-intel.md first, then competitive-matrix
+- **Feature idea surfaced** → offer to run feature intake (`ceremonies/feature-intake.md`)
+- **Writing a spec for eng** → use story spec template (`ceremonies/story-spec.md`)
+- **Something shipped** → celebrate briefly, log it, prompt for ship review (`ceremonies/ship-review.md`)
 - Shipped artifact → celebrate briefly, log it, check off commitment
 - Competitor mentioned → pull scoring + offer fresh research
 
@@ -37,6 +40,13 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 - `battle-cards.md` — 1-pagers for SailPoint, CyberArk, ConductorOne, Lumos
 - `market-context.md` — Market size, dynamics, buyer pains, M&A trends
 - `linx-product.md` — Current product status, architecture, roadmap, gaps
+
+## Ceremonies (`ceremonies/`)
+
+- `README.md` — Product ceremony framework: lifecycle, cadence, agent automation
+- `feature-intake.md` — Feature triage template (the "trade ticket")
+- `story-spec.md` — User story template with ready gate
+- `ship-review.md` — Post-ship learning loop (the "trade settlement")
 
 ## References (`references/`)
 
