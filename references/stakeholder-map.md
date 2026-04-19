@@ -36,8 +36,10 @@
 
 ### Omer — Lead PM
 - **Area:** Lead PM, connectors knowledge
+- **Status (Apr 19):** Leaving Linx. Deprioritize as relationship investment.
+- **Personality flag:** Omri's read — not a nice person. Watch for friction; route around when possible.
 - **Key context:** Told Omri that Linx is drawing away from NHIs at the moment.
-- **How Linx wins deals:** POV test case partner (weeks 4-5)
+- **How Linx wins deals:** POV test case partner (weeks 4-5) — reassign if he leaves first
 
 ### Mor — PM
 - **Area:** PM
@@ -65,7 +67,7 @@
 | **Refael** | Dev ninja | [ ] |
 | **Amir Hamanachem** | [TBD] | [ ] |
 
-**Strategic intro priority:** Amir Ben Ami (Head of AI) and Shon (AI TL) — connect AI-native initiative positioning. Ori (architecture) — understand the graph. Omer Blachman (connectors) — connector count and roadmap.
+**Strategic intro priority:** Amir Ben Ami (Head of AI) — **elevated to this week** (doubles as AI Assistant architecture intro + customer-feature-usage capability ask, given Omer departure). Shon (AI TL) — follow-up. Ori (architecture) — understand the graph. Omer Blachman (connectors) — **DEPRIORITIZED: leaving Linx**.
 
 ## HR & Ops
 
