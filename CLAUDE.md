@@ -93,6 +93,49 @@ Anti-patterns to catch in review:
 4. **Challenge the output.** After completing a skill's framework, add a "Stress Test" section: what's weakest in this analysis? What assumptions could be wrong? What would a smart competitor say in response?
 5. **Source hierarchy still applies.** Skills define structure. Repo knowledge files, project files, and web research supply substance. Never let a template override real data.
 
+## Operator-Kit Skills (external library — mandatory protocol)
+
+External skill library lives at **github.com/Lorch19/operator-kit** (maintained by Omri). Not cloned into this repo — fetch on demand via WebFetch.
+
+### When to reach for operator-kit (phase → skill)
+
+| Task | Skill |
+|---|---|
+| Deep competitive teardown | `domain-tools/competitive-teardown` |
+| Scope a problem precisely | `pm-frameworks/problem-statement` |
+| Map a problem space visually | `pm-frameworks/problem-framing-canvas` |
+| Identify the job a buyer is hiring Linx for | `pm-frameworks/jobs-to-be-done` |
+| Structured research methodology | `pm-frameworks/discovery-process` |
+| Working-backwards / force-clarify a demo target | `pm-frameworks/press-release` |
+| Visualize opportunity landscape | `pm-frameworks/opportunity-solution-tree` |
+| Decompose an epic into stories | `pm-frameworks/epic-breakdown-advisor` |
+| Sharpen positioning | `pm-frameworks/positioning-workshop`, `positioning-statement` |
+| Market sizing | `pm-frameworks/tam-sam-som-calculator` |
+| Draft a PRD | `prd-partner` |
+| Go-to-market | `gtm-tools/*` |
+| Analytics / metrics | `analytics-tools/*` |
+
+New skills are added to operator-kit regularly — when you don't find a fit, WebFetch the repo root to see what's new. Never invent a skill name that isn't in the repo.
+
+### Invocation protocol (every time a skill is used)
+
+1. **WebFetch the skill's SKILL.md** from its folder. Read it top to bottom before producing output.
+2. **Name the skill at the top of the response** (per Skill Usage Rule #2).
+3. **Apply the methodology** with Linx context pulled from `knowledge/`, `references/`, `customer-intel.md`, `linx-profile.yaml`. Don't improvise frameworks; don't copy skeletons blindly (per rules #3 + #5).
+4. **Write the output to a durable file** — `artifacts/<skill>-<topic>-<date>.md` for one-off outputs, or extend the relevant `knowledge/` file when it's reference material. Output in chat alone does not survive the session.
+5. **Stress-test the output** (per rule #4) — add a "Stress Test" section: weakest analysis point, unstated assumptions, likely competitor counter-argument.
+6. **Commit with a message that names the skill used.** Example: `Apply competitive-teardown to Astrix and ConductorOne`.
+7. **Push to the active branch.** Never leave skill output uncommitted.
+8. **Log the invocation in `log.md`** under today's date — which skill, what it produced, which file was created/updated.
+
+### Anti-patterns
+
+- Invoking a skill and leaving output in chat (= lost on session end).
+- Using the skill's template headers as the deliverable (empty shell).
+- Skipping the stress-test because the output "looks complete."
+- Forgetting to name the skill at the top of the response.
+- Duplicating work that an operator-kit skill already structures (e.g., writing a bespoke competitive analysis when `competitive-teardown` exists).
+
 ## Code Review Discipline
 
 ### Before presenting any code change:

@@ -1,0 +1,419 @@
+How to Securely Delegate Access From Humans to
+AI Agents
+20 August 2025 - ID G00833731 - 11 min read
+By: Nathan Harris, Akif Khan
+Initiatives:Identity and Access Management; Build and Optimize Cybersecurity Programs
+
+     Credential sharing when AI agents act on behalf of humans in both
+     workforce and customer context exposes organizations to very
+     high risk. IAM-focused cybersecurity leaders should prohibit this
+     practice and provide access delegation capabilities within the IAM
+     toolset to enable this use case.
+
+
+Overview
+Key Findings
+■      Some companies have deployed AI agents that ask a human for their personal
+       credentials in order to act on the human’s behalf, which substantially increases risk,
+       including account takeover (ATO) risk.
+
+■      Access delegation capabilities already exist in some access management (AM)
+       tools, and are successfully used for human-to-human delegation.
+
+■      The release of general-purpose AI agents by companies such as Anthropic and
+       OpenAI means that AI agents, acting on behalf of customers, can engage with
+       enterprise services.
+
+
+Recommendations
+Cybersecurity leaders focused on machine identity and access management (IAM) for AI
+agents should:
+
+■      Avoid the risks, increase in security incidents, and likely legal liability by prohibiting
+       credential sharing, including from humans to AI agents.
+
+■      Enable access delegation from humans to AI agents, by implementing access
+       delegation capability, starting with what is available from incumbent AM vendors.
+
+
+
+
+Gartner, Inc. | G00833731                                                                Page 1 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+■      Educate business leaders by explaining the risks created by allowing customers to
+       use third-party AI agents and the compromises that may be required to balance
+       security with customer engagement.
+
+
+Strategic Planning Assumptions
+By 2028, 90% of organizations that allow humans to share credentials with AI agents will
+have to make signiﬁcant investment to undo this design due to security and compliance
+issues.
+
+
+By 2028, 90% of digital commerce organizations that allow humans to share credentials
+with AI agents will have experienced a tripling in ATO and ﬁrst-party fraud.
+
+
+Introduction
+Many organizations across all industries are ramping up AI application development,
+including expanding GenAI capabilities to develop and implement AI agents. In a subset
+of use cases (see Note 1), mostly in consumer-facing digital business, there is potential
+value in enabling AI agents to act on behalf of a named individual. There are two
+technical approaches to enable this:
+
+■      Code the AI agent to ask the human for their authentication credentials and use
+       these to access back-end applications.
+
+■      Provide a way for a human to delegate their access within back-end applications to
+       the AI agent they are authorizing to act on their behalf.
+
+
+Some AI-related protocols, such as Model Context Protocol (MCP), actually enable
+credential sharing.
+
+
+
+However, credential sharing in any form substantially increases risk, including likelihood
+of data breaches, ﬁnancial loss and other incidents, and possible legal liability, and breaks
+the integrity of audit data (misattributes actions in back-end systems) and nonrepudiation
+mechanisms.
+
+
+
+How can IAM leaders enable access delegation from humans to agentic AI applications
+while avoiding the extreme risk associated with credential sharing?
+
+
+
+
+Gartner, Inc. | G00833731                                                               Page 2 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+IAM leaders should direct their teams to implement leading access delegation
+features/capabilities, utilizing the guidance in this research note, and apply these
+advanced capabilities to the relevant agentic AI use cases.
+
+
+Analysis
+Credential Sharing Is a Hazardous Approach. Don’t Implement It.
+The cheapest and fastest way to implement human-to-AI agent access delegation is
+credential sharing (having the agent ask the human for their credentials for the target
+applications it needs access to).
+
+
+
+Credential sharing is an exceptionally (we use this term intentionally) high-risk method for
+enabling AI agents to act on behalf of humans, and it is inconsistently effective.
+
+
+
+Credential sharing comes with multiple increased risks:
+
+■      Breaks audit trail integrity in back-end systems, as most systems don’t understand
+       impersonation natively, so will create log data indicating the human performed
+       transactions actually executed by an AI agent.
+
+■      Violates a fundamental cyberSecurity principle — unique identiﬁcation of all actors.
+
+■      Breaks nonrepudiation, handing involved humans a legally defensible repudiation
+       option: “the machine did it, not me.”
+
+■      For customer ﬁnancial transactions, this also opens the door to ﬁnancial transaction
+       repudiation: “I didn’t authorize this transaction; the AI agent did it without my
+       authorization.” This increases ﬁnancial risk substantially for any transaction with
+       costs.
+
+■      Increases business disruption, as revoking or blocking credentials for an agent
+       would result in blocking access for the human also.
+
+■      Promoting this for human-to-agent machine delegation will reduce the effectiveness
+       of all other anti-credential sharing security awareness campaigns and potentially
+       undermine the enforceability of security policies.
+
+
+Best practice is to actively discourage credential sharing. Encouraging this for human-to-
+agent delegation implies that the machines are more inherently trustworthy, which is not
+the case.
+
+Gartner, Inc. | G00833731                                                              Page 3 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+In addition to the risks involved, credential sharing will not work in some cases. Some
+authentication credential types are inherently not shareable, including biometric traits and
+FIDO2 passkeys.
+
+
+In conclusion, credential sharing is both an exceptionally high-risk practice and not
+workable for some authentication methods. IT leaders implementing AI agents to act on
+behalf of humans should prohibit credential sharing to enable this.
+
+
+Enable Secure Access Delegation for AI Agents
+Access delegation capabilities enable human-to-AI agent delegation use cases securely.
+There are multiple design options that can accomplish this, and one overarching
+requirement:
+
+Segregation of duties: First, those involved should eliminate/prohibit one design option:
+allowing the agentic AI software itself to manage what it is authorized to do on behalf of
+humans. This violates segregation of duties and will not pass any audit. Involved IT
+leaders should implement access delegation controls within the scope of control of
+organizations hosting resources/apps to be accessed by agentic AI, using one of the two
+below paths.
+
+
+Viable access delegation paths: There are two viable design/implementation paths for
+access delegation:
+
+
+Option A: Use vendor AM tools — Utilize access delegation capabilities available in your
+incumbent AM/CIAM tool (see Note 2):
+
+■      Some AM tools already support this for human-to-human delegation use cases,
+       common in insurance, healthcare, legal, ﬁnancial services and education industries.
+
+■      This capability is already largely supported in OAuth for API interactions, and a few
+       AM vendors have built out the necessary interfaces and management capabilities
+       for full functionality.
+
+■      Most organizations prefer one AM solution for both UI and API interactions,
+       including buying one AM tool for both UI layer and API layer access control.
+
+
+
+
+Gartner, Inc. | G00833731                                                             Page 4 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+■      If your current AM/CIAM vendor does not adequately support access delegation
+       ﬂows, IAM leaders should either:
+
+       ■      Evaluate and select a supplemental AM or authorization tool to ﬁll in the
+              missing capability, or
+
+       ■      Reevaluate their incumbent AM/CIAM tooling’s long-term suitability for their
+              organization’s requirements.
+
+
+Option B: Build — If IAM leaders chose to build this in-house, here are the minimum
+requirements:
+
+■      Build as a shared service along with other authorization functions, and reuse this
+       shared service wherever needed in your digital business architecture. For detailed
+       guidance on authorization architecture, see Guidance for Modernizing Authorization
+       Architecture.
+
+■      The component must also allow easy revocation of delegation. The ability to grant
+       authorization for an agent to act on the human’s behalf without the reciprocal ability
+       to revoke this authorization removes full discretion for this decision from the
+       involved people.
+
+■      Access delegation must support ﬂexible scope and constraints; it should not be “all
+       or nothing” access authorization to back-end systems or datasets. Delegation
+       should be limited to purpose, breadth of function, and ideally, ability to time-limit
+       access delegation authorization.
+
+■      This cannot be built into and controlled by the AI agents (as stated above).
+
+■      Access delegation should not be built into back-end applications, as this creates
+       unnecessary complexity and high ongoing costs. One exception is for organizations
+       with a single client-facing portal that “front-ends” all client-facing digital business. In
+       this case, integrating access delegation into the sole customer-facing portal may be
+       justiﬁed in the short term. However, implementing authorization, including access
+       delegation capability, as a reusable shared service still delivers superior technology
+       agility and long-term sustainability.
+
+
+
+
+Gartner, Inc. | G00833731                                                               Page 5 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+For UI interactions by dedicated (not-embedded) AI agents, IAM leaders and other involved
+IT leaders should decide between the two paths above for enabling these use cases
+(human-to-AI agent delegation). For API-enabled interactions, implement OAuth delegated
+access ﬂows using the API access control reference architecture (see Reference
+Architecture Brief: API Access Control).
+
+For Agentic AI features embedded in broader applications:
+
+
+IAM leaders should still apply all of the other guidance in this research note whenever the
+embedded agent is accessing resources or data outside of the application it is embedded
+in. However, for actions entirely within an application with embedded agentic AI features,
+the authentication and authorization architecture, including the use or not of shared
+access management tooling, directly constrains what is possible for the embedded
+agentic AI features. Speciﬁcally, it is very unlikely that the embedded agent functionality
+will have a separate identity record or authentication credentials from the broader
+application. This is not, by itself, a critical security issue.
+
+For this AI agent implementation pattern, traceability of accountability and preservation of
+nonrepudiation are still critical requirements. IAM leaders and other involved IT leaders
+should implement this pattern with the following requirements/capabilities:
+
+■      Provide for human-to-application (the entire business application, including
+       embedded agentic AI functions) access delegation using either Path A or Path B
+       above.
+
+■      Ensure that 100% of actions executed by agentic AI functions rather than directly by
+       the human are attributable to the application on behalf of the human, rather than
+       appearing to be executed by the human directly. This preserves auditability and
+       nonrepudiation.
+
+
+Engage Digital Business Leaders With a Plan for Enabling AI Agents Acting
+on Behalf of Your Customers
+Many customer-facing organizations are building (or buying) and deploying their own AI
+agents to help their customers to carry out tasks. Deployed in industries such as digital
+commerce and insurance, these agents can answer customer questions, suggest
+products, and support purchasing. In these cases, IAM leaders can enforce appropriate
+access delegation approaches as outlined in this research.
+
+
+
+
+Gartner, Inc. | G00833731                                                          Page 6 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+However, the proliferation of general-purpose AI agents, such as OpenAI’s ChatGPT agent
+or Anthropic’s Claude, means that an organization must be prepared for customers to use
+these agents, rather than its own, to engage with its services.
+
+Given that these agents are not under your control, it is not possible to restrict customers
+from sharing their own credentials with the agents. IAM leaders should engage with
+business leaders to explain the complexities of this environment and the two key
+approaches that require consideration:
+
+■      Restrict customers to using only your native AI agents — This approach prioritizes
+       security, but may come at the expense of frustrated customers who are attempting
+       to use third-party AI agents to engage with your services but ﬁnd themselves unable
+       to do so. Customers will be forced to follow your workﬂow for access delegation to
+       your agent. Of course, this is dependent on IAM leaders deploying tools that can
+       identify whether a customer is using a third-party agent and attempt to block its use.
+       Bot management vendors that have traditionally been used to block malicious
+       scripted bots used by attackers for credential stufﬁng or inventory grabbing are
+       evolving their capabilities to include detection and blocking of AI agents (see How to
+       Use Bot Management for IAM Use Cases), but this is likely to result in both false
+       positives and false negatives, with some humans being misidentiﬁed as AI agents
+       and some AI agents being misidentiﬁed as humans.
+
+
+■      Allow customers to use third-party AI agents — This approach prioritizes customer
+       engagement, giving customers the ﬂexibility to use your agents or third-party agents
+       of their choosing. This approach attempts to ﬁnd a middle ground, allowing
+       customers to use third-party agents, but only if they use access delegation as you
+       prescribe. Where a third-party agent is detected using a human’s credentials, it would
+       be blocked. If a business decision is made to permit access to a third-party agent
+       using human credentials, this opens up risks related to fraudulent impersonation of
+       a customer and nonrepudiation — as such, the costs of these should be factored into
+       the decision process of permitting this risky behavior.
+
+
+Whichever option is chosen, IAM leaders should inform and educate a number of business
+counterparts:
+
+■      Legal teams — Customer-facing terms and conditions will need adjusting,
+       speciﬁcally with respect to a customer’s right to report fraud or dispute a purchase
+       when an agent is involved.
+
+
+
+Gartner, Inc. | G00833731                                                           Page 7 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+■      Marketing/communications teams — Clearly communicate to customers how AI
+       agents will be permitted to engage with your services.
+
+■      Digital commerce teams — Ensure business leaders understand the different
+       approaches so they can balance security and customer engagement effectively.
+
+
+Evidence
+This research is based on client inquiry on this topic in addition to previously published
+Gartner research noted in the Recommended Reading.
+
+
+Note 1: Most Common AI Agent Use Cases
+The most common use cases for AI agents acting on behalf of speciﬁc humans will be in
+consumer use of commercial digital services. Likely examples include AI agents for:
+
+■      Assisting with travel booking and trip itinerary planning
+
+■      Assisting with insurance plan selection and enrollment during open enrollment
+       periods
+
+■      Completing online forms in various industries, including government agencies
+
+■      In service desk scenarios, automating the opening of support requests/tickets (all
+       industries)
+
+■      Basic medical/care management tasks, such as scheduling routine appointments
+       and requesting prescription reﬁlls
+
+■      Finding and automating applications for job openings that ﬁt an applicant’s
+       speciﬁcations
+
+■      Completing course registration processes in higher education
+
+
+Note 2: Vendors With Known Strong Access Delegation
+Capabilities
+Some representative access management vendors with known strong access delegation
+capabilities that do not rely on AI agent reuse of human access credentials/tokens
+include:
+
+■      IBM
+
+
+Gartner, Inc. | G00833731                                                          Page 8 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+■      Ping Identity
+
+■      Transmit Security
+
+
+
+
+Recommended by the Authors
+Some documents may not be available as part of your current Gartner subscription.
+
+Critical Capabilities for Access Management
+How to Use Bot Management for IAM Use Cases
+
+How to Secure Custom-Built AI Agents
+
+
+
+
+© 2025 Gartner, Inc. and/or its afﬁliates. All rights reserved. Gartner is a registered trademark of
+Gartner, Inc. and its afﬁliates. This publication may not be reproduced or distributed in any form
+without Gartner's prior written permission. It consists of the opinions of Gartner's research
+organization, which should not be construed as statements of fact. While the information contained in
+this publication has been obtained from sources believed to be reliable, Gartner disclaims all warranties
+as to the accuracy, completeness or adequacy of such information. Although Gartner research may
+address legal and ﬁnancial issues, Gartner does not provide legal or investment advice and its research
+should not be construed or used as such. Your access and use of this publication are governed by
+Gartner's Usage Policy. Gartner prides itself on its reputation for independence and objectivity. Its
+research is produced independently by its research organization without input or inﬂuence from any
+third party. For further information, see "Guiding Principles on Independence and Objectivity." Gartner
+research may not be used as input into or for the training or development of generative artiﬁcial
+intelligence, machine learning, algorithms, software, or related technologies.
+
+
+
+
+Gartner, Inc. | G00833731                                                                       Page 9 of 9
+
+
+This research note is restricted to the personal use of NIV@LINXSECURITY.IO.
+

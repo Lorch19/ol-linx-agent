@@ -200,6 +200,19 @@ Clean story: Linx's wedge is NHI governance discipline applied to agents, not a 
 - Tier 2 competitors: Astrix discovery/governance use-case, Oasis, Ping, Duo.
 - Tier 3 technical: Jared Hanson OAuth-for-agents talk, 1Password service accounts, unmitigatedrisk.com ephemeral attested identities (counter-school to node-primary).
 
+### Gartner 833731 ingested + Linx Claude prompts drafted + operator-kit mapped
+- Gartner PDF "How to Securely Delegate Access From Humans to AI Agents" (Niv's license) extracted + summarized at `references/gartner-833731-summary.md`. Key signals: credential sharing = forbidden; MCP enables credential sharing; SoD-for-AI-agents is analyst-endorsed; named AM vendors w/ strong delegation = IBM, Ping, Transmit (not Okta, not SailPoint, not CyberArk, not Entra); Gartner does NOT name any ISPM/IGA vendor as strong in this space = empty lane for Linx. SPA: 90% of orgs will redo their design by 2028 if they allow cred sharing.
+- Two paste-ready Linx Claude prompts written: `prompts/slack-extraction-ai-governance-channel.md` and `prompts/linear-extraction-ai-governance-tickets.md`. Fills the Slack/Linear gap where PMs Agent can't reach.
+- Operator-kit (github.com/Lorch19/operator-kit) surveyed via WebFetch. High-relevance skills for current phase: `pm-frameworks/problem-statement`, `pm-frameworks/problem-framing-canvas`, `pm-frameworks/jobs-to-be-done`, `domain-tools/competitive-teardown`, `pm-frameworks/press-release` (Amazon working-backwards for June demo clarity). Later phases: `prd-partner`, `pm-frameworks/epic-breakdown-advisor`.
+
+### Skill protocol recorded + external WebFetch blocked
+- CLAUDE.md updated with "Operator-Kit Skills" section: task→skill mapping, 8-step invocation protocol (WebFetch SKILL.md → name at top → apply w/ Linx context → write durable file → stress-test → commit with skill-named msg → push → log), anti-patterns. Auto-loaded every future session.
+- **External WebFetch is heavily gated in this env.** 403 on every competitor site (Astrix, ConductorOne, Oasis, Ping, Duo, CyberArk, CrowdStrike, Clutch) and on web.archive.org. Only GitHub works. Consequence: all external competitor research must route through Linx Claude.
+- Third Linx Claude prompt authored: `prompts/linx-claude-competitor-fetch.md` — 16-URL fetch with structured extraction schema + synthesis section. One-shot covers the full external source list.
+
+### Session close — handoff to Linx env
+Repo now connected to Omri's Linx-env Claude Code. Kickoff prompt written to `prompts/session-kickoff-linx-env.md` — self-contained brief covering scope lock, unresolved items, and immediate priorities (WebFetch probe, 3 Linx Claude prompts, `pm-frameworks/problem-statement`, competitive-teardowns on Astrix + ConductorOne). Branch `claude/ai-governance-connectors-ijPsJ` merged to main before close.
+
 ### AI Governance epic received — identity model + milestones already scoped
 Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
 
