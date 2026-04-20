@@ -10,6 +10,10 @@
 - 5 missions created: pre-onboarding, learn & map, contribute & validate, own & lead, platform strategy.
 - OpenClaw agent available for background tasks — future: connect to Linx Slack/Drive/Notion for real-time signals.
 
+## 2026-04-20
+- Dashboard review report shared with Rona. First-pass product UX review closed out.
+- Next: await Rona's questions/follow-ups, resolve open questions with product (persona, NHI data gap, workflow scale, report consumers), begin second-pass review on unreviewed surfaces.
+
 ## 2026-04-15
 - Completed first-pass product UX review of Linx Dashboard. Scope covered: Dashboard (landing), Discover → Non-Human Identities, Issues, Insights & Reports (incl. Scheduled Reports), Workflows.
 - Not yet reviewed: Human identities, Agents (detailed), Accounts/Groups/Roles/Applications/Resources, Access profiles/requests/reviews, SoD, Configurations, Employee management, System logs, Integrations, end-user surfaces (My access, Tasks), Linx AI, filter-behavior tests.
