@@ -210,6 +210,9 @@ Clean story: Linx's wedge is NHI governance discipline applied to agents, not a 
 - **External WebFetch is heavily gated in this env.** 403 on every competitor site (Astrix, ConductorOne, Oasis, Ping, Duo, CyberArk, CrowdStrike, Clutch) and on web.archive.org. Only GitHub works. Consequence: all external competitor research must route through Linx Claude.
 - Third Linx Claude prompt authored: `prompts/linx-claude-competitor-fetch.md` — 16-URL fetch with structured extraction schema + synthesis section. One-shot covers the full external source list.
 
+### Session close — handoff to Linx env
+Repo now connected to Omri's Linx-env Claude Code. Kickoff prompt written to `prompts/session-kickoff-linx-env.md` — self-contained brief covering scope lock, unresolved items, and immediate priorities (WebFetch probe, 3 Linx Claude prompts, `pm-frameworks/problem-statement`, competitive-teardowns on Astrix + ConductorOne). Branch `claude/ai-governance-connectors-ijPsJ` merged to main before close.
+
 ### AI Governance epic received — identity model + milestones already scoped
 Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
 
