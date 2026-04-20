@@ -8,6 +8,8 @@
 - [ ] Read Notion AI pages: Orchestration, Multi-Agent, Architecture, Press release, Cycle 79 — Apr 22 — self  [→ log 2026-04-19]
 - [ ] Confirm Feb 8 NYC doc access (404) — Apr 22 — Amir/Niv  [→ log 2026-04-19]
 - [ ] Figma + Notion handoff from Omer Efroni — Apr 22 — self  [→ log 2026-04-19]
+- [ ] Run Linx Claude docs extraction + measurement inventory prompts — Apr 22 — self  [→ log 2026-04-20]
+- [ ] Draft AI measurement v0 (4 layers: Coverage / Correctness / Containment / Consequence) — Apr 23 — self  [→ log 2026-04-20]
 
 ### Customer proximity
 - [ ] Self-serve "which customers use which features" capability — Apr 24 — self  [→ log 2026-04-19]
@@ -38,6 +40,8 @@
 - Feb 8 NYC AI roadmap doc — 404 [→ log 2026-04-19]
 - Agent repo leadership OK — raise in future 1:1 — Dor/Niv
 - Skills "Linx-Native" transformation — parallel project, surface when ready
+- Customer deep-dive — paused pending RevOps dashboard intro (Dor scheduling owner) [→ log 2026-04-20]
+- Clarify Mor's post-transfer scope — intro + shadow still valuable [→ log 2026-04-20]
 
 ## Recently Completed
 

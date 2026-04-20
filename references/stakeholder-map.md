@@ -53,10 +53,10 @@
 - **Key context:** Told Omri Linx is drawing away from NHIs at the moment.
 - **Critical-path ask:** Figma + Notion handoff (AI Workshop page + per-PRD designs) before last day.
 
-### Mor — PM (Agentic AI Identities)
-- **Scope:** Owns the "Agentic AI Identities" epic — Option B of Linx's AI strategy (governing customers' AI agents). Separate portfolio from Omer Efroni's Autopilot work.
-- **Status:** In product design. 10-capability framework, M0-M4 milestones (~8mo).
-- **Action:** Intro + shadow. Omri's AI mandate covers Mor's scope — org clarity needed with Niv.
+### Mor — PM
+- **Scope (prior):** Was the Notion-listed owner of the Agentic AI Identities epic (Option B).
+- **Status (Apr 20):** Omri owns Agentic AI Identities / AI Governance going forward. Mor's current portfolio unclear — confirm with Niv/Dor.
+- **Action:** Intro + shadow. Understand what Mor works on now post-transfer.
 
 ### Dana — [Product team]
 - **Area:** Product team. Part of the dev cycle flow.

@@ -146,3 +146,42 @@
   - **PRD standards:** no Linx-customized template; de-facto structure = Objective, Business justification, Non-goal, User scenario, User journey, Functional requirements (P0-P3 table), DoD, Design. Most PRDs missing success metrics. Reviewer Agent has strong testing section; AI governance-Agent has example-query library — both reusable.
   - **Cycle 79 in flight:** Drifter rollout, Tuner kickoff next month, MCP gateway POC (Sarit + Amir B.), taking-actions UAR expansion, assistant quality push (investigation tool DB→API, scheduled-reports caching fix), Portuguese support, smart navigation.
 - **Updates applied same-turn:** `knowledge/linx-product.md` rewritten with AI architecture + roadmap. `references/stakeholder-map.md` fixed Omer conflation + added Mor/Amir/Victoria. `commitments.md` tightened. `brief.md` refreshed to kill stale overdue items.
+
+## 2026-04-20
+
+### Dor's AI domain framing (HL, full scope Thursday Apr 23 with Amir)
+Three product surfaces Omri owns:
+1. **AI Enhancement** — behind-the-scenes AI powering product features (classification, generation, correlation on shared prompt infra).
+2. **AI Assistant (Co-Pilot)** — conversational surface in the Linx dashboard; "every user becomes a power user."
+3. **Autopilots** — autonomous workflow owners (Drifter, Profile Tuner, Reviewer, etc.).
+
+Plus: **AI Governance / Agentic AI Identities** — governing customers' AI agents. **Owned by Omri** (correction to Apr 19 assumption that Mor owns it). Four product surfaces total under Omri's mandate.
+
+Company-internal AI (dev lifecycle ops — Linear + cycle management) is a **separate initiative**, not in scope. Echoes Omri's Apr 14 observation about Linx's sprint/task management not being scalable — Dor elevated it to a real workstream, but distinct from the AI mandate.
+
+### Customer research parked (pending RevOps dashboard)
+Deep-dive output from Linx Claude (3 rounds — terrain map, pain/praise, pipeline diagnostic + narratives) covered:
+- Pipeline bottom-heavy: 63% at Stage 0-1, only 4 deals at Stage 3+. No new logo in 4 months.
+- Losses dominated by "dead project" + "went dark" — deaths by inaction, not competition. Only 1 confirmed competitive loss (Smurfit Westrock $250K).
+- Peloton NOT silent — escalated Apr 19 ahead of Q4 UAR launch. 378 needs = ~130 connectors + 110 UAR + 60 analytics + 25 AI.
+- monday.com = co-dev partner (40+ committed roadmap items via "Monday Success Plan" project). Polar opposite profile to Peloton despite similar ticket volume.
+- Aramark tier flagged wrong (Standard → should be VIP; F150, 260K employees, only 2026 Closed Won).
+- New Linx contacts: Matan Haimovitch (product, Peloton), Mor Shabi (product, monday.com), Kevin Cronin (CS — JLL/Achieve/NAF), Jonah Peterson (CS — Peloton/Sony/DT/Aramark).
+
+Dor mentioned a RevOps dashboard with better clarity + data points; will set up intro with owner. Customer work paused until that lands — no point building more on incomplete data.
+
+### AI measurement gap — the tractable first deliverable
+Before Thursday with Amir: "what gets measured today?" is the first question. Nothing systematic exists. Draft framework proposed — 4 layers, bootstrappable without new infra:
+1. **Coverage** — % of sessions invoking Assistant; % of customers with ≥1 active user. Adoption signal.
+2. **Correctness** — hallucination rate, task-completion rate, overturned-recommendation rate. Quality signal.
+3. **Containment** — % queries handled without escalation; p50/p95 latency. Is it a tool or noise?
+4. **Consequence** — AI-* / CON-* ticket volume (already in Linear); explicit opt-out requests (Peloton EXP-1515 just asked to disable AI UAR recs — second signal after Sony). Trust trajectory.
+
+Pitch: v0 in 2 weeks, no new infra, weekly review ritual. Two Linx Claude prompts drafted:
+- **Docs extraction** — docs.linxsecurity.io/ai-assistant section (webfetch returned 403 from this side; needs Linx Claude).
+- **Internal measurement inventory** — what dashboards / Notion docs / Linear tags / Slack threads already capture AI quality.
+
+Running external research on LLM eval best practice (Shankar, Willison, Husain) is deferred until post-Thursday. Framework is directionally right enough to start the conversation; over-polishing before Amir weighs in = wasted cycles.
+
+### Claude.ai project setup
+New Claude.ai project spun up for AI discovery. Instructions drafted (role + scope + behavior + source hierarchy). Four context docs attached: `knowledge/linx-product.md`, `artifacts/ai-overview-omer-efroni-2026-04-19.md`, `references/ai-leadership-principles.md`, `drafts/ai-assistant-reliability-problem-statement.md`. Ada context dropped from the attach list — company-internal AI is out of scope per Dor's framing.

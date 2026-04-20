@@ -57,7 +57,7 @@ Press release implies Autopilot is live. Underlying epics are still "In Product 
 
 ## Agentic AI Identities (Option B — separate workstream)
 
-- **Owner:** Mor (different PM from Omer Efroni).
+- **Owner:** Omri (confirmed Apr 20 — transferring from Mor as part of the AI leadership mandate).
 - **Objective:** ISPM + IGA for customers' AI agents.
 - **10-capability framework** (from "IAM for LLM-Based AI Agents" paper): Registration, Ownership, AuthN, AuthZ/delegation, Human oversight, Resource policy enforcement, Credential lifecycle, Auditability, Multi-agent collaboration, Visibility/observability.
 - **Milestones (~8 months total):**
@@ -74,7 +74,7 @@ Press release implies Autopilot is live. Underlying epics are still "In Product 
 | Option | Status |
 |---|---|
 | **A — Linx's own AI products (Autopilot/Co-Pilot)** | Dominant + public. Owned by Omer Efroni. |
-| **B — Govern customers' AI agents (Agentic AI Identities)** | Real, funded, in design. Owned by Mor. |
+| **B — Govern customers' AI agents (Agentic AI Identities)** | Real, funded, in design. **Owned by Omri** (confirmed Apr 20). |
 | **C — Compliance wedge (EU AI Act / NIST AI RMF / ISO 42001)** | **Absent.** No Notion references. Open question for Dor. |
 
 **Tension to surface:** Linx publicly markets autonomous AI (A) while separately building govern-other-people's-AI (B). No doc explains why customers should trust Linx's own agents under the same lens.
