@@ -205,6 +205,11 @@ Clean story: Linx's wedge is NHI governance discipline applied to agents, not a 
 - Two paste-ready Linx Claude prompts written: `prompts/slack-extraction-ai-governance-channel.md` and `prompts/linear-extraction-ai-governance-tickets.md`. Fills the Slack/Linear gap where PMs Agent can't reach.
 - Operator-kit (github.com/Lorch19/operator-kit) surveyed via WebFetch. High-relevance skills for current phase: `pm-frameworks/problem-statement`, `pm-frameworks/problem-framing-canvas`, `pm-frameworks/jobs-to-be-done`, `domain-tools/competitive-teardown`, `pm-frameworks/press-release` (Amazon working-backwards for June demo clarity). Later phases: `prd-partner`, `pm-frameworks/epic-breakdown-advisor`.
 
+### Skill protocol recorded + external WebFetch blocked
+- CLAUDE.md updated with "Operator-Kit Skills" section: task→skill mapping, 8-step invocation protocol (WebFetch SKILL.md → name at top → apply w/ Linx context → write durable file → stress-test → commit with skill-named msg → push → log), anti-patterns. Auto-loaded every future session.
+- **External WebFetch is heavily gated in this env.** 403 on every competitor site (Astrix, ConductorOne, Oasis, Ping, Duo, CyberArk, CrowdStrike, Clutch) and on web.archive.org. Only GitHub works. Consequence: all external competitor research must route through Linx Claude.
+- Third Linx Claude prompt authored: `prompts/linx-claude-competitor-fetch.md` — 16-URL fetch with structured extraction schema + synthesis section. One-shot covers the full external source list.
+
 ### AI Governance epic received — identity model + milestones already scoped
 Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
 
