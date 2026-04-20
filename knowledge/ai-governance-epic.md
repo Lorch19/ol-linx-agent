@@ -177,6 +177,115 @@ Discovery, Relationship & Credential Mapping, Directory, Permission Tracing, Rep
 
 ---
 
+# Parent concept doc — "Agentic AI Identity (WIP)" Notion
+
+**Source:** `Agentic-AI-Identity-WIP-256259f6555980cd88c6f828b34efaf3`. This is the concept/framing doc that sits upstream of the Linear implementation epic.
+
+## Why traditional IAM fails (framing)
+
+- Static identity models break on ephemeral agents (appear/disappear in seconds)
+- Tools assume stable long-lived accounts; agents are task-specific + context-based
+- Human-in-loop approvals can't match machine speed
+- RBAC doesn't scale to thousands of dynamic agents
+
+## Agent types taxonomy (5 types, ordered by discoverability)
+
+| Type | How they get access | Example | Detection path | Linear research ticket |
+|---|---|---|---|---|
+| Managed by Org (IDP / Connectors) | IDP service provider; inherit user permissions | ChatGPT Enterprise | IDP scan | [PRD-8564](https://linear.app/linxsecurity/issue/PRD-8564) |
+| Agents used by managed Apps | Through native integration w/ 3p apps | GitHub, Salesforce | Connector scan | [PRD-8565](https://linear.app/linxsecurity/issue/PRD-8565) |
+| 3p Agents | Get permissions from managed apps in unmanaged process | (custom OAuth apps) | Credential scan in connectors | [PRD-8566](https://linear.app/linxsecurity/issue/PRD-8566), [PRD-8563](https://linear.app/linxsecurity/issue/PRD-8563) |
+| Shadow Agents | Not managed by org; SaaS + org account; **no access to org data** per the doc | Personal Claude integration | ??? (unclear) | — |
+| On-prem agents | (e.g., dashboard BE apps) | — | — | — |
+
+**Note:** 4 research tickets already exist in Linear (PRD-8563/64/65/66). Someone may have started this work already. Check before duplicating.
+
+## Use cases by scope
+
+- **Company AI Agents** — embedded in core business systems (Salesforce lead qualifier, GitHub compliance bot). Risk: over-privileged agents break multi-tool workflows.
+- **Employee AI Agents** — act on behalf of individuals, span many apps (email drafting, reports, data retrieval). Risk: inherit full user permissions, need "sub-user" model.
+- **Agent-to-Agent** — agents coordinating (Finance validates with CRM before transaction). Risk: audit gap, trust propagation.
+
+## Authentication methods matrix
+
+| Auth method / NHI type | AI categories using it | Example uses |
+|---|---|---|
+| OAuth apps / tokens | Chatbots, Enterprise AI | Chatbot access to support tools; enterprise AI ↔ corporate auth |
+| API keys | Chatbots, RAG, Cloud Models, API-to-LLM, Enterprise AI | Programmatic access to LLMs, DBs, managed model services |
+| Webhooks | Chatbot AI | Trigger workflows between AI ↔ apps |
+| DB service accounts | RAG | Document retrieval pipelines |
+| IAM roles / managed identities | Cloud models (SageMaker, Vertex) | Scoped access to deploy/manage cloud AI |
+| User service accounts | Browser / computer agents | Machine-level actions on behalf of users |
+| Session tokens | Browser / computer agents | Maintain authenticated sessions |
+| Local service account passwords | Computer agents | Machine-level install/execute |
+
+## MCP authentication (the emerging standard to track)
+
+- **OAuth 2.1** with PKCE as primary protocol
+- **API keys** at the MCP server boundary
+- **HTTPS everywhere** + **JSON-RPC 2.0** over HTTP/SSE (remote) or STDIO (local)
+- Session-bound tokens after OAuth exchange; refresh mechanics
+- MCP authz is **optional** today — no enforced standard. Governance gap.
+
+## How Linx can detect agents (detection vectors)
+
+1. IDP
+2. Connectors
+3. Tools management experience
+4. **JAMF** (device mgmt — implies browser/computer agents in scope eventually)
+
+## Core capabilities (concept doc's own framing, differs slightly from the 10)
+
+1. Discovery + explainability
+2. Represent Shadow AI applications
+3. Governance: provision + deprovision access and tools
+4. Contextual insight per AI asset
+5. Issues + reports for AI assets
+
+## Open questions listed in the concept doc
+
+- Continuous verification vs. periodic reviews — how?
+- Task-scoped authz vs. RBAC — best practice?
+- Balance autonomous approval with security controls?
+- Standards for agent provenance + lineage?
+- Governance for ephemeral identities?
+- How is this different from bots? (ticket says: *check Astrix*)
+- Detecting agent-to-agent + agent-to-bot comm via API tokens/OAuth + their permissions?
+- Do we care whether data is used for training?
+- Should we represent agent tools in UI?
+- Is "GPT auth with GCP" credential sharing?
+
+## Competitor list (concept doc, broader than the implementation ticket)
+
+| Competitor | Link |
+|---|---|
+| Astrix | astrix.security/use-cases/agentic-ai/ |
+| **CyberArk** | cyberark.com/solutions/secure-agentic-ai/ + AWS Marketplace AI Agents category |
+| Clutch | clutch.security/use-cases/shadow-ai-discovery |
+| Oasis | oasis.security/solutions/ai |
+| **CrowdStrike** | "secures AI agents across SaaS stack" (press release) |
+| **SailPoint** | BrightTALK webcast (link in doc) |
+
+**New vs. implementation-ticket list:** CyberArk, CrowdStrike, SailPoint enter here. Missing from concept doc but present in ticket: ConductorOne, Natoma.
+
+## External references worth pulling
+
+- Gartner: "How to Securely Delegate..." (doc ID 833731)
+- Gartner: "IAM for LLM-Based AI Agents" (the capabilities framework source)
+- Blog: unmitigatedrisk.com/?p=1075 — argues for ephemeral cryptographically attested identities (TPM, SGX, SPIFFE) as the right primitive. Different school of thought from the node-primary model.
+
+---
+
+## Tensions I see between the two docs (for Omri to resolve)
+
+1. **Shadow agents: in or out?** Implementation ticket non-goal = "3rd-party internal agents as black box." Concept doc lists Shadow Agents as a first-class type + user stories include "reduce shadow agent risk." Either the non-goal is narrower than it reads, or the concept doc over-scopes. Clutch's entire positioning lives in this gap.
+2. **Ephemeral headline vs. persistent model.** Concept doc's lead differentiator = agents spin up/down in seconds. Implementation models Agent as a persistent graph node with editable owner. Either the model needs session-level records (edges) or the ephemeral framing isn't the actual use case we're solving for.
+3. **JAMF + browser/computer agents are in the detection vector list but not the M1 platforms.** Suggests device-layer agents are aspiration, not MVP. Worth naming.
+4. **Capability framework #1 vs #2.** Linear has "the 10 capabilities" from the PDF; concept doc lists 5 different capabilities. Overlapping but not isomorphic. Whichever Linx leads with externally has to be one story, not two.
+5. **PRD-8563/64/65/66 already exist.** Possibly in-flight research. Need to check status before restarting.
+
+---
+
 ## What's open (for Omri's research to close)
 
 1. **Tier-1 ambiguity.** Target list = tier-2 configured agents. Does "AI/LLM tools connected to your apps" include embedded copilots (Copilot-in-Word, Gemini-in-Gmail)? If yes, node-primary model can't capture them cleanly. If no, say so in customer-facing messaging before a buyer assumes otherwise.
