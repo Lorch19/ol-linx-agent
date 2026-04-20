@@ -286,6 +286,72 @@ Discovery, Relationship & Credential Mapping, Directory, Permission Tracing, Rep
 
 ---
 
+# Scope lock (as of 2026-04-20)
+
+## Gap 1 — Agent definition: **Agents only** (challengeable)
+
+Scope is tier-2 configured agents (ChatGPT Enterprise GPTs, Copilot Studio, Cursor, N8N, ServiceNow AICT). Not tier-1 embedded copilots. Not tier-3 shadow. Room to challenge later with evidence.
+
+## Gap 4 — Identity model / governance depth: **IGA scope = visibility + JIT**
+
+Two pillars:
+1. **Visibility** — discover, inventory, attribute ownership, graph the access
+2. **JIT (Just-in-Time access)** — govern provisioning + deprovisioning
+
+Not in MVP scope:
+- Real-time behavioral anomaly detection (M4)
+- Agent-to-agent trust enforcement (M4)
+- Credential issuance / rotation lifecycle (M4)
+- Edge-level action logging as primary model (though audit logs will feed visibility)
+
+**Net:** M1 (discovery) + approval-chain slice of M3 (JIT). Clean IGA story, not the full 10-capability buildout.
+
+## Stakeholder signals
+
+- **Niv (Co-Founder & CPO) is personally engaged** — dropped Duo + Ping Identity references in `#governance-of-agentic-ai` Slack channel. CPO-visible initiative.
+- **Mor Shabi** is the active PM — sharing docs, Hebrew Slack messages ("I talked to Yoad.. it doesn't exist right now" — likely re: 1Password integration for agent cred fetch).
+- **Yoad** likely holds the technical gap answer on whether current credential pipelines can capture agent creds.
+
+---
+
+# Research sources — annotated bibliography
+
+**Primary Slack channel:** `#governance-of-agentic-ai` (Linx internal). Ask PMs Agent or Linx Claude to scrape relevant context.
+
+## Tier 1 — read first
+
+| Source | Why | Link |
+|---|---|---|
+| Astrix × Bayer: "Touchpoints Between AI and NHIs" | Mor flagged "a great document." Real customer (Bayer) co-authored. Direct to the NHI ↔ agent overlap Linx wants to own. | astrix.security/learn/blog/astrix-research-presents-touchpoints-between-ai-and-non-human-identities |
+| ConductorOne: "Evolution of Identity — Agentic AI era 2025+" | Mor: "they frame the problem world very nicely." Use for positioning language. | conductorone.com/guides/the-evolution-of-identity/#the-agentic-ai-era-2025-and-beyond |
+| Gartner: "How to Securely Delegate Access From Humans to AI Agents" (doc 833731) | Analyst framing. Already referenced in concept doc. Ask Omri for a copy. | (Gartner portal) |
+| IAM for LLM-Based AI Agents (PDF) | Source of the 10-capability framework Linx is using. Must read for internal alignment. | Linked in concept doc — need copy |
+
+## Tier 2 — competitor / vendor positioning
+
+| Source | Why | Link |
+|---|---|---|
+| Astrix: AI Agent Discovery & Governance use case | Core competitor positioning page | astrix.security/use-cases/ai-agent-discovery-and-governance/ |
+| Astrix: "The MCP Shift Part 3 — The Future" | Forward-looking; MCP gap Linx also sees | astrix.security/learn/blog/the-mcp-shift-part-3-the-future/ |
+| Oasis: AI solutions | Secondary competitor | oasis.security/solutions/ai |
+| Ping Identity: Agentic AI Identity | Identity-giant framing; shared by Niv | pingidentity.com/en/solution/agentic-ai-identity.html |
+| Duo: 5 Ways to Defend Against AI Identity Threats | Shared by Niv; likely incumbent framing for CPO-level thinking | duo.com/blog/five-ways-to-defend-against-ai-powered-identity-threats-with-duo |
+
+## Tier 3 — technical / protocol
+
+| Source | Why | Link |
+|---|---|---|
+| YouTube: Jared Hanson on OAuth for agents (Keycard, Passport.js) | Authoritative technical overview of OAuth ↔ agents pattern | youtube.com/watch?v=blmAkayzE8M |
+| 1Password blog: Service accounts + SDKs for agentic AI | Practical: how creds flow. Mor's read: could Linx fetch these creds via existing pipeline? Identify agents via 1Password logs? | blog.1password.com/service-accounts-sdks-agentic-ai |
+| 1Password demo (Reprise) | Interactive demo of the flow above | app.getreprise.com/launch/3nvY4K6 |
+| unmitigatedrisk.com — ephemeral attested identities | Counter-school: argues identity should be ephemeral + crypto-attested (TPM/SGX/SPIFFE), not node-in-graph | unmitigatedrisk.com/?p=1075 |
+
+## Gap in current Linx capability (Mor + Yoad, Apr 20)
+
+Mor explored whether Linx could fetch 1Password-stored agent creds the same way existing connectors fetch creds. Answer from Yoad: **doesn't exist currently.** Concrete evidence for the "connectors need work" problem statement.
+
+---
+
 ## What's open (for Omri's research to close)
 
 1. **Tier-1 ambiguity.** Target list = tier-2 configured agents. Does "AI/LLM tools connected to your apps" include embedded copilots (Copilot-in-Word, Gemini-in-Gmail)? If yes, node-primary model can't capture them cleanly. If no, say so in customer-facing messaging before a buyer assumes otherwise.

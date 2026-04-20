@@ -183,6 +183,23 @@ Pitch: v0 in 2 weeks, no new infra, weekly review ritual. Two Linx Claude prompt
 
 Running external research on LLM eval best practice (Shankar, Willison, Husain) is deferred until post-Thursday. Framework is directionally right enough to start the conversation; over-polishing before Amir weighs in = wasted cycles.
 
+### AI Governance — scope locked + sources curated
+**Gap 1 (agent definition):** Agents only — tier-2 configured agents (ChatGPT Enterprise, Copilot Studio, Cursor, N8N, ServiceNow AICT). Challengeable with evidence, not now.
+
+**Gap 4 (identity model / governance depth):** **IGA scope = visibility + JIT.** Discover + inventory + ownership + access graph (M1) plus provisioning/deprovisioning with approval chains (slice of M3). Not real-time anomaly (M4), not A2A (M4), not credential lifecycle (M4).
+
+Clean story: Linx's wedge is NHI governance discipline applied to agents, not a new behavioral analytics category.
+
+**Signals from the Slack channel `#governance-of-agentic-ai`:**
+- **Niv (CPO) is personally engaged** — dropped Duo + Ping Identity references. CPO-visible initiative.
+- **Mor Shabi** is the active PM; curating external sources.
+- **Mor ↔ Yoad (Apr 20):** Linx cannot currently fetch agent creds from 1Password via the existing connector pipeline. Concrete gap evidence for "connectors need work."
+
+**Sources captured to `knowledge/ai-governance-epic.md` (annotated bibliography):**
+- Tier 1 must-reads: Astrix × Bayer touchpoints paper, ConductorOne Evolution of Identity, Gartner 833731, the IAM-for-LLM PDF.
+- Tier 2 competitors: Astrix discovery/governance use-case, Oasis, Ping, Duo.
+- Tier 3 technical: Jared Hanson OAuth-for-agents talk, 1Password service accounts, unmitigatedrisk.com ephemeral attested identities (counter-school to node-primary).
+
 ### AI Governance epic received — identity model + milestones already scoped
 Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
 
