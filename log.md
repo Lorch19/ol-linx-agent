@@ -200,6 +200,11 @@ Clean story: Linx's wedge is NHI governance discipline applied to agents, not a 
 - Tier 2 competitors: Astrix discovery/governance use-case, Oasis, Ping, Duo.
 - Tier 3 technical: Jared Hanson OAuth-for-agents talk, 1Password service accounts, unmitigatedrisk.com ephemeral attested identities (counter-school to node-primary).
 
+### Gartner 833731 ingested + Linx Claude prompts drafted + operator-kit mapped
+- Gartner PDF "How to Securely Delegate Access From Humans to AI Agents" (Niv's license) extracted + summarized at `references/gartner-833731-summary.md`. Key signals: credential sharing = forbidden; MCP enables credential sharing; SoD-for-AI-agents is analyst-endorsed; named AM vendors w/ strong delegation = IBM, Ping, Transmit (not Okta, not SailPoint, not CyberArk, not Entra); Gartner does NOT name any ISPM/IGA vendor as strong in this space = empty lane for Linx. SPA: 90% of orgs will redo their design by 2028 if they allow cred sharing.
+- Two paste-ready Linx Claude prompts written: `prompts/slack-extraction-ai-governance-channel.md` and `prompts/linear-extraction-ai-governance-tickets.md`. Fills the Slack/Linear gap where PMs Agent can't reach.
+- Operator-kit (github.com/Lorch19/operator-kit) surveyed via WebFetch. High-relevance skills for current phase: `pm-frameworks/problem-statement`, `pm-frameworks/problem-framing-canvas`, `pm-frameworks/jobs-to-be-done`, `domain-tools/competitive-teardown`, `pm-frameworks/press-release` (Amazon working-backwards for June demo clarity). Later phases: `prd-partner`, `pm-frameworks/epic-breakdown-advisor`.
+
 ### AI Governance epic received — identity model + milestones already scoped
 Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
 
