@@ -183,5 +183,55 @@ Pitch: v0 in 2 weeks, no new infra, weekly review ritual. Two Linx Claude prompt
 
 Running external research on LLM eval best practice (Shankar, Willison, Husain) is deferred until post-Thursday. Framework is directionally right enough to start the conversation; over-polishing before Amir weighs in = wasted cycles.
 
+### AI Governance — scope locked + sources curated
+**Gap 1 (agent definition):** Agents only — tier-2 configured agents (ChatGPT Enterprise, Copilot Studio, Cursor, N8N, ServiceNow AICT). Challengeable with evidence, not now.
+
+**Gap 4 (identity model / governance depth):** **IGA scope = visibility + JIT.** Discover + inventory + ownership + access graph (M1) plus provisioning/deprovisioning with approval chains (slice of M3). Not real-time anomaly (M4), not A2A (M4), not credential lifecycle (M4).
+
+Clean story: Linx's wedge is NHI governance discipline applied to agents, not a new behavioral analytics category.
+
+**Signals from the Slack channel `#governance-of-agentic-ai`:**
+- **Niv (CPO) is personally engaged** — dropped Duo + Ping Identity references. CPO-visible initiative.
+- **Mor Shabi** is the active PM; curating external sources.
+- **Mor ↔ Yoad (Apr 20):** Linx cannot currently fetch agent creds from 1Password via the existing connector pipeline. Concrete gap evidence for "connectors need work."
+
+**Sources captured to `knowledge/ai-governance-epic.md` (annotated bibliography):**
+- Tier 1 must-reads: Astrix × Bayer touchpoints paper, ConductorOne Evolution of Identity, Gartner 833731, the IAM-for-LLM PDF.
+- Tier 2 competitors: Astrix discovery/governance use-case, Oasis, Ping, Duo.
+- Tier 3 technical: Jared Hanson OAuth-for-agents talk, 1Password service accounts, unmitigatedrisk.com ephemeral attested identities (counter-school to node-primary).
+
+### AI Governance epic received — identity model + milestones already scoped
+Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
+
+- **Identity model = node-primary.** Agent is a first-class graph entity with Platform/Owner/Tools/Model/Prompt/Capabilities/timestamps. Tool is also first-class (API + MCP, with target URL + permissions). Confirms the bet from today's framing discussion.
+- **10-capability framework** (Registration → Multi-agent collab → Observability). Sourced from "IAM for LLM-Based AI Agents.pdf" — need to get a copy.
+- **4-milestone roadmap, 2 months each.** M1 = discover + inventory + owners. M2 = auth + delegation. M3 = approvals + policy. M4 = lifecycle + A2A + shadow detection.
+- **M1 target platforms (tier-2 configured agents only):** ChatGPT Enterprise, Copilot Studio, Anthropic, Cursor, N8N, ServiceNow AICT. Pick 2–4.
+- **Hero use case:** Maria the CISO, 10-min journey blind → 23 agents inventoried. Demo target.
+- **Non-goals:** prompt/PII security + detecting 3rd-party internal agents (black box).
+- **Competitors named:** Astrix, Oasis, ConductorOne, Natoma, Clutch. Not named but relevant: Zenity, Noma, Prompt Security, Token Security, Lasso, Credal, Aembit.
+
+Research workstream refocused: validate the framework (not rebuild it), find the gaps, competitive benchmark. Six open items carried to the knowledge doc — Tier-1 ambiguity, customer pull, June → which milestone, shadow AI gap, depth vs breadth across 10 capabilities, Mor/Omri ownership split.
+
+### AI Governance kickoff — Mor / Amir / Sarit
+First working session on the AI Governance mandate (the 4th product surface under Omri per Apr 19/20 Dor framing). Narrower problem isolated: **connector-level discovery of AI agents inside customer SaaS apps.**
+
+Two scenarios on the table:
+1. Org knows agents exist in app X → need inventory + ownership + scope
+2. Org doesn't know → shadow AI detection
+
+Core technical blocker: current Linx connectors don't have strong enough APIs to surface agents. SaaS vendors haven't modeled agents as first-class entities consistently. Likely approaches: OAuth app proxy, service-account pattern matching, log/telemetry scraping, vendor-specific agent APIs where they exist (Salesforce Agentforce, M365 Copilot Studio).
+
+**Target:** demo or functioning feature by June.
+
+**Action items assigned to Omri:**
+1. Learn the problem space — become the knowledge expert
+2. Competitor analysis — how Zenity/Astrix/Noma/Prompt Security/Credal solve this
+
+Omri's framing: big visibility opportunity to lead from research into org documentation.
+
+### PMs Agent — new tool available
+Linx launched an internal **PMs Agent** (Slack interface) — productized assistant with: codebase Q&A (frontend + backend), ArangoDB access across all tenants, web research, task scheduling. Read-only. Use for: "which connectors touch OAuth apps?", "how many customers have Salesforce connected?", competitive doc fetches. Written up in `references/pms-agent.md`.
+
 ### Claude.ai project setup
 New Claude.ai project spun up for AI discovery. Instructions drafted (role + scope + behavior + source hierarchy). Four context docs attached: `knowledge/linx-product.md`, `artifacts/ai-overview-omer-efroni-2026-04-19.md`, `references/ai-leadership-principles.md`, `drafts/ai-assistant-reliability-problem-statement.md`. Ada context dropped from the attach list — company-internal AI is out of scope per Dor's framing.
