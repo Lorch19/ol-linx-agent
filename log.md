@@ -183,6 +183,19 @@ Pitch: v0 in 2 weeks, no new infra, weekly review ritual. Two Linx Claude prompt
 
 Running external research on LLM eval best practice (Shankar, Willison, Husain) is deferred until post-Thursday. Framework is directionally right enough to start the conversation; over-polishing before Amir weighs in = wasted cycles.
 
+### AI Governance epic received — identity model + milestones already scoped
+Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
+
+- **Identity model = node-primary.** Agent is a first-class graph entity with Platform/Owner/Tools/Model/Prompt/Capabilities/timestamps. Tool is also first-class (API + MCP, with target URL + permissions). Confirms the bet from today's framing discussion.
+- **10-capability framework** (Registration → Multi-agent collab → Observability). Sourced from "IAM for LLM-Based AI Agents.pdf" — need to get a copy.
+- **4-milestone roadmap, 2 months each.** M1 = discover + inventory + owners. M2 = auth + delegation. M3 = approvals + policy. M4 = lifecycle + A2A + shadow detection.
+- **M1 target platforms (tier-2 configured agents only):** ChatGPT Enterprise, Copilot Studio, Anthropic, Cursor, N8N, ServiceNow AICT. Pick 2–4.
+- **Hero use case:** Maria the CISO, 10-min journey blind → 23 agents inventoried. Demo target.
+- **Non-goals:** prompt/PII security + detecting 3rd-party internal agents (black box).
+- **Competitors named:** Astrix, Oasis, ConductorOne, Natoma, Clutch. Not named but relevant: Zenity, Noma, Prompt Security, Token Security, Lasso, Credal, Aembit.
+
+Research workstream refocused: validate the framework (not rebuild it), find the gaps, competitive benchmark. Six open items carried to the knowledge doc — Tier-1 ambiguity, customer pull, June → which milestone, shadow AI gap, depth vs breadth across 10 capabilities, Mor/Omri ownership split.
+
 ### AI Governance kickoff — Mor / Amir / Sarit
 First working session on the AI Governance mandate (the 4th product surface under Omri per Apr 19/20 Dor framing). Narrower problem isolated: **connector-level discovery of AI agents inside customer SaaS apps.**
 
