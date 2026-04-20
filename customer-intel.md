@@ -3,10 +3,23 @@
 <!-- One section per customer. Patterns section at bottom. -->
 
 ## Peloton
-- **Stage:** Existing customer
-- **Cares about:** TBD — no direct conversation yet
-- **Open questions:** None yet
-- **Last contact:** N/A
+- **Stage:** Existing customer (VIP; April 2025 sign; "Winning Peloton against Okta IGA" Linear project)
+- **Cares about:** SOX-driven quarterly UARs across 20+ apps, connector reliability, AI trustworthiness
+- **Ticket volume:** 378 Linear needs — most operationally demanding in portfolio. ~130 connectors + ~110 UAR + ~60 analytics + ~25 AI + ~25 UX + ~15 feature requests.
+- **Key contacts:** Jonah Peterson (CS) · Niv Goldenberg (exec sponsor) · Matan Haimovitch (product owner)
+- **Risk level:** AT RISK as of Apr 19 — escalation email ahead of Q4 UAR kickoff Apr 20.
+- **AI-specific signal:**
+  - Disabled AI UAR recommendations (EXP-1515) after EY auditor pushback on "maybe"/"likely" language
+  - CON-3064 (Apr 14) — Sonnet model upgrade shipped a Shopify conversion regression that Peloton caught before Linx did
+  - Apr 19 hallucination loop on AI Spreadsheet Conversion agent (user flags hallucination → agent says "Perfect! I've corrected" → same error repeats across 4 sessions)
+  - Apr 5 Niv Goldenberg thread: audit team rejecting AI-generated permission descriptions that use "maybe"/"likely"
+- **Concrete product asks (Apr 5 — small-win candidates):**
+  - Report showing AI-sourced vs API-sourced descriptions (source attribution)
+  - Remove "maybe"/"unlikely" language from AI-generated permission descriptions
+- **Open questions:**
+  - Are hallucinations concentrated in AI Spreadsheet Conversion agent, or broader?
+  - What's the path to re-enabling AI UAR recs with audit-friendly language?
+- **Last contact:** Apr 19 2026 (escalation)
 
 ## Wiz
 - **Stage:** Existing customer (also angel investors via founders)
@@ -15,10 +28,13 @@
 - **Last contact:** N/A
 
 ## Aramark
-- **Stage:** Existing customer (Fortune 500)
-- **Cares about:** TBD
-- **Open questions:** None yet
-- **Last contact:** N/A
+- **Stage:** Existing customer (Fortune 150, ~260K employees, ~1M lives). Tier marked "Standard" in Linear — likely should be VIP.
+- **Cares about:** Enterprise-scale UAR, license expansion, new business
+- **Key contacts:** Lindsay Bernard (sales) · Stephan Simmons, Greg Pedone, Jonah Peterson (CS) · Sarit Reiner Frumkes (strategic)
+- **Status:** $72.8K expansion closed Apr 17 2026 — only 2026 Closed Won. New business deal open but at-risk (Grain call score 2/5).
+- **Key story:** Survived losing CISO + deputy CISO during the original sales cycle (~Oct 2025). Celebrated internally as "biggest team effort."
+- **Open questions:** Why Standard tier on a Fortune 150 anchor account? New business deal 2/5 despite expansion — what's the disconnect?
+- **Last contact:** Apr 17 2026 (expansion close)
 
 ## Discount Tire
 - **Stage:** Existing customer
@@ -44,6 +60,7 @@
   - Fragile data flows — ADP, Boomi, Okta, ServiceNow create complex flows with no single source of truth
   - Audit pressure — auditors pushing for full user base reviews (currently only privileged accounts), fear of overwhelming managers
   - Okta Workflow limitations — hitting ceiling on JML automation
+- **AI-specific signal (added Apr 20):** ~8 AI on-calls in last 12 months — was NOT on prior AI-quality radar. Wrong Applications-by-department data; 24h UAR recommendation hang (AI-358, APP-1847).
 - **Key use cases (from call):** User access reviews, role mining, JML automation, access request automation. Role mining seen as critical first step.
 - **Open questions:** ServiceNow expiration timeline — opportunity for Linx to fill the workflow gap?
 - **Last contact:** Pre-April 2026 (Rona's call review)
@@ -104,6 +121,36 @@
 - **Open questions:** Cloud-native environment — what's the full stack?
 - **Last contact:** Pre-April 2026 (Rona's call review)
 
+## monday.com
+- **Stage:** Existing customer (VIP; August 2025 sign)
+- **Cares about:** Full IGA platform — Access Requests, Access Profiles, JIT provisioning, workflows, custom automation. 160 SaaS apps targeted Q1 2026.
+- **Archetype:** Co-development partner, not just a customer. "Monday Success Plan" Linear project tracks 40+ committed features with quarterly deadlines (Terraform support, SCIM-to-Linx, Slack bot integration, resource-specific JIT, SIEM integration).
+- **Ticket volume:** 360 Linear needs — ~100 connectors + ~100 AR/UAR + ~60 feature requests + ~30 analytics.
+- **Key contacts:** Mor Shabi (product owner) · Omer Efroni (PM/Eng) · Niv Goldenberg (exec sponsor)
+- **AI-specific signal — POSITIVE REFERENCE:** #customer-monday Jan 26 (Mor Shabi): IT team used AI Assistant to identify who should access a new system — *"results were spot on."* Underused reference asset.
+- **Risk:** Not churn — under-delivering on 40+ committed roadmap items could erode trust.
+- **Open questions:** What's the delivery track record on the Success Plan? What's at-risk today?
+- **Last contact:** Apr 14-15 2026 (connector issues, on-call tickets)
+
+## Precor
+- **Stage:** Existing customer (sibling to Peloton — dual-tenant setup)
+- **AI-specific signal:** AI stuck in error loop on Spreadsheet Conversion (CON-3099, In Progress). Disabled AI UAR recommendations alongside Peloton (EXP-1515).
+
+## SHL
+- **Stage:** Active escalation (Mar 2026)
+- **AI-specific signal:** AI recommendation accuracy flagged — daily-use admins (Netskope engineers) incorrectly surfaced for "further review." Kevin Cronin raised blocking concern on Sage integration.
+- **Source:** #esc-shl-march-2026 (Jonah, Mar 18)
+
+## GSK
+- **Stage:** Prospect (Feb 2026)
+- **AI buy-criteria (Tyler Peters' deep-dive, Feb 3):** *"AI clearly resonated, but only with strong guardrails. They pushed hard on hallucination control, role-based access to agent actions, and full auditability and versioning of AI-generated configurations. AI must be assistive and explainable, not autonomous."*
+- **Strategic signal:** Confirms HITL stance is defensible competitive positioning, not a limitation.
+
+## WestRock
+- **Stage:** Prospect (Feb 2026)
+- **AI buy-criteria:** SOX-driven. "Auditor-defensible evidence artifacts" around AI recommendations is a buy criterion.
+- **Source:** #opp-westrock Feb 11
+
 ## Sony Pictures (incl. Crunchyroll)
 - **Stage:** Existing customer (enterprise — media/entertainment)
 - **Key contact:** Michael Melo
@@ -141,10 +188,11 @@
    Regulatory pressure forcing expanded access reviews, but no tooling to do it efficiently. Without automated role mining or AI recommendations, expanding reviews = rubber-stamping + increased risk.
 
 ### Cross-Customer Signals
-- **CRITICAL:** AI Assistant reliability is a live escalation at Sony Pictures. If Michael Melo is the only one speaking up, others may be silently churning or deprioritizing the assistant. Need to proactively survey other accounts.
-- **Product risk:** False confirmation pattern (saying "done" when it's not) is the most damaging failure mode for a security product — it creates false sense of security. This is not a UX issue, it's a trust-in-the-product issue.
-- Customer count: 10 named references. Actual customer base size unknown — confirm internally.
-- No first-hand customer conversation data yet. Phase 1 target: 5+ conversations by April 28.
+- **AI Assistant reliability is a multi-customer issue, not Sony-only** (confirmed Apr 20). Affected customers by on-call volume: Sony (~10) · Achieve (~8) · monday.com (~9 mixed) · DT (~6). Peloton + Precor disabled AI UAR recommendations (EXP-1515). SHL has escalation. CON-3064 regression shipped two weeks ago.
+- **monday.com is a positive AI reference** Linx doesn't leverage — Mor Shabi Jan 26: "spot on." Underused.
+- **Prospects have explicit AI buy-criteria.** GSK: "hallucination control, RBAC on agent actions, auditability + versioning, explainable not autonomous." WestRock: "auditor-defensible evidence artifacts." Regulated industries (FEA-247): BYO LLM — embedded models unacceptable even with no-training DPA. Confirms HITL stance is defensible positioning.
+- **Product risk:** False confirmation pattern (saying "done" when it's not) is the most damaging failure mode for a security product — trust issue, not UX.
+- **Pipeline story (parked Apr 20 pending RevOps dashboard):** 63% of open deals at Stage 0-1, only 4 at Stage 3+. Losses dominated by "dead project" + "went dark" (only 1 confirmed competitive loss: Smurfit Westrock $250K). No new logo in 4 months.
 
 ### Summary
 Customers are **data-rich but insight-poor**, struggling with a manual "Identity Gap" that leaves them vulnerable to both security risks and regulatory failure.

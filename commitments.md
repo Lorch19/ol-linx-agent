@@ -8,8 +8,17 @@
 - [ ] Read Notion AI pages: Orchestration, Multi-Agent, Architecture, Press release, Cycle 79 — Apr 22 — self  [→ log 2026-04-19]
 - [ ] Confirm Feb 8 NYC doc access (404) — Apr 22 — Amir/Niv  [→ log 2026-04-19]
 - [ ] Figma + Notion handoff from Omer Efroni — Apr 22 — self  [→ log 2026-04-19]
-- [ ] Run Linx Claude docs extraction + measurement inventory prompts — Apr 22 — self  [→ log 2026-04-20]
-- [ ] Draft AI measurement v0 (4 layers: Coverage / Correctness / Containment / Consequence) — Apr 23 — self  [→ log 2026-04-20]
+- [x] Run Linx Claude docs extraction + measurement inventory prompts — both done Apr 20
+- [ ] Draft measurement v0 artifact for Thursday (use `artifacts/ai-measurement-inventory-2026-04-20.md` as input) — Apr 23 — self
+
+### Thursday talking points (distilled from Apr 20 inventory)
+- Lead with Amir's own Apr 10 Slack answer + CON-3064 Peloton regression
+- Pitch: assign AI-491 to the measurement function being scoped
+- Sequence two deliverables — pre-deploy regression gate + override-rate instrumentation
+- Ask for 15 min with Dudi to confirm AI-309 actual scope
+- Ask Dror for read-only access to eval scaffolding files
+- Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
+- Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent
 
 ### Customer proximity
 - [ ] Self-serve "which customers use which features" capability — Apr 24 — self  [→ log 2026-04-19]
