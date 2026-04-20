@@ -183,5 +183,25 @@ Pitch: v0 in 2 weeks, no new infra, weekly review ritual. Two Linx Claude prompt
 
 Running external research on LLM eval best practice (Shankar, Willison, Husain) is deferred until post-Thursday. Framework is directionally right enough to start the conversation; over-polishing before Amir weighs in = wasted cycles.
 
+### AI Governance kickoff — Mor / Amir / Sarit
+First working session on the AI Governance mandate (the 4th product surface under Omri per Apr 19/20 Dor framing). Narrower problem isolated: **connector-level discovery of AI agents inside customer SaaS apps.**
+
+Two scenarios on the table:
+1. Org knows agents exist in app X → need inventory + ownership + scope
+2. Org doesn't know → shadow AI detection
+
+Core technical blocker: current Linx connectors don't have strong enough APIs to surface agents. SaaS vendors haven't modeled agents as first-class entities consistently. Likely approaches: OAuth app proxy, service-account pattern matching, log/telemetry scraping, vendor-specific agent APIs where they exist (Salesforce Agentforce, M365 Copilot Studio).
+
+**Target:** demo or functioning feature by June.
+
+**Action items assigned to Omri:**
+1. Learn the problem space — become the knowledge expert
+2. Competitor analysis — how Zenity/Astrix/Noma/Prompt Security/Credal solve this
+
+Omri's framing: big visibility opportunity to lead from research into org documentation.
+
+### PMs Agent — new tool available
+Linx launched an internal **PMs Agent** (Slack interface) — productized assistant with: codebase Q&A (frontend + backend), ArangoDB access across all tenants, web research, task scheduling. Read-only. Use for: "which connectors touch OAuth apps?", "how many customers have Salesforce connected?", competitive doc fetches. Written up in `references/pms-agent.md`.
+
 ### Claude.ai project setup
 New Claude.ai project spun up for AI discovery. Instructions drafted (role + scope + behavior + source hierarchy). Four context docs attached: `knowledge/linx-product.md`, `artifacts/ai-overview-omer-efroni-2026-04-19.md`, `references/ai-leadership-principles.md`, `drafts/ai-assistant-reliability-problem-statement.md`. Ada context dropped from the attach list — company-internal AI is out of scope per Dor's framing.
