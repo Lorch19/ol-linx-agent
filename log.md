@@ -167,6 +167,8 @@ Omri surfaced a CPO-authored LinkedIn post framing Saviynt's RSAC launch as *"th
 
 **Updates applied same-turn:** `artifacts/ai-agent-identity-sme-brief-2026-04-21.md` §6 Camp C-prime and §11 stress test tightened with the CPO-level framing + three-question attack. Competitive matrix already had Saviynt 87/100 (updated Apr 19 round); deep teardown stays on the Apr 30 commitment.
 
+Tags: #saviynt #camp-c-prime #rsac-2026 #runtime-enforcement #ai-access-gateway #see-govern-enforce #sod-for-agents #mcp-gateway
+
 ### AI-Agent Identity SME brief drafted (`artifacts/ai-agent-identity-sme-brief-2026-04-21.md`)
 Composed a single 11-section brief Omri can carry into any room (Niv, analyst, sales, customer) on the external/market/competitive side of Agentic AI Identity. Technical depth stays with Amir. Sections: problem space, why-now (4 forces), market state, standards landscape, two identity-model schools, six competitive camps, Linx's lane, 4-customer-questions → milestone map, 12/24/36-month future vision, open questions, stress test.
 
