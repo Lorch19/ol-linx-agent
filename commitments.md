@@ -20,6 +20,12 @@
 - Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
 - Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent
 
+### AI Governance SME workstream
+- [ ] Execute 16-URL competitor fetch via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) and merge into `knowledge/ai-governance-competitor-landscape.md` — Apr 28 — self  [→ log 2026-04-21]
+- [ ] Confirm Amir's MCP discovery scope: which SaaS vendors; covers Salesforce/ServiceNow/Atlassian gap? — Apr 23 (Thu) — self + Amir  [→ log 2026-04-21]
+- [ ] Resolve shadow-AI scope ambiguity with Mor (non-goal vs. M4) — Apr 28 — self/Mor  [→ log 2026-04-21]
+- [ ] One named Linx customer validating "we'd adopt this tomorrow" for AI agent inventory — before June demo — self  [→ log 2026-04-21]
+
 ### Customer proximity
 - [ ] Self-serve "which customers use which features" capability — Apr 24 — self  [→ log 2026-04-19]
 - [x] 4 Grain recordings watched end-to-end — Apr 24 — self (done; continuing as cadence)
