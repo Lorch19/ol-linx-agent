@@ -149,6 +149,24 @@
 
 ## 2026-04-21
 
+### Saviynt CPO LinkedIn post ingested (Nitin Sonawane, post-RSAC)
+Omri surfaced a CPO-authored LinkedIn post framing Saviynt's RSAC launch as *"the biggest launch in Saviynt's history."* Evidence quality upgrade over the Mar 24 marketing drop Niv flagged in `#governance-of-agentic-ai` (same launch, now narrated by the CPO personally).
+
+**Net-new vs. the Mar 24 signal:**
+1. **CPO personally publishes it** = company-level strategic bet, not a feature release. Raises threat posture.
+2. **Named three-question framework: See / Govern / Enforce.** This is the *mental model* they want CISOs to adopt. If it lands as the buyer's framework first, Linx ends up answering their frame instead of setting one.
+3. **"AI Access Gateway"** positioned as runtime authorization product — direct parallel to Amir Ben Ami's MCP gateway work. Saviynt shipped the narrative; Linx hasn't.
+4. **"You cannot secure AI agents without all three"** = explicit category-collapsing attack on point solutions (Astrix/Clutch on See only; Noma/Prompt on Enforce only). Same argument Linx is building — Saviynt got it to market first.
+5. **"Deliberately not staying in our swimlane"** — Saviynt is making the converged-category claim. Removes "they're just legacy IGA" as a Linx differentiator.
+
+**Gaps in the post (Linx openings):**
+- No tier-2 platforms named (ChatGPT/Copilot/Cursor/N8N/ServiceNow AICT) — still vague *which* agents.
+- No SoD framing — Gartner 833731's analyst-endorsed wedge still open for Linx.
+- No orphan-agent / ownership-lifecycle language — M1 owner assignment + lifecycle still differentiated.
+- "Thousands of decisions at machine speed" = runtime-detection framing. Linx's governance-before-action (approval chains, SoD) may be more audit-defensible than runtime inspection for agents already delegated to.
+
+**Updates applied same-turn:** `artifacts/ai-agent-identity-sme-brief-2026-04-21.md` §6 Camp C-prime and §11 stress test tightened with the CPO-level framing + three-question attack. Competitive matrix already had Saviynt 87/100 (updated Apr 19 round); deep teardown stays on the Apr 30 commitment.
+
 ### AI-Agent Identity SME brief drafted (`artifacts/ai-agent-identity-sme-brief-2026-04-21.md`)
 Composed a single 11-section brief Omri can carry into any room (Niv, analyst, sales, customer) on the external/market/competitive side of Agentic AI Identity. Technical depth stays with Amir. Sections: problem space, why-now (4 forces), market state, standards landscape, two identity-model schools, six competitive camps, Linx's lane, 4-customer-questions → milestone map, 12/24/36-month future vision, open questions, stress test.
 
