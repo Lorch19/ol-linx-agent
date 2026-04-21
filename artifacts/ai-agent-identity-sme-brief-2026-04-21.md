@@ -73,8 +73,6 @@ Saviynt's CPO (Nitin Sonawane) followed up with a LinkedIn post calling it *"the
 
 **Gaps in Saviynt's claim that are Linx openings:** no named tier-2 platforms (ChatGPT/Copilot/Cursor/N8N/ServiceNow AICT — still vague *which* agents); no SoD-for-AI-agents framing (Gartner 833731 wedge still open); no orphan-agent / ownership-lifecycle language; runtime-gateway posture ("thousands of decisions at machine speed") is easier to undercut with audit-first framing than governance-before-action. **Threat priority upgraded from medium to high. Full competitive teardown before June demo — commitments.md Apr 30.**
 
-Tags: #saviynt #camp-c-prime #rsac-2026 #ai-access-gateway #see-govern-enforce #sod-for-agents #mcp-gateway #runtime-enforcement
-
 **Camp D — Shadow-AI detection.** Clutch ("Shadow AI discovery"), parts of Zenity/Prompt Security. **Strength:** a wedge CISOs can buy in a quarter. **Linx line/risk:** the ticket's non-goal ("3p internal agents as black box") is Clutch's entire wedge. If we leave this uncovered, Clutch wins the visibility conversation first. [→ ai-governance-epic.md §Tensions #1]
 
 **Camp E — LLM app-security.** Noma, Prompt Security, Lasso, Credal. **Positioning:** prompt / PII / data-layer. Not our category but named alongside us constantly — bridge by saying "they govern what the model says; we govern what the agent can reach."

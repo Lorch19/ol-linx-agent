@@ -10,8 +10,6 @@
 - 5 missions created: pre-onboarding, learn & map, contribute & validate, own & lead, platform strategy.
 - OpenClaw agent available for background tasks — future: connect to Linx Slack/Drive/Notion for real-time signals.
 
-Tags: #onboarding #competitive-positioning #only-we #governance-depth-gap
-
 ### Gartner PDF Takeaways
 - NHI growth is table stakes — the real risk is orphaned/unmanaged identities orgs don't know exist. Discovery is broken.
 - Security teams buried in repetitive work — but IGA buyers are often GRC/compliance, not SecOps. Pain = audit prep, cert cycles, SoD proof. Don't pitch ops efficiency in a compliance room.
@@ -22,8 +20,6 @@ Tags: #onboarding #competitive-positioning #only-we #governance-depth-gap
 - IGA category being redefined (Gartner Market Guide): provisioning → ISPM + NHI + agentic. Incumbents retrofitting. Linx is native to new definition.
 - ODMs: measure IAM by business outcomes (risk reduced, violations caught), not ops metrics (tickets closed).
 - Core principle: be customer-obsessed. Be the voice of the customer in the halls. Customer-first, always.
-
-Tags: #gartner #nhi #sod-for-agents #credential-sharing #iga #buyer-personas #odms #discovery
 
 ## 2026-04-12 — DAY 1
 - First day at Linx. Received onboarding plan from Dor — 5-week structured ramp.
@@ -36,15 +32,11 @@ Tags: #gartner #nhi #sod-for-agents #credential-sharing #iga #buyer-personas #od
 - Competitors to study: ConductorOne (docs — best public IGA documentation), Lumos (main competitor on human identities), Noma Security (AI governance approach).
 - Tomorrow: start playing with the Linx platform.
 
-Tags: #day-1 #onboarding #dor #omer-efroni #sod-for-agents #conductorone #lumos #noma #agent-repo
-
 ### Sarit Meeting (CTO)
 - Got onboarding to-do list: dev env permissions (Keren Aloni), Hi Bob, Figma, Linear, ClickHouse, OpenSearch, Slack channels, Loom, Grain, Datadog.
 - Key people to meet (intro meetings needed): Ben Experience (UX/discovery), Dor Dadoush (app/IGA), Gil (group lead), Shon (AI TL), Amir Ben Ami (head of AI), Omer Blachman (connectors), Yoad, Ofek (analytics), Ori (architecture), Refael (dev ninja), Amir Hamanachem. Shadow Mor (PM).
 - **STRATEGIC OPPORTUNITY: Linx wants to become more AI-native** — initiatives around delivery lifecycle, customer research, market research. This is a natural fit for Omri. Goal: position to lead this initiative. Discuss with Dor Thursday.
 - Grain tip from Sarit: watch customer recordings and Niv's meetings, but only up-to-date ones.
-
-Tags: #day-1 #sarit #1-1 #onboarding #ai-native-initiative #stakeholder-mapping #grain
 
 ## 2026-04-13 — DAY 2
 - Day 2. Still learning identity fundamentals and testing the system. Not yet in full Week 1 execution mode.
@@ -54,8 +46,6 @@ Tags: #day-1 #sarit #1-1 #onboarding #ai-native-initiative #stakeholder-mapping 
 - Three document types emerging: feature epic, feature spec, vision/platform doc. Each needs a different template — one Skill won't fit all.
 - Customer calls recorded in Grain (noted for future reference).
 
-Tags: #day-2 #identity-foundations #ticket-examples #iga #ispm #itdr #pam #ciem #nhi #ticket-quality
-
 ## 2026-04-14 — DAY 3
 - First 1:1 with Dor (VP Product, direct manager). Strong meeting.
 - Shared two main observations: (1) product is tech-out not customer-first, (2) AI-powered autonomy gap — both in product and how we work.
@@ -64,20 +54,14 @@ Tags: #day-2 #identity-foundations #ticket-examples #iga #ispm #itdr #pam #ciem 
 - Dashboard review in progress in parallel session.
 - Grain ↔ Datadog research complete — no native connector, Pipedream is best path for POC.
 
-Tags: #day-3 #dor #1-1 #ai-leadership-mandate #3-month-criteria #grain #datadog
-
 ### Ideas to raise with Dor (next 1:1)
 - **SailPoint/Saviynt migration tool** — a purpose-built migration tool that dramatically simplifies moving from SailPoint/Saviynt to Linx could be a game-changer for displacement deals. Want Dor's read on whether this is on the radar.
 - **Autonomous solution for non-technical customers** — "we take care of you end-to-end." Could be a winning wedge for customers who don't have mature IAM teams. Hypothesis: this segment is underserved by SailPoint (too complex) and ConductorOne/Lumos (still require admin effort).
-
-Tags: #day-3 #sailpoint #saviynt #conductorone #lumos #migration-tool #autonomous-wedge #dor
 
 ### Ceremony framework + process observations
 - Product ceremony framework built: feature intake, story spec, ship review templates with agent automation. Portable — adapt to whatever Linx already has.
 - Observation: Linx's sprint/task management is not scalable — relies too heavily on people and manual coordination. Future initiative: formalize and automate. Need to see the actual workflow internally first.
 - Insight: many customer requests are small/simple. Opportunity to use AI to resolve these automatically and decrease dev team burden. Evaluate once inside: what % of requests are automatable? What's the current triage flow? Could be a quick win with high visibility.
-
-Tags: #day-3 #ceremony-framework #sprint-management #ai-automation
 
 ## 2026-04-15 — DAY 4
 - Completed first-pass product UX review of Linx Dashboard. Scope covered: Dashboard (landing), Discover → Non-Human Identities, Issues, Insights & Reports (incl. Scheduled Reports), Workflows.
@@ -87,20 +71,14 @@ Tags: #day-3 #ceremony-framework #sprint-management #ai-automation
 - Consolidated report drafted for Rona (new designer owning Dashboard redesign). Stored in `artifacts/dashboard-review-2026-04-15.md`. Second-pass planned to cover unreviewed surfaces.
 - Open questions to resolve before acting: primary dashboard persona (CISO vs analyst), whether missing NHI context is UI gap or data gap, typical workflow count per deployment, who actually consumes exported reports.
 
-Tags: #day-4 #dashboard-review #rona #ux #insights #workflows #issues #data-rich-insight-poor
-
 ## 2026-04-16 — DAY 5
 - **ESCALATION — AI Assistant reliability:** Sony Pictures (Michael Melo) has been escalating for 6+ months. False confirmations ("report created" when it wasn't), accuracy failures on security-critical tasks. Michael advising Crunchyroll CTO against using the assistant.
 - Michael requested user-configurable accuracy guardrails — accuracy over helpfulness toggle.
 - Linx response (Dor + Niv): root cause at AI/backend data boundary, committed to stricter QA, less appeasing personality, twice-daily eng status reports.
 - Logged to `customer-intel.md` + `artifacts/ai-assistant-reliability-problem-statement.md`. Need to assess: are other customers experiencing the same silently?
 
-Tags: #day-5 #sony #michael-melo #ai-assistant #escalation #reliability #crunchyroll #dor #niv
-
 ## 2026-04-19
 - Added Workflow Builder (trigger config) feedback to dashboard review: trigger catalog is overwhelming and has broken items, per-integration setup feels redundant, no tooltips/previews, possible direction = AI-assisted builder with decision-tree preview.
-
-Tags: #day-6 #dashboard-review #workflow-builder #ux
 
 ### Dor news — AI leadership mandate (Product)
 - **Dor has formally assigned Omri to lead AI at Linx from Product.** Materialization of Dor's 3-month success criterion #4 on Day 6. This is a substantial scope expansion — likely reframes what "own a domain" means for Omri.
@@ -112,8 +90,6 @@ Tags: #day-6 #dashboard-review #workflow-builder #ux
 - **Agent repo approval (Dor/Niv):** Omri says this will take more time — deprioritize, don't chase.
 - **Skills transformation ("Operator Kit" → "Linx Native"):** Omri is running this as low priority in a separate project. Agent has no visibility into that work. Flag to re-sync when Omri surfaces it.
 
-Tags: #day-6 #dor #ai-leadership-mandate #sony #ai-assistant #co-pilot #ada #operator-kit
-
 ### Open questions Omri needs to answer before the scope is executable
 - Scope sequencing across the three buckets for first 30 days
 - Decision rights: sponsor (Dor), eng allocation, budget, advisory vs P&L-style ownership
@@ -121,8 +97,6 @@ Tags: #day-6 #dor #ai-leadership-mandate #sony #ai-assistant #co-pilot #ada #ope
 - Success metrics at 30/60/90 for "leading AI"
 - Does "AI" become the assigned domain, or is this on top of a separate domain?
 - Share context on the internal "Operating System" — agent is blind
-
-Tags: #day-6 #ai-leadership-mandate #amir-ben-ami #shon #scope-open-questions
 
 ### Week 2 plan locked (short week: Yom HaZikaron + HaAtzmaut Apr 21-23)
 - **Stance:** too early for a 30/60/90 — Omri is still learning. Starting posture = learn the domain + shadow Sony. Agent will challenge + guide on cadence.
@@ -132,8 +106,6 @@ Tags: #day-6 #ai-leadership-mandate #amir-ben-ami #shon #scope-open-questions
 - **Dashboard:** Rona has first-pass feedback; second-pass + open questions reframed as Omri's self-learning gap (not Rona blocker). Deferred to Apr 30.
 - **Ada / internal OS context received (file: `Ada - PM - OS/ada-strategic-context-2026-04-19.md`).** Confirms bucket 3 of Dor's mandate is shipping Ada-style agent inside Linx. Not a side project — half the job.
 - **Commitments cleanup applied:** Noma research and 30-sec pitch drill dropped. Competitive matrix cold recall re-dated to May 2. ConductorOne/Lumos docs re-dated to Apr 26.
-
-Tags: #day-6 #week-2 #customer-proximity #sony #rona #ada #commitments
 
 ### Session close-out notes (end of 2026-04-19)
 - **Notion extraction ran successfully in Linx Claude against Omer's 15-page list.** Output is extensive and highly valuable — includes AI architecture (4-tier maturity model, 6-layer stack), PRD standards, Autopilot press release quotes, Sony RCA details, Agentic AI Identities epic, Cycle 79 priorities, and Product Roadmap planning. **Output NOT yet saved to this repo** — Omri to paste into a fresh session for ingestion.
@@ -151,15 +123,11 @@ Tags: #day-6 #week-2 #customer-proximity #sony #rona #ada #commitments
   - Marketing-reality gap: Autopilot press release claims launch while underlying epics (Multi-Agent System, Drifter, Profile Tuner) still "In Product Design"
 - **State of the session:** Agent froze mid-save of the extraction artifact (analysis paralysis on sequencing). Omri rightly called it and closed session. Next session priority: ingest the extraction output → artifact file, update `knowledge/linx-product.md` (was INCOMPLETE, now has real data), update `references/stakeholder-map.md` (add Mor as Agentic AI Identities owner), update `customer-intel.md` (clarify Sony two-layer nuance + add Peloton AI opt-out).
 
-Tags: #day-6 #notion-brief #autopilot #agentic-ai-identities #omer-efroni #mor #sony #peloton #option-c
-
 ### Amir Ben Ami 1:1 (same day)
 - Met same-day. Thursday (Apr 23) scheduled for AI Assistant deep dive. Fastest possible path into bucket 2 of the AI mandate — no weeks of intro-chasing.
 - Omri's read on his own gap: he is not an AI expert. Wants agent's help building toward right values — value-driven, anti over-engineering, best practices, trust through small valuable wins.
 - Agent's additions to that philosophy (for codification): lead through evaluation not architecture; be customer voice in every AI decision; own failure-mode vocabulary (hallucinations, confidence collapse, compound errors); build a public "what we don't do" list; weekly AI-product practice reading cadence (Willison, Husain, Shankar, Yan, Lee); guard ambition against small-wins drift.
 - Watch-outs flagged: "don't over-engineer" shouldn't mean under-engineering reliability (Sony cautionary tale); "small wins" shouldn't become small thinking; trust compounds slowly, collapses fast — don't over-promise early.
-
-Tags: #day-6 #amir-ben-ami #1-1 #ai-leadership-principles #sony
 
 ### Notion brief ingested (evening)
 - Linx Claude extraction of 13 Notion pages pasted in. Net-new vs yesterday's close-out note:
@@ -178,8 +146,6 @@ Tags: #day-6 #amir-ben-ami #1-1 #ai-leadership-principles #sony
   - **PRD standards:** no Linx-customized template; de-facto structure = Objective, Business justification, Non-goal, User scenario, User journey, Functional requirements (P0-P3 table), DoD, Design. Most PRDs missing success metrics. Reviewer Agent has strong testing section; AI governance-Agent has example-query library — both reusable.
   - **Cycle 79 in flight:** Drifter rollout, Tuner kickoff next month, MCP gateway POC (Sarit + Amir B.), taking-actions UAR expansion, assistant quality push (investigation tool DB→API, scheduled-reports caching fix), Portuguese support, smart navigation.
 - **Updates applied same-turn:** `knowledge/linx-product.md` rewritten with AI architecture + roadmap. `references/stakeholder-map.md` fixed Omer conflation + added Mor/Amir/Victoria. `commitments.md` tightened. `brief.md` refreshed to kill stale overdue items.
-
-Tags: #day-6 #notion-brief #autopilot #agentic-ai-identities #6-layer-stack #4-tier-maturity #omer-efroni #mor #sony #peloton #cycle-79 #mcp-gateway
 
 ## 2026-04-21
 
@@ -201,8 +167,6 @@ Omri surfaced a CPO-authored LinkedIn post framing Saviynt's RSAC launch as *"th
 
 **Updates applied same-turn:** `artifacts/ai-agent-identity-sme-brief-2026-04-21.md` §6 Camp C-prime and §11 stress test tightened with the CPO-level framing + three-question attack. Competitive matrix already had Saviynt 87/100 (updated Apr 19 round); deep teardown stays on the Apr 30 commitment.
 
-Tags: #saviynt #camp-c-prime #rsac-2026 #runtime-enforcement #ai-access-gateway #see-govern-enforce #sod-for-agents #mcp-gateway
-
 ### AI-Agent Identity SME brief drafted (`artifacts/ai-agent-identity-sme-brief-2026-04-21.md`)
 Composed a single 11-section brief Omri can carry into any room (Niv, analyst, sales, customer) on the external/market/competitive side of Agentic AI Identity. Technical depth stays with Amir. Sections: problem space, why-now (4 forces), market state, standards landscape, two identity-model schools, six competitive camps, Linx's lane, 4-customer-questions → milestone map, 12/24/36-month future vision, open questions, stress test.
 
@@ -215,8 +179,6 @@ Key framings surfaced:
 Stress-tested: no sized TAM for "agent identity" yet (don't fake); Camp F (agent-native startups) is thinnest in matrix; ephemeral-attested school = real threat if a CNAPP vendor ships SPIFFE-attested agent identity in their runtime.
 
 Nothing invented — all sourced from repo knowledge files + Gartner 833731 + PMs Agent output. 16-URL external competitor fetch still pending via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) — brief will tighten once that lands.
-
-Tags: #sme-brief #camp-a #camp-b #camp-c #camp-d #camp-e #camp-f #mcp-gateway #node-primary #ephemeral-attested #positioning #gartner-833731
 
 ### Slack extraction ingested — SME brief bumped to v0.2
 Omri delivered Linx Claude's full extraction of `#governance-of-agentic-ai` (Aug 19 2025 → Mar 24 2026). Saved verbatim to `knowledge/slack-governance-channel-extraction-2026-04-21.md`. Key signals that moved the brief:
@@ -234,8 +196,6 @@ Omri delivered Linx Claude's full extraction of `#governance-of-agentic-ai` (Aug
 
 Commitments updated: Slack extraction done; added Saviynt deep-dive, Mor position clarification, JIT scope confirmation, 60-day silence resolution with Niv/Sarit, Dor posture clarification.
 
-Tags: #slack-extraction #sme-brief #mor #jit #saviynt #camp-c-prime #amir-hamenahem #niv #dor #monday-com #okta #ephemeral-attested
-
 ## 2026-04-20
 
 ### Dor's AI domain framing (HL, full scope Thursday Apr 23 with Amir)
@@ -248,8 +208,6 @@ Plus: **AI Governance / Agentic AI Identities** — governing customers' AI agen
 
 Company-internal AI (dev lifecycle ops — Linear + cycle management) is a **separate initiative**, not in scope. Echoes Omri's Apr 14 observation about Linx's sprint/task management not being scalable — Dor elevated it to a real workstream, but distinct from the AI mandate.
 
-Tags: #ai-leadership-mandate #dor #ai-enhancement #ai-assistant #autopilot #agentic-ai-identities #four-product-surfaces
-
 ### Customer research parked (pending RevOps dashboard)
 Deep-dive output from Linx Claude (3 rounds — terrain map, pain/praise, pipeline diagnostic + narratives) covered:
 - Pipeline bottom-heavy: 63% at Stage 0-1, only 4 deals at Stage 3+. No new logo in 4 months.
@@ -260,8 +218,6 @@ Deep-dive output from Linx Claude (3 rounds — terrain map, pain/praise, pipeli
 - New Linx contacts: Matan Haimovitch (product, Peloton), Mor Shabi (product, monday.com), Kevin Cronin (CS — JLL/Achieve/NAF), Jonah Peterson (CS — Peloton/Sony/DT/Aramark).
 
 Dor mentioned a RevOps dashboard with better clarity + data points; will set up intro with owner. Customer work paused until that lands — no point building more on incomplete data.
-
-Tags: #customer-intel #pipeline #peloton #monday-com #aramark #smurfit-westrock #revops
 
 ### AI measurement gap — the tractable first deliverable
 Before Thursday with Amir: "what gets measured today?" is the first question. Nothing systematic exists. Draft framework proposed — 4 layers, bootstrappable without new infra:
@@ -275,8 +231,6 @@ Pitch: v0 in 2 weeks, no new infra, weekly review ritual. Two Linx Claude prompt
 - **Internal measurement inventory** — what dashboards / Notion docs / Linear tags / Slack threads already capture AI quality.
 
 Running external research on LLM eval best practice (Shankar, Willison, Husain) is deferred until post-Thursday. Framework is directionally right enough to start the conversation; over-polishing before Amir weighs in = wasted cycles.
-
-Tags: #measurement-framework #ai-assistant #amir-ben-ami #peloton #sony #coverage-correctness-containment-consequence
 
 ### AI Governance — scope locked + sources curated
 **Gap 1 (agent definition):** Agents only — tier-2 configured agents (ChatGPT Enterprise, Copilot Studio, Cursor, N8N, ServiceNow AICT). Challengeable with evidence, not now.
@@ -295,26 +249,18 @@ Clean story: Linx's wedge is NHI governance discipline applied to agents, not a 
 - Tier 2 competitors: Astrix discovery/governance use-case, Oasis, Ping, Duo.
 - Tier 3 technical: Jared Hanson OAuth-for-agents talk, 1Password service accounts, unmitigatedrisk.com ephemeral attested identities (counter-school to node-primary).
 
-Tags: #agentic-ai-identities #jit #discovery #inventory #node-primary #niv #mor #yoad #1password #astrix #ping #duo #ephemeral-attested
-
 ### Gartner 833731 ingested + Linx Claude prompts drafted + operator-kit mapped
 - Gartner PDF "How to Securely Delegate Access From Humans to AI Agents" (Niv's license) extracted + summarized at `references/gartner-833731-summary.md`. Key signals: credential sharing = forbidden; MCP enables credential sharing; SoD-for-AI-agents is analyst-endorsed; named AM vendors w/ strong delegation = IBM, Ping, Transmit (not Okta, not SailPoint, not CyberArk, not Entra); Gartner does NOT name any ISPM/IGA vendor as strong in this space = empty lane for Linx. SPA: 90% of orgs will redo their design by 2028 if they allow cred sharing.
 - Two paste-ready Linx Claude prompts written: `prompts/slack-extraction-ai-governance-channel.md` and `prompts/linear-extraction-ai-governance-tickets.md`. Fills the Slack/Linear gap where PMs Agent can't reach.
 - Operator-kit (github.com/Lorch19/operator-kit) surveyed via WebFetch. High-relevance skills for current phase: `pm-frameworks/problem-statement`, `pm-frameworks/problem-framing-canvas`, `pm-frameworks/jobs-to-be-done`, `domain-tools/competitive-teardown`, `pm-frameworks/press-release` (Amazon working-backwards for June demo clarity). Later phases: `prd-partner`, `pm-frameworks/epic-breakdown-advisor`.
-
-Tags: #gartner-833731 #credential-sharing #mcp #sod-for-agents #ibm #ping #transmit #slack-extraction #linear-extraction #operator-kit
 
 ### Skill protocol recorded + external WebFetch blocked
 - CLAUDE.md updated with "Operator-Kit Skills" section: task→skill mapping, 8-step invocation protocol (WebFetch SKILL.md → name at top → apply w/ Linx context → write durable file → stress-test → commit with skill-named msg → push → log), anti-patterns. Auto-loaded every future session.
 - **External WebFetch is heavily gated in this env.** 403 on every competitor site (Astrix, ConductorOne, Oasis, Ping, Duo, CyberArk, CrowdStrike, Clutch) and on web.archive.org. Only GitHub works. Consequence: all external competitor research must route through Linx Claude.
 - Third Linx Claude prompt authored: `prompts/linx-claude-competitor-fetch.md` — 16-URL fetch with structured extraction schema + synthesis section. One-shot covers the full external source list.
 
-Tags: #operator-kit #skill-protocol #webfetch-gated #competitor-fetch #linx-claude
-
 ### Session close — handoff to Linx env
 Repo now connected to Omri's Linx-env Claude Code. Kickoff prompt written to `prompts/session-kickoff-linx-env.md` — self-contained brief covering scope lock, unresolved items, and immediate priorities (WebFetch probe, 3 Linx Claude prompts, `pm-frameworks/problem-statement`, competitive-teardowns on Astrix + ConductorOne). Branch `claude/ai-governance-connectors-ijPsJ` merged to main before close.
-
-Tags: #session-handoff #linx-claude #astrix #conductorone #problem-statement
 
 ### AI Governance epic received — identity model + milestones already scoped
 Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic. Captured to `knowledge/ai-governance-epic.md`. Key decisions already locked:
@@ -328,8 +274,6 @@ Omri shared the Linear ticket + Notion content for the Agentic AI Identity epic.
 - **Competitors named:** Astrix, Oasis, ConductorOne, Natoma, Clutch. Not named but relevant: Zenity, Noma, Prompt Security, Token Security, Lasso, Credal, Aembit.
 
 Research workstream refocused: validate the framework (not rebuild it), find the gaps, competitive benchmark. Six open items carried to the knowledge doc — Tier-1 ambiguity, customer pull, June → which milestone, shadow AI gap, depth vs breadth across 10 capabilities, Mor/Omri ownership split.
-
-Tags: #agentic-ai-identities #node-primary #10-capability-framework #4-milestone-roadmap #astrix #oasis #conductorone #natoma #clutch #maria-ciso
 
 ### AI Governance kickoff — Mor / Amir / Sarit
 First working session on the AI Governance mandate (the 4th product surface under Omri per Apr 19/20 Dor framing). Narrower problem isolated: **connector-level discovery of AI agents inside customer SaaS apps.**
@@ -348,14 +292,8 @@ Core technical blocker: current Linx connectors don't have strong enough APIs to
 
 Omri's framing: big visibility opportunity to lead from research into org documentation.
 
-Tags: #agentic-ai-identities #mor #amir-ben-ami #sarit #connectors #shadow-ai #discovery #astrix #zenity #noma #prompt-security #credal #june-demo
-
 ### PMs Agent — new tool available
 Linx launched an internal **PMs Agent** (Slack interface) — productized assistant with: codebase Q&A (frontend + backend), ArangoDB access across all tenants, web research, task scheduling. Read-only. Use for: "which connectors touch OAuth apps?", "how many customers have Salesforce connected?", competitive doc fetches. Written up in `references/pms-agent.md`.
 
-Tags: #pms-agent #tools #codebase-qa #arangodb
-
 ### Claude.ai project setup
 New Claude.ai project spun up for AI discovery. Instructions drafted (role + scope + behavior + source hierarchy). Four context docs attached: `knowledge/linx-product.md`, `artifacts/ai-overview-omer-efroni-2026-04-19.md`, `references/ai-leadership-principles.md`, `drafts/ai-assistant-reliability-problem-statement.md`. Ada context dropped from the attach list — company-internal AI is out of scope per Dor's framing.
-
-Tags: #claude-ai-project #tools #linx-product #ai-leadership-principles #sony #ai-assistant-reliability

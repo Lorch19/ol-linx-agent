@@ -87,13 +87,11 @@ Anti-patterns to catch in review:
 
 ## Data Recording Discipline (MANDATORY)
 
-Every fact must be greppable and cheap to re-read. Context loaded = context wasted if it can't be queried.
+Make facts greppable so future sessions don't burn context loading files:
 
 1. **Canonical entity names.** One spelling per entity (Saviynt, ConductorOne, Niv Goldenberg). Grep must match deterministically.
-2. **`Tags:` line on every substantive entry** — log entries, artifact sections, knowledge updates. Format: `Tags: #entity #capability #problem` (e.g. `#saviynt #runtime-enforcement #camp-c-prime`). One grep returns every mention across the repo.
-3. **Knowledge files = atomic bullets with inline source.** One fact per line, cites source file or URL. Prose belongs in `artifacts/` or `brief.md`, not `knowledge/`.
-4. **One canonical location per fact.** Cross-reference with `[→ path §section]`; never restate. Avoids drift on update.
-5. **Dates inline** (YYYY-MM-DD) on time-sensitive claims. Staleness visible at grep time without opening the file.
+2. **Atomic bullets in `knowledge/`.** One fact per line, cites source. Prose belongs in `artifacts/` or `brief.md`.
+3. **Dates inline** (YYYY-MM-DD) on time-sensitive claims. Staleness visible at grep time.
 
 ## Skill Usage Rules
 
