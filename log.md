@@ -147,6 +147,21 @@
   - **Cycle 79 in flight:** Drifter rollout, Tuner kickoff next month, MCP gateway POC (Sarit + Amir B.), taking-actions UAR expansion, assistant quality push (investigation tool DB→API, scheduled-reports caching fix), Portuguese support, smart navigation.
 - **Updates applied same-turn:** `knowledge/linx-product.md` rewritten with AI architecture + roadmap. `references/stakeholder-map.md` fixed Omer conflation + added Mor/Amir/Victoria. `commitments.md` tightened. `brief.md` refreshed to kill stale overdue items.
 
+## 2026-04-21
+
+### AI-Agent Identity SME brief drafted (`artifacts/ai-agent-identity-sme-brief-2026-04-21.md`)
+Composed a single 11-section brief Omri can carry into any room (Niv, analyst, sales, customer) on the external/market/competitive side of Agentic AI Identity. Technical depth stays with Amir. Sections: problem space, why-now (4 forces), market state, standards landscape, two identity-model schools, six competitive camps, Linx's lane, 4-customer-questions → milestone map, 12/24/36-month future vision, open questions, stress test.
+
+Key framings surfaced:
+- **Empty lane (Gartner-evidenced):** only IBM/Ping/Transmit named strong on human→agent delegation; SailPoint/CyberArk/Okta/Entra/Saviynt absent. No ISPM/IGA vendor named as strong → Linx's positioning target.
+- **6 competitive camps** (not a vendor list): AI Agent Control Plane (Astrix/Oasis), AM-extending (Ping/IBM/Transmit), IGA/PAM incumbents with marketing ahead of capability (CyberArk/SailPoint/CrowdStrike), Shadow-AI (Clutch), LLM app-security (Noma/Prompt/Lasso), agent-native converged startups (Natoma/Token/Aembit).
+- **Amir's MCP telemetry bet** = load-bearing. Salesforce/ServiceNow/Atlassian don't expose OAuth-app enumeration today (confirmed via PMs Agent 2026-04-20). If MCP gives Linx a discovery channel those SaaS vendors won't, coverage curve is independent of vendor APIs.
+- **Tight positioning:** "inventory + governance layer for agents already delegated to enterprise systems" — not the delegation protocol, not prompt guardrails, not shadow-AI sniffer alone.
+
+Stress-tested: no sized TAM for "agent identity" yet (don't fake); Camp F (agent-native startups) is thinnest in matrix; ephemeral-attested school = real threat if a CNAPP vendor ships SPIFFE-attested agent identity in their runtime.
+
+Nothing invented — all sourced from repo knowledge files + Gartner 833731 + PMs Agent output. 16-URL external competitor fetch still pending via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) — brief will tighten once that lands.
+
 ## 2026-04-20
 
 ### Dor's AI domain framing (HL, full scope Thursday Apr 23 with Amir)
