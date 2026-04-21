@@ -162,6 +162,22 @@ Stress-tested: no sized TAM for "agent identity" yet (don't fake); Camp F (agent
 
 Nothing invented — all sourced from repo knowledge files + Gartner 833731 + PMs Agent output. 16-URL external competitor fetch still pending via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) — brief will tighten once that lands.
 
+### Slack extraction ingested — SME brief bumped to v0.2
+Omri delivered Linx Claude's full extraction of `#governance-of-agentic-ai` (Aug 19 2025 → Mar 24 2026). Saved verbatim to `knowledge/slack-governance-channel-extraction-2026-04-21.md`. Key signals that moved the brief:
+
+1. **Mor's Nov 5 "no dedicated AI discovery UI needed" position contradicts the M1 Maria CISO hero flow** (which explicitly opens to an Agent Inventory). Added to open questions as the #2 item to clarify with Mor.
+2. **JIT discussed nowhere in channel** despite being in the epic scope line ("visibility + JIT"). Added to open questions. Channel is 95% discovery/inventory — external story should lead with discovery.
+3. **Saviynt Mar 24 RSAC drop claims MCP gateway + UARs + access graph + real-time AC** — Linx's pitch almost verbatim. Promoted to Camp C-prime in §6, moved from medium to high study priority in §11 stress test.
+4. **Amir Hamenahem's Sep 9 scan logged Claude/Gemini/Copilot as "no API."** MSFT shipped Entra Agent ID Oct 21 partially unblocking Copilot. For Claude + Gemini, Amir Ben Ami's MCP bet may be the primary discovery path. Sharpened §7 Linx lane.
+5. **60-day Slack silence (Feb 20 → Apr 21)** — only 3 Niv posts, zero replies. Either project stalled or moved off-channel. Critical political signal to resolve with Niv/Sarit before planning on top of in-channel state.
+6. **R&D start date never confirmed** — Mor flagged Nov 11, Sarit replied in-thread but never resolved in-channel. Added to open questions.
+7. **Dor added Feb 27 for Veza review, zero posts since.** Added as open question — observer, waiting for Omri, or off-channel review?
+8. **Niv's CPO-level 🙏 reaction to ephemeral-attested blog (Aug 24)** = don't dismiss ephemeral-attested in a Niv-present room.
+9. **Monday.com is the only named reference customer** across 8 months of channel history. Customer-pull gap confirmed as evidence, not assumption.
+10. **Camp C expanded to include Okta** (Identity Security Fabric, Sep 30).
+
+Commitments updated: Slack extraction done; added Saviynt deep-dive, Mor position clarification, JIT scope confirmation, 60-day silence resolution with Niv/Sarit, Dor posture clarification.
+
 ## 2026-04-20
 
 ### Dor's AI domain framing (HL, full scope Thursday Apr 23 with Amir)

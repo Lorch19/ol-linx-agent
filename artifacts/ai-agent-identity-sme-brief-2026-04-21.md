@@ -1,7 +1,7 @@
-# AI-Agent Identity Security — SME Brief (v0.1)
+# AI-Agent Identity Security — SME Brief (v0.2)
 
-> Purpose: the one document Omri carries into any room (Niv, sales, analyst, customer) to sound like the matter expert on the external/market/competitive side of the Agentic AI Identity epic. Technical depth is owned by Amir.
-> Authored: 2026-04-21. Sources: repo knowledge files + Gartner 833731 + PMs Agent output (2026-04-20). Nothing outside this list is assumed.
+> Purpose: the one document Omri carries into any room (Niv, sales, analyst, customer) to sound like the matter expert on the external/market/competitive side of the Agentic AI Identity epic. Technical depth is owned by Amir Ben Ami.
+> Authored 2026-04-21, v0.1. Updated same day to v0.2 with Slack `#governance-of-agentic-ai` extraction. Sources: repo knowledge files + Gartner 833731 + PMs Agent output (2026-04-20) + `knowledge/slack-governance-channel-extraction-2026-04-21.md`. Nothing outside this list is assumed.
 
 ---
 
@@ -53,6 +53,8 @@ Enterprises are pushing AI agents into production faster than identity systems c
 
 **Omri-speaking position:** "Linx is node-primary because that's what a CISO can run an access review against. The ephemeral-attested school is correct about the physics of agents — we'll extend the graph with session-level edges when M4 lands. We are not religious about the model; we are religious about the audit outcome."
 
+**Internal signal worth knowing:** Niv dropped the ephemeral-attested blog (unmitigatedrisk.com) into `#governance-of-agentic-ai` on Aug 24 with a 🙏 reaction and no pushback. CPO-level receptive to the counter-school — don't dismiss ephemeral-attested in a room with Niv. [→ `knowledge/slack-governance-channel-extraction-2026-04-21.md` §2]
+
 ## 6. Competitive camps — who you'll bump into, grouped
 
 Not a vendor list — the framing you'll use in a room. Confidence on each camp is based on what's in `ai-governance-epic.md`, `competitive-matrix.md`, `battle-cards.md`, and the 16-URL competitor fetch still pending via Linx Claude (`prompts/linx-claude-competitor-fetch.md`).
@@ -61,7 +63,9 @@ Not a vendor list — the framing you'll use in a room. Confidence on each camp 
 
 **Camp B — AM vendors extending to delegation.** Ping, IBM, Transmit. Named by Gartner 833731 as "strong." **Strength:** the delegation protocol itself (OAuth/OBO). **Linx line:** we don't play in the delegation protocol; we are the posture + inventory layer for agents that have already been delegated to. Complement, not substitute.
 
-**Camp C — IGA/PAM incumbents with marketing ahead of capability.** CyberArk ("Secure Agentic AI"), SailPoint (BrightTALK webcast), CrowdStrike ("secures AI agents across SaaS"). **Strength:** distribution + CISO relationships. **Linx line:** Gartner did *not* name any of them as strong on delegation; marketing ahead of product is the exact window Linx is exploiting.
+**Camp C — IGA/PAM incumbents with marketing ahead of capability.** CyberArk ("Secure Agentic AI"), SailPoint (BrightTALK webcast), CrowdStrike ("secures AI agents across SaaS"), Okta ("Identity Security Fabric," Sep 2025). **Strength:** distribution + CISO relationships. **Linx line:** Gartner did *not* name any of them as strong on delegation; marketing ahead of product is the exact window Linx is exploiting.
+
+**Camp C-prime — Saviynt, flagged separately because the claim parity is unusually high.** Saviynt's Mar 24, 2026 RSAC post announces discovery + inventory + access graph + risk detection + UARs + **MCP gateway** + real-time access control — that is Linx's pitch almost verbatim. Niv shared it in-channel with "Very impressive," zero replies. [→ `slack-governance-channel-extraction-2026-04-21.md` §3 #24] **This moves Saviynt from "medium study priority" (per `identity-foundations.md`) to high. Competitive teardown needed before June demo.**
 
 **Camp D — Shadow-AI detection.** Clutch ("Shadow AI discovery"), parts of Zenity/Prompt Security. **Strength:** a wedge CISOs can buy in a quarter. **Linx line/risk:** the ticket's non-goal ("3p internal agents as black box") is Clutch's entire wedge. If we leave this uncovered, Clutch wins the visibility conversation first. [→ ai-governance-epic.md §Tensions #1]
 
@@ -76,7 +80,9 @@ Not a vendor list — the framing you'll use in a room. Confidence on each camp 
 The three moves that make this credible:
 
 1. **Node-primary graph extended with Tool-as-first-class.** Each tool (API or MCP server) gets a record with target URL + permissions. Blast radius becomes queryable. This is already in the epic spec.
-2. **Amir's MCP telemetry bet.** Salesforce, ServiceNow, Atlassian don't expose OAuth-app enumeration today (PMs Agent 2026-04-20). If Amir's MCP path gives us a discovery channel those SaaS vendors don't, Linx's coverage curve doesn't depend on waiting for vendor APIs. This is the durable technical asymmetry — confirm scope with Amir before leaning on it externally.
+2. **Amir Ben Ami's MCP telemetry bet.** Two gaps this potentially solves:
+   - **App-side:** Salesforce, ServiceNow, Atlassian don't expose OAuth-app enumeration today (PMs Agent 2026-04-20).
+   - **Agent-platform side:** Amir Hamenahem's Sep 9 API-availability scan logged Claude, Gemini, and Microsoft Copilot as "no API" for agent discovery. [→ `slack-governance-channel-extraction-2026-04-21.md` §5] MSFT Entra Agent ID (Oct 21) partially unblocks the Copilot side. **For Claude + Gemini, MCP may be the only discovery path.** That makes Amir Ben Ami's MCP work potentially the primary vector for two of the tier-2 M1 platforms — confirm scope at Thursday Apr 23 deep dive before leaning on it externally.
 3. **SoD for AI agents as the analyst-endorsed wedge.** Gartner: *"allowing the agentic AI software itself to manage what it is authorized to do on behalf of humans… violates segregation of duties and will not pass any audit."* No one else is saying this in product language yet. [→ gartner-833731-summary.md]
 
 ## 8. The four customer questions — map each to Linx evidence
@@ -98,21 +104,29 @@ The three moves that make this credible:
 
 ## 10. Open questions Omri still owns
 
-1. **Shadow-AI scope.** Non-goal or M4? Clutch will weaponize this if we leave it ambiguous. [→ ai-governance-epic.md §Tensions #1]
-2. **Customer pull evidence.** One named Linx customer saying "we'd adopt this tomorrow" by the June demo. Otherwise vendor-push narrative.
-3. **Amir's MCP discovery scope.** Which SaaS vendors does it actually cover? Confirm before positioning on it publicly.
-4. **The 16-URL competitor fetch** is drafted (`prompts/linx-claude-competitor-fetch.md`) but not yet executed. Camp A–F framing will tighten once the extraction lands.
-5. **Gartner "AI agent" Emerging Tech note** — is one scheduled? If so, who's the author? Brief them before they brief us.
-6. **Ownership split with Mor.** Research vs. spec vs. competitive vs. delivery. Unresolved.
+1. **Shadow-AI scope.** Non-goal or M4? Clutch will weaponize this if we leave it ambiguous. [→ ai-governance-epic.md §Tensions #1; `slack-governance-channel-extraction-2026-04-21.md` §4 — Shadow MCP flagged Sep 8 by Niv, never followed up]
+2. **Mor's Nov 5 "no dedicated AI discovery UI" position vs. the M1 hero flow.** Maria CISO journey requires an Agent Inventory surface. Either Mor's position evolves or the hero flow changes. First thing to clarify with Mor. [→ `slack-governance-channel-extraction-2026-04-21.md` §2]
+3. **JIT is in the epic name but discussed nowhere in channel.** Either scope is narrower than "visibility + JIT" implies, or JIT design is happening outside `#governance-of-agentic-ai`. Confirm with Mor or Sarit.
+4. **Customer pull evidence.** Monday.com is the only named reference customer in the entire channel; it is a research subject, not a voice saying "we'd buy this tomorrow." Need a customer quote by June.
+5. **Amir Ben Ami's MCP discovery scope.** Which SaaS vendors + which agent platforms does it cover? Confirm at Thu Apr 23.
+6. **The 16-URL competitor fetch** is drafted but not yet executed. Camp A–F framing tightens once the extraction lands.
+7. **60-day Slack silence (Feb 20 → Apr 21).** Project lost momentum, or work migrated to another venue? Ask Niv or Sarit before planning on top of in-channel decisions.
+8. **R&D start date never confirmed.** Mor surfaced this Nov 11; Sarit replied in-thread but never in-channel. Get a date.
+9. **Dor's posture on this epic.** Added Feb 27 for Veza review, zero posts. Observer? Waiting for Omri? Ask directly.
+10. **Gartner "AI agent" Emerging Tech note** — is one scheduled? If so, who's the author? Brief them before they brief us.
+11. **Ownership split with Mor.** Research vs. spec vs. competitive vs. delivery. Unresolved.
 
 ## 11. Stress test — what's weak in this brief
 
 - **No sized TAM for "agent identity."** Analyst gap; don't pretend it exists.
-- **Camp F is thin.** Natoma/Token/Aembit haven't been scored yet in `competitive-matrix.md`. Their claim to "agent-native from day one" could be our biggest positioning threat, not an aside.
-- **Amir's MCP telemetry bet is load-bearing but unscoped to me.** If MCP adoption inside customer SaaS is slower than assumed, the "doesn't depend on vendor APIs" claim collapses.
+- **Saviynt claim parity is the most concrete near-term threat.** Their Mar 24 RSAC feature list overlaps Linx's pitch almost verbatim (discovery + inventory + access graph + UARs + MCP gateway + real-time AC). If their product actually ships what their marketing claims, Linx's "only we" statement needs a sharper differentiator than "we govern, they audit."
+- **Camp F is thin.** Natoma/Token/Aembit haven't been scored in `competitive-matrix.md`. "Agent-native from day one" could be the biggest positioning threat, not an aside.
+- **Amir Ben Ami's MCP bet is load-bearing but unscoped.** Claim that MCP discovery covers Claude + Gemini + Copilot gaps depends on MCP actually being adopted inside customer SaaS. If adoption is slower than assumed, the "independent of vendor APIs" claim collapses.
+- **Internal tension: Mor's "no dedicated UI" vs. the hero flow.** Not just a branding issue — affects whether the June demo is credible to a CISO who needs a visible pane of glass.
+- **60-day Slack silence.** Brief treats the epic as live. If the project is actually stalled or has moved off-channel, planning on top of in-channel decisions is planning on stale state.
 - **Gartner's frame is human→agent delegation, narrower than Linx's scope.** Don't let their lens shrink our story in a room; use them for the SoD/credential-sharing ammunition, not the category definition.
-- **Ephemeral-attested school is not just an academic footnote.** If a CNAPP vendor (Wiz, Palo Alto) ships SPIFFE-attested agent identity inside their agent-runtime story, the node-primary graph becomes a reporting layer, not the identity layer. Worth a monthly re-check.
+- **Ephemeral-attested school is not just an academic footnote.** Niv endorsed it with a 🙏. If a CNAPP vendor (Wiz, Palo Alto) ships SPIFFE-attested agent identity inside their agent-runtime story, the node-primary graph becomes a reporting layer, not the identity layer. Monthly re-check.
 
 ---
 
-*Sources: `knowledge/ai-governance-epic.md`, `knowledge/market-context.md`, `knowledge/identity-foundations.md`, `knowledge/positioning.md`, `references/gartner-833731-summary.md`, PMs Agent output 2026-04-20 (connector map + NHI classification), `prompts/linx-claude-competitor-fetch.md`. Nothing fetched externally from this env (WebFetch gated).*
+*Sources: `knowledge/ai-governance-epic.md`, `knowledge/market-context.md`, `knowledge/identity-foundations.md`, `knowledge/positioning.md`, `knowledge/slack-governance-channel-extraction-2026-04-21.md`, `references/gartner-833731-summary.md`, PMs Agent output 2026-04-20 (connector map + NHI classification), `prompts/linx-claude-competitor-fetch.md` (pending execution). Nothing fetched externally from this env (WebFetch gated).*
