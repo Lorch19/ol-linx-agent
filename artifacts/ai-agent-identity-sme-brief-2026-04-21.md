@@ -1,7 +1,7 @@
-# AI-Agent Identity Security — SME Brief (v0.2)
+# AI-Agent Identity Security — SME Brief (v0.3)
 
 > Purpose: the one document Omri carries into any room (Niv, sales, analyst, customer) to sound like the matter expert on the external/market/competitive side of the Agentic AI Identity epic. Technical depth is owned by Amir Ben Ami.
-> Authored 2026-04-21, v0.1. Updated same day to v0.2 with Slack `#governance-of-agentic-ai` extraction. Sources: repo knowledge files + Gartner 833731 + PMs Agent output (2026-04-20) + `knowledge/slack-governance-channel-extraction-2026-04-21.md`. Nothing outside this list is assumed.
+> Authored 2026-04-21, v0.1. Updated same day to v0.2 with Slack `#governance-of-agentic-ai` extraction. Bumped to v0.3 same day with Saviynt CPO (Nitin Sonawane) LinkedIn post — CPO-authored RSAC narrative, See/Govern/Enforce framework, named AI Access Gateway. Sources: repo knowledge files + Gartner 833731 + PMs Agent output (2026-04-20) + `knowledge/slack-governance-channel-extraction-2026-04-21.md` + Saviynt CPO LinkedIn (quoted in `log.md` 2026-04-21). Nothing outside this list is assumed.
 
 ---
 
@@ -65,7 +65,13 @@ Not a vendor list — the framing you'll use in a room. Confidence on each camp 
 
 **Camp C — IGA/PAM incumbents with marketing ahead of capability.** CyberArk ("Secure Agentic AI"), SailPoint (BrightTALK webcast), CrowdStrike ("secures AI agents across SaaS"), Okta ("Identity Security Fabric," Sep 2025). **Strength:** distribution + CISO relationships. **Linx line:** Gartner did *not* name any of them as strong on delegation; marketing ahead of product is the exact window Linx is exploiting.
 
-**Camp C-prime — Saviynt, flagged separately because the claim parity is unusually high.** Saviynt's Mar 24, 2026 RSAC post announces discovery + inventory + access graph + risk detection + UARs + **MCP gateway** + real-time access control — that is Linx's pitch almost verbatim. Niv shared it in-channel with "Very impressive," zero replies. [→ `slack-governance-channel-extraction-2026-04-21.md` §3 #24] **This moves Saviynt from "medium study priority" (per `identity-foundations.md`) to high. Competitive teardown needed before June demo.**
+**Camp C-prime — Saviynt, flagged separately because the claim parity is unusually high.** Saviynt's Mar 24, 2026 RSAC post announces discovery + inventory + access graph + risk detection + UARs + **MCP gateway** + real-time access control — Linx's pitch almost verbatim. Niv shared it in-channel with "Very impressive," zero replies. [→ `slack-governance-channel-extraction-2026-04-21.md` §3 #24]
+
+Saviynt's CPO (Nitin Sonawane) followed up with a LinkedIn post calling it *"the biggest launch in Saviynt's history"* and framing the product around three questions: **(1) Can you see your AI agents? (2) Can you govern your AI agents? (3) Are your AI agents accessing the right systems — and are you enforcing policies in real time?** Three named pillars: **Posture Management for AI agents** (discovery/inventory/risk), **AI agent lifecycle governance** (registration/ownership/scope/lifecycle), and a named **AI Access Gateway** for runtime enforcement. The post explicitly argues *"you cannot secure AI agents without all three"* and that Saviynt *"deliberately decided not to stay in our traditional swimlane."*
+
+**Why it matters:** (a) CPO-authored = company-level strategic bet, not a feature release. (b) Three-question framework is the mental model Saviynt wants CISOs to adopt — if it lands first, Linx answers their frame instead of setting one. (c) "AI Access Gateway" is a named runtime product that parallels Amir Ben Ami's MCP gateway work; Saviynt shipped the marketing, Linx hasn't. (d) "You cannot secure AI agents without all three" is the same category-collapsing argument Linx is building — **Saviynt got it to market first as a narrative.**
+
+**Gaps in Saviynt's claim that are Linx openings:** no named tier-2 platforms (ChatGPT/Copilot/Cursor/N8N/ServiceNow AICT — still vague *which* agents); no SoD-for-AI-agents framing (Gartner 833731 wedge still open); no orphan-agent / ownership-lifecycle language; runtime-gateway posture ("thousands of decisions at machine speed") is easier to undercut with audit-first framing than governance-before-action. **Threat priority upgraded from medium to high. Full competitive teardown before June demo — commitments.md Apr 30.**
 
 **Camp D — Shadow-AI detection.** Clutch ("Shadow AI discovery"), parts of Zenity/Prompt Security. **Strength:** a wedge CISOs can buy in a quarter. **Linx line/risk:** the ticket's non-goal ("3p internal agents as black box") is Clutch's entire wedge. If we leave this uncovered, Clutch wins the visibility conversation first. [→ ai-governance-epic.md §Tensions #1]
 
@@ -119,7 +125,7 @@ The three moves that make this credible:
 ## 11. Stress test — what's weak in this brief
 
 - **No sized TAM for "agent identity."** Analyst gap; don't pretend it exists.
-- **Saviynt claim parity is the most concrete near-term threat.** Their Mar 24 RSAC feature list overlaps Linx's pitch almost verbatim (discovery + inventory + access graph + UARs + MCP gateway + real-time AC). If their product actually ships what their marketing claims, Linx's "only we" statement needs a sharper differentiator than "we govern, they audit."
+- **Saviynt claim parity is the most concrete near-term threat, and it escalated.** Mar 24 RSAC feature list already overlapped Linx's pitch almost verbatim; CPO Nitin Sonawane's follow-up LinkedIn post adds a named three-question framework (See / Govern / Enforce), a named runtime product (AI Access Gateway), and an explicit "you cannot secure AI agents without all three" category attack. That's the mental model Linx is building — published by a public-company CPO first. If their product ships what their marketing claims, Linx's "only we" needs a sharper differentiator than "we govern, they audit." Likely wedges still open: named tier-2 platform coverage, SoD-for-agents, orphan/ownership lifecycle, audit-first framing over runtime detection.
 - **Camp F is thin.** Natoma/Token/Aembit haven't been scored in `competitive-matrix.md`. "Agent-native from day one" could be the biggest positioning threat, not an aside.
 - **Amir Ben Ami's MCP bet is load-bearing but unscoped.** Claim that MCP discovery covers Claude + Gemini + Copilot gaps depends on MCP actually being adopted inside customer SaaS. If adoption is slower than assumed, the "independent of vendor APIs" claim collapses.
 - **Internal tension: Mor's "no dedicated UI" vs. the hero flow.** Not just a branding issue — affects whether the June demo is credible to a CISO who needs a visible pane of glass.
