@@ -147,6 +147,55 @@
   - **Cycle 79 in flight:** Drifter rollout, Tuner kickoff next month, MCP gateway POC (Sarit + Amir B.), taking-actions UAR expansion, assistant quality push (investigation tool DB→API, scheduled-reports caching fix), Portuguese support, smart navigation.
 - **Updates applied same-turn:** `knowledge/linx-product.md` rewritten with AI architecture + roadmap. `references/stakeholder-map.md` fixed Omer conflation + added Mor/Amir/Victoria. `commitments.md` tightened. `brief.md` refreshed to kill stale overdue items.
 
+## 2026-04-21
+
+### Saviynt CPO LinkedIn post ingested (Nitin Sonawane, post-RSAC)
+Omri surfaced a CPO-authored LinkedIn post framing Saviynt's RSAC launch as *"the biggest launch in Saviynt's history."* Evidence quality upgrade over the Mar 24 marketing drop Niv flagged in `#governance-of-agentic-ai` (same launch, now narrated by the CPO personally).
+
+**Net-new vs. the Mar 24 signal:**
+1. **CPO personally publishes it** = company-level strategic bet, not a feature release. Raises threat posture.
+2. **Named three-question framework: See / Govern / Enforce.** This is the *mental model* they want CISOs to adopt. If it lands as the buyer's framework first, Linx ends up answering their frame instead of setting one.
+3. **"AI Access Gateway"** positioned as runtime authorization product — direct parallel to Amir Ben Ami's MCP gateway work. Saviynt shipped the narrative; Linx hasn't.
+4. **"You cannot secure AI agents without all three"** = explicit category-collapsing attack on point solutions (Astrix/Clutch on See only; Noma/Prompt on Enforce only). Same argument Linx is building — Saviynt got it to market first.
+5. **"Deliberately not staying in our swimlane"** — Saviynt is making the converged-category claim. Removes "they're just legacy IGA" as a Linx differentiator.
+
+**Gaps in the post (Linx openings):**
+- No tier-2 platforms named (ChatGPT/Copilot/Cursor/N8N/ServiceNow AICT) — still vague *which* agents.
+- No SoD framing — Gartner 833731's analyst-endorsed wedge still open for Linx.
+- No orphan-agent / ownership-lifecycle language — M1 owner assignment + lifecycle still differentiated.
+- "Thousands of decisions at machine speed" = runtime-detection framing. Linx's governance-before-action (approval chains, SoD) may be more audit-defensible than runtime inspection for agents already delegated to.
+
+**Updates applied same-turn:** `artifacts/ai-agent-identity-sme-brief-2026-04-21.md` §6 Camp C-prime and §11 stress test tightened with the CPO-level framing + three-question attack. Competitive matrix already had Saviynt 87/100 (updated Apr 19 round); deep teardown stays on the Apr 30 commitment.
+
+### AI-Agent Identity SME brief drafted (`artifacts/ai-agent-identity-sme-brief-2026-04-21.md`)
+Composed a single 11-section brief Omri can carry into any room (Niv, analyst, sales, customer) on the external/market/competitive side of Agentic AI Identity. Technical depth stays with Amir. Sections: problem space, why-now (4 forces), market state, standards landscape, two identity-model schools, six competitive camps, Linx's lane, 4-customer-questions → milestone map, 12/24/36-month future vision, open questions, stress test.
+
+Key framings surfaced:
+- **Empty lane (Gartner-evidenced):** only IBM/Ping/Transmit named strong on human→agent delegation; SailPoint/CyberArk/Okta/Entra/Saviynt absent. No ISPM/IGA vendor named as strong → Linx's positioning target.
+- **6 competitive camps** (not a vendor list): AI Agent Control Plane (Astrix/Oasis), AM-extending (Ping/IBM/Transmit), IGA/PAM incumbents with marketing ahead of capability (CyberArk/SailPoint/CrowdStrike), Shadow-AI (Clutch), LLM app-security (Noma/Prompt/Lasso), agent-native converged startups (Natoma/Token/Aembit).
+- **Amir's MCP telemetry bet** = load-bearing. Salesforce/ServiceNow/Atlassian don't expose OAuth-app enumeration today (confirmed via PMs Agent 2026-04-20). If MCP gives Linx a discovery channel those SaaS vendors won't, coverage curve is independent of vendor APIs.
+- **Tight positioning:** "inventory + governance layer for agents already delegated to enterprise systems" — not the delegation protocol, not prompt guardrails, not shadow-AI sniffer alone.
+
+Stress-tested: no sized TAM for "agent identity" yet (don't fake); Camp F (agent-native startups) is thinnest in matrix; ephemeral-attested school = real threat if a CNAPP vendor ships SPIFFE-attested agent identity in their runtime.
+
+Nothing invented — all sourced from repo knowledge files + Gartner 833731 + PMs Agent output. 16-URL external competitor fetch still pending via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) — brief will tighten once that lands.
+
+### Slack extraction ingested — SME brief bumped to v0.2
+Omri delivered Linx Claude's full extraction of `#governance-of-agentic-ai` (Aug 19 2025 → Mar 24 2026). Saved verbatim to `knowledge/slack-governance-channel-extraction-2026-04-21.md`. Key signals that moved the brief:
+
+1. **Mor's Nov 5 "no dedicated AI discovery UI needed" position contradicts the M1 Maria CISO hero flow** (which explicitly opens to an Agent Inventory). Added to open questions as the #2 item to clarify with Mor.
+2. **JIT discussed nowhere in channel** despite being in the epic scope line ("visibility + JIT"). Added to open questions. Channel is 95% discovery/inventory — external story should lead with discovery.
+3. **Saviynt Mar 24 RSAC drop claims MCP gateway + UARs + access graph + real-time AC** — Linx's pitch almost verbatim. Promoted to Camp C-prime in §6, moved from medium to high study priority in §11 stress test.
+4. **Amir Hamenahem's Sep 9 scan logged Claude/Gemini/Copilot as "no API."** MSFT shipped Entra Agent ID Oct 21 partially unblocking Copilot. For Claude + Gemini, Amir Ben Ami's MCP bet may be the primary discovery path. Sharpened §7 Linx lane.
+5. **60-day Slack silence (Feb 20 → Apr 21)** — only 3 Niv posts, zero replies. Either project stalled or moved off-channel. Critical political signal to resolve with Niv/Sarit before planning on top of in-channel state.
+6. **R&D start date never confirmed** — Mor flagged Nov 11, Sarit replied in-thread but never resolved in-channel. Added to open questions.
+7. **Dor added Feb 27 for Veza review, zero posts since.** Added as open question — observer, waiting for Omri, or off-channel review?
+8. **Niv's CPO-level 🙏 reaction to ephemeral-attested blog (Aug 24)** = don't dismiss ephemeral-attested in a Niv-present room.
+9. **Monday.com is the only named reference customer** across 8 months of channel history. Customer-pull gap confirmed as evidence, not assumption.
+10. **Camp C expanded to include Okta** (Identity Security Fabric, Sep 30).
+
+Commitments updated: Slack extraction done; added Saviynt deep-dive, Mor position clarification, JIT scope confirmation, 60-day silence resolution with Niv/Sarit, Dor posture clarification.
+
 ## 2026-04-20
 
 ### Dor's AI domain framing (HL, full scope Thursday Apr 23 with Amir)

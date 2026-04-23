@@ -20,6 +20,20 @@
 - Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
 - Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent
 
+### AI Governance SME workstream
+- [x] Execute Slack channel extraction via Linx Claude (`prompts/slack-extraction-ai-governance-channel.md`) — done Apr 21; saved to `knowledge/slack-governance-channel-extraction-2026-04-21.md`
+- [ ] Execute 16-URL competitor fetch via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) and merge into a `knowledge/ai-governance-competitor-landscape.md` — Apr 28 — self  [→ log 2026-04-21]
+- [ ] Execute Linear tickets extraction via Linx Claude (`prompts/linear-extraction-ai-governance-tickets.md`) — Apr 25 — self
+- [ ] Confirm Amir Ben Ami's MCP discovery scope: which SaaS vendors + which agent platforms (Claude/Gemini coverage?) — Apr 23 (Thu) — self + Amir  [→ log 2026-04-21]
+- [ ] Saviynt deep-dive: verify Mar 24 RSAC feature-list claim parity (MCP gateway, UARs, access graph, real-time AC) — Apr 30 — self  [→ log 2026-04-21]
+- [ ] Clarify Mor's Nov 5 "no dedicated UI" position vs. M1 Maria CISO hero flow — Apr 28 — self/Mor  [→ log 2026-04-21]
+- [ ] Confirm JIT scope: in epic name but not discussed in channel — where is JIT design actually happening? — Apr 28 — self/Mor/Sarit  [→ log 2026-04-21]
+- [ ] Resolve 60-day Slack silence signal: is the project stalled, or moved off-channel? — Apr 28 — self + Niv/Sarit  [→ log 2026-04-21]
+- [ ] Resolve shadow-AI scope ambiguity with Mor (non-goal vs. M4) — Apr 28 — self/Mor  [→ log 2026-04-21]
+- [ ] Clarify Dor's posture on AI Governance epic (added Feb 27, zero posts) — Apr 25 — self + Dor  [→ log 2026-04-21]
+- [ ] Get R&D start date confirmed (Mor flagged unresolved Nov 11) — Apr 28 — self/Sarit  [→ log 2026-04-21]
+- [ ] One named Linx customer validating "we'd adopt this tomorrow" for AI agent inventory — before June demo — self  [→ log 2026-04-21]
+
 ### Customer proximity
 - [ ] Self-serve "which customers use which features" capability — Apr 24 — self  [→ log 2026-04-19]
 - [x] 4 Grain recordings watched end-to-end — Apr 24 — self (done; continuing as cadence)

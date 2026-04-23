@@ -85,6 +85,14 @@ Anti-patterns to catch in review:
 - Preamble bullets that announce what the next bullets will say
 - Restating what Omri just said before answering
 
+## Data Recording Discipline (MANDATORY)
+
+Make facts greppable so future sessions don't burn context loading files:
+
+1. **Canonical entity names.** One spelling per entity (Saviynt, ConductorOne, Niv Goldenberg). Grep must match deterministically.
+2. **Atomic bullets in `knowledge/`.** One fact per line, cites source. Prose belongs in `artifacts/` or `brief.md`.
+3. **Dates inline** (YYYY-MM-DD) on time-sensitive claims. Staleness visible at grep time.
+
 ## Skill Usage Rules
 
 1. **Read before executing.** Always read the relevant SKILL.md top-to-bottom before producing any output. Never improvise a framework when an installed skill exists for the task.
