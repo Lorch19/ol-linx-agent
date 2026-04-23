@@ -345,4 +345,4 @@ Files updated: `knowledge/ai-governance-core.md` (user scenarios + 10 open items
 ### AI Governance learning plan + master brief Part A
 - Created learning plan: Claude = synthesis/repo integration; Gemini = audio, Q&A, Deep Research for currency.
 - Wrote `artifacts/ai-governance-master-brief-part-a.md` — distilled problem space: one-paragraph pitch, 4 forces, 5 agent types, MCP attack surface, 10 capabilities mapped to milestones, 3 buyer questions, key numbers (144:1 NHI ratio), Linx positioning statement. `[verify]` markers on Gartner predictions + MCP authz-optional status.
-- Part B (competitive landscape) queued for next session.
+- Part B (competitive landscape) written: `artifacts/ai-governance-master-brief-part-b.md` — Gartner framing, 6 competitive camps, platform-bundling clock, 5 claims to memorize. `[verify]` markers on Saviynt product status, CrowdStrike/SGNL close, Cisco/Astrix deal, Token Security scope expansion.
