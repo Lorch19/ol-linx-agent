@@ -280,3 +280,14 @@ Linx launched an internal **PMs Agent** (Slack interface) — productized assist
 
 ### Claude.ai project setup
 New Claude.ai project spun up for AI discovery. Instructions drafted (role + scope + behavior + source hierarchy). Four context docs attached: `knowledge/linx-product.md`, `artifacts/ai-overview-omer-efroni-2026-04-19.md`, `references/ai-leadership-principles.md`, `drafts/ai-assistant-reliability-problem-statement.md`. Ada context dropped from the attach list — company-internal AI is out of scope per Dor's framing.
+
+## 2026-04-23
+
+### Amir deep dive talking points (moved from commitments.md)
+- Lead with Amir's own Apr 10 Slack answer + CON-3064 Peloton regression
+- Pitch: assign AI-491 to the measurement function being scoped
+- Sequence two deliverables — pre-deploy regression gate + override-rate instrumentation
+- Ask for 15 min with Dudi to confirm AI-309 actual scope
+- Ask Dror for read-only access to eval scaffolding files
+- Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
+- Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent

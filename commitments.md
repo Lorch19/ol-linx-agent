@@ -11,15 +11,6 @@
 - [x] Run Linx Claude docs extraction + measurement inventory prompts — both done Apr 20
 - [ ] Draft measurement v0 artifact for Thursday (use `artifacts/ai-measurement-inventory-2026-04-20.md` as input) — Apr 23 — self
 
-### Thursday talking points (distilled from Apr 20 inventory)
-- Lead with Amir's own Apr 10 Slack answer + CON-3064 Peloton regression
-- Pitch: assign AI-491 to the measurement function being scoped
-- Sequence two deliverables — pre-deploy regression gate + override-rate instrumentation
-- Ask for 15 min with Dudi to confirm AI-309 actual scope
-- Ask Dror for read-only access to eval scaffolding files
-- Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
-- Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent
-
 ### AI Governance SME workstream
 - [x] Execute Slack channel extraction via Linx Claude (`prompts/slack-extraction-ai-governance-channel.md`) — done Apr 21; saved to `knowledge/slack-governance-channel-extraction-2026-04-21.md`
 - [ ] Execute 16-URL competitor fetch via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) and merge into a `knowledge/ai-governance-competitor-landscape.md` — Apr 28 — self  [→ log 2026-04-21]
@@ -66,20 +57,6 @@
 - Customer deep-dive — paused pending RevOps dashboard intro (Dor scheduling owner) [→ log 2026-04-20]
 - Clarify Mor's post-transfer scope — intro + shadow still valuable [→ log 2026-04-20]
 
-## Recently Completed
-
-- [x] Apr 19 — Amir Ben Ami 1:1 + Thursday deep dive booked
-- [x] Apr 19 — Ada internal OS context received
-- [x] Apr 19 — Notion brief ingested + knowledge files updated
-- [x] Apr 17 — Dashboard review shared with Rona
-- [x] Apr 16 — Dor 1:1, AI mandate formalized
-- [x] Apr 14 — First 1:1 with Dor
-
 ## Standing / Recurring
 
 - [ ] Archive previous month's `log.md` entries to `log-archive-YYYY-MM.md` — 1st of each month — self
-
-## Dropped
-
-- ~~Noma Security research~~ — superseded by AI leadership mandate
-- ~~30-sec "only we" pitch drill~~ — will emerge from May 1 brief
