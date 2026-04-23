@@ -36,7 +36,15 @@
 
 Agent = first-class graph entity (not an edge). Properties: Platform, Name/Description/Prompt, Owner, Accounts shared with, Agent-to-agent edges, Entitlements, Tools (API+MCP), Capabilities, Model, Timestamps.
 
-**Tool** = first-class entity. Properties: Name, Type (API/MCP), Auth type, Permissions, Target URL, Target app. Linx maps blast radius by enumerating every tool surface, not just aggregate app access.
+**Tool** = first-class entity. Full property spec (from PRD 2026-04-23):
+- Name
+- Type: API | MCP
+- Authentication type: API key, OAuth, etc.
+- Permissions: list
+- Target URL
+- Target application name
+
+Linx maps blast radius by enumerating every tool surface, not just aggregate app access.
 
 ## Key competitors named in tickets
 

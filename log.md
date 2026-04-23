@@ -318,3 +318,26 @@ When Notion MCP is connected to Claude Code: sync Notion battle cards + competit
 - Ask Dror for read-only access to eval scaffolding files
 - Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
 - Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent
+
+### AI Governance framework session
+Defined the 3-dimension framework for AI Governance:
+1. **Identity Lifecycle** — Discover → Assess → Enforce (the customer value arc)
+2. **AI Visibility Tier** — Known agents in known apps / Unknown agents in known apps / Unknown-unknowns (apps Linx doesn't know have agents). Omri confirmed: unknown-unknowns likely never in scope.
+3. **Coverage** — connector breadth; this is the ceiling on everything else.
+
+**Lifecycle stage definitions locked:**
+- **Discover:** connector scan (known apps) + OAuth/API key pattern scan (shadow agents in known apps) + IDP scan. Output: agent inventory with platform, name, account linkages, first-seen.
+- **Assess:** ownership (orphaned flag), privilege posture (scopes requested vs granted vs used), credential type (API key → OAuth → JIT risk spectrum), activity (idle 60+ days), blast radius. Output: risk score + prioritized remediation queue.
+- **Enforce:** MCP Gateway (P0, session-level scope enforcement) + JIT provisioning/deprovision + lifecycle actions (offboard orphaned, rotate creds) + policy violations → alert or auto-remediate.
+
+**Key insight from competitive research (ChatGPT report reviewed):** MCP Gateway is both an Enforce AND a Discover mechanism — the proxy sees what agents are doing. Worth flagging to Niv.
+
+**Niv's challenge ("just use 10 capabilities") addressed:** 10 capabilities = what to build (eng catalog). D→A→E = how to sell and sequence (customer narrative). Milestones M1-M4 already implicitly use D→A→E. Both needed.
+
+**PRD reviewed (full Notion export).** M1 technical requirements are eng-ready. Critical gaps:
+- Business justification section is blank — no named customer
+- Definition of done is empty
+- Open questions section in Notion is empty (10 items now captured in ai-governance-core.md)
+- Auditability (#8) misplaced on M4 — belongs in M3
+
+Files updated: `knowledge/ai-governance-core.md` (user scenarios + 10 open items), `knowledge/ai-governance-deep.md` (Tool model full spec).

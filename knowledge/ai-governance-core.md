@@ -74,11 +74,30 @@ Maps directly to Linx's M0–M3 roadmap. Use as external validation in customer 
 
 ---
 
+## User scenarios (from PRD, 2026-04-23)
+
+| Persona | Need |
+|---|---|
+| IGA / IT Admin – Discovery | Discover all agentic AI identities across cloud/SaaS; eliminate blind spots |
+| IGA / IT Admin – Credential Mapping | Map credentials, resources, relationships per agent; understand blast radius |
+| IGA / IT Admin – Directory | Central directory of all agentic identities for continuous audit and tracking |
+| Security Admin – Permission Tracing | Trace how an agent gained specific permissions; detect privilege escalation |
+| Compliance Officer – Reporting | Reports on agentic identity access/usage for audit and regulatory requirements |
+| Security Analyst – Risk Detection | Detect suspicious/risky privileges in AI agents; prioritize threats |
+| Security Admin – Lifecycle Management | Know when agents are created, modified, or orphaned; prevent abandoned agents |
+| IT Admin – Ownership & Accountability | Assign owners to each agentic identity; enforce accountability |
+| Security Analyst – Incident Response | Trace/investigate agent activity during a security incident; contain compromised agents |
+| CISO / Security Leadership | High-level view of agentic identity risks and trends; executive risk posture reporting |
+
 ## Open items (Omri's research agenda)
 
 1. Tier-1 ambiguity: does scope include embedded copilots (Copilot-in-Word, Gemini-in-Gmail)?
-2. Customer pull: Maria is a persona. Need one named customer "we'd adopt this" before June demo.
+2. **Customer pull: business justification section in PRD is blank. Need one named customer "we'd adopt this" before June demo.**
 3. June target: M0 or early M1?
 4. Shadow AI gap vs. Clutch: competitive risk of the non-goal framing.
 5. Which 3 of the 10 capabilities actually block a buyer?
 6. Mor/Omri ownership split: spec vs. research vs. competitive vs. delivery.
+7. **Definition of done is empty in PRD.** M1 success criterion exists but no measurable DoD (e.g. # of customers in prod, # agents discovered).
+8. **Open questions section in Notion PRD is empty.** Items 1-6 above belong there — add them.
+9. **Platform owner vs. agent owner distinction unresolved.** PRD flags it but doesn't answer: same role/purpose? Separate fields?
+10. **Auditability (#8) has a question mark on M4.** Should be M3 — can't enforce policy without audit trails. Logging approval decisions is part of Human Oversight (#5) = M3.
