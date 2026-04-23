@@ -133,7 +133,7 @@ New skills are added to operator-kit regularly — when you don't find a fit, We
 Apply Skill Usage Rules 1-5 above, plus these operator-kit specifics:
 
 1. **WebFetch the skill's SKILL.md** from GitHub before producing output.
-2. **Apply with Linx context** from `knowledge/`, `references/`, `customer-intel.md`, `linx-profile.yaml`.
+2. **Apply with Linx context** from files confirmed via the Context Loading Protocol — do not load `knowledge/` or `references/` wholesale.
 3. **Write output to a durable file** — `artifacts/<skill>-<topic>-<date>.md` or extend the relevant `knowledge/` file. Chat output is lost on session end.
 4. **Commit naming the skill used.** Example: `Apply competitive-teardown to Astrix and ConductorOne`.
 5. **Push to active branch.** Never leave skill output uncommitted.
