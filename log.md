@@ -341,3 +341,8 @@ Defined the 3-dimension framework for AI Governance:
 - Auditability (#8) misplaced on M4 — belongs in M3
 
 Files updated: `knowledge/ai-governance-core.md` (user scenarios + 10 open items), `knowledge/ai-governance-deep.md` (Tool model full spec).
+
+### AI Governance learning plan + master brief Part A
+- Created learning plan: Claude = synthesis/repo integration; Gemini = audio, Q&A, Deep Research for currency.
+- Wrote `artifacts/ai-governance-master-brief-part-a.md` — distilled problem space: one-paragraph pitch, 4 forces, 5 agent types, MCP attack surface, 10 capabilities mapped to milestones, 3 buyer questions, key numbers (144:1 NHI ratio), Linx positioning statement. `[verify]` markers on Gartner predictions + MCP authz-optional status.
+- Part B (competitive landscape) queued for next session.
