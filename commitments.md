@@ -75,6 +75,10 @@
 - [x] Apr 16 — Dor 1:1, AI mandate formalized
 - [x] Apr 14 — First 1:1 with Dor
 
+## Standing / Recurring
+
+- [ ] Archive previous month's `log.md` entries to `log-archive-YYYY-MM.md` — 1st of each month — self
+
 ## Dropped
 
 - ~~Noma Security research~~ — superseded by AI leadership mandate
