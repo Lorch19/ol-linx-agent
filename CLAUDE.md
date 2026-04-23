@@ -11,6 +11,24 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 5. If something is overdue, mention once. Don't nag.
 6. **`log.md` is read-on-demand only — never load the full file.** When recent context is needed, read the last 40-50 lines (use `offset` parameter). The file grows unboundedly; a full read wastes ~10K tokens every time.
 
+## Context Router (MANDATORY — load files by task, not upfront)
+
+**Default at session start: load only `brief.md` + `commitments.md`.** Everything else loads on demand when the task triggers its category. Never preload the full knowledge base.
+
+| Category | Trigger signals | Load these files |
+|---|---|---|
+| **Competitive** | competitor name, market q, positioning, deal | `knowledge/competitive-matrix.md`, `knowledge/battle-cards.md`, `knowledge/capability-landscape.md`, `knowledge/positioning.md` |
+| **Customer** | customer name, call prep, discovery, customer intel | `customer-intel.md`, `references/stakeholder-map.md` |
+| **Product / spec** | feature idea, spec writing, roadmap, capability gap | `knowledge/linx-product.md`, `knowledge/capability-landscape.md` |
+| **AI governance** | agent governance, Amir meeting, AI epic, M1/M2, MCP | `knowledge/ai-governance-epic.md`, `knowledge/slack-governance-channel-extraction-2026-04-21.md` |
+| **Meeting prep** | "prep me for", stakeholder 1:1, board | category above + `references/stakeholder-map.md` |
+| **Weekly / planning** | milestones, quarterly, 30-60-90 | `milestones.md` |
+| **Recent context** | "what happened", "last week", "remind me" | tail `log.md` (last 40 lines only — never full file) |
+| **Market / Series B** | TAM, fundraise, market sizing, buyer | `knowledge/market-context.md` |
+| **IAM jargon** | unfamiliar IAM term | `references/iam-fintech-bridge.md` |
+
+When the task is ambiguous, state which category you inferred and which files you loaded. Omri can say "also load X" to extend.
+
 ## During Sessions — Persistence Discipline (MANDATORY)
 
 **The single cause of past data loss: conversations happened, but were never written to files and committed. Every Claude Code web session starts from `origin/main` — if it's not in the repo, it does not exist.**
