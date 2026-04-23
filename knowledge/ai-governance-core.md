@@ -92,7 +92,7 @@ Maps directly to Linx's M0–M3 roadmap. Use as external validation in customer 
 ## Open items (Omri's research agenda)
 
 1. Tier-1 ambiguity: does scope include embedded copilots (Copilot-in-Word, Gemini-in-Gmail)?
-2. **Customer pull: business justification section in PRD is blank. Need one named customer "we'd adopt this" before June demo.**
+2. **Customer pull: Monday.com is the named customer signal for AI governance. Business justification section in PRD should cite Monday explicitly — currently blank.**
 3. June target: M0 or early M1?
 4. Shadow AI gap vs. Clutch: competitive risk of the non-goal framing.
 5. Which 3 of the 10 capabilities actually block a buyer?
