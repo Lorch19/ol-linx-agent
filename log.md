@@ -291,6 +291,9 @@ New Claude.ai project spun up for AI discovery. Instructions drafted (role + sco
   3. **SailPoint** expanded Agent Identity connectors to Salesforce/ServiceNow/Snowflake (Apr 2026)
 - CrowdStrike/SGNL: still pending close (expected Apr 30). PANW/CyberArk close (Feb 11) already in matrix.
 
+### Notion battle cards — standing backlog item
+When Notion MCP is connected to Claude Code: sync Notion battle cards + competitor intel into `knowledge/battle-cards.md` and `knowledge/competitive-matrix.md` (not a new file — append to existing structure).
+
 ### Amir deep dive talking points (moved from commitments.md)
 - Lead with Amir's own Apr 10 Slack answer + CON-3064 Peloton regression
 - Pitch: assign AI-491 to the measurement function being scoped
