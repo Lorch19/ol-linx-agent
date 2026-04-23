@@ -11,23 +11,34 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 5. If something is overdue, mention once. Don't nag.
 6. **`log.md` is read-on-demand only — never load the full file.** When recent context is needed, read the last 40-50 lines (use `offset` parameter). The file grows unboundedly; a full read wastes ~10K tokens every time.
 
-## Context Router (MANDATORY — load files by task, not upfront)
+## Context Loading — Interactive Protocol (MANDATORY)
 
-**Default at session start: load only `brief.md` + `commitments.md`.** Everything else loads on demand when the task triggers its category. Never preload the full knowledge base.
+**At session start, load only:** `brief.md`, `commitments.md`, `context-index.md`. Nothing else.
 
-| Category | Trigger signals | Load these files |
-|---|---|---|
-| **Competitive** | competitor name, market q, positioning, deal | `knowledge/competitive-matrix.md`, `knowledge/battle-cards.md`, `knowledge/capability-landscape.md`, `knowledge/positioning.md` |
-| **Customer** | customer name, call prep, discovery, customer intel | `customer-intel.md`, `references/stakeholder-map.md` |
-| **Product / spec** | feature idea, spec writing, roadmap, capability gap | `knowledge/linx-product.md`, `knowledge/capability-landscape.md` |
-| **AI governance** | agent governance, Amir meeting, AI epic, M1/M2, MCP | `knowledge/ai-governance-epic.md`, `knowledge/slack-governance-channel-extraction-2026-04-21.md` |
-| **Meeting prep** | "prep me for", stakeholder 1:1, board | category above + `references/stakeholder-map.md` |
-| **Weekly / planning** | milestones, quarterly, 30-60-90 | `milestones.md` |
-| **Recent context** | "what happened", "last week", "remind me" | tail `log.md` (last 40 lines only — never full file) |
-| **Market / Series B** | TAM, fundraise, market sizing, buyer | `knowledge/market-context.md` |
-| **IAM jargon** | unfamiliar IAM term | `references/iam-fintech-bridge.md` |
+`context-index.md` is the tag-based manifest of all knowledge files. Use it to reason about relevance without loading files. It's cheap (5K) and prevents loading 70K+ of context that may not be needed.
 
-When the task is ambiguous, state which category you inferred and which files you loaded. Omri can say "also load X" to extend.
+### The protocol (every substantive task)
+
+**Step 1 — Propose before loading.** On the first message that requires knowledge files, scan `context-index.md` tags against the task topics and respond with a context proposal. Format:
+
+> **Context for this task**
+> **Load:** [file1] — [one-line reason] / [file2] — reason
+> **Maybe useful:** [file3] — [why uncertain] / [file4] — reason
+> **Skipping:** [file5, file6, ...] — not relevant to this task
+>
+> Confirm, or tell me what to add/drop?
+
+**Step 2 — Wait for confirmation.** Do not load files or start work until Omri responds. One round-trip.
+
+**Step 3 — Load confirmed files, then proceed.**
+
+### Rules
+- **Tags are cross-cutting.** A file tagged `competitive` AND `ai-governance` surfaces for either topic — don't restrict by category.
+- **Artifacts first.** Recent artifacts (`artifacts/`) are often the most targeted file for a topic. Always check their tags.
+- **Two-tier proposal always.** Primary = direct tag match. Secondary = adjacent tags that might add value. Never collapse to one tier.
+- **Skip explicitly.** Name what you're not loading and why — this lets Omri course-correct if you've missed something.
+- **Exception:** For quick factual questions that don't need file lookups (< 2 lines to answer from existing context), just answer — no proposal needed.
+- **`log.md` tail only** — never load the full file. Tail last 40 lines when recent context is needed.
 
 ## During Sessions — Persistence Discipline (MANDATORY)
 
