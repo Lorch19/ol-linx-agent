@@ -283,6 +283,14 @@ New Claude.ai project spun up for AI discovery. Instructions drafted (role + sco
 
 ## 2026-04-23
 
+### Token optimization + competitive refresh (agent session)
+- Completed bulk optimization work from previous session: SKILL.md frontmatter removed, context-index tiers updated (ai-sme-brief + competitive-dynamics → [ref])
+- Competitive-matrix.md refreshed to 2026-04-23 with 3 post-Apr-10 signals:
+  1. **Cisco/Astrix** in advanced acquisition talks ($250-350M, Apr 10) — unconfirmed, watch RSAC Apr 28
+  2. **Silverfort + SentinelOne** strategic partnership (Apr 21) — ecosystem motion accelerating
+  3. **SailPoint** expanded Agent Identity connectors to Salesforce/ServiceNow/Snowflake (Apr 2026)
+- CrowdStrike/SGNL: still pending close (expected Apr 30). PANW/CyberArk close (Feb 11) already in matrix.
+
 ### Amir deep dive talking points (moved from commitments.md)
 - Lead with Amir's own Apr 10 Slack answer + CON-3064 Peloton regression
 - Pitch: assign AI-491 to the measurement function being scoped
