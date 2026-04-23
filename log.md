@@ -318,3 +318,16 @@ When Notion MCP is connected to Claude Code: sync Notion battle cards + competit
 - Ask Dror for read-only access to eval scaffolding files
 - Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
 - Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent
+
+### Eng pre-kickoff deck prep + MCP Gateway pivot surfaced (agent session)
+- Sunday 2026-04-27 pre-kickoff with Eng team being prepped. Session purpose: consolidate shared picture, align on architectural pivot, use session itself to answer open scope questions (not a broadcast).
+- Connector cross-check via Linear + Notion MCP revealed three drifts from `ai-governance-core.md`:
+  1. **M1 shipped connectors = Gemini, Vertex AI, Bedrock, n8n** — NOT ChatGPT Enterprise (still Backlog, CON-1733) or Copilot Studio (Canceled Jan 2026, CON-1972). Core knowledge file listed ChatGPT + Copilot as P0 — wrong.
+  2. **M2 is 74%, 4 weeks overdue** (target was Feb 27). Remaining 26% = exactly where the generic-IAM-API approach broke.
+  3. **M3 scope silently narrowed in Linear** — struck through: MCP access controls, approval chains, resource policies, least-privilege analysis, NHI remediation. Notion still shows full scope. Docs drifted.
+- **Architectural pivot confirmed (Omri, this session):** Linx tried using generic IAM APIs (that power human + NHI governance) for agent governance; confirmed non-viable. Pivot to **MCP Gateway** as the governance layer. Status: concept/whiteboard. Sarit + Amir Ben Ami leading. No design doc yet. Listed as Cycle 79 AI priority in `linx-product.md`.
+- Caution per Omri: not every part of Mar 3 Notion spec is invalidated. M1 visibility stands. Parts of M2 likely still feed the Gateway. Spec delta is in the governance/enforcement layer specifically.
+- Deck plan saved at `~/.claude/plans/we-have-a-kick-humming-bumblebee.md`. 7-slide working-session arc: Why → Shipped → Learned (the wall) → Pivot (MCP Gateway) → What we figure out together → How we work → What we leave with.
+- Reusable from Mor's webinar (`~/Downloads/How Agentic Identities Actually Works - Webinar.pptx`, Dec 2025): "humans on steroids" line + Human-vs-AI-Agent-vs-NHI comparison triangle.
+- Pre-flight before generating slides: read Notion `Agentic AI Identities` epic + `AI Agents research` (edited today, 2026-04-23) + Linear project Updates tab; confirm with Sarit/Amir that "MCP Gateway" is the right public framing; decide if June 15 Identiverse is committed or aspirational.
+- Linear project lead = Ben Bakhar (Experience). Teams involved: Experience, AI, Application, Analytics, Connectors, Product, UX/UI Design, Tech Leads.

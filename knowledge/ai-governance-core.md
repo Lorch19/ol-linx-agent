@@ -1,8 +1,41 @@
 # AI Governance Epic — Scope & Status
 
-**Source:** Linear `governance-for-agentic-ai-07e946f01264` + Notion. As of 2026-04-20.
+**Source:** Linear `governance-for-agentic-ai-07e946f01264` + Notion. Original framing as of 2026-04-20. **Current-state delta as of 2026-04-23 (see below).**
 **Owner:** Mor Shabi (originating PM). Omri owns research + competitor workstream. Split TBD.
+**Linear project lead:** Ben Bakhar (Experience). Teams: Experience, AI, Application, Analytics, Connectors, Product, UX/UI Design, Tech Leads.
 **Deep reference:** `knowledge/ai-governance-deep.md` (10 capabilities, agent types, identity model)
+
+---
+
+## ⚠️ Current state (2026-04-23) — reality check + pivot
+
+The Mar 3 Notion spec and earlier versions of this file frame things that have since shifted. Read this section before trusting the roadmap/platforms/scope sections below.
+
+### What actually shipped in M1 (via Linear verification)
+
+| Claim in this doc | Reality |
+|---|---|
+| M1 P0 platforms = ChatGPT Enterprise + Microsoft Copilot Studio | **Wrong.** ChatGPT Enterprise (CON-1733) still in Backlog. Copilot Studio direct connector (CON-1972) **Canceled** Jan 2026. |
+| M1 shipped "2–4 agentic platforms" | **Correct — but different platforms.** Shipped: **Gemini, Vertex AI, Bedrock, n8n**. |
+| M1 visibility layer live | **Confirmed.** Agent graph model, Discovery > Agents UI, agent entity page, built-in issues (AGENT_EXCESSIVE_PERMISSIONS, AGENT_OWNER_OFFBOARDED). Real data, not UI scaffolding. |
+
+### M2 / M3 drift
+- **M2 Access Intelligence:** 74% complete, 4 weeks overdue (target was Feb 27). The unfinished 26% is exactly where the generic-IAM-API approach broke.
+- **M3 Governance & Control:** silently narrowed in Linear. **Struck through in the milestone description**: MCP server access controls, approval chains for sensitive ops, resource-level policies, least-privilege analysis, NHI remediation. **Remaining:** UARs for agents + JIT provisioning. Notion still shows the full M3 scope — docs drifted.
+
+### The architectural pivot: MCP Gateway
+
+Linx attempted to govern agents using the generic IAM APIs that power human + NHI governance. **Confirmed non-viable** — agent access flows (ephemeral, intent-driven, multi-hop through tools/MCP) don't fit the API surface.
+
+**Pivot:** govern agents at the **MCP protocol layer** via an MCP Gateway, not at the IAM-API layer.
+- **Status:** concept / whiteboard. No design doc yet.
+- **Leaders:** Sarit (CTO) + Amir Ben Ami (Head of AI).
+- **Already listed** as a Cycle 79 AI priority in `linx-product.md`.
+- **What survives:** M1 visibility stack (fully valid). Parts of M2 (credential discovery, delegation mapping) likely feed the Gateway as inputs. Omri's assessment (2026-04-23): "not every part of the old spec is invalidated — be cautious about what you throw out."
+- **What to figure out:** what M2 work to finish vs. pause, minimum viable Gateway surface, June 15 Identiverse demo scope.
+
+### Sunday 2026-04-27 pre-kickoff
+Eng pre-kickoff session with broader team. Not an announcement — everyone knows at some level. Deck is a working-session framing device. Plan: `~/.claude/plans/we-have-a-kick-humming-bumblebee.md`.
 
 ---
 
