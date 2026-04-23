@@ -3,3 +3,4 @@
 .telegram-bot.log
 .telegram-bot.err
 .telegram_sessions/
+.claude/settings.local.json
