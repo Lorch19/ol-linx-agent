@@ -9,6 +9,7 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 3. Scan `commitments.md` — note anything overdue
 4. If first message is work-related, weave in relevant context naturally
 5. If something is overdue, mention once. Don't nag.
+6. **`log.md` is read-on-demand only — never load the full file.** When recent context is needed, read the last 40-50 lines (use `offset` parameter). The file grows unboundedly; a full read wastes ~10K tokens every time.
 
 ## During Sessions — Persistence Discipline (MANDATORY)
 
@@ -127,14 +128,14 @@ New skills are added to operator-kit regularly — when you don't find a fit, We
 
 ### Invocation protocol (every time a skill is used)
 
-1. **WebFetch the skill's SKILL.md** from its folder. Read it top to bottom before producing output.
-2. **Name the skill at the top of the response** (per Skill Usage Rule #2).
-3. **Apply the methodology** with Linx context pulled from `knowledge/`, `references/`, `customer-intel.md`, `linx-profile.yaml`. Don't improvise frameworks; don't copy skeletons blindly (per rules #3 + #5).
-4. **Write the output to a durable file** — `artifacts/<skill>-<topic>-<date>.md` for one-off outputs, or extend the relevant `knowledge/` file when it's reference material. Output in chat alone does not survive the session.
-5. **Stress-test the output** (per rule #4) — add a "Stress Test" section: weakest analysis point, unstated assumptions, likely competitor counter-argument.
-6. **Commit with a message that names the skill used.** Example: `Apply competitive-teardown to Astrix and ConductorOne`.
-7. **Push to the active branch.** Never leave skill output uncommitted.
-8. **Log the invocation in `log.md`** under today's date — which skill, what it produced, which file was created/updated.
+Apply Skill Usage Rules 1-5 above, plus these operator-kit specifics:
+
+1. **WebFetch the skill's SKILL.md** from GitHub before producing output.
+2. **Apply with Linx context** from `knowledge/`, `references/`, `customer-intel.md`, `linx-profile.yaml`.
+3. **Write output to a durable file** — `artifacts/<skill>-<topic>-<date>.md` or extend the relevant `knowledge/` file. Chat output is lost on session end.
+4. **Commit naming the skill used.** Example: `Apply competitive-teardown to Astrix and ConductorOne`.
+5. **Push to active branch.** Never leave skill output uncommitted.
+6. **Log in `log.md`** under today's date — skill name, output file, key finding.
 
 ### Anti-patterns
 
