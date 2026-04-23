@@ -15,7 +15,7 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 
 **At session start, load only:** `brief.md`, `commitments.md`, `context-index.md`. Nothing else.
 
-`context-index.md` is the tag-based manifest of all knowledge files. Use it to reason about relevance without loading files. It's cheap (5K) and prevents loading 70K+ of context that may not be needed.
+`context-index.md` is the tag-based manifest of all knowledge files. Use it to reason about relevance without loading files. Files marked `[ref]` in the index are reference-tier — propose them as **Maybe Useful** by default; only promote to **Load** when the task explicitly requires depth (spec writing, deep technical analysis, historical channel decisions).
 
 ### The protocol (every substantive task)
 
