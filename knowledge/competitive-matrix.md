@@ -1,6 +1,6 @@
 # Competitive Matrix — Identity Security Landscape
 
-> Last updated: 2026-04-23 (post-Apr-10 signals: Cisco/Astrix talks, Silverfort/SentinelOne, SailPoint connectors)
+> Last updated: 2026-04-23 (added Token Security, Origin HQ; Niv-sourced research)
 > Confidence: Estimated (web-sourced April 2026 + Gartner Oct 2025 IGA Market Guide). Validate against internal Linx intel before customer-facing use.
 > Previous version: 2026-04-08 (pre-M&A-wave)
 
@@ -81,20 +81,20 @@ Scoring: 4=Best-in-class, 3=Strong, 2=Adequate, 1=Weak, 0=Absent
 
 ### NHI-Pure Plays
 
-| Capability | Weight | Astrix | Oasis |
-|---|---|---|---|
-| Identity Visibility & Discovery | 15% | 3 | 3 |
-| Access Graph / Relationship Mapping | 12% | 3 | 3 |
-| IGA Core (lifecycle, certs, SoD) | 12% | 1 | 1 |
-| NHI / Machine Identity Governance | 10% | 4 | 4 |
-| AI/ML-Driven Automation | 10% | 3 | 3 |
-| JIT / Least Privilege Enforcement | 8% | 2 | 3 |
-| ISPM / Posture Management | 8% | 3 | 2 |
-| Speed to Value / Deployment | 8% | 3 | 3 |
-| Integration Breadth (connectors) | 7% | 2 | 2 |
-| Compliance Automation | 5% | 2 | 2 |
-| AI Agent / Agentic Identity | 3% | 3 | 3 |
-| Data Access Governance | 2% | 1 | 1 |
+| Capability | Weight | Astrix | Oasis | Token Security |
+|---|---|---|---|---|
+| Identity Visibility & Discovery | 15% | 3 | 3 | 3 |
+| Access Graph / Relationship Mapping | 12% | 3 | 3 | 2 |
+| IGA Core (lifecycle, certs, SoD) | 12% | 1 | 1 | 1 |
+| NHI / Machine Identity Governance | 10% | 4 | 4 | 4 |
+| AI/ML-Driven Automation | 10% | 3 | 3 | 3 |
+| JIT / Least Privilege Enforcement | 8% | 2 | 3 | 3 |
+| ISPM / Posture Management | 8% | 3 | 2 | 2 |
+| Speed to Value / Deployment | 8% | 3 | 3 | 3 |
+| Integration Breadth (connectors) | 7% | 2 | 2 | 2 |
+| Compliance Automation | 5% | 2 | 2 | 1 |
+| AI Agent / Agentic Identity | 3% | 3 | 3 | 4 |
+| Data Access Governance | 2% | 1 | 1 | 1 |
 
 ---
 
@@ -168,6 +168,17 @@ $85M raised ($45M Series B Dec 2024). **NHI market leader expanding to human ide
 
 ⚠️ **April 10, 2026 — Cisco acquisition talks:** Reports emerged that Cisco is in advanced negotiations to acquire Astrix for **$250-350M** (The Information, SiliconAngle, Calcalist). Deal NOT yet announced or closed. If confirmed, Astrix exits the standalone market and becomes a Cisco security play. Implications: (1) removes a direct competitor, (2) validates the NHI + AI agent space valuation, (3) Cisco/Astrix together would be a credible mid-market identity entrant. Watch RSAC 2026 (Apr 28) for any confirmation.
 
+### Token Security — 63/100 (NEW — 2026-04-23)
+$28M total ($22M Series A, Jan 2025, Notable Capital). Named to The Information's 50 Most Promising Startups of 2025.
+
+**Product:** NHI security platform (service accounts, API keys, OAuth tokens, certs) with AI agent lifecycle management as primary 2026 vector. Launched **AI Agent Identity Lifecycle Management** (Nov 2025) — auto-inventories managed, home-grown, and personal AI agents including custom GPTs and MCP servers; assigns ownership; enforces least-privilege intent-based permissions; retires dormant agents.
+
+**Differentiator: MCP two-sided play.** Launched industry-first **MCP Server for NHI Security** (May 2025) — security teams query/remediate machine identity risk via natural language (Claude, ChatGPT, Cursor). AND they secure MCP servers as identities. No competitor has announced both sides of this.
+
+**vs. Linx:** Smaller, earlier-stage, NHI-focused without human identity breadth. But their AI agent lifecycle framing is tighter and more operationalized than anything Linx has shipped. Worth a deeper teardown before Identiverse.
+
+**Source:** Niv Goldenberg drop, 2026-04-23.
+
 ### Oasis Security — 73/100 (NEW)
 $195M raised total ($120M Series B March 2026, Craft Ventures). **Most funded pure NHI startup.** 5x ARR growth. NHI + Agentic Access Management focus. Not yet expanding to human identity but watch closely. Most likely to pivot to unified coverage next.
 
@@ -204,6 +215,16 @@ Silverfort is the most important new entry on this matrix. Same vision (unified 
 
 ### "AI-Native" Is Fully Commoditized
 ConductorOne/C1, Lumos, Veza, Saviynt, CyberArk, CrowdStrike all claim AI-native. **Differentiation must move from "we use AI" to measurable outcomes:** time-to-remediation, toil eliminated, autonomous actions per day, policy violations caught per week. Linx's **Autopilot GA** is a concrete claim to make vs. Lumos's waitlisted agents.
+
+### Adjacent / Complementary Players (not direct competitors — 2026-04-23)
+
+**Origin HQ** — Endpoint security for the AI agent reasoning layer ("semantic observability"). Captures the full trace of every agent: originating prompt, reasoning chain, file reads, processes, connections. Detects prompt injection, context-window poisoning ("Brainworm"), tool-call hijacking at the reasoning layer — attacks that leave no binary signature, so EDR tools miss them entirely.
+
+**Not a Linx competitor.** Origin governs *what agents decide and why*; Linx governs *what credentials agents hold and what access those credentials grant*. Complementary stack. Potential partnership angle — their observability + Linx's identity governance = full-stack AI agent security. Watch for scope expansion.
+
+**Source:** Niv Goldenberg drop, 2026-04-23.
+
+---
 
 ### Capital Position Matters Now
 With the M&A wave compressing the standalone window, raised capital = survival runway. Rough rankings:

@@ -283,6 +283,11 @@ New Claude.ai project spun up for AI discovery. Instructions drafted (role + sco
 
 ## 2026-04-23
 
+### Niv-sourced research: Origin HQ, Token Security, Software Analyst (agent session)
+- **Token Security** — direct competitor, NHI+AI agent lifecycle, $28M funded. MCP two-sided play (secures MCP servers + exposes platform via MCP). Added to competitive-matrix.md. Needs deeper teardown before Identiverse.
+- **Origin HQ** — complementary, not a competitor. EDR for the reasoning layer (semantic observability, prompt injection detection). Potential partnership angle. Added to competitive-matrix.md as adjacent player.
+- **Software Analyst (SACR)** — 5 relevant articles. Key: 4-phase governance model, 144:1 NHI:human ratio (buyer conversation anchor), JIT-TRUST framing, intent-aware access as next differentiator. Added to ai-governance-core.md as analyst validation.
+
 ### AI Governance project setup + MCP wiring (agent session)
 - Decision: Claude Code (terminal, local) as primary tool for AI Governance initiative. Claude.ai for lightweight connector tasks.
 - Three initiative streams locked: Competition (always-on intel), Vision (validate Niv's vision + framework), Execution (specs, tickets, decks).

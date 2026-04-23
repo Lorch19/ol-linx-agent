@@ -52,6 +52,28 @@ Bring ISPM + IGA to Agentic AI Identities on the Linx platform.
 - **IGA scope = visibility + JIT.** M4 items explicitly deferred.
 - **Niv is CPO-engaged.** Mor Shabi = active PM. Yoad = technical gate on credential pipelines.
 
+## Analyst-validated frameworks (Software Analyst Cyber Research — 2026-04-23)
+
+**Source:** softwareanalyst.substack.com — 5 relevant articles extracted by agent. Niv-sourced.
+
+**4-phase governance model** (AIAP framework — "new SSO for agents"):
+1. Discover/inventory agents
+2. Define allowed actions deterministically
+3. Provision access ephemerally
+4. Enforce continuous revocation
+
+Maps directly to Linx's M0–M3 roadmap. Use as external validation in customer and analyst conversations.
+
+**144:1 NHI-to-human ratio** — credible enterprise benchmark (sourced from SACR analysis). A single human operator can spin up multiple agents, each with distinct identities. Manual oversight structurally impossible at this scale. Use in CISO conversations to quantify why human-centric governance breaks.
+
+**Intent-aware access** — analyst frames this as the emerging differentiator beyond inventory/visibility. Identity + behavior + context + data sensitivity evaluated continuously. LLMs used to model and drift-detect behavioral intent over time. This is M4 territory for Linx — but worth naming as the vision horizon.
+
+**JIT-TRUST** — analyst framing as Zero Trust successor: Zero Trust answered "who can access what"; JIT-TRUST answers "how long, under what conditions, for what exact purpose." Ephemeral Access Grants, narrowly scoped per task. Requires cryptographically strong identity fabric. Maps to Linx's JIT access pillar.
+
+**ISPM vs. periodic IGA** — stolen credentials = 31% of breaches (Verizon 2025 DBIR). ISPM surfaces misconfigurations, stale accounts, insecure OAuth grants, and toxic permission combos in real-time — IGA periodic cert cycles miss these. Analyst validation for Linx's ISPM positioning.
+
+---
+
 ## Open items (Omri's research agenda)
 
 1. Tier-1 ambiguity: does scope include embedded copilots (Copilot-in-Word, Gemini-in-Gmail)?
