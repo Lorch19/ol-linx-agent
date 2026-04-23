@@ -283,6 +283,17 @@ New Claude.ai project spun up for AI discovery. Instructions drafted (role + sco
 
 ## 2026-04-23
 
+### AI Governance project setup + MCP wiring (agent session)
+- Decision: Claude Code (terminal, local) as primary tool for AI Governance initiative. Claude.ai for lightweight connector tasks.
+- Three initiative streams locked: Competition (always-on intel), Vision (validate Niv's vision + framework), Execution (specs, tickets, decks).
+- Existing epic (`ai-governance-epic.md`) flagged as likely outdated — will supersede with Niv's current vision when shared.
+- P0 deadline confirmed: June 15, Identiverse. Omri wants functioning product, not just a demo.
+- MCP setup: Linear ✔ connected (terminal), Notion/Slack pending admin approval. Grain + Datadog connected via claude.ai.
+- Desktop app confirmed server-side — doesn't pick up local MCP config. Terminal is the working environment.
+- `linx` alias created: `cd ~/ol-linx-agent && claude` — one command to launch from any terminal.
+- Repo cloned locally to `~/ol-linx-agent` on Omri's Mac.
+- Next session: share Niv's vision + framework to kick off the initiative properly.
+
 ### Token optimization + competitive refresh (agent session)
 - Completed bulk optimization work from previous session: SKILL.md frontmatter removed, context-index tiers updated (ai-sme-brief + competitive-dynamics → [ref])
 - Competitive-matrix.md refreshed to 2026-04-23 with 3 post-Apr-10 signals:
