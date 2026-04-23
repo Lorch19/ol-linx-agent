@@ -1,6 +1,6 @@
 # Competitive Matrix — Identity Security Landscape
 
-> Last updated: 2026-04-10 (major overhaul)
+> Last updated: 2026-04-23 (post-Apr-10 signals: Cisco/Astrix talks, Silverfort/SentinelOne, SailPoint connectors)
 > Confidence: Estimated (web-sourced April 2026 + Gartner Oct 2025 IGA Market Guide). Validate against internal Linx intel before customer-facing use.
 > Previous version: 2026-04-08 (pre-M&A-wave)
 
@@ -103,6 +103,8 @@ Scoring: 4=Best-in-class, 3=Strong, 2=Adequate, 1=Weak, 0=Absent
 ### SailPoint — 90/100 (+1)
 Re-IPO'd at $12.8B valuation, surpassed $1B ARR. Launched **Agent Identity Security + MCP server** at Navigate 2025. CrowdStrike Falcon integration deepened. Acquired Imprivata's IGA business. Gap remains: deployment speed and UI. Still the "nobody gets fired" choice.
 
+**April 2026 (post-matrix):** Expanded Agent Identity Security connectors to include SaaS versions of Salesforce, ServiceNow, and Snowflake — AI agents running in those platforms now discoverable and governable. New adaptive identity features announced. Breadth motion is accelerating.
+
 **Key insight:** The incumbent is not asleep. They shipped agentic identity before most challengers. Don't assume innovation lag — compete on architecture, not claims.
 
 **Customer voice (Apr 2026, 6 prospect calls):** Prospects call SailPoint the "Old Guard" — respected for depth but seen as over-engineered, expensive ($4.5M deployment cited), clunky UX, and poor at real-time cloud-native visibility. Active desire for modern alternative. Use "Too Big to Succeed" and "sticker shock" angles in mid-market deals.
@@ -128,6 +130,8 @@ Re-IPO'd at $12.8B valuation, surpassed $1B ARR. Launched **Agent Identity Secur
 **The most important new addition.** $222M raised, unicorn valuation ($1B+), 589 employees, **1,000+ enterprise customers** including UPS, Airbus. Acquired Rezonate (Nov 2024) for cloud identity/NHI/ISPM.
 
 **Product:** Agentless identity security platform enforcing universal MFA on legacy systems. Human MFA/PAM/ITDR + NHI security + **AI Agent Security (June 2025)** + Identity Graph. CrowdStrike Falcon integration. 100%+ YoY revenue growth.
+
+**April 2026 (post-matrix):** Announced strategic partnership with SentinelOne (Apr 21, 2026) — joint coverage across identities, endpoints, cloud workloads, and AI applications. Runtime security narrative expanding. Silverfort is building ecosystem gravity faster than Linx.
 
 **Why this matters for Linx:**
 - Building **identical** "unified identity security platform" vision as Linx — with a 5-year head start
@@ -161,6 +165,8 @@ Pivoted to "Next-Gen IGA" with Zluri 2.0 but **no NHI support**, no new funding 
 
 ### Astrix Security — 75/100 (NEW)
 $85M raised ($45M Series B Dec 2024). **NHI market leader expanding to human identity monitoring.** Fortune Cyber 60. Customers: Workday, NetApp, Priceline. AI Agent Control Plane. CEO explicitly plans human + NHI + AI agent unified coverage — **converging on Linx's positioning** from the NHI side.
+
+⚠️ **April 10, 2026 — Cisco acquisition talks:** Reports emerged that Cisco is in advanced negotiations to acquire Astrix for **$250-350M** (The Information, SiliconAngle, Calcalist). Deal NOT yet announced or closed. If confirmed, Astrix exits the standalone market and becomes a Cisco security play. Implications: (1) removes a direct competitor, (2) validates the NHI + AI agent space valuation, (3) Cisco/Astrix together would be a credible mid-market identity entrant. Watch RSAC 2026 (Apr 28) for any confirmation.
 
 ### Oasis Security — 73/100 (NEW)
 $195M raised total ($120M Series B March 2026, Craft Ventures). **Most funded pure NHI startup.** 5x ARR growth. NHI + Agentic Access Management focus. Not yet expanding to human identity but watch closely. Most likely to pivot to unified coverage next.
@@ -202,4 +208,11 @@ ConductorOne/C1, Lumos, Veza, Saviynt, CyberArk, CrowdStrike all claim AI-native
 ### Capital Position Matters Now
 With the M&A wave compressing the standalone window, raised capital = survival runway. Rough rankings:
 - **Well-capitalized:** Silverfort ($222M), Oasis ($195M), Linx ($83M), C1 ($111M+), Saviynt ($700M Series B)
-- **Under-capitalized:** Lumos (no new round since ~$65M), Opal ($32M), Astrix ($85M, may need more), Zluri (distressed)
+- **Under-capitalized:** Lumos (no new round since ~$65M), Opal ($32M), Zluri (distressed)
+- **Acquisition-tracked:** Astrix ($85M raised, advanced Cisco talks at $250-350M — may exit standalone market)
+
+### April 2026 Signals (post-Apr-10 update)
+- **Cisco/Astrix advanced talks** (Apr 10): If closed, removes NHI-pure competitor; validates $250-350M NHI valuation floor. Watch RSAC 2026 (Apr 28).
+- **Silverfort + SentinelOne partnership** (Apr 21): Ecosystem gravity building; runtime + identity coverage expanding.
+- **SailPoint April connector expansion**: Salesforce, ServiceNow, Snowflake AI agent governance — deepening breadth moat.
+- **CrowdStrike/SGNL close pending** (expected by Apr 30): Still open. Once closed, CrowdStrike becomes a fully integrated identity + security competitor.
