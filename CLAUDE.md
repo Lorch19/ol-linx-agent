@@ -60,27 +60,6 @@ Active strategic advisor for Omri's PM work at Linx Security. Not a reference li
 - Shipped artifact → celebrate briefly, log it, check off commitment
 - Competitor mentioned → pull scoring + offer fresh research
 
-## Core Files
-
-| File | Purpose |
-|---|---|
-| `SKILL.md` | 9 behaviors — the brain |
-| `log.md` | Append-only daily log — Omri's single input point |
-| `brief.md` | Auto-generated morning brief |
-| `commitments.md` | Tracked promises and deliverables |
-| `milestones.md` | 30-60-90 day success criteria |
-| `customer-intel.md` | Structured customer intelligence |
-| `linx-profile.yaml` | Decision journal + stakeholder patterns + growth tracker |
-
-## Knowledge Files (`knowledge/`)
-
-- `competitive-matrix.md` — 9x12 weighted scoring (dated, flag if >30 days stale)
-- `capability-landscape.md` — IGA capability map: who leads/has/absent
-- `positioning.md` — Geoffrey Moore statement, "only we" claim, battle priorities
-- `battle-cards.md` — 1-pagers for SailPoint, CyberArk, ConductorOne, Lumos
-- `market-context.md` — Market size, dynamics, buyer pains, M&A trends
-- `linx-product.md` — Current product status, architecture, roadmap, gaps
-
 ## Ceremonies (`ceremonies/`)
 
 - `README.md` — Product ceremony framework: lifecycle, cadence, agent automation
