@@ -112,71 +112,74 @@ const slideTitle = (s, text, color = INK) =>
 }
 
 // ============================================================
-// 3 — 10 CAPABILITIES — thematic groups, no completion claims
+// 3 — 10 CAPABILITIES — Discover / Assess / Enforce
 // ============================================================
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
   accentBar(s);
   eyebrow(s, "02 · The full map");
-  slideTitle(s, "What \u201Cagent IAM\u201D actually means.");
-  s.addText("10-capability framework (\u201CIAM for LLM-Based AI Agents\u201D). Grouped by theme — not phases.", {
-    x: 0.5, y: 1.75, w: 9, h: 0.35, fontSize: 12, fontFace: "Calibri", color: MUTED, italic: true, margin: 0,
-  });
+  slideTitle(s, "10 capabilities. Three stages.");
 
-  // 3 thematic groups
   const groups = [
     {
-      label: "VISIBILITY",
+      label: "DISCOVER",
       color: TEAL,
       caps: [
         { n: "1", t: "Registration & identification" },
         { n: "2", t: "Ownership assignment" },
-        { n: "3", t: "Authentication" },
         { n: "10", t: "Visibility & observability" },
       ],
     },
     {
-      label: "CONTROL",
+      label: "ASSESS",
       color: NAVY,
       caps: [
+        { n: "3", t: "Authentication" },
         { n: "4", t: "Authorization & delegation" },
-        { n: "5", t: "Human oversight & approval" },
-        { n: "6", t: "Resource policy enforcement" },
+        { n: "9", t: "Multi-agent collaboration" },
       ],
     },
     {
-      label: "LIFECYCLE",
+      label: "ENFORCE",
       color: PURPLE,
       caps: [
+        { n: "5", t: "Human oversight & approval" },
+        { n: "6", t: "Resource policy enforcement" },
         { n: "7", t: "Credential lifecycle" },
         { n: "8", t: "Auditability & logging" },
-        { n: "9", t: "Multi-agent collaboration" },
       ],
     },
   ];
 
-  const gY = 2.2, gH = 2.8, gW = 3.0, gGap = 0.1;
+  // Arrows between stage labels
+  const gY = 1.85, gH = 3.15, gW = 3.0, gGap = 0.1;
   const gStart = (W - (3 * gW + 2 * gGap)) / 2;
 
   groups.forEach((g, i) => {
     const x = gStart + i * (gW + gGap);
-    // Header
-    s.addShape(pres.shapes.RECTANGLE, { x, y: gY, w: gW, h: 0.42, fill: { color: g.color }, line: { color: g.color, width: 0 } });
-    s.addText(g.label, { x, y: gY, w: gW, h: 0.42, fontSize: 13, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", charSpacing: 4, margin: 0 });
-    // Body
-    s.addShape(pres.shapes.RECTANGLE, { x, y: gY + 0.42, w: gW, h: gH - 0.42, fill: { color: ICE }, line: { color: g.color, width: 1 } });
+    s.addShape(pres.shapes.RECTANGLE, { x, y: gY, w: gW, h: 0.45, fill: { color: g.color }, line: { color: g.color, width: 0 } });
+    s.addText(g.label, { x, y: gY, w: gW, h: 0.45, fontSize: 14, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", charSpacing: 5, margin: 0 });
+    s.addShape(pres.shapes.RECTANGLE, { x, y: gY + 0.45, w: gW, h: gH - 0.45, fill: { color: ICE }, line: { color: g.color, width: 1 } });
 
     g.caps.forEach((c, j) => {
-      const rowY = gY + 0.55 + j * 0.57;
-      s.addShape(pres.shapes.OVAL, { x: x + 0.2, y: rowY + 0.04, w: 0.3, h: 0.3, fill: { color: g.color }, line: { color: g.color, width: 0 } });
-      s.addText(c.n, { x: x + 0.2, y: rowY + 0.04, w: 0.3, h: 0.3, fontSize: 11, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
-      s.addText(c.t, { x: x + 0.6, y: rowY, w: gW - 0.75, h: 0.42, fontSize: 12, fontFace: "Calibri", color: INK, valign: "middle", margin: 0 });
+      const rowY = gY + 0.6 + j * 0.64;
+      s.addShape(pres.shapes.OVAL, { x: x + 0.2, y: rowY + 0.06, w: 0.28, h: 0.28, fill: { color: g.color }, line: { color: g.color, width: 0 } });
+      s.addText(c.n, { x: x + 0.2, y: rowY + 0.06, w: 0.28, h: 0.28, fontSize: 10, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
+      s.addText(c.t, { x: x + 0.58, y: rowY, w: gW - 0.72, h: 0.5, fontSize: 12, fontFace: "Calibri", color: INK, valign: "middle", margin: 0 });
     });
+
+    // Arrow between columns
+    if (i < 2) {
+      s.addShape(pres.shapes.LINE, {
+        x: x + gW + 0.01, y: gY + 0.22, w: gGap - 0.01, h: 0,
+        line: { color: WHITE, width: 2, endArrowType: "triangle" },
+      });
+    }
   });
 
-  s.addText("P0 covers the full Visibility group + Authorization + Resource policy + Auditability. Everything else is post-P0.", {
-    x: 0.5, y: 5.05, w: W - 1, h: 0.35, fontSize: 11, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
+  s.addText("Source: \u201CIAM for LLM-Based AI Agents\u201D framework.", {
+    x: 0.5, y: 5.1, w: W - 1, h: 0.28, fontSize: 10, fontFace: "Calibri", color: MUTED, italic: true, margin: 0,
   });
 
   pageNum(s, 3);
