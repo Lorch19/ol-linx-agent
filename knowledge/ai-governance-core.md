@@ -34,6 +34,27 @@ Linx attempted to govern agents using the generic IAM APIs that power human + NH
 - **What survives:** M1 visibility stack (fully valid). Parts of M2 (credential discovery, delegation mapping) likely feed the Gateway as inputs. Omri's assessment (2026-04-23): "not every part of the old spec is invalidated — be cautious about what you throw out."
 - **What to figure out:** what M2 work to finish vs. pause, minimum viable Gateway surface, June 15 Identiverse demo scope.
 
+### MCP Gateway P0 scope (from Sarit session, 2026-04-23)
+
+**Lesson learned (Sarit's framing):** *"We counted on the IdPs to identify connectors, but it didn't work. The MCP Gateway is our new approach."*
+
+**P0:**
+1. **Gateway core**
+2. **Policy Agent — Access profiles for agents**
+   - Access for the specific MCP / Platform
+   - **AND** the Tools within it (tool-level granularity, not just platform-level)
+3. **Screens:**
+   - "Integration" tab for MCPs
+   - Logs (3 types): System Logs · Governance Logs · All Access Logs
+
+**Future (post-P0):**
+1. JIT with gateway — on-the-fly approval, with or without human intervention
+2. JML (joiner/mover/leaver for agents)
+3. Onboarding — UI for connecting Apps to the Gateway + secured setup
+4. Agent Intent
+
+**Deadline:** harsh — Identiverse June 15. Goal now: connect the team to the story/vision and start working.
+
 ### Sunday 2026-04-27 pre-kickoff
 Eng pre-kickoff session with broader team. Not an announcement — everyone knows at some level. Deck is a working-session framing device. Plan: `~/.claude/plans/we-have-a-kick-humming-bumblebee.md`.
 
