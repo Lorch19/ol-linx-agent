@@ -7,6 +7,8 @@
 - Michael requested user-configurable accuracy guardrails — accuracy over helpfulness toggle.
 - Linx response (Dor + Niv): root cause at AI/backend data boundary, committed to stricter QA, less appeasing personality, twice-daily eng status reports.
 - Logged to customer-intel.md. Need to assess: are other customers experiencing the same silently?
+- Drafted portable problem statement (`drafts/ai-assistant-reliability-problem-statement.md`) with 10 research questions for deeper work in Linx Claude.
+- Added to commitments.md as ongoing tracking item.
 
 ## 2026-03-29
 - System initialized. Pre-onboarding phase begins. Day 1 at Linx: April 12.
