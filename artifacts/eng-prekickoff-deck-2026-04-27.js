@@ -261,7 +261,7 @@ const eyebrow = (s, text, dark = false) =>
     fontSize: 9, fontFace: "Calibri", color: AMBER, italic: true, margin: 0,
   });
 
-  s.addText("Race is on: Saviynt, Token Security, Astrix all moving on MCP-layer governance. No customer has asked by name — yet.", {
+  s.addText("Agents are the fastest-growing identity category. We want to be the one-stop shop — this is the moment. Race is on: Saviynt, Token Security, Astrix all converging here.", {
     x: 0.5, y: 5.08, w: W - 1, h: 0.3,
     fontSize: 10, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
   });
@@ -288,7 +288,7 @@ const eyebrow = (s, text, dark = false) =>
     {
       num: "01", title: "Gateway Core",
       body: "Protocol-layer enforcement point. Every agent → tool call flows through it.",
-      note: "Eng research starts here",
+      note: "Javier + Omer Blechman · research starts here · what feeds in from M1/M2 = part of this discovery",
     },
     {
       num: "02", title: "Policy Agent",
@@ -377,12 +377,12 @@ const eyebrow = (s, text, dark = false) =>
     },
     {
       num: "B", color: AMBER,
-      title: "Eng owns Gateway Core POC",
+      title: "Gateway Core POC plan",
       items: [
+        "Owners: Javier + Omer Blechman",
         "Options mapped: build vs. adopt",
-        "Coverage trade-offs understood",
-        "Checkpoint date set (2 weeks out)",
-        "Owner named",
+        "What from M1/M2 feeds in",
+        "→ First sync: Wednesday",
       ],
     },
     {
