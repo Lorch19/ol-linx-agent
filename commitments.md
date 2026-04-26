@@ -44,6 +44,13 @@
 - [ ] Second-pass dashboard review — Apr 30 — self  [→ log 2026-04-15]
 - [ ] Name all 8 competitors cold — May 2 — self
 
+## AI Governance — Next Session
+
+- [ ] Review Figma Make prototypes (JML + JIT) — open in browser, confirm frames are clickable and data is realistic (Sarah Cohen / 4 agents / Slack+SFDC+Datadog). Share verdict so we can pick B vs B' for May 5 Mor+Niv. Links: [JML](https://www.figma.com/make/ztRdQd4siTC3N55YgHTvqr/) · [JIT](https://www.figma.com/make/1K1fqU0x5ESIwbAbVpnsJx/) — ASAP — self
+- [ ] Update `building-blocks.md` with Task A findings: Inventory>Agents LIVE (M1/Dec 2025), Logs already 3-stream LinxAuditLog schema — next session — self
+- [ ] Update `discovery-plan.md` with new open questions from Task A (Access Profiles AGENT_TOOL type, Integration tab Option A/B/C, "All Access Logs" = USER_ACTIVITY rebrand?) — next session — self
+- [ ] Process Task C Notion extraction output (paste results into chat) — next session — self
+
 ## Deliverables
 
 - [ ] AI mandate: 30/60/90 + decision rights w/ Amir & Shon — Apr 30 — Dor  [→ log 2026-04-19]
