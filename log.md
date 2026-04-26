@@ -367,3 +367,30 @@ Use case #2 (employee leaving → agents handled) — concrete, customer-pain-dr
 
 ### Open list owners (next phase)
 Q3 (connector pivot naming) before Sunday Apr 27. Q1, Q2 by Apr 30. Q4–Q8 by May 5–12.
+
+## 2026-04-26 (continued) — Mor scope answers + building blocks
+
+### Mor answers on scope-blocking
+- Q3 (connector pivot) resolved: yes shifting to target SaaS. P0 = Slack/SFDC/Datadog. Agent platforms = identity-ingestion only.
+- Q1 (tool-level): action item — check MCP gateway capabilities via Claude / MCP spec. Omri to research.
+- Q2 (where Linx sits): "in the request loop, approve/deny/JIT." Pulls toward Option A (inline) — opposite of earlier "won't be in sessions" framing. Need eng clarity: inline for every MCP tool call (heavy proxy) or only for policy-flagged calls (selective).
+
+### Implication: hero moment menu expanded
+- C (JIT approval flow) was previously high-risk — now feasible per Mor Q2 answer.
+- Updated recommendation: A (JML) primary + C (JIT approval) as the live-stage moment, contingent on Q2 nuance landing.
+
+### Building blocks v2 — adopted Mor naming
+INVENTORY · GOVERN · ENFORCE · AUDIT (with UARs added under Audit). Maps to AIAP analyst framework. JML and JIT approval reframed as cross-cutting flows, not blocks. Committed to building-blocks.md.
+
+### Mor tip
+Use Figma Make + Claude to simulate AI Governance flow against today human flows. Action: prototype one flow (likely JML or JIT approval) once Q2 nuance is clarified.
+
+### Omer (eng team lead) ask
+- Need clarity on scope and how it fits into current Linx human / NHI flows.
+- Need alignment on requirements format/depth.
+
+### Outstanding clarification questions for Mor / Omer
+1. Q2 nuance — proxy every MCP request or selectively?
+2. Requirements format Omer expects — functional requirements doc, PRD, story-level ACs?
+3. Existing human/NHI flows — pointer to where to start mapping (Notion? Code? Figma?)
+4. Hero moment selection — Omri draft + Mor/Niv align (target May 5)

@@ -12,28 +12,35 @@
 These four answers shape what we're building. No commit until they're in.
 
 ### Q1. Tool-level visibility — in P0 or descope?
-- **Why blocks:** P0 surface area depends on this. Sarit Apr 23 said tool-level explicit; Mor Apr 26 said feasibility-gated. If cheap → in. If expensive → out. Affects eng estimate and demo story.
-- **Resolve:** eng + UX feasibility check. What MCP introspection actually exposes. UX cost for tool-level surface vs. platform-level only.
-- **Owner:** Omri to scope, eng + UX to estimate.
+- **Mor's Apr 26 update:** "need to check what MCP gateway exposes — verify via Claude / MCP spec." Action item, not yet answered.
+- **Why blocks:** P0 surface area depends on this. Affects eng estimate and demo story.
+- **Resolve:** (a) MCP spec research — what tool-level introspection is part of the protocol vs. server-implementation-dependent. (b) Eng feasibility for the surface. Omri can do (a) this week.
+- **Owner:** Omri research (a), eng + UX estimate (b).
 - **Target:** Apr 30.
 
-### Q2. Where does Linx physically sit in MCP traffic?
-- **Why blocks:** determines what "enforce" means in the product. (A) inline proxy / real-time block, (B) sidecar / detect-and-revoke, (C) provisioning-time credential scoping. Three different products. Can't write a demo script without this.
-- **Resolve:** discovery session with eng. Read existing prototypes / Sarit's whiteboard.
-- **Owner:** Omri to drive, eng to answer.
+### Q2. Where does Linx physically sit in MCP traffic? **(partially answered Apr 26)**
+- **Mor's Apr 26 answer:** Linx sits "in the requests loop" — approving / denying / JIT-escalating tool-call requests. Pulls toward Option A (inline) rather than the earlier "won't be in sessions" framing.
+- **Still open — needs eng clarification:** is "in the request loop" inline for *every* MCP tool call (heavy proxy load), or only for policy-flagged calls (lighter, but how do we know which to flag without seeing all)? Two different impl profiles.
+- **Resolve:** eng session — confirm proxy architecture, expected throughput, latency budget.
+- **Owner:** Omri drive, eng answer.
 - **Target:** Apr 30.
 
-### Q3. Connector pivot — agent platforms vs. target SaaS — confirmed?
-- **Why blocks:** original M1 = agent platforms (ChatGPT, Cursor). Apr 26 direction = target SaaS (Slack/SFDC/Datadog). Pre-kickoff did not explicitly confirm. Eng team may still think they're building original M1.
-- **Resolve:** validation conversation with Mor + Sarit. Confirm in writing. If pivoted, update kickoff materials so eng has it explicit.
-- **Owner:** Omri.
-- **Target:** This week (Apr 30).
+### Q3. Connector pivot — agent platforms vs. target SaaS — **RESOLVED 2026-04-26**
+- **Confirmed by Mor:** yes, shifting. P0 connectors = target SaaS (Slack, Salesforce, Datadog). Agent platforms become identity-ingestion only.
+- Move to status log below; remove from open list once eng kickoff materials reflect it.
 
 ### Q7. Demo hero moment for June 15
 - **Why blocks:** without this, all build sequencing is guessing. Determines what P0 actually means.
-- **Resolve:** Omri draft (1-paragraph press-release-style "what does the audience walk away believing"), then align Mor + Niv. Strongest seed today: agent JML story (Q5) — concrete, ships on existing AGENT_OWNER_OFFBOARDED issue type, recognizable customer pain. Validate vs. policy-enforcement story (use case #4) and pick one.
-- **Owner:** Omri.
-- **Target:** May 5.
+- **Updated context (Apr 26):** Mor's Q2 answer ("in the request loop, approve/deny/JIT") makes JIT approval flow (option C) feasible. Was previously high-risk; now plausible.
+- **Candidates:**
+  - **A — JML:** employee leaves → agents handled. Exercises all 4 building blocks. Strongest complete narrative.
+  - **C — JIT approval:** agent requests sensitive write → admin approves live. "Live control" moment, dramatic for stage demo.
+  - **D — Policy enforced at SFDC/Slack/DD:** admin sets rule, agent action prevented. Honors connector pivot.
+  - **E — Toxic combinations:** agent has PII read + external Slack post → flagged. SoD-for-agents differentiator.
+  - **F — Audit trace:** incident → admin traces agent action by user/tool/data. Compliance buyer story.
+- **Recommendation:** A primary (lowest risk, complete arc) + C as the live-demo dramatic moment if Q2 lands cleanly. D, E, F as supporting frames.
+- **Resolve:** Omri draft press-release-style paragraph, align Mor + Niv.
+- **Owner:** Omri. **Target:** May 5.
 
 ---
 
@@ -101,3 +108,4 @@ Single doc, no rewrites for politics. If exec wants a deck, derive from the scop
 | Date | Update |
 |---|---|
 | 2026-04-26 | File created. 10 questions seeded from Mor sync. |
+| 2026-04-26 | Q3 resolved (connector pivot confirmed). Q2 partially answered ("in the request loop"). Q1 has action plan (MCP spec research). Hero moment menu expanded — C now feasible. |
