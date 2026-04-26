@@ -116,6 +116,55 @@ Output: shareable Figma Make link + 1-paragraph speaker notes per frame.
 
 ---
 
+## Task C — Notion content extraction (Claude.ai or Claude Code terminal, with Linx Notion MCP)
+
+**Goal:** stop pretending we're drafting requirements from zero. Extract what's already in Notion, normalize it, flag what's still valid post-Apr 26 pivot vs. what's invalidated.
+
+**Output file:** `artifacts/notion-extraction-2026-04-26.md`
+
+### Prompt
+
+```
+Using the Linx Notion MCP connection, search for and extract content from the following pages (or their current equivalents). For each: pull the source URL, summarize the content in structured form, and flag whether it's still valid post-Apr 26 MCP Gateway pivot or invalidated.
+
+Search targets:
+1. **Agentic AI Identities** epic (the originating product epic)
+2. **AI Agents research** page (edited 2026-04-23 — most recent)
+3. **Mar 3 PRD / spec** for AI Governance / Agentic Identities
+4. **10 capabilities** PDF or page (architecture-side capability list)
+5. **5 capabilities** concept doc (different framing of same)
+6. **Cycle 79** AI priorities — anything mentioning MCP Gateway
+7. **AI architecture / Multi-Agent / Orchestration / Press release** pages mentioned in Amir prep commitments
+8. Any user scenarios / personas / use case docs for AI Governance
+
+For each page found, output:
+- Source URL (Notion link)
+- Last edited date
+- Owner / author
+- Content extracted, organized as one of:
+  - Personas / user scenarios → list with persona + need
+  - Use cases → list with trigger / actor / flow
+  - Capabilities → list with name + description + scope tier
+  - Architecture / spec → 1-paragraph summary
+  - Other / context
+- Validity post-Apr 26 pivot:
+  - VALID — still applies
+  - PARTIALLY VALID — applies but needs adjustment (note what)
+  - INVALIDATED — superseded by MCP Gateway pivot (note what replaces it)
+  - UNCLEAR — flag for human review
+
+Reconcile:
+- The 10 user scenarios already in our `ai-governance-core.md` (lines 131-145) — confirm they're still in Notion source-of-truth
+- The 10 capabilities (PDF) vs 5 capabilities (concept doc) tension — pull both, flag the discrepancy
+- The Notion M3 scope (full) vs Linear M3 scope (narrowed, struck through) — confirm doc drift
+
+Save the result as `artifacts/notion-extraction-2026-04-26.md`. Commit and push to the active branch.
+```
+
+**Why this changes the May 8 path:** instead of drafting requirements sections from blank, we lift the 60-70% that already exists in Notion, validate post-pivot, and only draft the deltas. Same May 8 commit date, less rework.
+
+---
+
 ## What I do with the outputs when you're back
 
 - **Task A output (`existing-screens-mapping`):** drives the requirements doc Omer asked for (use cases + screens + journeys). Each existing screen becomes a section.

@@ -409,3 +409,9 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - New file artifacts/mcp-gateway-eng-bundle-2026-04-26.md — 4 curated links for Sarit/Amir/Omer/Javier (MCP spec, Solo.io tutorial, Lunar MCPX repo+writeup, Microsoft MCP Gateway). Vendor marketing deliberately cut.
 - Open: validate Linx counter-position ("graph context as differentiator") with Niv before May 5.
 - Open: Saviynt deep-dive (Apr 30, on commitments) should now also score Strata + Ping + Lunar against same rubric.
+
+### Late EOD: caught a major framing gap (Omri Q)
+- Realization: I (assistant) had been treating Mor's 5 Apr 26 sketch items as load-bearing "use cases" when only 2 are actual user-facing scenarios — the rest are design questions or capabilities.
+- Bigger gap: Notion already has 10 user scenarios in the existing PRD (already pulled forward into ai-governance-core.md lines 131-145), plus Mar 3 spec, 10/5 capabilities docs, AI Agents research page (edited 2026-04-23), Agentic AI Identities epic. ~60-70% of the requirements doc structure already exists — we have not been drafting from zero.
+- Adding Task C: Notion content extraction via Linx MCP. Self-contained prompt added to artifacts/parallel-tasks-2026-04-26.md.
+- Path to May 8 unchanged but lower-effort: extract → normalize → validate post-pivot → draft only the deltas.
