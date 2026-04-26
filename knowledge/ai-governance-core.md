@@ -66,7 +66,7 @@ Eng pre-kickoff session with broader team. Not an announcement — everyone know
 1. **Scope MCP capabilities** — what governance signals MCP exposes, what it doesn't.
 2. **Map log flows** — System Logs · Governance Logs · All Access Logs (matches Sarit Apr 23 P0).
 3. **Access policy with delegated identity** — `agent_perms = user_perms ∩ admin_agent_ceiling`. Admin sets a hard ceiling on what agents can do regardless of which user invoked them; user perms are the upper bound the agent inherits from. Both bounds apply.
-4. **Tool-level management — feasibility-gated.** In P0 if cheap, descope if expensive. Tension: contradicts Sarit Apr 23 P0 naming tool-level granularity explicitly. Reconcile before Sunday kickoff. (See `open-questions.md` Q1.)
+4. **Tool-level management — feasibility-gated.** In P0 if cheap, descope if expensive. Tension: contradicts Sarit Apr 23 P0 naming tool-level granularity explicitly. Reconcile via eng feasibility. (See `discovery-plan.md` Q1.)
 5. **Apps representation for agentic context** — existing Applications page doesn't cover. New surface needed. Linx not in the agent sessions in early phases (sidecar/observer or provisioning-only — TBD with eng, see Q2).
 
 ### Use cases — sketch list from Mor
