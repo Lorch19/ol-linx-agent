@@ -402,3 +402,10 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - **Requirements format from Omer:** mainly use cases, screens, user journeys. A bit of all three. Will produce hybrid doc.
 - **Parallel tasks queued for tonight/tomorrow:** Task A (Claude.ai with Linx MCP — existing screens validation), Task B (Figma Make — JML flow prototype). Prompts saved in `artifacts/parallel-tasks-2026-04-26.md`.
 - **Branch:** about to merge `claude/amazing-austin-cd8909` → main per session-end discipline.
+
+### MCP Gateway competitive + eng bundle (Claude.ai research surfaced, Apr 26 EOD)
+- Category resolved: Linx = inbound governance MCP gateway. Same lane as Strata, Ping Agent Gateway, Lunar MCPX, Operant. These are direct competitors — not in competitive-matrix.md yet.
+- New file knowledge/mcp-gateway-competitive.md captures the 4 direct competitors, generalist references, and the "smart competitor" threat ("IDPs eat this for free; Linx must win on the graph").
+- New file artifacts/mcp-gateway-eng-bundle-2026-04-26.md — 4 curated links for Sarit/Amir/Omer/Javier (MCP spec, Solo.io tutorial, Lunar MCPX repo+writeup, Microsoft MCP Gateway). Vendor marketing deliberately cut.
+- Open: validate Linx counter-position ("graph context as differentiator") with Niv before May 5.
+- Open: Saviynt deep-dive (Apr 30, on commitments) should now also score Strata + Ping + Lunar against same rubric.
