@@ -107,42 +107,18 @@ const eyebrow = (s, text, dark = false) =>
     fontSize: 34, fontFace: "Georgia", color: NAVY, bold: true, margin: 0,
   });
 
-  // Two columns
-  // LEFT: The problem in 3 lines
+  // Two columns — LEFT: what we've built (engineers care), RIGHT: problem context
+  // LEFT: What we've built
   s.addShape(pres.shapes.RECTANGLE, {
-    x: 0.5, y: 1.7, w: 4.5, h: 2.8,
-    fill: { color: ICE }, line: { color: ICE, width: 0 },
+    x: 0.5, y: 1.7, w: 4.3, h: 2.8,
+    fill: { color: NAVY }, line: { color: NAVY, width: 0 },
   });
   s.addShape(pres.shapes.RECTANGLE, {
     x: 0.5, y: 1.7, w: 0.08, h: 2.8,
     fill: { color: TEAL }, line: { color: TEAL, width: 0 },
   });
-  s.addText("THE PROBLEM", {
-    x: 0.75, y: 1.82, w: 4.0, h: 0.28,
-    fontSize: 10, fontFace: "Calibri", color: TEAL, bold: true, charSpacing: 3, margin: 0,
-  });
-  s.addText([
-    { text: "Enterprises now run more agents than humans — 144 : 1.", options: { color: INK, fontSize: 13, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "Existing IAM and PAM tools were built for humans and NHIs. They don't govern agents that spin up in seconds, chain through tools, and decide at runtime.", options: { color: INK, fontSize: 13, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "No visibility. No policy. No audit trail.", options: { color: NAVY, bold: true, fontSize: 13 } },
-  ], {
-    x: 0.75, y: 2.18, w: 4.0, h: 2.1,
-    fontFace: "Calibri", margin: 0,
-  });
-
-  // RIGHT: What we've built
-  s.addShape(pres.shapes.RECTANGLE, {
-    x: 5.2, y: 1.7, w: 4.3, h: 2.8,
-    fill: { color: NAVY }, line: { color: NAVY, width: 0 },
-  });
-  s.addShape(pres.shapes.RECTANGLE, {
-    x: 5.2, y: 1.7, w: 0.08, h: 2.8,
-    fill: { color: TEAL }, line: { color: TEAL, width: 0 },
-  });
   s.addText("WHAT WE'VE BUILT", {
-    x: 5.45, y: 1.82, w: 3.8, h: 0.28,
+    x: 0.75, y: 1.82, w: 3.8, h: 0.28,
     fontSize: 10, fontFace: "Calibri", color: TEAL, bold: true, charSpacing: 3, margin: 0,
   });
 
@@ -155,16 +131,40 @@ const eyebrow = (s, text, dark = false) =>
   built.forEach((it, i) => {
     const y = 2.2 + i * 0.55;
     s.addShape(pres.shapes.OVAL, {
-      x: 5.48, y: y + 0.07, w: 0.22, h: 0.22,
+      x: 0.78, y: y + 0.07, w: 0.22, h: 0.22,
       fill: { color: TEAL }, line: { color: TEAL, width: 0 },
     });
     s.addText([
       { text: it.label + "  ", options: { bold: true, color: WHITE, fontSize: 12 } },
       { text: it.note, options: { color: ICE, fontSize: 11 } },
     ], {
-      x: 5.8, y, w: 3.5, h: 0.5,
+      x: 1.1, y, w: 3.5, h: 0.5,
       fontFace: "Calibri", valign: "middle", margin: 0,
     });
+  });
+
+  // RIGHT: The problem in 3 lines
+  s.addShape(pres.shapes.RECTANGLE, {
+    x: 5.0, y: 1.7, w: 4.5, h: 2.8,
+    fill: { color: ICE }, line: { color: ICE, width: 0 },
+  });
+  s.addShape(pres.shapes.RECTANGLE, {
+    x: 5.0, y: 1.7, w: 0.08, h: 2.8,
+    fill: { color: TEAL }, line: { color: TEAL, width: 0 },
+  });
+  s.addText("THE GAP", {
+    x: 5.25, y: 1.82, w: 4.0, h: 0.28,
+    fontSize: 10, fontFace: "Calibri", color: TEAL, bold: true, charSpacing: 3, margin: 0,
+  });
+  s.addText([
+    { text: "144 : 1 — more agents than humans in the average enterprise.", options: { color: INK, fontSize: 13, breakLine: true } },
+    { text: " ", options: { fontSize: 5, breakLine: true } },
+    { text: "IAM and PAM tools were built for humans and NHIs. They don't govern agents that spin up in seconds, chain through tools, and decide at runtime.", options: { color: INK, fontSize: 13, breakLine: true } },
+    { text: " ", options: { fontSize: 5, breakLine: true } },
+    { text: "No visibility. No policy. No audit trail.", options: { color: NAVY, bold: true, fontSize: 13 } },
+  ], {
+    x: 5.25, y: 2.18, w: 4.0, h: 2.1,
+    fontFace: "Calibri", margin: 0,
   });
 
   // Footer note
@@ -261,7 +261,7 @@ const eyebrow = (s, text, dark = false) =>
     fontSize: 9, fontFace: "Calibri", color: AMBER, italic: true, margin: 0,
   });
 
-  s.addText("Agents are the fastest-growing identity category. We want to be the one-stop shop — this is the moment. Race is on: Saviynt, Token Security, Astrix all converging here.", {
+  s.addText("Agents are the fastest-growing identity category — we want to be the one-stop shop. If Saviynt or Token Security defines MCP governance at Identiverse and we don't show up, that category is theirs.", {
     x: 0.5, y: 5.08, w: W - 1, h: 0.3,
     fontSize: 10, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
   });
@@ -380,19 +380,19 @@ const eyebrow = (s, text, dark = false) =>
       title: "Gateway Core POC plan",
       items: [
         "Owners: Javier + Omer Blechman",
-        "Options mapped: build vs. adopt",
-        "What from M1/M2 feeds in",
-        "→ First sync: Wednesday",
+        "Options: build vs. adopt · M1/M2 inputs",
+        "Apr 27 research → May 11 POC check",
+        "→ Jun 1 integration · Jun 15 demo",
       ],
     },
     {
       num: "C", color: ICE,
-      title: "Demo defined",
+      title: "Demo format picked",
       items: [
-        "What does \"works on June 15\" mean?",
-        "Live integration or canned flow?",
-        "Which agent? Which tools?",
-        "→ Scope locked, not aspirational",
+        "Thin live: Gateway + 1 connector + 1 policy, live",
+        "Wide canned: all 3 components, scripted",
+        "Hybrid: Gateway live, rest scripted",
+        "→ Room picks one",
       ],
     },
   ];
