@@ -80,6 +80,42 @@ Output: shareable Figma Make link + 1-paragraph speaker notes per frame.
 
 ---
 
+## Task B' — Figma Make: prototype the JIT approval flow (live-control moment)
+
+**Goal:** clickable prototype of the live-control hero moment. Now feasible because Q2 resolved as inline-for-everything (Linx in the request loop). This is the dramatic stage demo for Identiverse.
+
+### Prompt for Figma Make
+
+```
+Prototype an "Agent JIT Approval" flow for the Linx AI Governance product. Generate 5–7 frames showing live in-the-loop enforcement as it happens.
+
+Setup:
+- Persona: Maria, CISO at an enterprise customer.
+- Scenario: Sarah (Sales Ops manager) prompts her "Sales Forecasting Agent" (running on Cursor) to update a deal stage in Salesforce. The agent calls the Salesforce write tool via MCP.
+- Linx is in the request loop and intercepts the tool call.
+- Admin policy: agents may NOT write to Salesforce without explicit approval per request.
+
+Frames:
+1. **Agent triggers a tool call:** show the agent context — the user prompt, the agent's plan, the tool it's about to call (sfdc.opportunities.update). Visual cue: "intercepted by Linx Gateway."
+2. **Policy evaluation:** Linx evaluates the request against the policy. Show: identity (Sarah + agent), requested scope (sfdc.write on opportunity 4521), admin ceiling (no agent write to SFDC). Result: "approval required."
+3. **Approval routed:** Maria's approval inbox in Linx (or Slack notification). Card shows: who, what, why, blast radius (1 record? all opportunities?), recommended decision.
+4. **Maria approves with scope:** Maria clicks Approve → modal lets her narrow scope (just this opportunity, expires in 15 min). Confirms.
+5. **Ephemeral credential issued:** Linx issues a narrow, time-boxed Salesforce credential to the agent. Agent retries the call. Action succeeds.
+6. **Audit entry:** simultaneous audit log entry — full trace: user, agent, tool, scope, approver, decision, target, result.
+7. **Credential auto-revokes:** 15 minutes later, credential expires. Show the lifecycle event in audit.
+
+Style: same as Task B (Linx product visual language, dense data tables, dark accent for risk states). The "Approve" moment should feel decisive — single primary CTA.
+
+Output: shareable Figma Make link + 1-paragraph speaker notes per frame.
+```
+
+**Why both (B + B'):**
+- B (JML) exercises all 4 building blocks → strongest *complete* narrative
+- B' (JIT) is the *live* moment → strongest *stage* moment
+- Show both to Mor + Niv on May 5; pick the primary, the other becomes secondary frame in the demo
+
+---
+
 ## What I do with the outputs when you're back
 
 - **Task A output (`existing-screens-mapping`):** drives the requirements doc Omer asked for (use cases + screens + journeys). Each existing screen becomes a section.
