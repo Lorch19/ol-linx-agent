@@ -60,6 +60,45 @@ Eng pre-kickoff session with broader team. Not an announcement — everyone know
 
 ---
 
+## Mor sync 2026-04-26 — scope map + use cases
+
+### Confirmed scope map (Mor + Omri)
+1. **Scope MCP capabilities** — what governance signals MCP exposes, what it doesn't.
+2. **Map log flows** — System Logs · Governance Logs · All Access Logs (matches Sarit Apr 23 P0).
+3. **Access policy with delegated identity** — `agent_perms = user_perms ∩ admin_agent_ceiling`. Admin sets a hard ceiling on what agents can do regardless of which user invoked them; user perms are the upper bound the agent inherits from. Both bounds apply.
+4. **Tool-level management — feasibility-gated.** In P0 if cheap, descope if expensive. Tension: contradicts Sarit Apr 23 P0 naming tool-level granularity explicitly. Reconcile via eng feasibility. (See `discovery-plan.md` Q1.)
+5. **Apps representation for agentic context** — existing Applications page doesn't cover. New surface needed. Linx not in the agent sessions in early phases (sidecar/observer or provisioning-only — TBD with eng, see Q2).
+
+### Use cases — sketch list from Mor
+1. Access controls (the policy engine itself)
+2. **Employee leaves → what happens to their agents** (JML for agents — strongest concrete demo seed, lights up existing AGENT_OWNER_OFFBOARDED issue type)
+3. Inherit human permissions — resolved as `agent_perms = user_perms ∩ admin_ceiling`
+4. **Enforce admin policies in critical platforms — Slack / Salesforce / Datadog as P0 starting set**
+5. Additional access profile level (Roles for agents)
+
+### Architectural pivot — explicit naming
+
+Two integration axes wear the word "platform" in this space and people conflate them:
+
+| | Agent platform | Target SaaS |
+|---|---|---|
+| Definition | Where the agent *lives / runs* | Where the agent *acts* |
+| Examples | ChatGPT Enterprise, Copilot Studio, Cursor, n8n, Bedrock, Vertex, Anthropic | Slack, Salesforce, Datadog, Jira, GitHub, Snowflake |
+| Maturity for governance | Low — vendor-specific, opaque APIs | High — mature RBAC, OAuth, audit |
+
+Original M1 framing: visibility-first across **agent platforms** (Maria sees 23 agents).
+Apr 26 direction: enforcement-first at **target SaaS** (admin scopes agent capability per app).
+
+Implication: enforcement happens via credential scoping at JIT/provisioning time. Agent platforms become identity-ingestion points, not enforcement points. Demo story shifts from "see your agents" to "control what agents do in your apps."
+
+### Decisions confirmed Apr 26
+- Customer voice for June 15: executive call. Niv asked, no further push. Treat as granted.
+- Demo target = customers at Identiverse.
+- Discovery = "ugly flow" for MVP. Acknowledged.
+- MCP traffic-flow position pending eng discovery (Q2).
+
+---
+
 ## Goal
 
 Bring ISPM + IGA to Agentic AI Identities on the Linx platform.

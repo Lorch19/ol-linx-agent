@@ -60,3 +60,4 @@
 ## Standing / Recurring
 
 - [ ] Archive previous month's `log.md` entries to `log-archive-YYYY-MM.md` — 1st of each month — self
+- AI Governance / MCP Gateway discovery + open questions live in [`discovery-plan.md`](discovery-plan.md) — review weekly, scope commit target May 8
