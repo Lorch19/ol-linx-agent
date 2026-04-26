@@ -331,3 +331,39 @@ When Notion MCP is connected to Claude Code: sync Notion battle cards + competit
 - Reusable from Mor's webinar (`~/Downloads/How Agentic Identities Actually Works - Webinar.pptx`, Dec 2025): "humans on steroids" line + Human-vs-AI-Agent-vs-NHI comparison triangle.
 - Pre-flight before generating slides: read Notion `Agentic AI Identities` epic + `AI Agents research` (edited today, 2026-04-23) + Linear project Updates tab; confirm with Sarit/Amir that "MCP Gateway" is the right public framing; decide if June 15 Identiverse is committed or aspirational.
 - Linear project lead = Ben Bakhar (Experience). Teams involved: Experience, AI, Application, Analytics, Connectors, Product, UX/UI Design, Tech Leads.
+
+## 2026-04-26 — Mor MCP Gateway scope sync
+
+### Confirmed scope map with Mor
+1. **Scope MCP capabilities** — what governance signals MCP gives us, what it does not.
+2. **Map log flows** — System Logs · Governance Logs · All Access Logs (matches Sarit Apr 23 P0 verbatim).
+3. **Access policy with new dimensions** — agent permissions = function of (interacting user perms, admin agent ceiling). Mor example: human X has Salesforce write; admin policy says no agents write to SFDC; agent does not get write. Translated rule: `agent_perms = user_perms ∩ admin_agent_ceiling`.
+4. **Tool-level management — currently OUT of scope, decision pending.** Direction: feasibility-gated. Cheap to add → in P0. Expensive → descope. NOTE: contradicts Sarit Apr 23 P0 which named tool-level granularity explicitly. Reconcile before Sunday kickoff.
+5. **Apps representation for agentic context** — existing Applications page does not cover. New surface needed. Linx will not be in the agent sessions in early phases.
+
+### Hidden architectural pivot surfaced today
+Use-case #4 from Mor (enforce admin policies in Slack / Salesforce / Datadog) implies a shift from **agent platforms** (where agents live: ChatGPT, Copilot, Cursor, n8n, Bedrock) to **target SaaS** (where agents act). Different integration axes. Enforcement at target SaaS via credential scoping at JIT time is more tractable than agent-platform-level enforcement. If Sunday kickoff team thinks they are still building the original M1 visibility wedge across agent platforms, rework risk. Must name the pivot explicitly.
+
+### Use cases from Mor (sketch list)
+1. Access controls (generic — the policy engine itself)
+2. Employee leaves → what happens to their agents (JML for agents, ties to AGENT_OWNER_OFFBOARDED issue type already in M1)
+3. Inherit human permissions — yes / no / ceiling-capped (resolved as #3 above)
+4. Enforce admin policies in critical platforms — Slack / Salesforce / Datadog as P0 starting set
+5. Additional access profile level (Roles for agents)
+
+### Decisions confirmed
+- **Customer voice for June 15:** executive call. Niv asked, no further push. Treat as granted, focus on execution.
+- **Demo target = customers** (Identiverse, June 15).
+- **Discovery = ugly flow** for MVP. Acknowledged not pretty.
+- **Tech-team discovery** required for MCP traffic-flow position (inline / sidecar / provisioning-only). Generic reference, not naming individuals to avoid maintenance churn.
+
+### Files created / updated
+- New: `open-questions.md` — running list of unresolved AI Governance / MCP Gateway questions, referenced from `commitments.md`.
+- Updated: `commitments.md` — added reference row under Standing.
+- Updated: `ai-governance-core.md` — appended Apr 26 Mor sync block.
+
+### Strongest demo seed
+Use case #2 (employee leaving → agents handled) — concrete, customer-pain-driven, lights up the existing AGENT_OWNER_OFFBOARDED issue type. Candidate hero moment for Identiverse.
+
+### Open list owners (next phase)
+Q3 (connector pivot naming) before Sunday Apr 27. Q1, Q2 by Apr 30. Q4–Q8 by May 5–12.

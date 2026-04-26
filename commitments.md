@@ -60,3 +60,4 @@
 ## Standing / Recurring
 
 - [ ] Archive previous month's `log.md` entries to `log-archive-YYYY-MM.md` — 1st of each month — self
+- AI Governance / MCP Gateway open questions live in [`open-questions.md`](open-questions.md) — review weekly, resolve into log when closed
