@@ -4,3 +4,4 @@
 .telegram-bot.err
 .telegram_sessions/
 .claude/settings.local.json
+.DS_Store

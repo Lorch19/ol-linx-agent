@@ -319,30 +319,15 @@ When Notion MCP is connected to Claude Code: sync Notion battle cards + competit
 - Establish per-tenant slicing as non-negotiable (Sony = 10× Monday on issues)
 - Raise the 3-reality gap: public docs vs press release vs Notion Multi-Agent
 
-### AI Governance framework session
-Defined the 3-dimension framework for AI Governance:
-1. **Identity Lifecycle** — Discover → Assess → Enforce (the customer value arc)
-2. **AI Visibility Tier** — Known agents in known apps / Unknown agents in known apps / Unknown-unknowns (apps Linx doesn't know have agents). Omri confirmed: unknown-unknowns likely never in scope.
-3. **Coverage** — connector breadth; this is the ceiling on everything else.
-
-**Lifecycle stage definitions locked:**
-- **Discover:** connector scan (known apps) + OAuth/API key pattern scan (shadow agents in known apps) + IDP scan. Output: agent inventory with platform, name, account linkages, first-seen.
-- **Assess:** ownership (orphaned flag), privilege posture (scopes requested vs granted vs used), credential type (API key → OAuth → JIT risk spectrum), activity (idle 60+ days), blast radius. Output: risk score + prioritized remediation queue.
-- **Enforce:** MCP Gateway (P0, session-level scope enforcement) + JIT provisioning/deprovision + lifecycle actions (offboard orphaned, rotate creds) + policy violations → alert or auto-remediate.
-
-**Key insight from competitive research (ChatGPT report reviewed):** MCP Gateway is both an Enforce AND a Discover mechanism — the proxy sees what agents are doing. Worth flagging to Niv.
-
-**Niv's challenge ("just use 10 capabilities") addressed:** 10 capabilities = what to build (eng catalog). D→A→E = how to sell and sequence (customer narrative). Milestones M1-M4 already implicitly use D→A→E. Both needed.
-
-**PRD reviewed (full Notion export).** M1 technical requirements are eng-ready. Critical gaps:
-- Business justification section is blank — no named customer
-- Definition of done is empty
-- Open questions section in Notion is empty (10 items now captured in ai-governance-core.md)
-- Auditability (#8) misplaced on M4 — belongs in M3
-
-Files updated: `knowledge/ai-governance-core.md` (user scenarios + 10 open items), `knowledge/ai-governance-deep.md` (Tool model full spec).
-
-### AI Governance learning plan + master brief Part A
-- Created learning plan: Claude = synthesis/repo integration; Gemini = audio, Q&A, Deep Research for currency.
-- Wrote `artifacts/ai-governance-master-brief-part-a.md` — distilled problem space: one-paragraph pitch, 4 forces, 5 agent types, MCP attack surface, 10 capabilities mapped to milestones, 3 buyer questions, key numbers (144:1 NHI ratio), Linx positioning statement. `[verify]` markers on Gartner predictions + MCP authz-optional status.
-- Part B (competitive landscape) written: `artifacts/ai-governance-master-brief-part-b.md` — Gartner framing, 6 competitive camps, platform-bundling clock, 5 claims to memorize. `[verify]` markers on Saviynt product status, CrowdStrike/SGNL close, Cisco/Astrix deal, Token Security scope expansion.
+### Eng pre-kickoff deck prep + MCP Gateway pivot surfaced (agent session)
+- Sunday 2026-04-27 pre-kickoff with Eng team being prepped. Session purpose: consolidate shared picture, align on architectural pivot, use session itself to answer open scope questions (not a broadcast).
+- Connector cross-check via Linear + Notion MCP revealed three drifts from `ai-governance-core.md`:
+  1. **M1 shipped connectors = Gemini, Vertex AI, Bedrock, n8n** — NOT ChatGPT Enterprise (still Backlog, CON-1733) or Copilot Studio (Canceled Jan 2026, CON-1972). Core knowledge file listed ChatGPT + Copilot as P0 — wrong.
+  2. **M2 is 74%, 4 weeks overdue** (target was Feb 27). Remaining 26% = exactly where the generic-IAM-API approach broke.
+  3. **M3 scope silently narrowed in Linear** — struck through: MCP access controls, approval chains, resource policies, least-privilege analysis, NHI remediation. Notion still shows full scope. Docs drifted.
+- **Architectural pivot confirmed (Omri, this session):** Linx tried using generic IAM APIs (that power human + NHI governance) for agent governance; confirmed non-viable. Pivot to **MCP Gateway** as the governance layer. Status: concept/whiteboard. Sarit + Amir Ben Ami leading. No design doc yet. Listed as Cycle 79 AI priority in `linx-product.md`.
+- Caution per Omri: not every part of Mar 3 Notion spec is invalidated. M1 visibility stands. Parts of M2 likely still feed the Gateway. Spec delta is in the governance/enforcement layer specifically.
+- Deck plan saved at `~/.claude/plans/we-have-a-kick-humming-bumblebee.md`. 7-slide working-session arc: Why → Shipped → Learned (the wall) → Pivot (MCP Gateway) → What we figure out together → How we work → What we leave with.
+- Reusable from Mor's webinar (`~/Downloads/How Agentic Identities Actually Works - Webinar.pptx`, Dec 2025): "humans on steroids" line + Human-vs-AI-Agent-vs-NHI comparison triangle.
+- Pre-flight before generating slides: read Notion `Agentic AI Identities` epic + `AI Agents research` (edited today, 2026-04-23) + Linear project Updates tab; confirm with Sarit/Amir that "MCP Gateway" is the right public framing; decide if June 15 Identiverse is committed or aspirational.
+- Linear project lead = Ben Bakhar (Experience). Teams involved: Experience, AI, Application, Analytics, Connectors, Product, UX/UI Design, Tech Leads.
