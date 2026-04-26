@@ -25,7 +25,7 @@ pres.title = "Engineering Pre-Kickoff — AI Governance";
 pres.author = "Omri Lorch";
 
 const W = 10, H = 5.625;
-const TOTAL = 9;
+const TOTAL = 8;
 
 const accentBar = (s, color = TEAL) =>
   s.addShape(pres.shapes.RECTANGLE, { x: 0, y: 0, w: 0.12, h: H, fill: { color }, line: { color, width: 0 } });
@@ -112,7 +112,7 @@ const slideTitle = (s, text, color = INK) =>
 }
 
 // ============================================================
-// 3 — 10 CAPABILITIES — Discover / Assess / Enforce
+// 3 — 10 CAPABILITIES + STATUS (Discover / Assess / Enforce)
 // ============================================================
 {
   const s = pres.addSlide();
@@ -121,39 +121,43 @@ const slideTitle = (s, text, color = INK) =>
   eyebrow(s, "02 · The full map");
   slideTitle(s, "10 capabilities. Three stages.");
 
+  // Status badge definitions
+  const STATUS = {
+    M1:      { label: "M1 \u2713", color: TEAL },
+    M2:      { label: "M2",       color: AMBER },
+    P0:      { label: "P0",       color: NAVY },
+    FUTURE:  { label: "Future",   color: MUTED },
+  };
+
   const groups = [
     {
-      label: "DISCOVER",
-      color: TEAL,
+      label: "DISCOVER", color: TEAL,
       caps: [
-        { n: "1", t: "Registration & identification" },
-        { n: "2", t: "Ownership assignment" },
-        { n: "10", t: "Visibility & observability" },
+        { n: "1",  t: "Registration & identification", s: "M1" },
+        { n: "2",  t: "Ownership assignment",          s: "M1" },
+        { n: "10", t: "Visibility & observability",    s: "M1" },
       ],
     },
     {
-      label: "ASSESS",
-      color: NAVY,
+      label: "ASSESS", color: NAVY,
       caps: [
-        { n: "3", t: "Authentication" },
-        { n: "4", t: "Authorization & delegation" },
-        { n: "9", t: "Multi-agent collaboration" },
+        { n: "3", t: "Authentication",             s: "M2" },
+        { n: "4", t: "Authorization & delegation", s: "P0" },
+        { n: "9", t: "Multi-agent collaboration",  s: "FUTURE" },
       ],
     },
     {
-      label: "ENFORCE",
-      color: PURPLE,
+      label: "ENFORCE", color: PURPLE,
       caps: [
-        { n: "5", t: "Human oversight & approval" },
-        { n: "6", t: "Resource policy enforcement" },
-        { n: "7", t: "Credential lifecycle" },
-        { n: "8", t: "Auditability & logging" },
+        { n: "5", t: "Human oversight & approval",    s: "FUTURE" },
+        { n: "6", t: "Resource policy enforcement",   s: "P0" },
+        { n: "7", t: "Credential lifecycle",          s: "FUTURE" },
+        { n: "8", t: "Auditability & logging",        s: "P0" },
       ],
     },
   ];
 
-  // Arrows between stage labels
-  const gY = 1.85, gH = 3.15, gW = 3.0, gGap = 0.1;
+  const gY = 1.85, gH = 3.15, gW = 2.95, gGap = 0.1;
   const gStart = (W - (3 * gW + 2 * gGap)) / 2;
 
   groups.forEach((g, i) => {
@@ -163,67 +167,36 @@ const slideTitle = (s, text, color = INK) =>
     s.addShape(pres.shapes.RECTANGLE, { x, y: gY + 0.45, w: gW, h: gH - 0.45, fill: { color: ICE }, line: { color: g.color, width: 1 } });
 
     g.caps.forEach((c, j) => {
-      const rowY = gY + 0.6 + j * 0.64;
-      s.addShape(pres.shapes.OVAL, { x: x + 0.2, y: rowY + 0.06, w: 0.28, h: 0.28, fill: { color: g.color }, line: { color: g.color, width: 0 } });
-      s.addText(c.n, { x: x + 0.2, y: rowY + 0.06, w: 0.28, h: 0.28, fontSize: 10, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
-      s.addText(c.t, { x: x + 0.58, y: rowY, w: gW - 0.72, h: 0.5, fontSize: 12, fontFace: "Calibri", color: INK, valign: "middle", margin: 0 });
+      const rowY = gY + 0.55 + j * (( gH - 0.55) / g.caps.length);
+      const rowH = (gH - 0.55) / g.caps.length;
+      // number badge
+      s.addShape(pres.shapes.OVAL, { x: x + 0.18, y: rowY + (rowH - 0.28) / 2, w: 0.28, h: 0.28, fill: { color: g.color }, line: { color: g.color, width: 0 } });
+      s.addText(c.n, { x: x + 0.18, y: rowY + (rowH - 0.28) / 2, w: 0.28, h: 0.28, fontSize: 10, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
+      // capability text
+      s.addText(c.t, { x: x + 0.54, y: rowY, w: gW - 1.25, h: rowH, fontSize: 11, fontFace: "Calibri", color: INK, valign: "middle", margin: 0 });
+      // status pill
+      const st = STATUS[c.s];
+      s.addShape(pres.shapes.RECTANGLE, { x: x + gW - 0.68, y: rowY + (rowH - 0.24) / 2, w: 0.65, h: 0.24, fill: { color: st.color }, line: { color: st.color, width: 0 } });
+      s.addText(st.label, { x: x + gW - 0.68, y: rowY + (rowH - 0.24) / 2, w: 0.65, h: 0.24, fontSize: 9, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
     });
 
     // Arrow between columns
     if (i < 2) {
       s.addShape(pres.shapes.LINE, {
         x: x + gW + 0.01, y: gY + 0.22, w: gGap - 0.01, h: 0,
-        line: { color: WHITE, width: 2, endArrowType: "triangle" },
+        line: { color: LINE, width: 2, endArrowType: "triangle" },
       });
     }
   });
 
-  s.addText("Source: \u201CIAM for LLM-Based AI Agents\u201D framework.", {
-    x: 0.5, y: 5.1, w: W - 1, h: 0.28, fontSize: 10, fontFace: "Calibri", color: MUTED, italic: true, margin: 0,
-  });
+  // Connectors footnote (replaces standalone slide 4)
+  s.addText([
+    { text: "M1 connectors live: ", options: { bold: true, color: NAVY, fontSize: 10 } },
+    { text: "Gemini · Vertex AI · Bedrock · n8n  ·  ", options: { color: INK, fontSize: 10 } },
+    { text: "ChatGPT Enterprise: Backlog  ·  Copilot Studio: Canceled Jan 2026", options: { color: MUTED, italic: true, fontSize: 10 } },
+  ], { x: 0.5, y: 5.1, w: W - 1, h: 0.28, fontFace: "Calibri", margin: 0 });
 
   pageNum(s, 3);
-}
-
-// ============================================================
-// 4 — WHAT'S IN SCOPE SO FAR (no "shipped" claims)
-// ============================================================
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  accentBar(s);
-  eyebrow(s, "03 · Where we are");
-  slideTitle(s, "What's been started.");
-  s.addText("M1 visibility layer is live. M2 is ~74% in. Some work may cover P0 needs — Omri will verify with Mor.", {
-    x: 0.5, y: 1.7, w: 9, h: 0.4, fontSize: 12, fontFace: "Calibri", color: MUTED, italic: true, margin: 0,
-  });
-
-  s.addText([
-    { text: "M1 · Agent visibility layer", options: { bold: true, color: NAVY, fontSize: 14, breakLine: true } },
-    { text: "Agent graph model · Discovery > Agents UI · agent entity page", options: { color: MUTED, fontSize: 12, breakLine: true } },
-    { text: "Built-in issues: AGENT_EXCESSIVE_PERMISSIONS · AGENT_OWNER_OFFBOARDED", options: { color: MUTED, fontSize: 12, breakLine: true } },
-    { text: "Connectors: Gemini · Vertex AI · Amazon Bedrock · n8n", options: { color: MUTED, fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "M2 · Access Intelligence", options: { bold: true, color: AMBER, fontSize: 14, breakLine: true } },
-    { text: "~74% in progress. Credential discovery, NHI→agent map, OAuth scope viz.", options: { color: MUTED, fontSize: 12, breakLine: true } },
-    { text: "The remaining 26% is where the original approach hit the wall.", options: { color: MUTED, fontSize: 12 } },
-  ], { x: 0.6, y: 1.85, w: 4.5, h: 3.1, fontFace: "Calibri", margin: 0 });
-
-  s.addImage({
-    path: "/tmp/mor-pics/slide12_160.png",
-    x: 5.3, y: 1.75, w: 4.2, h: 2.8,
-    sizing: { type: "contain", w: 4.2, h: 2.8 },
-  });
-  s.addText("Linx · agent detail page (in product)", {
-    x: 5.3, y: 4.6, w: 4.2, h: 0.25, fontSize: 9, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
-  });
-
-  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 5.05, w: W - 1, h: 0.4, fill: { color: ICE }, line: { color: LINE, width: 0 } });
-  s.addText("ChatGPT Enterprise: still in Backlog  ·  Copilot Studio direct connector: Canceled (Jan 2026)", {
-    x: 0.7, y: 5.05, w: W - 1.4, h: 0.4, fontSize: 11, fontFace: "Calibri", color: MUTED, italic: true, valign: "middle", margin: 0,
-  });
-
-  pageNum(s, 4);
 }
 
 // ============================================================
@@ -259,16 +232,12 @@ const slideTitle = (s, text, color = INK) =>
   s.addShape(pres.shapes.RECTANGLE, { x: 5.5, y: 1.85, w: 0.08, h: 3.0, fill: { color: "E11D48" }, line: { color: "E11D48", width: 0 } });
   s.addText("What happened", { x: 5.7, y: 1.95, w: 3.7, h: 0.4, fontSize: 15, fontFace: "Georgia", color: NAVY, bold: true, margin: 0 });
   s.addText([
-    { text: "Agent access doesn't map to the IAM API surface.", options: { bold: true, color: "E11D48", fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "Ephemeral:", options: { bold: true, color: INK, fontSize: 12 } },
-    { text: " sessions spin up/down in seconds — no persistent identity to track.", options: { color: INK, fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "Intent-driven:", options: { bold: true, color: INK, fontSize: 12 } },
-    { text: " access isn't pre-declared — it's determined at runtime based on task context.", options: { color: INK, fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "Multi-hop:", options: { bold: true, color: INK, fontSize: 12 } },
-    { text: " one agent call chains through tools, MCP servers, and downstream apps — not a single entitlement check.", options: { color: INK, fontSize: 12 } },
+    { text: "The IAM API surface couldn't support the agent access flow.", options: { bold: true, color: "E11D48", fontSize: 12, breakLine: true } },
+    { text: " ", options: { fontSize: 8, breakLine: true } },
+    { text: "The exact failure mode is what Sarit + Amir are best placed to describe — and it's the foundation for the Gateway design.", options: { color: MUTED, italic: true, fontSize: 12, breakLine: true } },
+    { text: " ", options: { fontSize: 8, breakLine: true } },
+    { text: "What we know: ", options: { bold: true, color: INK, fontSize: 12 } },
+    { text: "M2 stalled at the 26% that required deep access to the agent call flow — not user accounts, not static entitlements.", options: { color: INK, fontSize: 12 } },
   ], { x: 5.7, y: 2.45, w: 3.7, h: 2.3, fontFace: "Calibri", margin: 0 });
 
   s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 5.05, w: W - 1, h: 0.4, fill: { color: AMBER, transparency: 75 }, line: { color: AMBER, width: 0 } });
@@ -276,7 +245,7 @@ const slideTitle = (s, text, color = INK) =>
     x: 0.7, y: 5.05, w: W - 1.4, h: 0.4, fontSize: 12, fontFace: "Calibri", color: NAVY, bold: true, italic: true, valign: "middle", margin: 0,
   });
 
-  pageNum(s, 5);
+  pageNum(s, 4);
 }
 
 // ============================================================
@@ -320,7 +289,7 @@ const slideTitle = (s, text, color = INK) =>
     { text: "Market: Saviynt, Token Security, Astrix converging here.", options: { color: ICE, italic: true, fontSize: 12 } },
   ], { x: 0.5, y: 4.15, w: W - 1, h: 0.4, fontFace: "Calibri", valign: "middle", margin: 0 });
 
-  pageNum(s, 6, true);
+  pageNum(s, 5, true);
 }
 
 // ============================================================
@@ -371,7 +340,7 @@ const slideTitle = (s, text, color = INK) =>
     x: 0.7, y: 5.05, w: W - 1.4, h: 0.4, fontSize: 12, fontFace: "Calibri", color: WHITE, bold: true, valign: "middle", margin: 0,
   });
 
-  pageNum(s, 7);
+  pageNum(s, 6);
 }
 
 // ============================================================
@@ -407,7 +376,7 @@ const slideTitle = (s, text, color = INK) =>
     x: 0.5, y: 5.05, w: W - 1, h: 0.3, fontSize: 11, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
   });
 
-  pageNum(s, 8);
+  pageNum(s, 7);
 }
 
 // ============================================================
@@ -475,7 +444,7 @@ const slideTitle = (s, text, color = INK) =>
     { text: "What from M1 / M2 do you think already covers parts of P0?", options: { color: NAVY, bold: true, italic: true, fontSize: 13 } },
   ], { x: 0.7, y: 5.0, w: W - 1.4, h: 0.45, fontFace: "Calibri", valign: "middle", margin: 0 });
 
-  pageNum(s, 9, true);
+  pageNum(s, 8, true);
 }
 
 pres.writeFile({ fileName: OUT }).then((f) => console.log("Wrote:", f));
