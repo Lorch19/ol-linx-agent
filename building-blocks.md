@@ -36,7 +36,7 @@ What physically allows or blocks an agent action.
 |---|---|---|
 | 3.1 Target SaaS connectors (Slack, SFDC, Datadog) | confirmed in scope (Apr 26) | Per-app integration depth TBD |
 | 3.2 Credential issuance (JIT, scoped tokens) | open | Mechanism per connector |
-| 3.3 Enforcement point (Q2) | partial answer | Mor: "in the request loop, approve/deny/JIT" — pulls toward Option A inline. Eng to confirm exact arch. |
+| 3.3 Enforcement point (Q2) | **RESOLVED Apr 26** | Inline-for-everything (Option A). Linx proxies every MCP tool call. Eng owns throughput/latency/fail-mode downstream. |
 
 ## 4. AUDIT — see, prove, react
 
@@ -59,6 +59,21 @@ What we can show after the fact and during.
 | JIT approval | 2 → 3 → 4 | UC implicit | TBD on Q2 |
 | Toxic combo detection | 1 → 4 | implicit | TBD |
 | Policy enforcement at target SaaS | 2 → 3 → 4 | UC #4 | Yes |
+
+---
+
+## Existing screens to validate (Apr 26 — Omri to confirm via Linx Notion/Linear MCP)
+
+Per Mor + Omri, the screens that AI Governance needs to land on or extend:
+
+| # | Screen | Status | AI-Gov delta |
+|---|---|---|---|
+| 1 | **Access Profiles** (Applications) | exists for human/NHI | Add Applications + Tools dimensions for agents |
+| 2 | **Inventory > Agents** | suspected exists (M1 shipped per Linear) | Validate; identify gaps for new use cases |
+| 3 | **Integration tab** | exists for API-based integrations | Add MCP Gateway integration representation (new connector type / new tab / merged?) |
+| 4 | **Logs** — System / Governance / All Access | TBD existence in current product | Confirm whether all three exist today or are new for AI Gov |
+
+**Action:** validate via Linx MCP (Notion + Linear). Output to `artifacts/existing-screens-mapping-2026-04-26.md`.
 
 ---
 

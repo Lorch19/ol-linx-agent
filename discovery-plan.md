@@ -18,12 +18,11 @@ These four answers shape what we're building. No commit until they're in.
 - **Owner:** Omri research (a), eng + UX estimate (b).
 - **Target:** Apr 30.
 
-### Q2. Where does Linx physically sit in MCP traffic? **(partially answered Apr 26)**
-- **Mor's Apr 26 answer:** Linx sits "in the requests loop" — approving / denying / JIT-escalating tool-call requests. Pulls toward Option A (inline) rather than the earlier "won't be in sessions" framing.
-- **Still open — needs eng clarification:** is "in the request loop" inline for *every* MCP tool call (heavy proxy load), or only for policy-flagged calls (lighter, but how do we know which to flag without seeing all)? Two different impl profiles.
-- **Resolve:** eng session — confirm proxy architecture, expected throughput, latency budget.
-- **Owner:** Omri drive, eng answer.
-- **Target:** Apr 30.
+### Q2. Where does Linx physically sit in MCP traffic? **RESOLVED 2026-04-26**
+- **Mor:** "in the request loop, approve/deny/JIT."
+- **Omri (Apr 26):** "we need to be in all of them eventually" → inline-for-everything. Option A.
+- **Implication:** Linx proxies every MCP tool call. Heavy proxy load + latency budget become eng concerns. We see all traffic. Demo of "real-time control" is on the table. JIT approval flow (hero moment C) is feasible.
+- **Open eng items downstream of this answer:** throughput target, latency budget, fail-open vs. fail-closed posture, MCP version coverage. These are eng implementation decisions, not scope-blocking.
 
 ### Q3. Connector pivot — agent platforms vs. target SaaS — **RESOLVED 2026-04-26**
 - **Confirmed by Mor:** yes, shifting. P0 connectors = target SaaS (Slack, Salesforce, Datadog). Agent platforms become identity-ingestion only.
@@ -109,3 +108,4 @@ Single doc, no rewrites for politics. If exec wants a deck, derive from the scop
 |---|---|
 | 2026-04-26 | File created. 10 questions seeded from Mor sync. |
 | 2026-04-26 | Q3 resolved (connector pivot confirmed). Q2 partially answered ("in the request loop"). Q1 has action plan (MCP spec research). Hero moment menu expanded — C now feasible. |
+| 2026-04-26 (eod) | Q2 fully resolved: inline-for-everything (Option A). Eng implementation decisions (throughput, latency, fail-mode) move downstream. Scope-blocking list now: Q1 (tool-level), Q7 (hero moment). |

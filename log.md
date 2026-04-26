@@ -394,3 +394,11 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 2. Requirements format Omer expects — functional requirements doc, PRD, story-level ACs?
 3. Existing human/NHI flows — pointer to where to start mapping (Notion? Code? Figma?)
 4. Hero moment selection — Omri draft + Mor/Niv align (target May 5)
+
+### EOD wrap 2026-04-26
+- **Q2 fully resolved:** "in all of them" — inline-for-everything. Option A confirmed. Hero moment C (JIT approval) now architecturally feasible.
+- **Scope-blocking list reduced:** only Q1 (tool-level) and Q7 (hero moment) remain. Q1 has action plan (MCP spec research via Linx Claude). Q7 target May 5.
+- **Existing screens list defined** (need to validate via Linx Notion/Linear MCP): Access Profiles, Inventory > Agents, Integration tab, Logs (3 streams).
+- **Requirements format from Omer:** mainly use cases, screens, user journeys. A bit of all three. Will produce hybrid doc.
+- **Parallel tasks queued for tonight/tomorrow:** Task A (Claude.ai with Linx MCP — existing screens validation), Task B (Figma Make — JML flow prototype). Prompts saved in `artifacts/parallel-tasks-2026-04-26.md`.
+- **Branch:** about to merge `claude/amazing-austin-cd8909` → main per session-end discipline.
