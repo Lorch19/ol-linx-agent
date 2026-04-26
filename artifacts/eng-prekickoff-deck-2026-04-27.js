@@ -1,7 +1,7 @@
 // Engineering Pre-Kickoff Deck — AI Governance / MCP Gateway
 // Sunday 2026-04-27 · Omri Lorch
-// v3 — Mor's triangle style rebuilt, previous-try slide, no completion claims
-// Run: node artifacts/eng-prekickoff-deck-2026-04-27.js
+// v6 — 7 slides. Adds problem statement. Consolidates previous-try + pivot,
+//      and P0 + post-P0. Run: node artifacts/eng-prekickoff-deck-2026-04-27.js
 
 const pptxgen = require("pptxgenjs");
 const path = require("path");
@@ -16,6 +16,7 @@ const INK = "1A1F36";
 const MUTED = "64748B";
 const TEAL = "02C39A";
 const AMBER = "F59E0B";
+const RED = "E11D48";
 const LINE = "CBD5E1";
 const PURPLE = "7C3AED";
 
@@ -25,7 +26,7 @@ pres.title = "Engineering Pre-Kickoff — AI Governance";
 pres.author = "Omri Lorch";
 
 const W = 10, H = 5.625;
-const TOTAL = 8;
+const TOTAL = 7;
 
 const accentBar = (s, color = TEAL) =>
   s.addShape(pres.shapes.RECTANGLE, { x: 0, y: 0, w: 0.12, h: H, fill: { color }, line: { color, width: 0 } });
@@ -68,11 +69,11 @@ const slideTitle = (s, text, color = INK) =>
 }
 
 // ============================================================
-// 2 — PROBLEM SPACE — Mor's triangle style (overlapping glowing ovals)
+// 2 — PROBLEM SPACE — Mor's triangle style
 // ============================================================
 {
   const s = pres.addSlide();
-  s.background = { color: "0A0E1A" }; // near-black like Mor's dark bg
+  s.background = { color: "0A0E1A" };
 
   eyebrow(s, "01 · The problem space", true);
   s.addText("What makes agents different?", {
@@ -82,29 +83,21 @@ const slideTitle = (s, text, color = INK) =>
     x: 0.5, y: 1.55, w: 9, h: 0.45, fontSize: 12, fontFace: "Calibri", color: ICE, italic: true, margin: 0,
   });
 
-  // Glowing orbs — left (Human, purple), center (Agent, teal), right (NHI, amber)
   const orbY = 2.1, orbW = 3.0, orbH = 2.5;
-  // purple glow (Human)
   s.addShape(pres.shapes.OVAL, { x: 0.2, y: orbY, w: orbW, h: orbH, fill: { color: PURPLE, transparency: 55 }, line: { color: PURPLE, width: 0 } });
-  // teal glow (Agent — center, slightly lower)
   s.addShape(pres.shapes.OVAL, { x: 3.5, y: orbY + 0.15, w: orbW, h: orbH, fill: { color: TEAL, transparency: 50 }, line: { color: TEAL, width: 0 } });
-  // amber glow (NHI — right)
   s.addShape(pres.shapes.OVAL, { x: 6.7, y: orbY, w: orbW, h: orbH, fill: { color: AMBER, transparency: 55 }, line: { color: AMBER, width: 0 } });
 
-  // Labels
   s.addText("HUMAN", { x: 0.4, y: orbY + 0.25, w: 2.6, h: 0.4, fontSize: 13, fontFace: "Calibri", color: WHITE, bold: true, align: "center", charSpacing: 4, margin: 0 });
   s.addText("AI AGENT", { x: 3.7, y: orbY + 0.4, w: 2.6, h: 0.4, fontSize: 13, fontFace: "Calibri", color: WHITE, bold: true, align: "center", charSpacing: 4, margin: 0 });
   s.addText("NHI", { x: 6.9, y: orbY + 0.25, w: 2.6, h: 0.4, fontSize: 13, fontFace: "Calibri", color: WHITE, bold: true, align: "center", charSpacing: 4, margin: 0 });
 
-  // Attributes (Human)
   s.addText("Judicious · Static\nRole-based permissions\nDeterministic", { x: 0.25, y: orbY + 0.85, w: 2.8, h: 0.9, fontSize: 11, fontFace: "Calibri", color: ICE, align: "center", margin: 0 });
   s.addText("Risk: Socially exploitable\nover-permissioned over time", { x: 0.25, y: orbY + 1.8, w: 2.8, h: 0.55, fontSize: 10, fontFace: "Calibri", color: PURPLE, italic: true, align: "center", margin: 0 });
 
-  // Attributes (Agent)
   s.addText("Autonomous · Goal-based\nNondeterministic · LLM-powered\nContext-aware · Iterative", { x: 3.6, y: orbY + 0.98, w: 2.8, h: 0.9, fontSize: 11, fontFace: "Calibri", color: ICE, align: "center", margin: 0 });
   s.addText("Risk: Manipulable via inputs\ndangerous when over-trusted", { x: 3.6, y: orbY + 1.9, w: 2.8, h: 0.55, fontSize: 10, fontFace: "Calibri", color: TEAL, italic: true, align: "center", margin: 0 });
 
-  // Attributes (NHI)
   s.addText("Restless · Works at scale\nPermission-greedy", { x: 6.8, y: orbY + 0.85, w: 2.8, h: 0.9, fontSize: 11, fontFace: "Calibri", color: ICE, align: "center", margin: 0 });
   s.addText("Risk: Misconfigurations\nlong-lived secrets", { x: 6.8, y: orbY + 1.8, w: 2.8, h: 0.55, fontSize: 10, fontFace: "Calibri", color: AMBER, italic: true, align: "center", margin: 0 });
 
@@ -112,21 +105,57 @@ const slideTitle = (s, text, color = INK) =>
 }
 
 // ============================================================
-// 3 — 10 CAPABILITIES + STATUS (Discover / Assess / Enforce)
+// 3 — PROBLEM STATEMENT (new)
 // ============================================================
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
   accentBar(s);
-  eyebrow(s, "02 · The full map");
+  eyebrow(s, "02 · The problem");
+  slideTitle(s, "What we're solving.");
+
+  // Statement card
+  s.addShape(pres.shapes.RECTANGLE, { x: 0.7, y: 1.85, w: W - 1.4, h: 2.85, fill: { color: ICE }, line: { color: ICE, width: 0 } });
+  s.addShape(pres.shapes.RECTANGLE, { x: 0.7, y: 1.85, w: 0.08, h: 2.85, fill: { color: TEAL }, line: { color: TEAL, width: 0 } });
+
+  s.addText([
+    { text: "For CISOs ", options: { color: NAVY, bold: true, fontSize: 17 } },
+    { text: "whose enterprises now run more agents than humans (144 : 1),", options: { color: INK, fontSize: 17, breakLine: true } },
+    { text: " ", options: { fontSize: 6, breakLine: true } },
+    { text: "there's no way to see ", options: { color: INK, fontSize: 17 } },
+    { text: "what agents exist, who owns them, what they access, or what they did.", options: { color: INK, fontSize: 17, breakLine: true } },
+    { text: " ", options: { fontSize: 6, breakLine: true } },
+    { text: "The IAM and PAM tools they have ", options: { color: INK, fontSize: 17 } },
+    { text: "were built for humans and NHIs — not agents", options: { color: INK, italic: true, fontSize: 17 } },
+    { text: " that spin up in seconds, decide at runtime, and chain through tools and MCP servers.", options: { color: INK, fontSize: 17, breakLine: true } },
+  ], { x: 1.1, y: 2.1, w: W - 2.0, h: 2.4, fontFace: "Calibri", paraSpaceAfter: 4, margin: 0 });
+
+  // Solution line
+  s.addShape(pres.shapes.RECTANGLE, { x: 0.7, y: 4.95, w: W - 1.4, h: 0.5, fill: { color: NAVY }, line: { color: NAVY, width: 0 } });
+  s.addText([
+    { text: "LINX SOLVES THIS WITH  ", options: { color: TEAL, bold: true, fontSize: 11, charSpacing: 3 } },
+    { text: "agentic identity governance, end-to-end:  ", options: { color: WHITE, fontSize: 14 } },
+    { text: "Discover \u2192 Assess \u2192 Enforce.", options: { color: WHITE, bold: true, fontSize: 14 } },
+  ], { x: 0.95, y: 4.95, w: W - 1.9, h: 0.5, fontFace: "Calibri", valign: "middle", margin: 0 });
+
+  pageNum(s, 3);
+}
+
+// ============================================================
+// 4 — CAPABILITY MAP — Discover / Assess / Enforce + status
+// ============================================================
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  accentBar(s);
+  eyebrow(s, "03 · The full map");
   slideTitle(s, "10 capabilities. Three stages.");
 
-  // Status badge definitions
   const STATUS = {
-    M1:      { label: "M1 \u2713", color: TEAL },
-    M2:      { label: "M2",       color: AMBER },
-    P0:      { label: "P0",       color: NAVY },
-    FUTURE:  { label: "Future",   color: MUTED },
+    M1:     { label: "M1 \u2713", color: TEAL },
+    M2:     { label: "M2",       color: AMBER },
+    P0:     { label: "P0",       color: NAVY },
+    FUTURE: { label: "Future",   color: MUTED },
   };
 
   const groups = [
@@ -167,20 +196,16 @@ const slideTitle = (s, text, color = INK) =>
     s.addShape(pres.shapes.RECTANGLE, { x, y: gY + 0.45, w: gW, h: gH - 0.45, fill: { color: ICE }, line: { color: g.color, width: 1 } });
 
     g.caps.forEach((c, j) => {
-      const rowY = gY + 0.55 + j * (( gH - 0.55) / g.caps.length);
       const rowH = (gH - 0.55) / g.caps.length;
-      // number badge
+      const rowY = gY + 0.55 + j * rowH;
       s.addShape(pres.shapes.OVAL, { x: x + 0.18, y: rowY + (rowH - 0.28) / 2, w: 0.28, h: 0.28, fill: { color: g.color }, line: { color: g.color, width: 0 } });
       s.addText(c.n, { x: x + 0.18, y: rowY + (rowH - 0.28) / 2, w: 0.28, h: 0.28, fontSize: 10, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
-      // capability text
       s.addText(c.t, { x: x + 0.54, y: rowY, w: gW - 1.25, h: rowH, fontSize: 11, fontFace: "Calibri", color: INK, valign: "middle", margin: 0 });
-      // status pill
       const st = STATUS[c.s];
       s.addShape(pres.shapes.RECTANGLE, { x: x + gW - 0.68, y: rowY + (rowH - 0.24) / 2, w: 0.65, h: 0.24, fill: { color: st.color }, line: { color: st.color, width: 0 } });
       s.addText(st.label, { x: x + gW - 0.68, y: rowY + (rowH - 0.24) / 2, w: 0.65, h: 0.24, fontSize: 9, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
     });
 
-    // Arrow between columns
     if (i < 2) {
       s.addShape(pres.shapes.LINE, {
         x: x + gW + 0.01, y: gY + 0.22, w: gGap - 0.01, h: 0,
@@ -189,221 +214,166 @@ const slideTitle = (s, text, color = INK) =>
     }
   });
 
-  // Connectors footnote (replaces standalone slide 4)
   s.addText([
     { text: "M1 connectors live: ", options: { bold: true, color: NAVY, fontSize: 10 } },
     { text: "Gemini · Vertex AI · Bedrock · n8n  ·  ", options: { color: INK, fontSize: 10 } },
     { text: "ChatGPT Enterprise: Backlog  ·  Copilot Studio: Canceled Jan 2026", options: { color: MUTED, italic: true, fontSize: 10 } },
   ], { x: 0.5, y: 5.1, w: W - 1, h: 0.28, fontFace: "Calibri", margin: 0 });
 
-  pageNum(s, 3);
-}
-
-// ============================================================
-// 5 — THE PREVIOUS TRY
-// ============================================================
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  accentBar(s, AMBER);
-  eyebrow(s, "04 · What we tried first");
-  slideTitle(s, "The original approach.");
-
-  // Two-column: what we tried vs. what happened
-  // Left — the plan
-  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.85, w: 4.3, h: 3.0, fill: { color: ICE }, line: { color: ICE, width: 0 } });
-  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.85, w: 0.08, h: 3.0, fill: { color: AMBER }, line: { color: AMBER, width: 0 } });
-  s.addText("The plan", { x: 0.7, y: 1.95, w: 3.9, h: 0.4, fontSize: 15, fontFace: "Georgia", color: NAVY, bold: true, margin: 0 });
-  s.addText([
-    { text: "Govern agents using the same IAM APIs that power human + NHI governance.", options: { color: INK, fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "Identity graph already connected to every app.", options: { color: INK, fontSize: 12, breakLine: true } },
-    { text: "Access request flows already built.", options: { color: INK, fontSize: 12, breakLine: true } },
-    { text: "Credential discovery already in motion (M2).", options: { color: INK, fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 5, breakLine: true } },
-    { text: "Natural extension of what we already do for humans and NHIs.", options: { color: MUTED, italic: true, fontSize: 12 } },
-  ], { x: 0.7, y: 2.45, w: 3.9, h: 2.2, fontFace: "Calibri", margin: 0 });
-
-  // Arrow
-  s.addShape(pres.shapes.LINE, { x: 4.87, y: 3.35, w: 0.55, h: 0, line: { color: NAVY, width: 2, endArrowType: "triangle" } });
-
-  // Right — what happened
-  s.addShape(pres.shapes.RECTANGLE, { x: 5.5, y: 1.85, w: 4.1, h: 3.0, fill: { color: ICE }, line: { color: ICE, width: 0 } });
-  s.addShape(pres.shapes.RECTANGLE, { x: 5.5, y: 1.85, w: 0.08, h: 3.0, fill: { color: "E11D48" }, line: { color: "E11D48", width: 0 } });
-  s.addText("What happened", { x: 5.7, y: 1.95, w: 3.7, h: 0.4, fontSize: 15, fontFace: "Georgia", color: NAVY, bold: true, margin: 0 });
-  s.addText([
-    { text: "The IAM API surface couldn't support the agent access flow.", options: { bold: true, color: "E11D48", fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 8, breakLine: true } },
-    { text: "The exact failure mode is what Sarit + Amir are best placed to describe — and it's the foundation for the Gateway design.", options: { color: MUTED, italic: true, fontSize: 12, breakLine: true } },
-    { text: " ", options: { fontSize: 8, breakLine: true } },
-    { text: "What we know: ", options: { bold: true, color: INK, fontSize: 12 } },
-    { text: "M2 stalled at the 26% that required deep access to the agent call flow — not user accounts, not static entitlements.", options: { color: INK, fontSize: 12 } },
-  ], { x: 5.7, y: 2.45, w: 3.7, h: 2.3, fontFace: "Calibri", margin: 0 });
-
-  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 5.05, w: W - 1, h: 0.4, fill: { color: AMBER, transparency: 75 }, line: { color: AMBER, width: 0 } });
-  s.addText("This is a useful discovery. We now know exactly what the next layer must do.", {
-    x: 0.7, y: 5.05, w: W - 1.4, h: 0.4, fontSize: 12, fontFace: "Calibri", color: NAVY, bold: true, italic: true, valign: "middle", margin: 0,
-  });
-
   pageNum(s, 4);
 }
 
 // ============================================================
-// 6 — LESSON → PIVOT
-// ============================================================
-{
-  const s = pres.addSlide();
-  s.background = { color: NAVY_DEEP };
-  s.addShape(pres.shapes.RECTANGLE, { x: 0, y: 0, w: 0.12, h: H, fill: { color: TEAL }, line: { color: TEAL, width: 0 } });
-
-  eyebrow(s, "05 · The new approach", true);
-  slideTitle(s, "MCP Gateway.", WHITE);
-  s.addText("Govern agents at the protocol layer — one enforcement point between every agent and every tool.", {
-    x: 0.5, y: 1.75, w: 9, h: 0.5, fontSize: 15, fontFace: "Calibri", color: ICE, italic: true, margin: 0,
-  });
-
-  // Diagram
-  const dY = 2.55, boxH = 1.3;
-  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 0.5, y: dY, w: 2.0, h: boxH, fill: { color: "1A2545" }, line: { color: ICE, width: 1 }, rectRadius: 0.08 });
-  s.addText("AGENT", { x: 0.5, y: dY + 0.1, w: 2.0, h: 0.35, fontSize: 10, fontFace: "Calibri", color: MUTED, bold: true, align: "center", charSpacing: 3, margin: 0 });
-  s.addText("ChatGPT · Claude\nCursor · n8n", { x: 0.5, y: dY + 0.5, w: 2.0, h: 0.75, fontSize: 12, fontFace: "Calibri", color: WHITE, align: "center", margin: 0 });
-
-  s.addShape(pres.shapes.LINE, { x: 2.55, y: dY + boxH / 2, w: 0.75, h: 0, line: { color: TEAL, width: 2, endArrowType: "triangle" } });
-
-  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 3.4, y: dY - 0.15, w: 3.2, h: boxH + 0.3, fill: { color: NAVY }, line: { color: TEAL, width: 3 }, rectRadius: 0.1 });
-  s.addText("MCP GATEWAY", { x: 3.4, y: dY, w: 3.2, h: 0.4, fontSize: 13, fontFace: "Calibri", color: TEAL, bold: true, align: "center", charSpacing: 4, margin: 0 });
-  s.addText("identity · policy · audit", { x: 3.4, y: dY + 0.45, w: 3.2, h: 0.3, fontSize: 13, fontFace: "Calibri", color: WHITE, italic: true, align: "center", margin: 0 });
-  s.addText("every call, policy-checked", { x: 3.4, y: dY + 0.85, w: 3.2, h: 0.3, fontSize: 10, fontFace: "Calibri", color: ICE, align: "center", margin: 0 });
-
-  s.addShape(pres.shapes.LINE, { x: 6.65, y: dY + boxH / 2, w: 0.75, h: 0, line: { color: TEAL, width: 2, endArrowType: "triangle" } });
-
-  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 7.5, y: dY, w: 2.0, h: boxH, fill: { color: "1A2545" }, line: { color: ICE, width: 1 }, rectRadius: 0.08 });
-  s.addText("APPS · TOOLS", { x: 7.5, y: dY + 0.1, w: 2.0, h: 0.35, fontSize: 10, fontFace: "Calibri", color: MUTED, bold: true, align: "center", charSpacing: 2, margin: 0 });
-  s.addText("Slack · Linear\nNotions · Postgres", { x: 7.5, y: dY + 0.5, w: 2.0, h: 0.75, fontSize: 12, fontFace: "Calibri", color: WHITE, align: "center", margin: 0 });
-
-  // Two facts
-  s.addText([
-    { text: "Status: concept / whiteboard.  ", options: { color: AMBER, bold: true, fontSize: 12 } },
-    { text: "Sarit + Amir Ben Ami leading architecture.  ", options: { color: ICE, fontSize: 12 } },
-    { text: "Cycle 79 AI priority.  ", options: { color: ICE, fontSize: 12 } },
-    { text: "Market: Saviynt, Token Security, Astrix converging here.", options: { color: ICE, italic: true, fontSize: 12 } },
-  ], { x: 0.5, y: 4.15, w: W - 1, h: 0.4, fontFace: "Calibri", valign: "middle", margin: 0 });
-
-  pageNum(s, 5, true);
-}
-
-// ============================================================
-// 7 — P0 SCOPE
+// 5 — FROM → TO (combined: previous try + MCP Gateway)
 // ============================================================
 {
   const s = pres.addSlide();
   s.background = { color: WHITE };
   accentBar(s);
-  eyebrow(s, "06 · P0 scope — the demo target");
-  slideTitle(s, "What we're building first.");
-  s.addText("From Sarit's session. Some pieces may exist in M1/M2 — Omri will connect the dots.", {
-    x: 0.5, y: 1.7, w: 9, h: 0.4, fontSize: 12, fontFace: "Calibri", color: MUTED, italic: true, margin: 0,
+  eyebrow(s, "04 · From \u2192 To");
+  slideTitle(s, "From IdP-led to protocol-led.");
+
+  // FROM (left)
+  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.85, w: 4.1, h: 3.1, fill: { color: ICE }, line: { color: ICE, width: 0 } });
+  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.85, w: 0.08, h: 3.1, fill: { color: AMBER }, line: { color: AMBER, width: 0 } });
+  s.addText("WHAT WE TRIED", { x: 0.7, y: 1.95, w: 3.7, h: 0.3, fontSize: 10, fontFace: "Calibri", color: AMBER, bold: true, charSpacing: 3, margin: 0 });
+  s.addText("Govern agents through the same IAM APIs that govern humans + NHIs.", {
+    x: 0.7, y: 2.3, w: 3.7, h: 0.85, fontSize: 14, fontFace: "Georgia", color: NAVY, bold: true, margin: 0,
+  });
+  s.addText([
+    { text: "The IAM API surface couldn't support the agent access flow.", options: { color: RED, bold: true, fontSize: 11, breakLine: true } },
+    { text: " ", options: { fontSize: 6, breakLine: true } },
+    { text: "The exact failure mode is what Sarit + Amir are best placed to describe — and it's the foundation for the Gateway design.", options: { color: MUTED, italic: true, fontSize: 11, breakLine: true } },
+    { text: " ", options: { fontSize: 6, breakLine: true } },
+    { text: "Signal: ", options: { bold: true, color: INK, fontSize: 11 } },
+    { text: "M2 stalled at the 26% that needed deep access to the agent call flow.", options: { color: INK, fontSize: 11 } },
+  ], { x: 0.7, y: 3.2, w: 3.7, h: 1.7, fontFace: "Calibri", margin: 0 });
+
+  // Arrow
+  s.addShape(pres.shapes.LINE, { x: 4.65, y: 3.4, w: 0.7, h: 0, line: { color: NAVY, width: 3, endArrowType: "triangle" } });
+
+  // TO (right)
+  s.addShape(pres.shapes.RECTANGLE, { x: 5.4, y: 1.85, w: 4.1, h: 3.1, fill: { color: NAVY }, line: { color: NAVY, width: 0 } });
+  s.addShape(pres.shapes.RECTANGLE, { x: 5.4, y: 1.85, w: 0.08, h: 3.1, fill: { color: TEAL }, line: { color: TEAL, width: 0 } });
+  s.addText("WHAT WE'RE DOING NOW", { x: 5.6, y: 1.95, w: 3.7, h: 0.3, fontSize: 10, fontFace: "Calibri", color: TEAL, bold: true, charSpacing: 3, margin: 0 });
+  s.addText("MCP Gateway.", { x: 5.6, y: 2.3, w: 3.7, h: 0.5, fontSize: 22, fontFace: "Georgia", color: WHITE, bold: true, margin: 0 });
+  s.addText("Govern agents at the protocol layer — one enforcement point between every agent and every tool.", {
+    x: 5.6, y: 2.85, w: 3.7, h: 0.7, fontSize: 12, fontFace: "Calibri", color: ICE, italic: true, margin: 0,
   });
 
-  const cols = [
-    {
-      num: "01", title: "Gateway Core",
-      body: "The protocol-layer enforcement point. Every agent → tool call flows through it.\n\nIdentity-aware, loggable, policy-checkable.",
-      note: "Eng research starts here.",
-      noteColor: TEAL,
-    },
-    {
-      num: "02", title: "Policy Agent",
-      body: "Access profiles for agents:\n\n• At the MCP / platform level\n• AND at the individual tool level\n\nGranular, not binary.",
-    },
-    {
-      num: "03", title: "Screens",
-      body: "\"Integration\" tab for MCPs\n\nLogs — three views:\n• System Logs\n• Governance Logs\n• All Access Logs",
-    },
+  // Mini diagram inside the right card
+  const dY = 3.7, dH = 0.65;
+  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 5.55, y: dY, w: 1.0, h: dH, fill: { color: "1A2545" }, line: { color: ICE, width: 0.75 }, rectRadius: 0.06 });
+  s.addText("Agent", { x: 5.55, y: dY, w: 1.0, h: dH, fontSize: 11, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
+  s.addShape(pres.shapes.LINE, { x: 6.6, y: dY + dH / 2, w: 0.3, h: 0, line: { color: TEAL, width: 1.5, endArrowType: "triangle" } });
+  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 6.95, y: dY - 0.05, w: 1.55, h: dH + 0.1, fill: { color: NAVY_DEEP }, line: { color: TEAL, width: 1.5 }, rectRadius: 0.06 });
+  s.addText("Gateway", { x: 6.95, y: dY - 0.05, w: 1.55, h: dH + 0.1, fontSize: 11, fontFace: "Calibri", color: TEAL, bold: true, align: "center", valign: "middle", margin: 0 });
+  s.addShape(pres.shapes.LINE, { x: 8.55, y: dY + dH / 2, w: 0.3, h: 0, line: { color: TEAL, width: 1.5, endArrowType: "triangle" } });
+  s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: 8.9, y: dY, w: 0.55, h: dH, fill: { color: "1A2545" }, line: { color: ICE, width: 0.75 }, rectRadius: 0.06 });
+  s.addText("Tools", { x: 8.9, y: dY, w: 0.55, h: dH, fontSize: 9, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", margin: 0 });
+
+  s.addText("Lead: Sarit + Amir Ben Ami  ·  Status: concept / whiteboard", {
+    x: 5.6, y: 4.45, w: 3.7, h: 0.4, fontSize: 10, fontFace: "Calibri", color: AMBER, italic: true, valign: "middle", margin: 0,
+  });
+
+  // Footer: market tailwind
+  s.addText("Market tailwind: Saviynt, Token Security, Astrix all converging on MCP-layer governance.", {
+    x: 0.5, y: 5.1, w: W - 1, h: 0.3, fontSize: 11, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
+  });
+
+  pageNum(s, 5);
+}
+
+// ============================================================
+// 6 — ROADMAP (P0 + Post-P0 consolidated)
+// ============================================================
+{
+  const s = pres.addSlide();
+  s.background = { color: WHITE };
+  accentBar(s);
+  eyebrow(s, "05 · Roadmap");
+  slideTitle(s, "P0 first. Then in sequence.");
+
+  // P0 — section label
+  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 1.7, w: 1.0, h: 0.32, fill: { color: NAVY }, line: { color: NAVY, width: 0 } });
+  s.addText("P0", { x: 0.5, y: 1.7, w: 1.0, h: 0.32, fontSize: 12, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", charSpacing: 3, margin: 0 });
+  s.addText("the demo target", { x: 1.6, y: 1.72, w: 8, h: 0.3, fontSize: 11, fontFace: "Calibri", color: MUTED, italic: true, valign: "middle", margin: 0 });
+
+  // P0 — 3 columns
+  const p0 = [
+    { num: "01", title: "Gateway Core",    body: "Protocol-layer enforcement point. Every agent \u2192 tool call flows through it.", note: "Eng research starts here." },
+    { num: "02", title: "Policy Agent",    body: "Access profiles per agent — at MCP/platform level AND tool level. Granular, not binary." },
+    { num: "03", title: "Screens",         body: "\u201CIntegration\u201D tab for MCPs + 3 log views: System · Governance · All Access." },
   ];
-  const cY = 2.2, cH = 2.7, cW = 3.0, cGap = 0.1;
+  const cY = 2.15, cH = 1.85, cW = 3.0, cGap = 0.1;
   const cStart = (W - (3 * cW + 2 * cGap)) / 2;
-  cols.forEach((c, i) => {
+  p0.forEach((c, i) => {
     const x = cStart + i * (cW + cGap);
     s.addShape(pres.shapes.RECTANGLE, { x, y: cY, w: cW, h: cH, fill: { color: WHITE }, line: { color: LINE, width: 1 } });
-    s.addShape(pres.shapes.RECTANGLE, { x, y: cY, w: cW, h: 0.08, fill: { color: TEAL }, line: { color: TEAL, width: 0 } });
-    s.addText(c.num, { x: x + 0.3, y: cY + 0.2, w: 1, h: 0.35, fontSize: 11, fontFace: "Calibri", color: TEAL, bold: true, charSpacing: 3, margin: 0 });
-    s.addText(c.title, { x: x + 0.3, y: cY + 0.55, w: cW - 0.6, h: 0.5, fontSize: 18, fontFace: "Georgia", color: NAVY, bold: true, margin: 0 });
-    s.addText(c.body, { x: x + 0.3, y: cY + 1.1, w: cW - 0.6, h: cH - 1.25, fontSize: 11, fontFace: "Calibri", color: INK, margin: 0, paraSpaceAfter: 2 });
+    s.addShape(pres.shapes.RECTANGLE, { x, y: cY, w: cW, h: 0.06, fill: { color: TEAL }, line: { color: TEAL, width: 0 } });
+    s.addText(c.num, { x: x + 0.25, y: cY + 0.15, w: 0.8, h: 0.3, fontSize: 10, fontFace: "Calibri", color: TEAL, bold: true, charSpacing: 3, margin: 0 });
+    s.addText(c.title, { x: x + 0.25, y: cY + 0.45, w: cW - 0.5, h: 0.4, fontSize: 16, fontFace: "Georgia", color: NAVY, bold: true, margin: 0 });
+    s.addText(c.body, { x: x + 0.25, y: cY + 0.9, w: cW - 0.5, h: 0.7, fontSize: 11, fontFace: "Calibri", color: INK, margin: 0 });
     if (c.note) {
-      s.addText(c.note, { x: x + 0.3, y: cY + cH - 0.32, w: cW - 0.6, h: 0.28, fontSize: 10, fontFace: "Calibri", color: c.noteColor || TEAL, bold: true, italic: true, margin: 0 });
+      s.addText(c.note, { x: x + 0.25, y: cY + cH - 0.3, w: cW - 0.5, h: 0.25, fontSize: 9, fontFace: "Calibri", color: TEAL, bold: true, italic: true, margin: 0 });
     }
   });
 
-  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 5.05, w: W - 1, h: 0.4, fill: { color: NAVY }, line: { color: NAVY, width: 0 } });
-  s.addText("Identiverse · June 15 · harsh deadline.", {
-    x: 0.7, y: 5.05, w: W - 1.4, h: 0.4, fontSize: 12, fontFace: "Calibri", color: WHITE, bold: true, valign: "middle", margin: 0,
+  // Post-P0 — section label
+  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 4.2, w: 1.0, h: 0.32, fill: { color: MUTED }, line: { color: MUTED, width: 0 } });
+  s.addText("POST-P0", { x: 0.5, y: 4.2, w: 1.0, h: 0.32, fontSize: 10, fontFace: "Calibri", color: WHITE, bold: true, align: "center", valign: "middle", charSpacing: 2, margin: 0 });
+  s.addText("in sequence after the demo lands", { x: 1.6, y: 4.22, w: 8, h: 0.3, fontSize: 11, fontFace: "Calibri", color: MUTED, italic: true, valign: "middle", margin: 0 });
+
+  // Post-P0 — 4 slim cards
+  const post = [
+    { t: "JIT with Gateway", b: "On-the-fly grants. With/without HITL." },
+    { t: "JML for Agents",   b: "Joiner / mover / leaver lifecycle." },
+    { t: "Onboarding",       b: "UI to connect apps. Secured setup." },
+    { t: "Agent Intent",     b: "Behavior + context + sensitivity." },
+  ];
+  const pY = 4.62, pH = 0.55, pW = 2.25, pGap = 0.13;
+  const pStart = (W - (4 * pW + 3 * pGap)) / 2;
+  post.forEach((it, i) => {
+    const x = pStart + i * (pW + pGap);
+    s.addShape(pres.shapes.RECTANGLE, { x, y: pY, w: pW, h: pH, fill: { color: ICE }, line: { color: ICE, width: 0 } });
+    s.addShape(pres.shapes.RECTANGLE, { x, y: pY, w: 0.06, h: pH, fill: { color: NAVY }, line: { color: NAVY, width: 0 } });
+    s.addText([
+      { text: it.t, options: { bold: true, color: NAVY, fontSize: 11, breakLine: true } },
+      { text: it.b, options: { color: MUTED, fontSize: 9 } },
+    ], { x: x + 0.15, y: pY + 0.05, w: pW - 0.2, h: pH - 0.1, fontFace: "Calibri", margin: 0 });
+  });
+
+  // Footer: deadline
+  s.addText("Identiverse  ·  June 15  ·  harsh deadline", {
+    x: 0.5, y: 5.3, w: W - 1, h: 0.3, fontSize: 11, fontFace: "Calibri", color: AMBER, bold: true, italic: true, align: "center", margin: 0,
   });
 
   pageNum(s, 6);
 }
 
 // ============================================================
-// 8 — POST-P0
-// ============================================================
-{
-  const s = pres.addSlide();
-  s.background = { color: WHITE };
-  accentBar(s);
-  eyebrow(s, "07 · Post-P0");
-  slideTitle(s, "Where this goes next.");
-
-  const items = [
-    { t: "JIT with Gateway", b: "On-the-fly access grants, with or without human-in-the-loop. Ephemeral, scoped per task." },
-    { t: "JML for Agents", b: "Joiner / mover / leaver lifecycle. Owner offboarded? Their agents don't linger." },
-    { t: "Onboarding", b: "UI for connecting apps to the Gateway. Secured setup — self-service, not a services engagement." },
-    { t: "Agent Intent", b: "Identity + behavior + context + data sensitivity, continuously evaluated. The vision horizon." },
-  ];
-  const gY = 1.85, gH = 1.5, gW = 4.55, gGap = 0.2;
-  const gXs = [0.5, 0.5 + gW + gGap];
-  const gYs = [gY, gY + gH + gGap];
-
-  items.forEach((it, i) => {
-    const x = gXs[i % 2];
-    const y = gYs[Math.floor(i / 2)];
-    s.addShape(pres.shapes.RECTANGLE, { x, y, w: gW, h: gH, fill: { color: ICE }, line: { color: ICE, width: 0 } });
-    s.addShape(pres.shapes.RECTANGLE, { x, y, w: 0.08, h: gH, fill: { color: NAVY }, line: { color: NAVY, width: 0 } });
-    s.addText(it.t, { x: x + 0.3, y: y + 0.18, w: gW - 0.5, h: 0.45, fontSize: 17, fontFace: "Georgia", color: NAVY, bold: true, margin: 0 });
-    s.addText(it.b, { x: x + 0.3, y: y + 0.68, w: gW - 0.5, h: gH - 0.78, fontSize: 11, fontFace: "Calibri", color: INK, margin: 0 });
-  });
-
-  s.addText("Sequenced after P0. Omri scopes these in parallel with competitor research.", {
-    x: 0.5, y: 5.05, w: W - 1, h: 0.3, fontSize: 11, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
-  });
-
-  pageNum(s, 7);
-}
-
-// ============================================================
-// 9 — KNOWNS · UNKNOWNS · NEXT STEPS
+// 7 — KNOWNS · UNKNOWNS · NEXT STEPS (close, dark)
 // ============================================================
 {
   const s = pres.addSlide();
   s.background = { color: NAVY };
   s.addShape(pres.shapes.OVAL, { x: -2, y: 3.5, w: 5, h: 5, fill: { color: TEAL, transparency: 85 }, line: { color: TEAL, width: 0 } });
 
-  eyebrow(s, "08 · What we leave with", true);
+  eyebrow(s, "06 · What we leave with", true);
   slideTitle(s, "Know · Don't know · Start.", WHITE);
 
   const sections = [
     {
-      label: "WE KNOW",
-      color: TEAL,
+      label: "WE KNOW", color: TEAL,
       items: [
         "Deadline: Identiverse, June 15",
         "Arch lead: Sarit + Amir Ben Ami",
         "P0: Gateway Core, Policy Agent, Screens",
-        "Visibility layer started (M1 + M2 in flight)",
+        "Discover layer (M1) is done — needs validation against P0",
       ],
     },
     {
-      label: "WE DON'T KNOW",
-      color: AMBER,
+      label: "WE DON'T KNOW", color: AMBER,
       items: [
         "What Gateway Core actually looks like",
         "Build options and coverage trade-offs",
@@ -412,8 +382,7 @@ const slideTitle = (s, text, color = INK) =>
       ],
     },
     {
-      label: "WE START NOW",
-      color: ICE,
+      label: "WE START NOW", color: ICE,
       items: [
         "Eng: research Gateway Core — options, coverage, POC plan",
         "Omri: market + competitor scan (share what we have)",
@@ -444,7 +413,7 @@ const slideTitle = (s, text, color = INK) =>
     { text: "What from M1 / M2 do you think already covers parts of P0?", options: { color: NAVY, bold: true, italic: true, fontSize: 13 } },
   ], { x: 0.7, y: 5.0, w: W - 1.4, h: 0.45, fontFace: "Calibri", valign: "middle", margin: 0 });
 
-  pageNum(s, 8, true);
+  pageNum(s, 7, true);
 }
 
 pres.writeFile({ fileName: OUT }).then((f) => console.log("Wrote:", f));
