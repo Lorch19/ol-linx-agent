@@ -261,7 +261,7 @@ const eyebrow = (s, text, dark = false) =>
     fontSize: 9, fontFace: "Calibri", color: AMBER, italic: true, margin: 0,
   });
 
-  s.addText("Agents are the fastest-growing identity category — we want to be the one-stop shop. If Saviynt or Token Security defines MCP governance at Identiverse and we don't show up, that category is theirs.", {
+  s.addText("Agent identities now outpace every other identity class — 144:1 in deployed enterprises (SACR, 2026). If Saviynt or Token Security defines MCP governance at Identiverse and we don't show up, that category is theirs.", {
     x: 0.5, y: 5.08, w: W - 1, h: 0.3,
     fontSize: 10, fontFace: "Calibri", color: MUTED, italic: true, align: "center", margin: 0,
   });
@@ -348,86 +348,116 @@ const eyebrow = (s, text, dark = false) =>
 }
 
 // ============================================================
-// 5 — WHAT WE LEAVE WITH (outcomes, not open questions)
+// 5 — GO. (alignment close — owner per workstream, cadence, priority signal)
 // ============================================================
 {
   const s = pres.addSlide();
   s.background = { color: NAVY };
+
+  // Ambient glow
   s.addShape(pres.shapes.OVAL, {
-    x: -1.5, y: 3.5, w: 5, h: 5,
-    fill: { color: TEAL, transparency: 85 }, line: { color: TEAL, width: 0 },
+    x: 7.5, y: 2.5, w: 5, h: 5,
+    fill: { color: TEAL, transparency: 88 }, line: { color: TEAL, width: 0 },
   });
 
-  eyebrow(s, "04 · We leave with", true);
-  s.addText("Three outputs. Not discussion topics.", {
-    x: 0.5, y: 0.75, w: 9, h: 0.75,
-    fontSize: 30, fontFace: "Georgia", color: WHITE, bold: true, margin: 0,
+  eyebrow(s, "05 · Aligned. Now go.", true);
+  s.addText("Go.", {
+    x: 0.5, y: 0.72, w: 3, h: 1.0,
+    fontSize: 72, fontFace: "Georgia", color: WHITE, bold: true, margin: 0,
+  });
+  s.addText("Three workstreams start today. One cadence. June 15.", {
+    x: 0.5, y: 1.72, w: 8.5, h: 0.4,
+    fontSize: 15, fontFace: "Calibri", color: ICE, italic: true, margin: 0,
   });
 
-  const outcomes = [
+  const tracks = [
     {
-      num: "A", color: TEAL,
-      title: "P0 status snapshot",
-      items: [
-        "Gateway Core: what exists, what doesn't",
-        "Policy Agent: same",
-        "Screens: design started?",
-        "→ Shared picture, no gaps",
+      color: TEAL,
+      owner: "Javier + Omer Blechman",
+      role: "GATEWAY CORE",
+      lines: [
+        "Research: build vs. adopt, options + coverage",
+        "Map what existing work feeds in",
+        "Draft POC plan",
+        "\u2192 First sync: Wednesday",
       ],
     },
     {
-      num: "B", color: AMBER,
-      title: "Gateway Core POC plan",
-      items: [
-        "Owners: Javier + Omer Blechman",
-        "Options: build vs. adopt · M1/M2 inputs",
-        "Apr 27 research → May 11 POC check",
-        "→ Jun 1 integration · Jun 15 demo",
+      color: AMBER,
+      owner: "Omri",
+      role: "SCOPE + COMPETITIVE",
+      lines: [
+        "Competitor scan: where the market is moving",
+        "Scope P0 remainder + post-P0 sequence",
+        "Define \u201Cdemo lands\u201D — format + scenario",
+        "\u2192 Share findings: Wednesday",
       ],
     },
     {
-      num: "C", color: ICE,
-      title: "Demo format picked",
-      items: [
-        "Thin live: Gateway + 1 connector + 1 policy, live",
-        "Wide canned: all 3 components, scripted",
-        "Hybrid: Gateway live, rest scripted",
-        "→ Room picks one",
+      color: ICE,
+      owner: "Sarit + Amir Ben Ami",
+      role: "ARCHITECTURE",
+      lines: [
+        "Gateway design doc: surface + policy model",
+        "Tool-level access model for Policy Agent",
+        "Integration points with eng research",
+        "\u2192 This week",
       ],
     },
   ];
 
-  const sY = 1.8, sH = 3.0, sW = 2.95, sGap = 0.13;
-  const sStart = (W - (3 * sW + 2 * sGap)) / 2;
-  outcomes.forEach((sec, i) => {
-    const x = sStart + i * (sW + sGap);
-    s.addShape(pres.shapes.RECTANGLE, { x, y: sY, w: sW, h: 0.52, fill: { color: sec.color }, line: { color: sec.color, width: 0 } });
-    s.addText(sec.num, { x, y: sY, w: 0.52, h: 0.52, fontSize: 22, fontFace: "Georgia", color: NAVY, bold: true, align: "center", valign: "middle", margin: 0 });
-    s.addText(sec.title, { x: x + 0.58, y: sY + 0.07, w: sW - 0.65, h: 0.42, fontSize: 14, fontFace: "Georgia", color: NAVY, bold: true, valign: "middle", margin: 0 });
+  const tY = 2.3, tH = 2.55, tW = 2.95, tGap = 0.1;
+  const tStart = (W - (3 * tW + 2 * tGap)) / 2;
 
-    s.addShape(pres.shapes.RECTANGLE, { x, y: sY + 0.52, w: sW, h: sH - 0.52, fill: { color: NAVY_DEEP }, line: { color: sec.color, width: 1 } });
+  tracks.forEach((t, i) => {
+    const x = tStart + i * (tW + tGap);
+    const isLight = t.color === ICE;
 
-    const bullets = sec.items.map((t, j) => ({
-      text: t,
+    // Header bar
+    s.addShape(pres.shapes.RECTANGLE, { x, y: tY, w: tW, h: 0.72, fill: { color: t.color }, line: { color: t.color, width: 0 } });
+    s.addText(t.role, {
+      x: x + 0.15, y: tY + 0.05, w: tW - 0.3, h: 0.28,
+      fontSize: 10, fontFace: "Calibri", color: isLight ? NAVY : NAVY,
+      bold: true, charSpacing: 3, margin: 0,
+    });
+    s.addText(t.owner, {
+      x: x + 0.15, y: tY + 0.38, w: tW - 0.3, h: 0.28,
+      fontSize: 12, fontFace: "Georgia", color: isLight ? NAVY : NAVY_DEEP,
+      bold: true, margin: 0,
+    });
+
+    // Body
+    s.addShape(pres.shapes.RECTANGLE, { x, y: tY + 0.72, w: tW, h: tH - 0.72, fill: { color: NAVY_DEEP }, line: { color: t.color, width: 1 } });
+
+    const bullets = t.lines.map((line, j) => ({
+      text: line,
       options: {
-        bullet: t.startsWith("→") ? false : { code: "25A0" },
-        color: t.startsWith("→") ? sec.color : WHITE,
-        fontSize: t.startsWith("→") ? 11 : 11,
-        bold: t.startsWith("→"),
-        breakLine: j < sec.items.length - 1,
+        bullet: line.startsWith("\u2192") ? false : { code: "25A0" },
+        color: line.startsWith("\u2192") ? t.color : WHITE,
+        bold: line.startsWith("\u2192"),
+        fontSize: 11,
+        breakLine: j < t.lines.length - 1,
       },
     }));
     s.addText(bullets, {
-      x: x + 0.2, y: sY + 0.68, w: sW - 0.4, h: sH - 0.82,
-      fontFace: "Calibri", margin: 0, paraSpaceAfter: 5,
+      x: x + 0.18, y: tY + 0.88, w: tW - 0.36, h: tH - 1.0,
+      fontFace: "Calibri", margin: 0, paraSpaceAfter: 4,
     });
   });
 
-  s.addShape(pres.shapes.RECTANGLE, { x: 0.5, y: 4.97, w: W - 1, h: 0.42, fill: { color: TEAL }, line: { color: TEAL, width: 0 } });
+  // Priority signal footer
+  s.addShape(pres.shapes.RECTANGLE, {
+    x: 0.5, y: 5.0, w: W - 1, h: 0.42,
+    fill: { color: AMBER }, line: { color: AMBER, width: 0 },
+  });
   s.addText([
-    { text: "OPEN TO THE ROOM:  ", options: { bold: true, color: NAVY, fontSize: 10, charSpacing: 3 } },
-    { text: "What from M1 / M2 already covers parts of P0? What do you think is missing?", options: { bold: true, color: NAVY, italic: true, fontSize: 13 } },
-  ], { x: 0.7, y: 4.97, w: W - 1.4, h: 0.42, fontFace: "Calibri", valign: "middle", margin: 0 });
+    { text: "P0 FOR LINX  \u00B7  ", options: { bold: true, color: NAVY, fontSize: 11, charSpacing: 3 } },
+    { text: "Omri + Sarit tracking weekly  \u00B7  June 15 is the line  \u00B7  ", options: { color: NAVY, fontSize: 13 } },
+    { text: "Next full sync after Wednesday research check-in.", options: { color: NAVY, bold: true, fontSize: 13 } },
+  ], {
+    x: 0.7, y: 5.0, w: W - 1.4, h: 0.42,
+    fontFace: "Calibri", valign: "middle", margin: 0,
+  });
 
   pageNum(s, 5, true);
 }
