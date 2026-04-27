@@ -45,7 +45,20 @@ For each of these three vendors:
 - **Astrix Security** — https://astrix.security/, https://astrix.security/use-cases/ai-agent-discovery-and-governance/, plus "Agent Control Plane (ACP)" content and the Bayer research piece
 - **Ping Identity** — https://www.pingidentity.com/en/solution/agentic-ai-identity.html, plus any "Agent Gateway", "Runtime Identity", or PingOne for AI Agents documentation
 
-…answer all of the following with **direct quotes and source URLs**. If a question can't be answered from public sources, say so explicitly.
+**Don't stop at the seeded URLs.** The main vendor pages are marketing-sanitized. Supplement each vendor with:
+- **Conference talks** (RSA, Identiverse, KubeCon, DevDay) in the past 18 months — engineers describe real architecture here, not marketing copy
+- **G2 / Gartner Peer Insights reviews** — customers surface what's actually missing or broken
+- **GitHub repos** — SPIFFE/OIDC integrations, MCP tooling, SDK examples reveal implementation depth
+- **Press releases and partner pages** — capability announcements that haven't landed on the main site yet (e.g., Astrix×Wiz integration, Ping×SailPoint)
+- **LinkedIn posts from product/eng leadership** — often announce features before docs are published
+- Search query suggestions per vendor:
+  - C1: `"ConductorOne" "AI agent" OR "agentic" OR "MCP" site:github.com OR site:g2.com OR site:youtube.com`
+  - Astrix: `"Astrix" "Agent Control Plane" OR "ACP" OR "MCP" -site:astrix.security`
+  - Ping: `"Ping Identity" "agent gateway" OR "agentic AI" OR "PingOne for agents" OR "runtime identity"`
+
+If a question can't be answered from public sources after exhausting the above, say so explicitly — **do not infer or hallucinate capabilities**.
+
+…answer all of the following with **direct quotes and source URLs**.
 
 ### Section 1 — Registration
 
