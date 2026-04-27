@@ -42,7 +42,7 @@ The PM is becoming the in-house SME on AI agent governance. The output of this r
 For each of these three vendors:
 
 - **ConductorOne (C1)** — https://www.conductorone.com/, https://www.conductorone.com/solutions/nhi-governance/, plus any "Agentic" or "AI Agent" pages, blog posts, or webinars from the past 12 months
-- **Astrix Security** — https://astrix.security/, https://astrix.security/use-cases/ai-agent-discovery-and-governance/, plus "Agent Control Plane (ACP)" content and the Bayer research piece
+- **Astrix Security** — https://astrix.security/, https://astrix.security/use-cases/ai-agent-discovery-and-governance/, plus "Agent Control Plane (ACP)" content and the Bayer research piece. **Also fetch:** https://astrix.security/learn/blog/securing-llms-ai-agents-and-mcp-unpacking-the-new-cis-companion-guides/ — this post unpacks the new CIS companion guides and reveals how Astrix is positioning against CIS Controls v8.1 (an enterprise credibility play). The two CIS guides it references are also critical context: https://www.cisecurity.org/insights/white-papers/controls-v8-1-ai-agents-companion-guide and https://www.cisecurity.org/insights/white-papers/controls-v8-1-model-context-protocol-companion-guide — extract any requirements these define for AI agent governance and MCP security, as they may set vendor-neutral standards that buyers will use to evaluate Linx.
 - **Ping Identity** — https://www.pingidentity.com/en/solution/agentic-ai-identity.html, plus any "Agent Gateway", "Runtime Identity", or PingOne for AI Agents documentation
 
 **Don't stop at the seeded URLs.** The main vendor pages are marketing-sanitized. Supplement each vendor with:

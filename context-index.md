@@ -30,6 +30,8 @@ Auto-loaded at session start. Scan tags to propose relevant files before loading
 | `references/amir-discussion-topics.md` | | 4K | Amir, ai-governance, meeting-prep, AI-assistant |
 | `references/gartner-833731-summary.md` | [ref] | 4.5K | ai-governance, Gartner, analyst, agent, credential, NHI, delegation, Ping, IBM |
 | `references/gartner-833725-iam-for-llm-agents.md` | [ref] | 8K | ai-governance, Gartner, analyst, 10-capabilities, framework, MCP, A2A, OAuth, ABAC, PBAC, architecture, use-cases, requirements |
+| `references/cis-controls-v8-1-ai-agents-companion-guide.md` | [ref] **PENDING** | — | ai-governance, CIS, framework, AI-agents, controls, requirements |
+| `references/cis-controls-v8-1-mcp-companion-guide.md` | [ref] **PENDING** | — | ai-governance, CIS, framework, MCP, controls, requirements |
 | `references/ticket-examples.md` | [ref] | 15K | spec-writing, ticket, quality, template, eng-handoff |
 | `references/ai-leadership-principles.md` | [ref] | 4K | ai-governance, leadership, principles, Amir |
 | `references/omer-efroni-notion-handoff-2026-04-19.md` | [ref] | 5K | handoff, Omer, ai-governance, context |

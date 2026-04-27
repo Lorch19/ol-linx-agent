@@ -457,3 +457,12 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - 3-layer architecture: OAuth (L1) → MCP (L2) → A2A (L3). Gartner says A2A "too immature for production." M4 timeline aligns.
 - MCP scalability caution (stateful servers, fragmented OAuth endpoints) = Linx Gateway positioning wedge: "unified OAuth plane across stateful MCP servers."
 - Competitor layer mapping: Clutch=L0, ConductorOne=L0+L1, Astrix=L1+partial L2, Ping+CyberArk=L2, no one credibly at L3.
+
+### CIS Controls v8.1 — AI Agents + MCP companion guides (2026-04-27)
+- Astrix blog (https://astrix.security/learn/blog/securing-llms-ai-agents-and-mcp-unpacking-the-new-cis-companion-guides/) references two new CIS companion guides.
+- **CIS Controls v8.1 AI Agents Companion Guide** (https://www.cisecurity.org/insights/white-papers/controls-v8-1-ai-agents-companion-guide) — defines security controls for AI agents mapped to existing CIS Controls. Registration-wall, not yet ingested.
+- **CIS Controls v8.1 MCP Companion Guide** (https://www.cisecurity.org/insights/white-papers/controls-v8-1-model-context-protocol-companion-guide) — defines security controls specifically for MCP. Registration-wall, not yet ingested.
+- Strategic implication: these are a THIRD authoritative framework alongside Gartner G00833725 and G00833731. Enterprise buyers already use CIS Controls as a baseline. If CIS defines requirements that Linx doesn't satisfy, that's a gap. If Linx satisfies them and competitors don't, that's a positioning wedge.
+- Astrix positioning move: explicitly aligning with CIS = enterprise credibility play. CIS-alignment claim is credible to security buyers (vs. Gartner which is analyst-tier).
+- **Action:** Obtain both guides (download via CIS registration or have Omri download + paste). Save to `references/cis-controls-v8-1-ai-agents-companion-guide.md` and `references/cis-controls-v8-1-mcp-companion-guide.md`. Then map requirements against Linx's 33-requirement coverage table.
+- Added specific Astrix blog URL + both CIS guide URLs to `prompts/competitive-teardown-c1-astrix-ping.md` for Claude.ai to attempt during research run.
