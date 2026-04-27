@@ -415,3 +415,24 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - Bigger gap: Notion already has 10 user scenarios in the existing PRD (already pulled forward into ai-governance-core.md lines 131-145), plus Mar 3 spec, 10/5 capabilities docs, AI Agents research page (edited 2026-04-23), Agentic AI Identities epic. ~60-70% of the requirements doc structure already exists — we have not been drafting from zero.
 - Adding Task C: Notion content extraction via Linx MCP. Self-contained prompt added to artifacts/parallel-tasks-2026-04-26.md.
 - Path to May 8 unchanged but lower-effort: extract → normalize → validate post-pivot → draft only the deltas.
+
+## 2026-04-27 — Ingestion session
+
+### Notion extraction ingested
+- Task C Notion output pasted and saved to `knowledge/notion-extraction-ai-governance-2026-04-26.md`.
+- Canonical 10 capabilities and 10 user scenarios now in repo (verbatim from Agentic AI Identities epic).
+- Key reconciliation finding: WIP concept doc (Nov 2025) missing scenario #2 (Relationship & Credential Mapping). Check ai-governance-core.md lines 131-145 for this gap.
+- 5-capability framing confirmed as superseded — keep only for positioning/outward narrative.
+
+### Competitor landscape ingested
+- ChatGPT research (2 reports, 9 vendors) saved to `knowledge/ai-governance-competitor-landscape.md`.
+- Vendors covered: Astrix, Oasis Security, ConductorOne, Clutch Security, Ping Identity, CyberArk, CrowdStrike, Duo (adjacent), UnmitigatedRisk (independent blog).
+- ⚠ Ping Identity NOT in competitive-matrix.md — needs scoring pass. Has Agent Gateway for MCP, per-action enforcement, OAuth-based delegation. Gartner 833731 named them as "strong" in AM delegation alongside IBM + Transmit Security.
+- White space confirmed: crypto-attested ephemeral credentials, cross-layer shadow AI detection, policy-as-code for agents — no vendor owns these.
+
+### Gartner IAM_for_LLM-Based_AI_Agents PDF
+- Full PDF NOT in repo. Only have Gartner 833731 ("Securely Delegate Access From Humans to AI Agents"). These are two different documents.
+- PDF is attached to the Agentic AI Identities Notion epic — source of the 10 capabilities table. Needs separate extraction.
+
+### Next: use case mapping
+- All harvest inputs now in repo. Proceed to use case mapping against 10 capabilities + 10 user scenarios.

@@ -13,7 +13,7 @@
 
 ### AI Governance SME workstream
 - [x] Execute Slack channel extraction via Linx Claude (`prompts/slack-extraction-ai-governance-channel.md`) — done Apr 21; saved to `knowledge/slack-governance-channel-extraction-2026-04-21.md`
-- [ ] Execute 16-URL competitor fetch via Linx Claude (`prompts/linx-claude-competitor-fetch.md`) and merge into a `knowledge/ai-governance-competitor-landscape.md` — Apr 28 — self  [→ log 2026-04-21]
+- [x] Execute competitor fetch and merge into `knowledge/ai-governance-competitor-landscape.md` — done Apr 27 (ChatGPT research, 9 vendors). ⚠ Ping Identity not in competitive-matrix.md — needs scoring pass.  [→ log 2026-04-21]
 - [ ] Execute Linear tickets extraction via Linx Claude (`prompts/linear-extraction-ai-governance-tickets.md`) — Apr 25 — self
 - [ ] Confirm Amir Ben Ami's MCP discovery scope: which SaaS vendors + which agent platforms (Claude/Gemini coverage?) — Apr 23 (Thu) — self + Amir  [→ log 2026-04-21]
 - [ ] Saviynt deep-dive: verify Mar 24 RSAC feature-list claim parity (MCP gateway, UARs, access graph, real-time AC) — Apr 30 — self  [→ log 2026-04-21]
@@ -49,7 +49,7 @@
 - [ ] Review Figma Make prototypes (JML + JIT) — open in browser, confirm frames are clickable and data is realistic (Sarah Cohen / 4 agents / Slack+SFDC+Datadog). Share verdict so we can pick B vs B' for May 5 Mor+Niv. Links: [JML](https://www.figma.com/make/ztRdQd4siTC3N55YgHTvqr/) · [JIT](https://www.figma.com/make/1K1fqU0x5ESIwbAbVpnsJx/) — ASAP — self
 - [ ] Update `building-blocks.md` with Task A findings: Inventory>Agents LIVE (M1/Dec 2025), Logs already 3-stream LinxAuditLog schema — next session — self
 - [ ] Update `discovery-plan.md` with new open questions from Task A (Access Profiles AGENT_TOOL type, Integration tab Option A/B/C, "All Access Logs" = USER_ACTIVITY rebrand?) — next session — self
-- [ ] Process Task C Notion extraction output (paste results into chat) — next session — self
+- [x] Process Task C Notion extraction output — done Apr 27; saved to `knowledge/notion-extraction-ai-governance-2026-04-26.md`
 
 ## Deliverables
 

@@ -19,6 +19,8 @@ Auto-loaded at session start. Scan tags to propose relevant files before loading
 | `knowledge/ai-governance-core.md` | | 3.5K | ai-governance, M1, M2, milestones, scope, JIT, Amir, meeting-prep, tensions, open-items, hero-use-case |
 | `knowledge/ai-governance-deep.md` | [ref] | 3.5K | ai-governance, capability, technical, spec-writing, agent-types, identity-model, 10-capabilities, MCP |
 | `knowledge/slack-governance-channel-extraction-2026-04-21.md` | [ref] | 3.5K | ai-governance, Niv, Mor, Saviynt, MCP, JIT, competitive, channel-history, Monday-com, stakeholder-intel |
+| `knowledge/notion-extraction-ai-governance-2026-04-26.md` | | 5K | ai-governance, 10-capabilities, 10-user-scenarios, milestones, Notion, canonical, M1, M2, M3, M4, personas |
+| `knowledge/ai-governance-competitor-landscape.md` | | 8K | competitive, ai-governance, Astrix, Oasis, ConductorOne, CyberArk, Ping, CrowdStrike, Clutch, NHI, MCP, JIT, white-space |
 | `knowledge/identity-foundations.md` | [ref] | 18K | learning, IGA, PAM, CIEM, NHI, ISPM, RBAC, ABAC, terminology, foundations |
 | `knowledge/competitive-dynamics.md` | [ref] | 8K | competitive, market, dynamics, M&A, trends |
 | `customer-intel.md` | | 15K | customer, Sony, Monday-com, call-prep, discovery, pain, signal, feature-request |
