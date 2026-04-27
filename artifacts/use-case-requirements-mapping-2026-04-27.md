@@ -81,76 +81,166 @@
 
 ---
 
-## §3 — Mapping Table (FILL THIS IN)
+## §3 — Mapping Table (FIRST-PASS COMPLETE — 2026-04-27)
 
-For each scenario, list the requirements (R1–R33) that the scenario depends on. Use **bold** for "must-have to satisfy this scenario", plain for "nice-to-have / depth dimension".
+**Bold** = must-have. Plain = supporting/depth.
 
-Pre-populated with first-pass guesses to seed thinking — challenge them, don't rubber-stamp.
-
-| UC | Persona | Dor chapter | Required (must-have) | Supporting (nice-to-have) | P0/P1/P2 | Notes |
+| UC | Persona | Dor chapter | Required (must-have) | Supporting | P0/P1/P2 | Reasoning |
 |---|---|---|---|---|---|---|
-| UC1 | IGA – Discovery | Registration | **R1, R16** | R2, R14 | **P0** | Foundation. Without this nothing works. |
-| UC2 | IGA – Credential Mapping | Registration + Policy | **R1, R2, R14, R22** | R20, R31 | **P0** | "Blast radius" view requires graph + resource-level visibility. |
-| UC3 | IGA – Directory | Registration | **R11, R12, R14** | R10 | **P0** | The "Inventory > Agents" page. M1 partially shipped per Linear. |
-| UC4 | Security Admin – Permission Tracing | Policy | **R20, R22, R23** | R6, R7 | P1 | Requires lineage, not just current state. |
-| UC5 | Compliance Officer – Reporting | (cross-cutting) | **R10, R29, R30, R33** | R5 | P1 | Audit + SoD. Slack channel intel says UARs are surviving M3 item. |
-| UC6 | Security Analyst – Risk Detection | (cross-cutting) | **R3, R4, R5** | R2, R29 | P1 | Behavioral baselining + anomaly detection. Linx's Issues engine partially covers. |
-| UC7 | Security Admin – Lifecycle Management | Registration | **R7, R10, R12** | R6, R31 | **P0** | "AGENT_OWNER_OFFBOARDED" issue exists per building-blocks 4.2. |
-| UC8 | IT Admin – Ownership & Accountability | Registration | **R6, R7** | R10 | **P0** | Cheapest, highest-leverage scenario. Foundational to everything else. |
-| UC9 | Security Analyst – Incident Response | Enforcement + Audit | **R5, R29, R30, R31** | R32, R33 | P1 | Requires logs structured for query (building block 4.3 is open). |
-| UC10 | CISO – Visibility Dashboard | (cross-cutting) | **R1, R2, R10** | R5, R29 | **P0** (lite) | The "executive view." Often the demo opener but rarely the demo hero. |
+| UC1 | IGA – Discovery | Registration | **R1, R2, R16** | R11, R14 | **P0** | "Discover all agents" = R1 + R16 by definition. R2 (metadata) is what makes discovery useful — a list of names without context is not a deliverable. |
+| UC2 | IGA – Credential Mapping | Registration + Policy | **R1, R2, R14, R20, R22, R23** | R30, R31 | **P0** | THE wedge. "Which users can leverage it" = delegation (R23). "Resources" = R22. "Blast radius" needs graph (R2 + R14). C1 has IGA graph but not Linx's; Astrix has NHI graph but not multi-IdP. |
+| UC3 | IGA – Directory | Registration | **R1, R11, R12, R14** | R6, R10, R31 | **P0** | The Inventory > Agents page. R11 is the conceptual foundation (agents as their own constituency). R12 is how they get in. R10 = "continuously audit." |
+| UC4 | Security Admin – Permission Tracing | Policy | **R20, R22, R23, R29** | R6, R7, R30 | P1 | "How an agent gained" = lineage trace. Requires logging (R29) AND the policy/role substrate. Hard build, downstream of foundations. |
+| UC5 | Compliance Officer – Reporting | Audit | **R10, R29, R30, R33** | R5, R9, R32 | P1 | UARs (R10) + log feed (R29) + delegated-action attribution (R30) + SoD/toxic-combo (R33). UARs are the M3 surviving item. |
+| UC6 | Security Analyst – Risk Detection | Audit | **R3, R4, R5** | R2, R20, R22, R29 | P1 | Behavioral baselining (R3) is the heaviest lift in the framework. Linx Issues engine (M1) partially covers R5 (rules), not R3-R4 (real baselining). |
+| UC7 | Security Admin – Lifecycle | Registration + Audit | **R6, R7, R10, R12** | R29, R31 | **P0** | JML for agents. Hero moment Option A candidate. AGENT_OWNER_OFFBOARDED already shipped (M1, building-block 4.2). Highest leverage on existing infra. |
+| UC8 | IT Admin – Ownership | Registration | **R6, R7** | R10, R12 | **P0** | Pure governance metadata. Cheapest scenario in the set. Pre-requisite for UC7 (orphan detection needs ownership) and UC4 (accountability). |
+| UC9 | Security Analyst – Incident Response | Enforcement + Audit | **R5, R29, R30, R31** | R4, R32, R33 | P1 | Trace + contain. Building block 4.3 (audit trace / search / replay) is OPEN. Logs need structured-for-query schema. P1 because dependency-blocked, not because low value. |
+| UC10 | CISO – Visibility Dashboard | Cross-cutting | **R1, R2, R5, R10** | R3, R29 | **P0** (lite) | Falls out of P0 foundations nearly free. Counts + risk view + trend = aggregations over R1+R2+R5+R10. Demo opener. |
 
 ---
 
 ## §4 — Reverse View: Requirement Coverage
 
-Once §3 is filled in, count how many scenarios depend on each requirement. Requirements with **0 scenario dependencies** are candidates to descope. Requirements with **6+ dependencies** are foundational and must be P0 plumbing.
+Count = `must-have UCs` + `supporting UCs` (must-haves weight more in verdict).
 
-| Req | Category | # of UCs that need this | Verdict |
-|---|---|---|---|
-| R1 AI agent discovery | Observability | (count) | Foundational |
-| R2 Enhanced metadata capture | Observability | (count) | |
-| R3 Behavioral baselining | Observability | (count) | |
-| R4 Behavioral monitoring & anomaly | Observability | (count) | |
-| R5 Threat detection & response | Observability | (count) | |
-| R6 Assigning ownership | Governance | (count) | Foundational |
-| R7 Defining policies | Governance | (count) | |
-| R8 Human oversight | Governance | (count) | |
-| R9 Governance frameworks | Governance | (count) | |
-| R10 Reviews and audits | Governance | (count) | |
-| R11 Agents as distinct constituency | Issuance | (count) | |
-| R12 Registration & attestation | Issuance | (count) | Foundational |
-| R13 Leveraging existing protocols | Issuance | (count) | |
-| R14 Unique identifiers & metadata | Issuance | (count) | |
-| R15 Multiple credential types | Issuance | (count) | |
-| R16 Auto-discovery of agents | Issuance | (count) | |
-| R17 Dynamic/JIT access | Authentication | (count) | |
-| R18 Strong authentication | Authentication | (count) | |
-| R19 Mutual auth (multiagent) | Authentication | (count) | M4 — defer per Gartner "A2A immature" |
-| R20 Fine-grained access control | Authorization | (count) | |
-| R21 Context-aware access control | Authorization | (count) | |
-| R22 Resource-level access control | Authorization | (count) | |
-| R23 Delegation of authority | Authorization | (count) | |
-| R24 Human-in-the-loop authz flows | Authorization | (count) | |
-| R25 Rich authorization requests | Authorization | (count) | |
-| R26 Trust agreement | Federation | (count) | M4 |
-| R27 Workload federation | Federation | (count) | M4 |
-| R28 Token exchange | Federation | (count) | |
-| R29 Detailed logging | Monitoring | (count) | Foundational |
-| R30 Tracking delegated actions | Monitoring | (count) | |
-| R31 Token activity monitoring | Monitoring | (count) | |
-| R32 Auditing delegation credentials | Monitoring | (count) | |
-| R33 Enforcing SoD | Monitoring | (count) | |
+| Req | Category | Must | Supp | Total | Verdict |
+|---|---|---|---|---|---|
+| R1 AI agent discovery | Observability | 4 (UC1, UC2, UC3, UC10) | 0 | **4** | **FOUNDATIONAL** |
+| R2 Enhanced metadata capture | Observability | 3 (UC1, UC2, UC10) | 1 (UC6) | **4** | **FOUNDATIONAL** |
+| R3 Behavioral baselining | Observability | 1 (UC6) | 1 (UC10) | 2 | P1 — heavy lift, single must-have UC |
+| R4 Behavioral monitoring & anomaly | Observability | 1 (UC6) | 1 (UC9) | 2 | P1 — same cluster as R3 |
+| R5 Threat detection & response | Observability | 3 (UC6, UC9, UC10) | 1 (UC5) | **4** | P0 — Issues engine (M1) partial cover |
+| R6 Assigning ownership | Governance | 2 (UC7, UC8) | 2 (UC3, UC4) | **4** | **FOUNDATIONAL** |
+| R7 Defining policies | Governance | 2 (UC7, UC8) | 1 (UC4) | 3 | P0 — but means metadata, not enforcement, in P0 |
+| R8 Human oversight | Governance | 0 | 0 | **0** | **GAP — see §6 stress test** |
+| R9 Governance frameworks | Governance | 0 | 1 (UC5) | 1 | Descope — documentation, not user-facing |
+| R10 Reviews and audits | Governance | 4 (UC3, UC5, UC7, UC10) | 1 (UC8) | **5** | **FOUNDATIONAL** |
+| R11 Agents as distinct constituency | Issuance | 1 (UC3) | 1 (UC1) | 2 | P0 plumbing — implicit in directory |
+| R12 Registration & attestation | Issuance | 2 (UC3, UC7) | 1 (UC8) | 3 | P0 |
+| R13 Leveraging existing protocols (OAuth) | Issuance | 0 | 0 | **0** | Plumbing — not a user scenario, but P0 by default for L2 |
+| R14 Unique identifiers & metadata | Issuance | 2 (UC2, UC3) | 1 (UC1) | 3 | P0 |
+| R15 Multiple credential types | Issuance | 0 | 0 | **0** | Descope for P0 — single token type acceptable |
+| R16 Auto-discovery of agents | Issuance | 1 (UC1) | 0 | 1 | P0 — UC1 hero requirement |
+| R17 Dynamic/JIT access | Authentication | 0 | 0 | **0** | **GAP — implicit in JIT approval hero** |
+| R18 Strong authentication | Authentication | 0 | 0 | **0** | Plumbing — assume mTLS/JWT for P0 |
+| R19 Mutual auth (multiagent) | Authentication | 0 | 0 | **0** | M4 defer — Gartner: "A2A immature" |
+| R20 Fine-grained access control | Authorization | 2 (UC2, UC4) | 1 (UC6) | 3 | P0 — visibility scope (read), not enforcement scope |
+| R21 Context-aware access control | Authorization | 0 | 0 | **0** | **GAP — runtime risk awareness missing from UCs** |
+| R22 Resource-level access control | Authorization | 2 (UC2, UC4) | 1 (UC6) | 3 | P0 — needed for blast-radius graph |
+| R23 Delegation of authority | Authorization | 2 (UC2, UC4) | 0 | 2 | P0 — UC2 is the wedge |
+| R24 Human-in-the-loop authz flows | Authorization | 0 | 0 | **0** | **MAJOR GAP — JIT approval hero (Q7-C) has no UC sponsor** |
+| R25 Rich authorization requests (RAR) | Authorization | 0 | 0 | **0** | Descope or M4 |
+| R26 Trust agreement | Federation | 0 | 0 | **0** | M4 |
+| R27 Workload federation | Federation | 0 | 0 | **0** | M4 |
+| R28 Token exchange (RFC 8693) | Federation | 0 | 0 | **0** | **GAP — Ping's flagship; should Linx care?** |
+| R29 Detailed logging | Monitoring | 3 (UC4, UC5, UC9) | 3 (UC6, UC7, UC10) | **6** | **FOUNDATIONAL — highest coverage** |
+| R30 Tracking delegated actions | Monitoring | 2 (UC5, UC9) | 1 (UC4) | 3 | P0 |
+| R31 Token activity monitoring | Monitoring | 1 (UC9) | 3 (UC2, UC3, UC7) | **4** | P0 |
+| R32 Auditing delegation credentials | Monitoring | 0 | 2 (UC5, UC9) | 2 | P1 |
+| R33 Enforcing SoD | Monitoring | 1 (UC5) | 1 (UC9) | 2 | P1 — toxic-combo differentiator (per `building-blocks` cross-cutting) |
 
 ---
 
-## §5 — Decision Outputs (after §3 + §4 are complete)
+## §5 — Decision Outputs (FIRST-PASS — 2026-04-27)
 
-Fill in these three answers — they ARE the May 8 scope commit:
+### 1. P0 scenarios — 6 of 10
 
-1. **P0 scenarios:** _(list)_
-2. **Foundational requirements (P0 plumbing):** _(list, drawn from §4 Foundational column)_
-3. **Descoped scenarios + rationale:** _(list, with one-sentence justification each)_
+- **UC1 Discovery** — without it nothing else works
+- **UC2 Credential Mapping** — THE wedge. Multi-IdP graph + delegation + resource-level visibility. C1 has graph-not-Linx's, Astrix has NHI graph not multi-IdP, Ping has neither
+- **UC3 Directory** — the Inventory > Agents page. M1 partially shipped
+- **UC7 Lifecycle / JML** — Hero moment Option A candidate. AGENT_OWNER_OFFBOARDED already exists
+- **UC8 Ownership** — cheapest in the set, prerequisite for UC4 + UC7
+- **UC10 CISO Dashboard (lite)** — falls out of P0 foundations nearly free; demo opener
+
+### 2. Foundational requirements (P0 plumbing — must build, unlocks 6/10 UCs)
+
+Five requirements with ≥4 scenario dependencies AND must-have weight:
+
+- **R29 Detailed logging** (6 UCs) — highest coverage, the substrate for UC4/5/9 lineage and audit
+- **R10 Reviews and audits** (5 UCs) — the directory's "continuous audit" + UAR hook
+- **R1 AI agent discovery** (4 UCs) — discovery as a primitive
+- **R2 Enhanced metadata capture** (4 UCs) — what makes discovery useful
+- **R6 Assigning ownership** (4 UCs) — accountability spine for UC4/7/8
+
+Plus three P0-tier supporting plumbing (each in 3 P0 UCs):
+- **R12 Registration & attestation** (UC3, UC7, UC8 supp)
+- **R14 Unique identifiers & metadata** (UC2, UC3, UC1 supp)
+- **R31 Token activity monitoring** (UC9 + UC2/3/7 supp)
+
+### 3. Sequenced (P1) — not descoped, but post-P0
+
+- **UC4 Permission Tracing** — needs lineage on top of R29 + R20-23. Hard build.
+- **UC5 Compliance Reporting** — UAR layer on top of foundational logging. M3 surviving item.
+- **UC6 Risk Detection** — R3-R4 (behavioral baselining) is the heaviest framework lift; Issues engine partial cover acceptable for v1
+- **UC9 Incident Response** — building block 4.3 (audit trace / search / replay) is OPEN; logs need structured-for-query schema first
+
+### 4. M4 / out-of-scope (Gartner-aligned)
+
+- **R19, R26, R27** — A2A / cross-domain federation. Gartner says "A2A immature for production." Defer.
+- **R25** — Rich authorization requests. M4 or descope.
+
+### 5. Pure descope (zero-coverage with no strategic backstop)
+
+- **R9 Governance frameworks documentation** — back-office docs, not user-facing
+- **R15 Multiple credential types** — single token type sufficient for P0
+- **R18 Strong authentication** — assume mTLS/JWT plumbing, not a UC
+
+---
+
+## §6 — Stress Test (with concrete findings)
+
+### Finding 1 — FOUR requirements have zero UC coverage but are strategically critical
+
+- **R8 Human oversight** — 0 UCs. The Notion 10 are all admin-side (discover, audit, govern). Where's the *agent author* or *agent end user* perspective?
+- **R17 Dynamic / JIT access** — 0 UCs. But this is implicit in any "scoped credential at session start" architecture (Astrix's model). If P0 issues credentials at all, R17 is in P0 by stealth.
+- **R21 Context-aware access control** — 0 UCs. Runtime risk-awareness ("agent is making 100 calls/min, throttle") is entirely missing from the user-facing scenario set. This is what Datadog/runtime competitors will use to differentiate.
+- **R24 Human-in-the-loop authz flows** — 0 UCs. **This is the single most important gap.** Q7 hero moment Option C ("JIT approval — agent requests sensitive write, admin approves live") depends entirely on R24, but no UC sponsors it. Either:
+  - **(a) Add UC11** — "Security Admin – Live approval: I need to approve sensitive agent actions in real time so I can demonstrate live control." This makes Option C a legitimate P0.
+  - **(b) Drop Option C** as a hero candidate and lean on UC7 JML (Option A) instead.
+
+**Recommendation:** Resolve before May 8. Currently the hero moment menu is decoupled from the scenario set.
+
+### Finding 2 — R28 (Token exchange / RFC 8693) has zero coverage but is Ping's flagship
+
+Ping's "Agent IAM Core" is built on RFC 8693 token exchange and OBO flows. If Linx ignores R28, every Ping side-by-side comparison ends with "Linx doesn't preserve user identity in delegated calls." Either:
+- **(a)** Add R28 to P0 plumbing (modest lift if delegation graph already exists) — wins the comparison
+- **(b)** Accept the gap and counter with: "we expose delegation in the graph, Ping exposes it in the token — different layer of the stack"
+
+**Recommendation:** Discuss with Niv/Dor — this is positioning, not engineering.
+
+### Finding 3 — All 10 UCs are admin-side. Where are the developer / agent-author / end-user scenarios?
+
+A smart competitor at Niv's level will say: "your scenarios assume someone has already built and deployed an agent. Where's the developer who's *registering* the agent for the first time? Where's the end user of the agent who needs visibility into what the agent is doing on their behalf?"
+
+The Notion epic was written from the IT/security buyer perspective. That's defensible — that's the buyer. But the demo will fall flat if no one ever sees the registration flow from the developer's side, or the consent/visibility flow from the end-user side.
+
+**Recommendation:** Add 1-2 non-admin scenarios for completeness, even if they're P2:
+- **UC11 (proposed)** — Developer/agent-author: "I need to register my agent for an environment so it can access tools without my admin manually granting each scope"
+- **UC12 (proposed)** — End user of agent: "I need visibility into actions the agent took on my behalf so I can trust and audit it"
+
+### Finding 4 — Apr 26 MCP Gateway pivot didn't fundamentally change the mapping
+
+R20, R22, R7 (the "policy at gateway" capabilities) only land as supporting, not must-have, in the user-facing scenarios — because the 10 UCs are about visibility/governance, not enforcement. **The MCP Gateway is the eng story; the user scenarios are still inventory + audit.** This is fine — but be honest in framing: P0 is "we see and govern," not "we block." Blocking-as-hero (Option D) needs a UC sponsor too.
+
+### Finding 5 — Notion scenario hygiene check
+
+Per 2026-04-26 EOD log: "only 2 of Mor's 5 sketch items are actual user-facing scenarios." Worth re-reading the 10 UCs to confirm UC4/UC9/UC10 are truly user scenarios and not capability descriptions in scenario clothing. Quick check: each UC is a 1st-person need with a clear "so I can [outcome]" — the 10 listed pass that test. ✓
+
+---
+
+## §7 — What this means for May 8 scope
+
+**Recommended P0 scope statement (for the May 8 commit doc):**
+
+> "Linx P0 covers Discover (UC1) → Map (UC2) → Govern (UC3 + UC7 + UC8) → Surface (UC10). Built on five foundational requirements (R1, R2, R6, R10, R29). Permission tracing (UC4), compliance reporting (UC5), risk detection (UC6), and incident response (UC9) are P1 — sequenced after foundations land. JIT live-approval (Option C hero) requires a new UC11 sponsor or it's not really P0."
+
+**One-line summary:** 6 P0 scenarios, 5 foundational requirements, 1 unsponsored hero moment that needs a UC11 decision before May 8.
+
+**Three things to take to Dor before May 8:**
+1. Confirm 6 P0 / 4 P1 split is right — or push back which UC moves
+2. Decide UC11 (live approval) — add or drop hero moment Option C
+3. Decide R28 (token exchange) — close the Ping gap or accept it as positioning
 
 ---
 
