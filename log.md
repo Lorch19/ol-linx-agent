@@ -415,3 +415,14 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - Bigger gap: Notion already has 10 user scenarios in the existing PRD (already pulled forward into ai-governance-core.md lines 131-145), plus Mar 3 spec, 10/5 capabilities docs, AI Agents research page (edited 2026-04-23), Agentic AI Identities epic. ~60-70% of the requirements doc structure already exists — we have not been drafting from zero.
 - Adding Task C: Notion content extraction via Linx MCP. Self-contained prompt added to artifacts/parallel-tasks-2026-04-26.md.
 - Path to May 8 unchanged but lower-effort: extract → normalize → validate post-pivot → draft only the deltas.
+
+## 2026-04-27 — MCP Gateway demo script v0.1 (Identiverse June 15)
+
+- Drafted first-pass demo script: `artifacts/mcp-gateway-demo-script-2026-04-27.md`. For Dor review tomorrow (Apr 28).
+- Adapted Dor's Drifter RSAC2026 skeleton — *shape* kept, *substance* flipped. Drifter is agent-experience-led (Autopilot produces findings, admin reviews). MCP Gateway is gateway-enforcement-led (admin sets policy, gateway enforces inline, admin handles exceptions). Different protagonist, different rhythm, different aha.
+- **Locked for v0.1:** spine = JIT-led live approval on stage (Mor's "C" from 4-26 hero menu); medium = real Linx env with 5–6 screens minimum scope; Saviynt See/Govern/Enforce framework dropped (functional UI tells the story); cast = Maria (admin) + Sarah Cohen (user, continuity w/ Figma Make JML proto) + 5 agents across n8n/Bedrock/Vertex.
+- **Flow:** Dashboard → JIT request detail → Agent detail → Access Log → Inventory > Agents → Integration > MCP Servers → return to dashboard. 7 stages, 6 screens.
+- **Hero moment:** Sales Pipeline Bot (n8n, Sarah Cohen) requests WRITE on Salesforce Opportunities. Profile caps at READ. Maria scopes the grant — 1h, this user's session — and approves live.
+- **Open for Dor:** persona (Maria CISO vs operational IGA Admin), Identiverse slot (booth/breakout/keynote drives 5/10/20-min cut), JML 30-sec teaser in closing, competitive framing opt-in/out, live-approval choreography, cast size (5 vs 8–10), reset boundary.
+- **Stress-test flags surfaced in artifact:** live JIT is the riskiest stage moment (need backup recording); denial in stage 4 is told not lived (v0.2 candidate); no JML beat (Mor had it as primary in her menu, may need to add).
+- Branch: `claude/create-mcp-gateway-demo-UQQCv`. Will commit + push but holding merge-to-main pending Omri authorization.
