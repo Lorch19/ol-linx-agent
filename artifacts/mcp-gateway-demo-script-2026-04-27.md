@@ -1,55 +1,40 @@
 # MCP Gateway Demo — Identiverse 2026 (June 15)
 
-v0.1 draft for Dor — 2026-04-28.
+v0.1 draft for Dor — 2026-04-28. Two flow options below.
 
-## Flow
+Locked: JIT + Access Profiles for agents + employee-agent (1:1 user binding) + tool-level granularity (the unit is the MCP tool, not the SaaS app).
 
-| Stage | Where | Story / Actions |
+---
+
+## Flow A — Reactive (live JIT exception)
+
+*Story: an agent hits a wall, admin resolves on stage.*
+
+| # | Stage | Beat |
 |---|---|---|
-| 1 | Dashboard | Maria opens her Monday. *[Tiles: agents under governance · policies · MCP calls 24h · denials 24h · **1 JIT pending**]* Activity feed: green flow + 2 weekend denials. Click the pending request. |
-| 2 | JIT Request — Detail | "Sales Pipeline Bot" (n8n, owner: Sarah Cohen) needs WRITE on Salesforce Opportunities; profile caps at READ. *[Show: requested tool, current ceiling, delegation chain user→agent→tool, policy that fired.]* Maria scopes — 1h, this user — and approves. **Live stage moment.** |
-| 3 | Agent Detail | Sales Pipeline Bot profile: owner, platform badge, MCP tools, Access Profile, last 50 calls inline w/ green/red, the just-approved escalation pinned at top. |
-| 4 | Access Log | Unified 3-stream view. 1,200 calls / 14 denials / 3 JIT in 24h. Surface a *different* denial: "Datadog Triage Agent attempted `delete_monitor` on prod-checkout — denied." Caught without a notification firing. |
-| 5 | Inventory > Agents | ~5 agents, mixed platforms (n8n, Bedrock, Vertex). Gateway sees them uniformly regardless of platform. |
-| 6 | Integration > MCP Servers | The 4 connected MCPs (Salesforce, Slack, Datadog, Snowflake). Architectural beat: gateway sits between any agent platform and any target SaaS. |
-| 7 | Dashboard | Pending: 0. Sarah's session running w/ temp grant; JIT timer revokes automatically. End on steady state. |
+| 1 | Dashboard | 1 JIT request pending. |
+| 2 | JIT Request | Sarah's agent needs `update_opportunity`; her agent profile only has `read_opportunity`. Show user→agent→tool chain. |
+| 3 | Approve | Maria scopes: this tool, this user, 1 hour. Approve. |
+| 4 | Confirm | Approval pinned to agent profile + audit. |
 
-## Cast
+---
 
-- **Maria** — admin on stage.
-- **Sarah Cohen** — sales rep, owns Sales Pipeline Bot. Reuses Figma Make JML name for continuity.
+## Flow B — Proactive (Access Profile setup, gateway enforces silently)
 
-| Agent | Platform | Owner | Tools |
-|---|---|---|---|
-| Sales Pipeline Bot | n8n | Sarah Cohen | Salesforce R, Slack DM |
-| Customer Insights | Bedrock | Sarah Cohen | Salesforce R, Slack R |
-| Datadog Triage | Bedrock | Ops | Datadog R, PagerDuty W *(stage 4 denial)* |
-| Slack Digest | n8n | Marketing | Slack R |
-| Snowflake Reporter | Vertex | Finance | Snowflake R |
+*Story: admin sets the policy, gateway does the work, audit catches what's left.*
 
-## Screens (eng ask)
+| # | Stage | Beat |
+|---|---|---|
+| 1 | Sarah's Agent | New agent registered for Sarah (1:1). Open its Access Profile — empty. |
+| 2 | Tool Catalog | Salesforce MCP exposes 12 tools. Maria grants `read_opportunity`, `read_account`. Declines write tools. Save. |
+| 3 | Live | Agent runs: read calls flow green. One write attempt → denied at the gateway, no human needed. |
+| 4 | Audit | Maria sees the denial, decides profile stays as-is. |
 
-1. **Dashboard** — KPI tiles, pending banner, activity feed.
-2. **JIT Request Detail** — agent + owner, requested tool/scope, ceiling, delegation chain, policy fired, approve / scope-down / deny w/ duration.
-3. **Agent Detail** — header, Tools tab, Access Profile tab, Activity log tab (3 streams collapsed).
-4. **Access Log** — table + filters (agent / app / user / outcome) + row drill-in.
-5. **Inventory > Agents** — cards w/ platform badge, sort by risk + activity.
-6. **Integration > MCP Servers** — list + per-server status.
+---
 
-Cuttable to 4 if forced: collapse 5+6 → "infrastructure"; collapse 4 → tab on 3.
+## Which to pick
 
-## Risks
+- **A** is dramatic, single live moment, fragile if the request fails on stage.
+- **B** is calmer, shows the steady state ("this is how every day works"), no live approval risk.
 
-- Live JIT is the fragile beat — need backup recording.
-- Stage 4 denial is told, not lived. Strong v0.2 candidate.
-- No JML — Mor's menu had JML primary. Deliberate cut, flag to Dor.
-
-## Opens for Dor
-
-1. Persona — Maria CISO or operational IGA Admin?
-2. Identiverse slot — keynote / breakout / booth? Drives 5 / 10 / 20-min cut.
-3. Add 30-sec JML teaser at stage 7?
-4. Saviynt See/Govern/Enforce counter — in or out?
-5. Live approval — Maria's hand or scripted timer?
-6. Cast — 5 or push eng to 8–10?
-7. Reset boundary — JIT only, or audit log + feed too?
+Open for Dor: A, B, or A→B sequenced (start reactive, end proactive)?
