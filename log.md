@@ -434,6 +434,18 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - Full PDF NOT in repo. Only have Gartner 833731 ("Securely Delegate Access From Humans to AI Agents"). These are two different documents.
 - PDF is attached to the Agentic AI Identities Notion epic — source of the 10 capabilities table. Needs separate extraction.
 
+### Dor meeting (2026-04-27) — 3-chapter product framing
+- Dor's organizing structure: (1) Agent registration — in advance or on-the-fly? how to present? (2) Policy management — use Access Profiles or new construct? tool-level? roles? (3) Enforcement — mainly technical.
+- Maps to building blocks: INVENTORY (1) + GOVERN (2) + ENFORCE (3).
+- Dor also asked for deep competitive study: ConductorOne + Astrix + Ping Identity specifically.
+- Updated building-blocks.md with Dor's questions under 1.0 (registration) and 2.3 (policy authoring).
+
+### Amir & Omer meeting (2026-04-27) — MCP connection architecture
+- Key question surfaced: does the user/org connect ONLY the Linx MCP gateway, or also individual SaaS MCPs (Datadog, Slack, etc.) in parallel?
+- Critical: if parallel, Linx is blind to non-Linx MCP traffic. Coverage gap invalidates enforcement story.
+- Added to discovery-plan.md Q1 as sub-question (b) — architecture decision: single-gateway vs. multi-gateway topology.
+- Must resolve before registration model and enforcement demo story can be locked.
+
 ### Next: use case mapping
 - All harvest inputs now in repo. Proceed to use case mapping against 10 capabilities + 10 user scenarios.
 
