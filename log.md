@@ -436,3 +436,12 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 
 ### Next: use case mapping
 - All harvest inputs now in repo. Proceed to use case mapping against 10 capabilities + 10 user scenarios.
+
+### Gartner G00833725 ingested — IAM for LLM-Based AI Agents (Jun 2025)
+- Saved to `references/gartner-833725-iam-for-llm-agents.md`. This is the source-of-truth the Notion epic's 10 capabilities were lifted from.
+- Distinct from G00833731 (delegation-focused). 833725 = foundational framework.
+- Key insight: Gartner's 10-step Concept of Operations = Linx's 10 capabilities 1:1. Use as positioning ammunition — "analyst-validated framework, June 2025."
+- Gartner's Requirements Framework has ~33 specific requirements across 7 categories (Observability / Governance / Issuance / Authentication / Authorization / Federation / Monitoring) — more precise than the 10 capabilities for use case mapping.
+- 3-layer architecture: OAuth (L1) → MCP (L2) → A2A (L3). Gartner says A2A "too immature for production." M4 timeline aligns.
+- MCP scalability caution (stateful servers, fragmented OAuth endpoints) = Linx Gateway positioning wedge: "unified OAuth plane across stateful MCP servers."
+- Competitor layer mapping: Clutch=L0, ConductorOne=L0+L1, Astrix=L1+partial L2, Ping+CyberArk=L2, no one credibly at L3.
