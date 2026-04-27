@@ -244,18 +244,7 @@ Per 2026-04-26 EOD log: "only 2 of Mor's 5 sketch items are actual user-facing s
 
 ---
 
-## §6 — Stress Test (mandatory — apply before declaring done)
-
-What's weakest in this analysis? Audit yourself against these:
-
-- Did you over-rely on the Notion 10 scenarios? They're the Linx canon, but the **2026-04-26 EOD log entry** flagged that "only 2 of Mor's 5 sketch items are actual user-facing scenarios" — suggesting scenario hygiene is uneven.
-- Did you under-weight the **Apr 26 MCP Gateway pivot**? Capabilities #5 and #6 (= R7, R8, R20, R22 in this taxonomy) became gateway-mediated. Several scenarios may be more or less feasible than they look on paper.
-- Did you treat the 10 user scenarios as static, or did you add scenarios that **emerged from the competitive teardown** (e.g., "I want to revoke an agent in <5s when Datadog flags an anomaly" — currently nowhere)?
-- A smart competitor at Niv's level would say: "your scenarios are all admin-side. Where's the developer / agent-author scenario? Where's the end-user-of-the-agent scenario?" — what's your answer?
-
----
-
-## §7 — Sources
+## §8 — Sources
 
 - 10 user scenarios: `knowledge/notion-extraction-ai-governance-2026-04-26.md` § 7
 - 33 requirements: `references/gartner-833725-iam-for-llm-agents.md` § Key IAM Requirements Framework
