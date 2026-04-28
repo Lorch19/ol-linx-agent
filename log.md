@@ -416,6 +416,57 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - Adding Task C: Notion content extraction via Linx MCP. Self-contained prompt added to artifacts/parallel-tasks-2026-04-26.md.
 - Path to May 8 unchanged but lower-effort: extract → normalize → validate post-pivot → draft only the deltas.
 
+## 2026-04-27 — Ingestion session
+
+### Notion extraction ingested
+- Task C Notion output pasted and saved to `knowledge/notion-extraction-ai-governance-2026-04-26.md`.
+- Canonical 10 capabilities and 10 user scenarios now in repo (verbatim from Agentic AI Identities epic).
+- Key reconciliation finding: WIP concept doc (Nov 2025) missing scenario #2 (Relationship & Credential Mapping). Check ai-governance-core.md lines 131-145 for this gap.
+- 5-capability framing confirmed as superseded — keep only for positioning/outward narrative.
+
+### Competitor landscape ingested
+- ChatGPT research (2 reports, 9 vendors) saved to `knowledge/ai-governance-competitor-landscape.md`.
+- Vendors covered: Astrix, Oasis Security, ConductorOne, Clutch Security, Ping Identity, CyberArk, CrowdStrike, Duo (adjacent), UnmitigatedRisk (independent blog).
+- ⚠ Ping Identity NOT in competitive-matrix.md — needs scoring pass. Has Agent Gateway for MCP, per-action enforcement, OAuth-based delegation. Gartner 833731 named them as "strong" in AM delegation alongside IBM + Transmit Security.
+- White space confirmed: crypto-attested ephemeral credentials, cross-layer shadow AI detection, policy-as-code for agents — no vendor owns these.
+
+### Gartner IAM_for_LLM-Based_AI_Agents PDF
+- Full PDF NOT in repo. Only have Gartner 833731 ("Securely Delegate Access From Humans to AI Agents"). These are two different documents.
+- PDF is attached to the Agentic AI Identities Notion epic — source of the 10 capabilities table. Needs separate extraction.
+
+### Dor meeting (2026-04-27) — 3-chapter product framing
+- Dor's organizing structure: (1) Agent registration — in advance or on-the-fly? how to present? (2) Policy management — use Access Profiles or new construct? tool-level? roles? (3) Enforcement — mainly technical.
+- Maps to building blocks: INVENTORY (1) + GOVERN (2) + ENFORCE (3).
+- Dor also asked for deep competitive study: ConductorOne + Astrix + Ping Identity specifically.
+- Updated building-blocks.md with Dor's questions under 1.0 (registration) and 2.3 (policy authoring).
+
+### Amir & Omer meeting (2026-04-27) — MCP connection architecture
+- Key question surfaced: does the user/org connect ONLY the Linx MCP gateway, or also individual SaaS MCPs (Datadog, Slack, etc.) in parallel?
+- Critical: if parallel, Linx is blind to non-Linx MCP traffic. Coverage gap invalidates enforcement story.
+- Added to discovery-plan.md Q1 as sub-question (b) — architecture decision: single-gateway vs. multi-gateway topology.
+- Must resolve before registration model and enforcement demo story can be locked.
+
+### Next: use case mapping
+- All harvest inputs now in repo. Proceed to use case mapping against 10 capabilities + 10 user scenarios.
+
+### Gartner G00833725 ingested — IAM for LLM-Based AI Agents (Jun 2025)
+- Saved to `references/gartner-833725-iam-for-llm-agents.md`. This is the source-of-truth the Notion epic's 10 capabilities were lifted from.
+- Distinct from G00833731 (delegation-focused). 833725 = foundational framework.
+- Key insight: Gartner's 10-step Concept of Operations = Linx's 10 capabilities 1:1. Use as positioning ammunition — "analyst-validated framework, June 2025."
+- Gartner's Requirements Framework has ~33 specific requirements across 7 categories (Observability / Governance / Issuance / Authentication / Authorization / Federation / Monitoring) — more precise than the 10 capabilities for use case mapping.
+- 3-layer architecture: OAuth (L1) → MCP (L2) → A2A (L3). Gartner says A2A "too immature for production." M4 timeline aligns.
+- MCP scalability caution (stateful servers, fragmented OAuth endpoints) = Linx Gateway positioning wedge: "unified OAuth plane across stateful MCP servers."
+- Competitor layer mapping: Clutch=L0, ConductorOne=L0+L1, Astrix=L1+partial L2, Ping+CyberArk=L2, no one credibly at L3.
+
+### CIS Controls v8.1 — AI Agents + MCP companion guides (2026-04-27)
+- Astrix blog (https://astrix.security/learn/blog/securing-llms-ai-agents-and-mcp-unpacking-the-new-cis-companion-guides/) references two new CIS companion guides.
+- **CIS Controls v8.1 AI Agents Companion Guide** (https://www.cisecurity.org/insights/white-papers/controls-v8-1-ai-agents-companion-guide) — defines security controls for AI agents mapped to existing CIS Controls. Registration-wall, not yet ingested.
+- **CIS Controls v8.1 MCP Companion Guide** (https://www.cisecurity.org/insights/white-papers/controls-v8-1-model-context-protocol-companion-guide) — defines security controls specifically for MCP. Registration-wall, not yet ingested.
+- Strategic implication: these are a THIRD authoritative framework alongside Gartner G00833725 and G00833731. Enterprise buyers already use CIS Controls as a baseline. If CIS defines requirements that Linx doesn't satisfy, that's a gap. If Linx satisfies them and competitors don't, that's a positioning wedge.
+- Astrix positioning move: explicitly aligning with CIS = enterprise credibility play. CIS-alignment claim is credible to security buyers (vs. Gartner which is analyst-tier).
+- **Action:** Obtain both guides (download via CIS registration or have Omri download + paste). Save to `references/cis-controls-v8-1-ai-agents-companion-guide.md` and `references/cis-controls-v8-1-mcp-companion-guide.md`. Then map requirements against Linx's 33-requirement coverage table.
+- Added specific Astrix blog URL + both CIS guide URLs to `prompts/competitive-teardown-c1-astrix-ping.md` for Claude.ai to attempt during research run.
+
 ## 2026-04-27 — MCP Gateway demo script v0.1 (Identiverse June 15)
 
 - Drafted first-pass demo script: `artifacts/mcp-gateway-demo-script-2026-04-27.md`. For Dor review tomorrow (Apr 28).

@@ -13,9 +13,10 @@ These four answers shape what we're building. No commit until they're in.
 
 ### Q1. Tool-level visibility — in P0 or descope?
 - **Mor's Apr 26 update:** "need to check what MCP gateway exposes — verify via Claude / MCP spec." Action item, not yet answered.
+- **Amir/Omer Apr 27:** NEW SUB-QUESTION — does the user connect ONLY the Linx MCP gateway, or do they also connect individual SaaS MCPs (e.g., Datadog MCP, Slack MCP) in parallel? If parallel, Linx only sees traffic through its own gateway — blind to the rest. This is potentially a full coverage gap and must be resolved before registration model and enforcement story can be locked.
 - **Why blocks:** P0 surface area depends on this. Affects eng estimate and demo story.
-- **Resolve:** (a) MCP spec research — what tool-level introspection is part of the protocol vs. server-implementation-dependent. (b) Eng feasibility for the surface. Omri can do (a) this week.
-- **Owner:** Omri research (a), eng + UX estimate (b).
+- **Resolve:** (a) MCP spec research — what tool-level introspection is part of the protocol vs. server-implementation-dependent. (b) Architecture decision: single-gateway vs. multi-gateway topology. (c) Eng feasibility.
+- **Owner:** Omri research (a+b), eng + UX estimate (c).
 - **Target:** Apr 30.
 
 ### Q2. Where does Linx physically sit in MCP traffic? **RESOLVED 2026-04-26**
@@ -66,6 +67,12 @@ Answer these in parallel. Won't block the May 8 scope commit, but each constrain
 ---
 
 ## Adjacent research — supports scope but doesn't block
+
+### Q11. Competitive deep-dive — ConductorOne, Astrix, Ping Identity (Dor ask, 2026-04-27)
+- Dor explicitly asked Omri to study how these three tackle the 3-chapter framing (registration / policy / enforcement).
+- We have surface-level coverage in `knowledge/ai-governance-competitor-landscape.md`. Need depth.
+- Ping Identity is the most under-researched of the three — and most directly competitive (Agent Gateway = Layer 2, same as Linx).
+- **Owner:** Omri. **Target:** May 2. **Output:** `artifacts/competitive-teardown-c1-astrix-ping-2026-05-02.md`.
 
 ### Q9. Saviynt Mar 24 RSAC parity
 - Closest competitor pitch to Linx's MCP Gateway. Need parity check before June.

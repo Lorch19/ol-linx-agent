@@ -20,6 +20,8 @@ Auto-loaded at session start. Scan tags to propose relevant files before loading
 | `knowledge/ai-governance-deep.md` | [ref] | 3.5K | ai-governance, capability, technical, spec-writing, agent-types, identity-model, 10-capabilities, MCP |
 | `knowledge/slack-governance-channel-extraction-2026-04-21.md` | [ref] | 3.5K | ai-governance, Niv, Mor, Saviynt, MCP, JIT, competitive, channel-history, Monday-com, stakeholder-intel |
 | `knowledge/anthropic-mcp-gateway-karan-sampath.md` | | 4K | ai-governance, MCP, gateway, Anthropic, Karan-Sampath, architecture, competitive-validation, SME, RFC-8693, delegated-identity |
+| `knowledge/notion-extraction-ai-governance-2026-04-26.md` | | 5K | ai-governance, 10-capabilities, 10-user-scenarios, milestones, Notion, canonical, M1, M2, M3, M4, personas |
+| `knowledge/ai-governance-competitor-landscape.md` | | 8K | competitive, ai-governance, Astrix, Oasis, ConductorOne, CyberArk, Ping, CrowdStrike, Clutch, NHI, MCP, JIT, white-space |
 | `knowledge/identity-foundations.md` | [ref] | 18K | learning, IGA, PAM, CIEM, NHI, ISPM, RBAC, ABAC, terminology, foundations |
 | `knowledge/competitive-dynamics.md` | [ref] | 8K | competitive, market, dynamics, M&A, trends |
 | `customer-intel.md` | | 15K | customer, Sony, Monday-com, call-prep, discovery, pain, signal, feature-request |
@@ -27,7 +29,10 @@ Auto-loaded at session start. Scan tags to propose relevant files before loading
 | `references/omri-context.md` | [ref] | 2.5K | personal, background, blind-spots, career, fintech, strengths |
 | `references/iam-fintech-bridge.md` | | 4K | jargon, fintech, translation, IAM-terms, explanation |
 | `references/amir-discussion-topics.md` | | 4K | Amir, ai-governance, meeting-prep, AI-assistant |
-| `references/gartner-833731-summary.md` | [ref] | 4.5K | ai-governance, Gartner, analyst, agent, credential, NHI |
+| `references/gartner-833731-summary.md` | [ref] | 4.5K | ai-governance, Gartner, analyst, agent, credential, NHI, delegation, Ping, IBM |
+| `references/gartner-833725-iam-for-llm-agents.md` | [ref] | 8K | ai-governance, Gartner, analyst, 10-capabilities, framework, MCP, A2A, OAuth, ABAC, PBAC, architecture, use-cases, requirements |
+| `references/cis-controls-v8-1-ai-agents-companion-guide.md` | [ref] **PENDING** | — | ai-governance, CIS, framework, AI-agents, controls, requirements |
+| `references/cis-controls-v8-1-mcp-companion-guide.md` | [ref] **PENDING** | — | ai-governance, CIS, framework, MCP, controls, requirements |
 | `references/ticket-examples.md` | [ref] | 15K | spec-writing, ticket, quality, template, eng-handoff |
 | `references/ai-leadership-principles.md` | [ref] | 4K | ai-governance, leadership, principles, Amir |
 | `references/omer-efroni-notion-handoff-2026-04-19.md` | [ref] | 5K | handoff, Omer, ai-governance, context |

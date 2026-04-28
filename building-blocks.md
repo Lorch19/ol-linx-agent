@@ -4,6 +4,8 @@
 
 **Naming convention adopted from Mor (2026-04-26):** Inventory · Govern · Enforce · Audit. Maps to AIAP analyst framework (discover → define → provision → enforce + audit).
 
+**Dor's 3-chapter product framing (2026-04-27):** Registration → Policy management → Enforcement. Maps directly to INVENTORY (1) + GOVERN (2) + ENFORCE (3). Same structure, customer-facing language. Use Dor's framing in external/stakeholder communication; use building-block labels internally.
+
 **JML and JIT approval are not blocks — they are cross-cutting flows that exercise multiple blocks.**
 
 ---
@@ -15,7 +17,8 @@ What exists in the customer's stack.
 | Sub-block | Status | Notes / questions |
 |---|---|---|
 | 1.1 Agent discovery (from agent platforms) | partially shipped (M1) | Currently: Gemini, Vertex, Bedrock, n8n. Future scope TBD per pivot. |
-| 1.2 MCP / tool discovery | open | Q1 — what tool-level introspection does MCP spec expose? |
+| 1.0 **Agent registration model** | open | Dor Q: in advance (manual/IaC) or on-the-fly during session (dynamic)? How presented in UI? [→ log 2026-04-27] |
+| 1.2 MCP / tool discovery | open | Q1 — what tool-level introspection does MCP spec expose? Also: does user connect only Linx MCP, or Datadog/Slack MCPs in parallel? [→ Amir/Omer 2026-04-27] |
 | 1.3 Credential mapping | open | Was M2 work, partially deferred. Tied to enforcement (3.2). |
 
 ## 2. GOVERN — policies & identity model
@@ -26,7 +29,7 @@ What rules apply, and how an agent identity is represented.
 |---|---|---|
 | 2.1 Identity model (delegated: agent + user) | decided | `agent_perms = user_perms ∩ admin_agent_ceiling` |
 | 2.2 Permission rule | decided (Apr 26) | Same as above, confirm Q4 default model |
-| 2.3 Policy authoring (admin UI) | open | Surface, scope of policies, who authors |
+| 2.3 Policy authoring (admin UI) | open | Dor Qs: use existing Access Profiles or new construct? Tool-level granularity? Roles? Surface, scope, who authors. [→ log 2026-04-27] |
 
 ## 3. ENFORCE — put policy into effect
 
