@@ -1,40 +1,45 @@
 # MCP Gateway Demo — Identiverse 2026 (June 15)
 
-v0.1 draft for Dor — 2026-04-28. Two flow options below.
+v0.2 draft for Dor — 2026-04-28.
 
-Locked: JIT + Access Profiles for agents + employee-agent (1:1 user binding) + tool-level granularity (the unit is the MCP tool, not the SaaS app).
+## Spine
+- 1:1 employee-agent binding · Access Profile per agent · tool-level granularity · JIT.
+- **Visual centerpiece — 3 rings:** Sarah's perms · admin ceiling for agents · this agent's profile. Effective = innermost. *Pure-gateway competitors (Strata, Lunar, Ping) can't draw the outer ring — no IGA graph behind them.*
 
----
-
-## Flow A — Reactive (live JIT exception)
-
-*Story: an agent hits a wall, admin resolves on stage.*
-
-| # | Stage | Beat |
-|---|---|---|
-| 1 | Dashboard | 1 JIT request pending. |
-| 2 | JIT Request | Sarah's agent needs `update_opportunity`; her agent profile only has `read_opportunity`. Show user→agent→tool chain. |
-| 3 | Approve | Maria scopes: this tool, this user, 1 hour. Approve. |
-| 4 | Confirm | Approval pinned to agent profile + audit. |
-
----
-
-## Flow B — Proactive (Access Profile setup, gateway enforces silently)
-
-*Story: admin sets the policy, gateway does the work, audit catches what's left.*
+## Two options
+Both share stages 1, 2, 4. Differ only on stage 3.
 
 | # | Stage | Beat |
 |---|---|---|
-| 1 | Sarah's Agent | New agent registered for Sarah (1:1). Open its Access Profile — empty. |
-| 2 | Tool Catalog | Salesforce MCP exposes 12 tools. Maria grants `read_opportunity`, `read_account`. Declines write tools. Save. |
-| 3 | Live | Agent runs: read calls flow green. One write attempt → denied at the gateway, no human needed. |
-| 4 | Audit | Maria sees the denial, decides profile stays as-is. |
+| 1 | **Detect** | Gateway noticed a new agent 12 min ago: Sales Pipeline Bot (n8n), owner = Sarah Cohen, matched via OAuth caller. No admin onboarding. |
+| 2 | **Bind** | Agent profile. Three rings — Sarah (SFDC admin) · agent ceiling (no delete) · this profile (read-only). Effective = inner ring. |
+| 3 | *(differs — see below)* | |
+| 4 | **Trace** | Audit row → one click → chain: Sarah → agent → tool → policy → outcome. *Who is responsible* in one frame. |
 
----
+### Option A — Deterministic denial *(recommended)*
+**Stage 3:** Agent attempts `delete_account`. Denied by policy. Sarah herself could; her agent can't.
 
-## Which to pick
+### Option B — Live JIT approval
+**Stage 3:** Agent requests `update_opportunity` for a real deal. Maria scopes down to `update_amount` only, 1h, this account. Approves on stage. The binding makes the scope-down visible — she's narrowing within the agent ceiling, not opening Sarah's full perms.
 
-- **A** is dramatic, single live moment, fragile if the request fails on stage.
-- **B** is calmer, shows the steady state ("this is how every day works"), no live approval risk.
+## Trade-off
 
-Open for Dor: A, B, or A→B sequenced (start reactive, end proactive)?
+| | A (denial) | B (live JIT) |
+|---|---|---|
+| Defensibility | Strong — single image | Same image + action |
+| Choreography risk | None | Live approval can fail on stage |
+| Story | "Linx blocks what Sarah herself could do" | "Linx narrows what Sarah's agent needs, in the moment" |
+| Build cost | Lower | + JIT request flow |
+
+## Why this beats prior drafts (A/B from v0.1)
+- Prior flows were demoable by every gateway competitor. This one isn't — the outer ring requires the IGA graph.
+- The 1:1 binding now does work on stage instead of being narrated.
+- Discovery (stage 1) answers the CISO's first question — prior drafts ducked it.
+- Lands on audit chain (stage 4) — Gartner SoD-for-agents wedge, unclaimed by Saviynt.
+
+## Opens for Dor
+1. Option A or B?
+2. Persona — Maria CISO, or operational admin?
+3. Identiverse slot — keynote / breakout / booth? Drives 5 / 10 / 20 min cut.
+4. Cast — 1 agent on stage (Sarah's), 5+ in inventory shot for scale?
+5. Stretch close — *"You have 47 agents under management. Maria approved 3 today. Gateway handled the rest."*
