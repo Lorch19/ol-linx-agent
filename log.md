@@ -466,3 +466,23 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - Astrix positioning move: explicitly aligning with CIS = enterprise credibility play. CIS-alignment claim is credible to security buyers (vs. Gartner which is analyst-tier).
 - **Action:** Obtain both guides (download via CIS registration or have Omri download + paste). Save to `references/cis-controls-v8-1-ai-agents-companion-guide.md` and `references/cis-controls-v8-1-mcp-companion-guide.md`. Then map requirements against Linx's 33-requirement coverage table.
 - Added specific Astrix blog URL + both CIS guide URLs to `prompts/competitive-teardown-c1-astrix-ping.md` for Claude.ai to attempt during research run.
+
+## 2026-04-27 — MCP Gateway demo script v0.1 (Identiverse June 15)
+
+- Drafted first-pass demo script: `artifacts/mcp-gateway-demo-script-2026-04-27.md`. For Dor review tomorrow (Apr 28).
+- Adapted Dor's Drifter RSAC2026 skeleton — *shape* kept, *substance* flipped. Drifter is agent-experience-led (Autopilot produces findings, admin reviews). MCP Gateway is gateway-enforcement-led (admin sets policy, gateway enforces inline, admin handles exceptions). Different protagonist, different rhythm, different aha.
+- **Locked for v0.1:** spine = JIT-led live approval on stage (Mor's "C" from 4-26 hero menu); medium = real Linx env with 5–6 screens minimum scope; Saviynt See/Govern/Enforce framework dropped (functional UI tells the story); cast = Maria (admin) + Sarah Cohen (user, continuity w/ Figma Make JML proto) + 5 agents across n8n/Bedrock/Vertex.
+- **Flow:** Dashboard → JIT request detail → Agent detail → Access Log → Inventory > Agents → Integration > MCP Servers → return to dashboard. 7 stages, 6 screens.
+- **Hero moment:** Sales Pipeline Bot (n8n, Sarah Cohen) requests WRITE on Salesforce Opportunities. Profile caps at READ. Maria scopes the grant — 1h, this user's session — and approves live.
+- **Open for Dor:** persona (Maria CISO vs operational IGA Admin), Identiverse slot (booth/breakout/keynote drives 5/10/20-min cut), JML 30-sec teaser in closing, competitive framing opt-in/out, live-approval choreography, cast size (5 vs 8–10), reset boundary.
+- **Stress-test flags surfaced in artifact:** live JIT is the riskiest stage moment (need backup recording); denial in stage 4 is told not lived (v0.2 candidate); no JML beat (Mor had it as primary in her menu, may need to add).
+- Branch: `claude/create-mcp-gateway-demo-UQQCv`. Will commit + push but holding merge-to-main pending Omri authorization.
+
+### 2026-04-28 update — Dor feedback + Anthropic validation + v0.3 lock
+
+- Dor reviewed v0.2. Feedback: agents pre-registered (P0), no agent-level perms (policy = role × owner per app), demo = 3-min booth loop covering (1) Sarah's-agent-fails / Sarah-self-succeeds (2) Scott's-agent-succeeds (3) admin's view. Spine pivoted from "3-rings" to "same-action / different-actor / different-outcome" contrast.
+- Recorded Anthropic gateway video (Karan Sampath, "Gateways are all you need") — `knowledge/anthropic-mcp-gateway-karan-sampath.md`. Validates Linx architecture is in the mainstream + names "delegated user + agent identity" (proving gateway can identify human behind agent — load-bearing for the demo's contrast story). Karan = build-it-yourself; Linx wedge = adds IGA graph turning his primitives into auditable governance.
+- Indexed in `context-index.md` (tags: ai-governance, MCP, gateway, Anthropic, RFC-8693, delegated-identity).
+- v0.3 demo script written to `artifacts/mcp-gateway-demo-script-2026-04-27.md`. Includes: 3-beat flow w/ timing, centerpiece audit-row image, screen build map (4 screens, 1–2 likely new), build prereqs (Salesforce user-activity ingestion = open dependency), explicit cuts (no live JIT, no JML, no discovery, no org ceiling).
+- Concrete cast locked: Sarah Cohen (PM) + Scott Davis (VP Sales) both owning a "Sales Pipeline Bot." Tool: `update_opportunity` for all three actions. Policies: `pm-agents-readonly`, `vp-sales-agents-write`.
+- Open: validate screen existence + SFDC ingestion path via Linx Claude (next session); persona for Beat 3 (Maria CISO vs operational admin); Identiverse format confirmation.
