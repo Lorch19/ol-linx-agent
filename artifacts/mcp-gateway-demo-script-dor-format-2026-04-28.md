@@ -14,12 +14,13 @@ Format adapted from Dor's RSAC2026 Drifter demo skeleton.
 
 | Stage | Where | Story / Actions |
 | --- | --- | --- |
-| 1 | Linx — Live Activity | Sarah Cohen's "Sales Pipeline Bot" (n8n) calls `update_opportunity` on Salesforce via the gateway. Row appears in red — **DENIED**. Inline reason: *policy: pm-agents-readonly*. *[ Should show a live MCP call stream with color-coded outcomes and the policy reason inline ]* |
-| 2 | Linx — Live Activity | Sarah herself accesses Salesforce directly. The same `update_opportunity` action is ingested through Linx's SFDC connector. Row appears in green — **ALLOWED** via her direct SFDC role. *Same person. Same action. Different actor — different outcome.* *[ Should make the contrast visible side-by-side with Stage 1 ]* |
-| 3 | Linx — Live Activity | Scott Davis (VP Sales) — owner of *the same* "Sales Pipeline Bot" class — calls `update_opportunity`. Row appears in green — **ALLOWED**. Reason: *policy: vp-sales-agents-write*. Three rows now sit side-by-side on the same action. *[ Should reinforce: same agent, same call, different human → different outcome ]* |
-| 4 | Maria's Dashboard | Switch to the security admin's view. Inventory shows agents under governance and the policies in effect. *[ Should show a rich inventory panel — at least 5 agents, 2 named policies, owners visible ]* |
-| 5 | Audit Event Detail | Drill into Sarah's DENIED event. The full chain renders inline: **human (Sarah Cohen) → agent (Sales Pipeline Bot) → tool (`update_opportunity`) → policy (`pm-agents-readonly`) → outcome (DENIED)**. *[ Should show a single-click trace from any action all the way back to the human responsible ]* |
-| 6 | Maria's Dashboard | Close: *"Every MCP call captured. Every action attributable. Every policy auditable."* Loop resets to Stage 1. *[ Should reset to the start state cleanly on each loop ]* |
+| 1 | Agent Registry | Maria opens the registry. Each agent appears with its **single human owner** and the **policy attached to it**. Drill into "Sales Pipeline Bot": two instances visible — one owned by **Sarah Cohen (PM)** with `pm-agents-readonly`, one owned by **Scott Davis (VP Sales)** with `vp-sales-agents-write`. *[ Should show a clean registry: agent · owner · platform · policy · last activity. Establishes the cast and the policy contract before any action plays out ]* |
+| 2 | Linx — Live Activity | Sarah's "Sales Pipeline Bot" calls `update_opportunity` on Salesforce via the gateway. Row appears in red — **DENIED**. Inline reason: *policy: pm-agents-readonly*. *[ Should show a live MCP call stream with color-coded outcomes and the policy reason inline ]* |
+| 3 | Linx — Live Activity | Sarah herself accesses Salesforce directly. The same `update_opportunity` action is ingested via Linx's SFDC connector. Row appears in green — **ALLOWED** via her direct SFDC role. *Same person. Same action. Different actor — different outcome.* *[ Should make the contrast visible side-by-side with Stage 2 ]* |
+| 4 | Linx — Live Activity | Scott's "Sales Pipeline Bot" — *the same agent class* — calls `update_opportunity`. Row appears in green — **ALLOWED**. Reason: *policy: vp-sales-agents-write*. Three rows now sit side-by-side on the same action. *[ Should reinforce: same agent, same call, different human → different outcome ]* |
+| 5 | Maria's Dashboard | Switch to the security admin's overview. Inventory + policy panel recap with all of today's activity. *[ Should show ≥5 agents, 2 named policies, owners visible ]* |
+| 6 | Audit Event Detail | Drill into Sarah's DENIED event. The full chain renders inline: **human (Sarah Cohen) → agent (Sales Pipeline Bot) → tool (`update_opportunity`) → policy (`pm-agents-readonly`) → outcome (DENIED)**. *[ Should show a single-click trace from any action all the way back to the human responsible ]* |
+| 7 | Maria's Dashboard | Close: *"Every MCP call captured. Every action attributable. Every policy auditable."* Loop resets to Stage 1. *[ Should reset to the start state cleanly on each loop ]* |
 
 ## Cast
 
@@ -30,12 +31,12 @@ Format adapted from Dor's RSAC2026 Drifter demo skeleton.
 
 ## Build Notes
 
-| # | Screen | Status (validate via Linx Claude w/ MCP) |
-|---|---|---|
-| 1 | Live Activity / Gateway View | New build or major extend of Logs view. Load-bearing. |
-| 2 | Audit Event Detail (with chain) | Extend existing log-row drilldown — chain visualization is the new piece. |
-| 3 | Inventory > Agents | Likely exists (M1). |
-| 4 | Policy List | New build (Mor's Access Profiles P0). |
+| # | Screen | Used in | Status (validate via Linx Claude w/ MCP) |
+|---|---|---|---|
+| 1 | Agent Registry — agent · owner · policy · last activity | Stage 1 | Likely exists (M1 Inventory > Agents). May need policy-attached column. |
+| 2 | Live Activity / Gateway View — color-coded MCP call stream | Stages 2–4 | New build or major extend of Logs. Load-bearing. |
+| 3 | Maria's Dashboard — inventory + policies panel | Stages 5, 7 | Likely exists; may need policy panel. |
+| 4 | Audit Event Detail — full chain rendering | Stage 6 | Extend existing log-row drilldown — chain viz is the new piece. |
 
 **Build prereq:** Salesforce ingestion of *human-user* activity (option a). If not supported, Stage 2 falls back to operator narration of Sarah's direct action rather than a rendered row.
 
