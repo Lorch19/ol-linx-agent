@@ -415,3 +415,15 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - Bigger gap: Notion already has 10 user scenarios in the existing PRD (already pulled forward into ai-governance-core.md lines 131-145), plus Mar 3 spec, 10/5 capabilities docs, AI Agents research page (edited 2026-04-23), Agentic AI Identities epic. ~60-70% of the requirements doc structure already exists — we have not been drafting from zero.
 - Adding Task C: Notion content extraction via Linx MCP. Self-contained prompt added to artifacts/parallel-tasks-2026-04-26.md.
 - Path to May 8 unchanged but lower-effort: extract → normalize → validate post-pivot → draft only the deltas.
+
+## 2026-04-27 — MCP Gateway competitive research kickoff (for Dor presentation)
+
+- Dor asked Omri to present market research on MCP Gateway to product team (PMs + designers). Format: slides eventually, materials first.
+- Three-bucket frame agreed (Omri): A = IGA/identity competitors with MCP gateway, B = IGA/identity competitors using alternatives, C = MCP Gateway players outside our IGA set.
+- Scaffold written: `artifacts/mcp-gateway-competitive-research-2026-04-27.md`. Initial bucket assignments + open classification questions + research gaps + presentation sequencing options.
+- Bucket A initial: Saviynt, ServiceNow/Veza, C1, SailPoint, Token Security, Opal, CyberArk(?). Bucket B initial: Silverfort, CrowdStrike/SGNL, Astrix, Oasis, Lumos, Clutch, Origin HQ. Bucket C initial: 14 candidates incl. Strata, Ping, Lunar MCPX, Operant, MS, Docker, IBM, Kong, TrueFoundry, Solo.io + 4 not yet researched (Cloudflare, Pomerium, Auth0, Lasso) + Anthropic check.
+- Open border cases flagged: Ping (IDP straddles A and C), CyberArk (verify gateway architecture), Token Security (two-sided MCP play), Astrix (verify MCP enforcement vs. NHI-only).
+- Stress test surfaced 5 weak spots — most important: zero customer voice on "we picked X for the MCP gateway." If presentation lands without a customer quote, it's vendor-watching.
+- Linked to existing work: Apr 28 16-URL fetch (already queued) covers most Bucket A/B gaps. Apr 30 Saviynt deep-dive should expand to score Strata/Ping/Lunar same rubric.
+- Orphan branch `claude/create-mcp-gateway-demo-UQQCv` confirmed adjacent — Identiverse demo script v0.1 (different artifact, not duplicative).
+- Status: NOT finalized. Awaiting Omri sign-off on bucket assignments + sequencing choice before next research pass.
