@@ -15,6 +15,8 @@
 
 ## §1 — The 33 Requirements (Gartner Framework)
 
+> **Vocabulary watch (added 2026-04-28 walkthrough):** the 7 Gartner categories below are *not* Dor's 3 chapters. Dor: Registration / Policy / Enforcement. Gartner: Observability, Governance & Administration, Issuance & Storage, Authentication, Authorization, Federation, Monitoring. "Enforcement" sounds like a Gartner category but isn't one — it's Dor's framing for the Authorization + Federation + parts of Authentication clusters. Keep vocabularies separate when speaking to Niv/Dor.
+
 ### Observability (5)
 - **R1** AI agent discovery
 - **R2** Enhanced metadata capture
