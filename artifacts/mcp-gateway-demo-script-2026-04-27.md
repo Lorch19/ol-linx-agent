@@ -11,7 +11,7 @@ Both share stages 1, 2, 4. Differ only on stage 3.
 
 | # | Stage | Beat |
 |---|---|---|
-| 1 | **Detect** | Gateway noticed a new agent 12 min ago: Sales Pipeline Bot (n8n), owner = Sarah Cohen, matched via OAuth caller. No admin onboarding. |
+| 1 | **Detect** | **Live.** Sarah's agent (Sales Pipeline Bot, n8n) just made its first MCP call. Gateway auto-bound it to Sarah via OAuth caller, applied the default agent profile. Lands on Maria's dashboard in real time. |
 | 2 | **Bind** | Agent profile. Three rings — Sarah (SFDC admin) · agent ceiling (no delete) · this profile (read-only). Effective = inner ring. |
 | 3 | *(differs — see below)* | |
 | 4 | **Trace** | Audit row → one click → chain: Sarah → agent → tool → policy → outcome. *Who is responsible* in one frame. |
