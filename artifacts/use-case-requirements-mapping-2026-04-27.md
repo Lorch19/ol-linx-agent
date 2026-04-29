@@ -9,7 +9,7 @@
 
 **How to use this doc:** Fill in the mapping table (§3) one scenario at a time. For each scenario, tag the requirements that scenario *requires* in order to be satisfied. Then read §4 (reverse view) — requirements that no scenario covers are candidates to descope; requirements that *every* scenario depends on are foundational P0.
 
-**Filter using Dor's 3 chapters** (Registration / Policy / Enforcement) when assigning P0/P1/P2.
+**Chapter framing (revised 2026-04-28 walkthrough):** Mapping uses **4 chapters** — Registration / Policy / Enforcement / Audit — matching the building-blocks decomposition. Dor's external 3-chapter framing (Registration / Policy / Enforcement) folds Audit into Enforcement. We unfold it here because Audit is a fundamentally different mode (after-the-fact proof, not runtime allow/deny) and UC5 + UC9 sit there. Use 4 internally; collapse to 3 only when speaking to Dor's external framing.
 
 ---
 
