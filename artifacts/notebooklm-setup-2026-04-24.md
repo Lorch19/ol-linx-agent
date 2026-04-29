@@ -1,4 +1,5 @@
 # NotebookLM Setup — AI Governance Learning Notebook
+
 > Written: 2026-04-24. Follow this once to set up the notebook. Estimated time: 20 min.
 
 ---
@@ -13,14 +14,16 @@ Go to [notebooklm.google.com](https://notebooklm.google.com) → **New Notebook*
 
 Download these 6 files from your local repo at `~/ol-linx-agent/` and upload each as a document source:
 
-| File | What it gives the notebook |
-|---|---|
-| `artifacts/ai-governance-master-brief-part-a.md` | Problem space, agent types, MCP, buyer questions |
-| `artifacts/ai-governance-master-brief-part-b.md` | Competitive landscape, Gartner framing, 6 camps |
-| `knowledge/ai-governance-core.md` | Epic scope, milestones, user scenarios, open items |
-| `knowledge/ai-governance-deep.md` | 10 capabilities, agent types, identity model |
-| `references/gartner-833731-summary.md` | Analyst validation, SoD line, incumbent gap |
+
+| File                                                  | What it gives the notebook                         |
+| ----------------------------------------------------- | -------------------------------------------------- |
+| `artifacts/ai-governance-master-brief-part-a.md`      | Problem space, agent types, MCP, buyer questions   |
+| `artifacts/ai-governance-master-brief-part-b.md`      | Competitive landscape, Gartner framing, 6 camps    |
+| `knowledge/ai-governance-core.md`                     | Epic scope, milestones, user scenarios, open items |
+| `knowledge/ai-governance-deep.md`                     | 10 capabilities, agent types, identity model       |
+| `references/gartner-833731-summary.md`                | Analyst validation, SoD line, incumbent gap        |
 | `artifacts/ai-agent-identity-sme-brief-2026-04-21.md` | Full market + competitive brief (most synthesized) |
+
 
 **How to download:** in Finder → Go → `~/ol-linx-agent/` → navigate to each file → drag to Desktop → upload.
 
@@ -31,23 +34,32 @@ Download these 6 files from your local repo at `~/ol-linx-agent/` and upload eac
 In NotebookLM click **+ Add Source → Website**. Paste each URL:
 
 ### Analyst frameworks
-| URL | What it covers |
-|---|---|
-| `https://softwareanalyst.substack.com/p/emerging-agentic-identity-access` | AIAP framework — "SSO for agents", 4 governance phases, Zero Standing Privilege |
-| `https://softwareanalyst.substack.com/p/the-future-of-just-in-time-trust` | JIT-TRUST framework, 144:1 NHI ratio source, Ephemeral Access Grants |
-| `https://softwareanalyst.substack.com/p/runtime-security-for-ai-agents-an` | Runtime security, MCP stats (53% insecure, 8.5% OAuth), 3 agent archetypes |
+
+
+| URL                                                                        | What it covers                                                                  |
+| -------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `https://softwareanalyst.substack.com/p/emerging-agentic-identity-access`  | AIAP framework — "SSO for agents", 4 governance phases, Zero Standing Privilege |
+| `https://softwareanalyst.substack.com/p/the-future-of-just-in-time-trust`  | JIT-TRUST framework, 144:1 NHI ratio source, Ephemeral Access Grants            |
+| `https://softwareanalyst.substack.com/p/runtime-security-for-ai-agents-an` | Runtime security, MCP stats (53% insecure, 8.5% OAuth), 3 agent archetypes      |
+
 
 ### Technical foundation
-| URL | What it covers |
-|---|---|
-| `https://modelcontextprotocol.io/introduction` | What MCP is, how it connects agents to tools, ecosystem |
-| `https://unmitigatedrisk.com/?p=1075` | Ephemeral-attested school — the counter-argument Niv 🙏'd |
+
+
+| URL                                            | What it covers                                            |
+| ---------------------------------------------- | --------------------------------------------------------- |
+| `https://modelcontextprotocol.io/introduction` | What MCP is, how it connects agents to tools, ecosystem   |
+| `https://unmitigatedrisk.com/?p=1075`          | Ephemeral-attested school — the counter-argument Niv 🙏'd |
+
 
 ### Competitor product pages
-| URL | What it covers |
-|---|---|
-| `https://www.token.security` | Token Security AI agent lifecycle — ownership, orphan decommission, intent-based least privilege |
-| `https://www.sailpoint.com/identity-library/agent-identity-security/` | SailPoint Agent Identity Security datasheet (Sep 2025) |
+
+
+| URL                                                                   | What it covers                                                                                   |
+| --------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------ |
+| `https://www.token.security`                                          | Token Security AI agent lifecycle — ownership, orphan decommission, intent-based least privilege |
+| `https://www.sailpoint.com/identity-library/agent-identity-security/` | SailPoint Agent Identity Security datasheet (Sep 2025)                                           |
+
 
 **Saviynt:** no working public URL found for their AI agent security page. If you find the RSAC post or product page, add it — their "See / Govern / Enforce" framing + AI Access Gateway announcement is the highest-value competitive source missing from this notebook.
 
@@ -56,6 +68,7 @@ In NotebookLM click **+ Add Source → Website**. Paste each URL:
 ## Step 4 — Generate Audio Overview
 
 Once all sources are added:
+
 1. Click **Notebook Guide** (top right)
 2. Click **Audio Overview → Generate**
 3. Let it process (~2 min)
@@ -81,6 +94,7 @@ Paste these into the NotebookLM chat to test your knowledge and find gaps:
 ## Keeping it current (ongoing)
 
 When Claude writes a new artifact (weekly scan, updated brief, competitive teardown):
+
 1. Download the updated file from `~/ol-linx-agent/artifacts/`
 2. In NotebookLM → Sources → delete the old version → upload the new one
 
