@@ -485,4 +485,16 @@ Use Figma Make + Claude to simulate AI Governance flow against today human flows
 - Indexed in `context-index.md` (tags: ai-governance, MCP, gateway, Anthropic, RFC-8693, delegated-identity).
 - v0.3 demo script written to `artifacts/mcp-gateway-demo-script-2026-04-27.md`. Includes: 3-beat flow w/ timing, centerpiece audit-row image, screen build map (4 screens, 1–2 likely new), build prereqs (Salesforce user-activity ingestion = open dependency), explicit cuts (no live JIT, no JML, no discovery, no org ceiling).
 - Concrete cast locked: Sarah Cohen (PM) + Scott Davis (VP Sales) both owning a "Sales Pipeline Bot." Tool: `update_opportunity` for all three actions. Policies: `pm-agents-readonly`, `vp-sales-agents-write`.
+
+### 2026-04-28 update — v0.6 Dor-format script + Linx Claude validation
+
+- Validated demo screens against live Linx env via Linx Claude (MCP). Findings: Live Activity / MCP call stream = MISSING (net-new build, load-bearing). Audit Event chain rendering = MISSING (extend flat log detail). Agent Inventory = PARTIAL (M1 EXP-335 shipped; missing platform badge, policy column, last-activity timestamp). SFDC human-activity ingestion = MISSING and **hard-blocked** — SEC-200 backlogged to Aug 2026, after Identiverse June 15.
+- **Stage 3 dropped from rendered row to narration** ("Sarah herself in SFDC can do this. Same person, different actor, different outcome."). Removes SFDC ingestion from build prereqs entirely. Two rendered rows + narration line carry the contrast.
+- Dropped "agent class/instance" framing — overspec'd a Linx product concept that may not exist. Centerpiece reframed as "two agents both named Sales Pipeline Bot, different owners, different policies."
+- Off-stage MVP (build, don't show during loop): Agent Registry (add flow, pre-registered for demo), Access Profiles editor, Integrations tab. Cut: Issues page, Maria review/approve action (defers to v0.7+ alongside JIT).
+- Closed open items: booth-loop format confirmed, Maria = Security Admin (not CISO).
+- **Open for Dor:** (1) confirm w/ Mor whether current Access Profiles support agent-scoped policies or are user-IGA only — determines MVP scope, (2) captions on-screen or operator-only.
+- Suspicious finding from Linx Claude: claimed Access Profiles are user-IGA only. Contradicts Mor's M1 scope. Don't take as final — verify w/ Mor before treating AP as PARTIAL.
+- Files: `artifacts/mcp-gateway-demo-script-dor-format-2026-04-28.md` (v0.6, 35 lines), `artifacts/linx-claude-validation-prompt-2026-04-28.md` (6-question prompt, reusable).
+- Branch: `claude/demo-script-agent-registry-opening`. Merging to main this session.
 - Open: validate screen existence + SFDC ingestion path via Linx Claude (next session); persona for Beat 3 (Maria CISO vs operational admin); Identiverse format confirmation.
