@@ -38,12 +38,13 @@
 | **SailPoint** | Agent Identity Security + **MCP server** | Navigate 2025 + Apr 2026 expansion (Salesforce, ServiceNow, Snowflake) | competitive-matrix.md |
 | **Token Security** | **MCP Server for NHI Security** + AI Agent Identity Lifecycle | May 2025 (server) + Nov 2025 (lifecycle) | competitive-matrix.md (Niv drop, Apr 23) |
 | **Opal** | Paladin (agentic authorization) + **MCP server support** | 2025 launch under new CEO Howard Ting | competitive-matrix.md |
-| **CyberArk (PANW)** | Secure AI Agents (GA Dec 2025) — MCP component **TBD** | Dec 2025 | competitive-matrix.md (need to verify gateway shape) |
+| **CyberArk (PANW)** | Secure AI Agents (GA Dec 2025) — MCP component verify via fetch URL #10 | Dec 2025 | competitive-matrix.md |
 
-**Open classification questions:**
-- Is **CyberArk Secure AI Agents** an actual MCP gateway, or credential-vaulting-for-agents? Verify via product page (URL #10 in queued fetch).
-- **Token Security**'s MCP play is a two-sided one: they expose an MCP server FOR security teams to query (read-only) AND govern MCP servers as identities. Does this count as Bucket A? Likely yes on the second axis — confirm.
-- **C1's "3,000+ hosted MCP servers"** — is this a gateway, a marketplace, or a connector library? Need to read their March 2026 launch material.
+**Token Security removed from Bucket A → moved to Bucket B (decision 2026-04-27).** Their architectural bet is NHI-extension (govern MCP servers as identities). The "MCP server for security teams" is a chat-query surface, not protocol enforcement.
+
+**Remaining open classification questions:**
+- **CyberArk Secure AI Agents:** verify gateway architecture vs. credential vaulting. Default A pending Apr 28 fetch (URL #10).
+- **C1's "3,000+ hosted MCP servers"** — gateway, marketplace, or connector library? Need their March 2026 launch material.
 
 **What to extract per Bucket-A vendor (consistent schema):**
 - Gateway architecture: inline proxy / sidecar / catalog-only / federation layer
@@ -58,20 +59,21 @@
 
 ## Bucket B — IGA/identity competitors using different architectures
 
-| Vendor | Their bet | Why not MCP Gateway | Source |
-|---|---|---|---|
-| **Silverfort** | Agent-based runtime authentication; universal MFA enforcement layer | Identity at the auth-protocol layer, not the MCP-protocol layer. Agent-based deployment philosophy. | competitive-matrix.md |
-| **CrowdStrike / SGNL** | Context-aware authorization extending Falcon ITDR | Identity as a feature of the security platform; not governance-depth-shaped | competitive-matrix.md |
-| **Astrix Security** | NHI-extended **AI Agent Control Plane** | Coming from NHI side; treats agents as NHIs with metadata, not as protocol-layer entities | competitive-matrix.md (Cisco talks Apr 10) |
-| **Oasis Security** | NHI + Agentic Access Management (NHI-pure-play extension) | Same architectural family as Astrix — credential-discovery + lifecycle, not protocol-inline | competitive-matrix.md |
-| **Lumos** | Identity Security Agents (waitlist) + Albus | Agentic *automation* of IGA workflows, not a protocol gateway | competitive-matrix.md |
-| **Clutch** | Shadow AI / Shadow MCP discovery | Detection-first, not enforcement-inline | ai-governance-deep.md |
-| **Origin HQ** | Semantic observability of agent reasoning | Not a competitor — adjacent stack (governs *decisions*, not *credentials*) | competitive-matrix.md (Niv drop, Apr 23) |
+**Five architectural families** (clean slide structure):
 
-**Open classification questions:**
-- **Astrix**: do they have any MCP-aware enforcement layer, or is it pure NHI-discovery for agents? Three URLs in queued fetch (Astrix product + Bayer research + MCP Shift Part 3) should clarify.
-- **CyberArk Conjur / Secure AI Agents** — straddles A and B. If their "secure" story is credential-vaulting, it's Bucket B; if there's a protocol-aware proxy, it's A.
-- **Lumos** — any MCP component announced? Verify before classifying.
+| Architecture | Vendor(s) | Their bet | Source |
+|---|---|---|---|
+| **Runtime-auth** | Silverfort | Agent-based universal MFA at the auth-protocol layer (not MCP-protocol) | competitive-matrix.md |
+| **ITDR-extension** | CrowdStrike / SGNL | Context-aware authorization extending Falcon; identity as feature of security platform | competitive-matrix.md |
+| **NHI-extension** | Astrix, Oasis, **Token Security** | Treat agents/MCP-servers as NHIs; inventory + lifecycle, not protocol-inline | competitive-matrix.md |
+| **Agent-automation of IGA** | Lumos | Identity Security Agents (waitlist) automate workflows; not a protocol gateway | competitive-matrix.md |
+| **Detection-first** | Clutch | Shadow AI / Shadow MCP discovery, not enforcement-inline | ai-governance-deep.md |
+
+**Adjacent (not a Linx competitor — separate slide / footnote):** Origin HQ — semantic observability of agent reasoning; governs *decisions*, not *credentials*. Complementary stack.
+
+**Remaining verification (low priority):**
+- **Astrix**: do they have any MCP-aware enforcement, or pure NHI-discovery? Fetch URLs #1, #3, #4 confirm.
+- **Lumos**: any MCP component announced beyond agent-automation? Default B pending verification.
 
 **What to extract per Bucket-B vendor:**
 - Their architectural alternative (what they DO instead)
@@ -86,7 +88,7 @@
 | Vendor | Lane | Source |
 |---|---|---|
 | **Strata Maverics — AI Identity Gateway** | Identity-federation / IDP-extension | mcp-gateway-competitive.md |
-| **Ping Identity Agent Gateway** | IAM incumbent extension *(borderline — Ping is IDP, not IGA — flag for Omri)* | mcp-gateway-competitive.md |
+| **Ping Identity Agent Gateway** | IDP doing gateway play. **Confirmed Bucket C 2026-04-27** — Ping is an IDP not in our IGA matrix; the "why not just use Ping?" objection is exactly what Bucket C addresses. | mcp-gateway-competitive.md |
 | **Lunar MCPX** | OSS, governance-first, MIT-licensed (~400 stars) | eng-bundle |
 | **Operant MCP Gateway** | Threat-detection framing | mcp-gateway-competitive.md |
 | **Microsoft MCP Gateway** | Kubernetes-native reverse proxy (OSS) | eng-bundle |
@@ -146,7 +148,7 @@ Sharpened for product team:
 
 1. **Bucket A vs. Bucket C boundary is fuzzy at IDPs.** Ping Identity is an IDP (Bucket C-1) AND has Agent Gateway (eats Bucket A). Same risk for Auth0/Okta if their Agentic Identity matures. Decide: is the bucket about "who they sell against" or "what shape their product takes"?
 2. **"Has an MCP Gateway" is binary, but the products aren't.** Saviynt's "Agent Access Gateway" might be a proxy, a registry, or a reverse-proxy — same word, different shapes. Need the per-vendor architecture row to make Bucket A meaningful.
-3. **Customer signal absent.** Zero customer voice on "we picked vendor X because of the MCP gateway." If this presentation lands without a customer quote, it's a vendor-watching exercise. Worth flagging.
+3. ~~**Customer signal absent.**~~ **Reframed 2026-04-27.** Asking for "customer X bought Y's MCP gateway" is a 2027 quote in 2026 — category is too new. Replace with: pull *competitor reference customers* per bucket from existing matrix (HiBob/Lunar, Saviynt 600+, SailPoint enterprise list) as proof-points the category is shipping. Linx-side problem-validation quote is a separate workstream (commitment line 26, before June demo).
 4. **CyberArk and Token Security might both straddle A and B** depending on how strictly we define "MCP Gateway." Risk: bucket A inflates with vendors who just say "MCP" in marketing.
 5. **No mention of Anthropic's own role.** Anthropic owns the MCP spec. Are they shipping a reference gateway? If yes, that's the canonical Bucket C entry and the audience will ask.
 
