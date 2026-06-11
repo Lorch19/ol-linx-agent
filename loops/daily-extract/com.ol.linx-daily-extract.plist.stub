@@ -1,0 +1,20 @@
+<!-- INACTIVE STUB — not installed by anything in this repo.
+     Activation: same 4 steps as loops/morning-brief/*.plist.stub.
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ol.linx-daily-extract</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/omrilorch/ol-linx-agent/loops/daily-extract/run.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>22</integer><key>Minute</key><integer>0</integer></dict>
+  <key>StandardErrorPath</key><string>/Users/omrilorch/ol-linx-agent/loops/daily-extract/.err.log</string>
+  <key>StandardOutPath</key><string>/Users/omrilorch/ol-linx-agent/loops/daily-extract/.out.log</string>
+</dict>
+</plist>
+-->
