@@ -1,0 +1,24 @@
+<!-- INACTIVE STUB — not installed by anything in this repo.
+     To activate (Omri, manually):
+       1. launchctl list | grep com.ol.linx     # check for conflicts first
+       2. Remove this comment block, fix the two paths below
+       3. cp to ~/Library/LaunchAgents/com.ol.linx-morning-brief.plist
+       4. launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.ol.linx-morning-brief.plist
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key><string>com.ol.linx-morning-brief</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/omrilorch/ol-linx-agent/loops/morning-brief/run.sh</string>
+  </array>
+  <key>StartCalendarInterval</key>
+  <dict><key>Hour</key><integer>7</integer><key>Minute</key><integer>0</integer></dict>
+  <key>StandardErrorPath</key><string>/Users/omrilorch/ol-linx-agent/loops/morning-brief/.err.log</string>
+  <key>StandardOutPath</key><string>/Users/omrilorch/ol-linx-agent/loops/morning-brief/.out.log</string>
+</dict>
+</plist>
+-->
