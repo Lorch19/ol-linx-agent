@@ -19,6 +19,16 @@
 1. **Both** conditions filed Mor (internal colleague) into customer-intel.md. Pre-existing, not a regression. Fix: customers-only line in CLAUDE.md data discipline.
 2. **New** (S3) used 49-day-old competitive claims without a staleness flag — rule survived the rewrite but was stated too weakly. Fix: inline as-of-date requirement in SKILL.md.
 
+## Quality audit (independent verifier, same day)
+
+**Faithfulness:** 18 factual claims from the NEW outputs checked against repo sources: 15 SUPPORTED (file+line), 0 NOT FOUND, 2 CONTRADICTED, 1 supported-with-overstated-certainty (B6 "Niv confirmed" vs "treat as granted").
+- A11: repeated Linx marketing ("Autopilot GA, autonomous remediation in production") which linx-product.md flags as a marketing-reality gap. Failure mode: trusting positioning copy over the product reality-check.
+- B4: declared Opal undocumented after checking one landscape file; Opal has a matrix entry + battle card. Failure mode: single-file search before a negative claim.
+
+**Hindsight backtest:** blind to the outcome, the NEW agent reproduced the recorded 2026-04-28 decision (cut live JIT from the Identiverse demo, risk-driven — log.md:486, demo script artifact). Its added "Figma prototype as closing vision beat" was not what was adopted. Partial match; core call correct.
+
+**Instruction-bloat guard:** neither defect gets patched into CLAUDE.md/SKILL.md yet. Rule: an eval finding earns an instruction line only on recurrence — patching every miss into the prompt is exactly how the old 14KB CLAUDE.md grew. Both are recorded here as known failure modes to re-test.
+
 ## Limitations (honest)
 
 - n=1 per cell — single-run variance unmeasured.
