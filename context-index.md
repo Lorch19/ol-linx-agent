@@ -1,12 +1,12 @@
 # Context Index
 
-Auto-loaded at session start. Scan tags to propose relevant files before loading them.
-**Auto-loaded (no proposal needed):** `brief.md`, `commitments.md`
+Auto-loaded at session start. Scan tags, state what you're loading/skipping and why, then **proceed** — no confirmation round-trip (changed 2026-06-11, verdict #3; ask only when genuinely ambiguous).
+**Auto-loaded (no statement needed):** `commitments.md`
 **Tail only — never full read:** `log.md` (last 40 lines via offset)
 
 **Tiers:**
-- *(no marker)* = propose as **Load** when tags match
-- `[ref]` = propose as **Maybe Useful** by default; only promote to Load when the task explicitly needs depth (spec writing, deep technical analysis, historical decisions)
+- *(no marker)* = load when tags match
+- `[ref]` = load only when the task explicitly needs depth (spec writing, deep technical analysis, historical decisions)
 
 | File | Tier | ~Size | Tags |
 |---|---|---|---|
