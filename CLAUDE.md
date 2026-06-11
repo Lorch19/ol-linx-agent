@@ -29,6 +29,7 @@ If it isn't committed to this repo, it doesn't exist (documented Week-1 loss: 7 
 - Atomic bullets in `knowledge/` — one fact per line, source cited.
 - Dates inline (YYYY-MM-DD) on time-sensitive claims.
 - Commitments: `action — date — owner`. Rationale goes to log.md, referenced as `[→ log YYYY-MM-DD]`.
+- `customer-intel.md` is for **customers only** (Sony, Monday.com, …). Internal colleagues (Mor, Dor, Niv, Sarit, Amir) go to log.md and `references/stakeholder-map.md` — never customer-intel. (Caught by replay eval 2026-06-11: both old and new systems made this mistake.)
 
 ## Loops
 
