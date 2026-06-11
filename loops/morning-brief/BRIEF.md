@@ -2,7 +2,7 @@
 
 **Trigger:** daily 07:00 launchd (stub inactive — see `com.ol.linx-morning-brief.plist.stub`)
 **Inputs:**
-- Google Calendar — today's events (Calendar MCP / gcalcli; v1 failed partly because it had no real tool access — missions/07: "no connection to real work tools")
+- Google Calendar — today's events (Calendar MCP / gcalcli; v1 failed partly because it had no real tool access — _archive/07-agent-evolution.md: "no connection to real work tools")
 - Linear — issues assigned to Omri, in-progress + due (Linear MCP, configured in `.mcp.json`)
 - `commitments.md` — overdue items (date < today, unchecked)
 - `loops/competitor-watch/state/` — yesterday's diff, if any
@@ -14,7 +14,7 @@
 
 ## Why this loop (evidence)
 
-brief.md was hand-maintained daily until 2026-04-19 — demand is proven. It froze when the manual cost exceeded the value. A scheduled version allegedly existed (missions/07, Apr 8) and died silently. v2 differences: real tool inputs, push to a channel Omri reads, failure-notice instead of silent death.
+brief.md was hand-maintained daily until 2026-04-19 — demand is proven. It froze when the manual cost exceeded the value. A scheduled version allegedly existed (_archive/07-agent-evolution.md, Apr 8) and died silently. v2 differences: real tool inputs, push to a channel Omri reads, failure-notice instead of silent death.
 
 ## Activation (manual, Omri only)
 
