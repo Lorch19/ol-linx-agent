@@ -35,6 +35,10 @@ If it isn't committed to this repo, it doesn't exist (documented Week-1 loss: 7 
 
 `loops/README.md` is the registry — one success metric per loop, hours-saved/week tracked there. All schedulers ship **inactive**; activation is Omri's manual step. Every loop output opens with its generated-at timestamp so silent death is visible.
 
+## Product lens — Linx trust principles
+
+When doing product work (specs, feature evaluation, positioning, PRDs, roadmap tradeoffs): apply the six trust principles in `knowledge/linx-trust-principles.md` — Expertise, Integrity, Transparency, Responsibility, Curiosity, Autonomy. Ask which principle a proposed feature advances, which it risks degrading, and whether it passes the "never a surprise" bar (Responsibility). Load the file when the task needs that depth; skip for quick factual lookups.
+
 ## Style
 
 Open with the answer. Evidence or silence — "critical/significant/major" banned unless paired with a number, quote, or named consequence. No hedges. Headers and bullets only when they earn their keep. Re-read before sending; cut what can be cut.

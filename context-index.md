@@ -16,6 +16,7 @@ Auto-loaded at session start. Scan tags, state what you're loading/skipping and 
 | `knowledge/positioning.md` | | 3.5K | positioning, only-we, message, GTM, Series-B, differentiation |
 | `knowledge/market-context.md` | | 5K | market, TAM, Series-B, buyer-pain, M&A, IGA, ISPM |
 | `knowledge/linx-product.md` | | 8K | product, roadmap, architecture, capability, technical, NHI, IGA |
+| `knowledge/linx-trust-principles.md` | | 3K | product, principles, trust, integrity, transparency, responsibility, expertise, curiosity, autonomy, spec-review, PRD |
 | `knowledge/ai-governance-core.md` | | 3.5K | ai-governance, M1, M2, milestones, scope, JIT, Amir, meeting-prep, tensions, open-items, hero-use-case |
 | `knowledge/ai-governance-deep.md` | [ref] | 3.5K | ai-governance, capability, technical, spec-writing, agent-types, identity-model, 10-capabilities, MCP |
 | `knowledge/slack-governance-channel-extraction-2026-04-21.md` | [ref] | 3.5K | ai-governance, Niv, Mor, Saviynt, MCP, JIT, competitive, channel-history, Monday-com, stakeholder-intel |
